@@ -30,27 +30,27 @@ pub extern "js" fn CanvasRenderingContext2D::reset(self : Self) = "(x) => x.rese
 ///|
 pub extern "js" fn CanvasRenderingContext2D::is_context_lost(
   self : Self
-) -> Bool = "() => x.isContextLost()"
+) -> Bool = "(self) => self.isContextLost()"
 
 ///|
 pub extern "js" fn CanvasRenderingContext2D::scale(
   self : Self,
   x : Double,
   y : Double
-) = "(x,y) => x.scale(x,y)"
+) = "(self,x,y) => self.scale(x,y)"
 
 ///|
 pub extern "js" fn CanvasRenderingContext2D::rotate(
   self : Self,
   angle : Double
-) = "(x,angle) => x.rotate(angle)"
+) = "(self,angle) => self.rotate(angle)"
 
 ///|
 pub extern "js" fn CanvasRenderingContext2D::translate(
   self : Self,
   x : Double,
   y : Double
-) = "(x,y) => x.translate(x,y)"
+) = "(self,x,y) => self.translate(x,y)"
 
 ///|
 pub extern "js" fn CanvasRenderingContext2D::transform(
@@ -61,7 +61,7 @@ pub extern "js" fn CanvasRenderingContext2D::transform(
   d : Double,
   e : Double,
   f : Double
-) = "(x,a,b,c,d,e,f) => x.transform(a,b,c,d,e,f)"
+) = "(self,a,b,c,d,e,f) => self.transform(a,b,c,d,e,f)"
 
 ///|
 pub extern "js" fn CanvasRenderingContext2D::set_transform(
@@ -72,7 +72,7 @@ pub extern "js" fn CanvasRenderingContext2D::set_transform(
   d : Double,
   e : Double,
   f : Double
-) = "(x,a,b,c,d,e,f) => x.setTransform(a,b,c,d,e,f)"
+) = "(self,a,b,c,d,e,f) => self.setTransform(a,b,c,d,e,f)"
 
 ///|
 pub extern "js" fn CanvasRenderingContext2D::reset_transform(self : Self) = "(x) => x.resetTransform()"
