@@ -12,6 +12,15 @@ pub extern "js" fn Document::create_element(
 ) -> Element = "(doc,tag) => doc.createElement(tag)"
 
 ///|
+pub extern "js" fn Document::create_element_ns(
+  self : Self,
+  namespace_uri : String,
+  qualified_name : String,
+  on_namespace_error~ : (DOMException) -> Element = default_exception_handler,
+  on_invalid_character_error~ : (DOMException) -> Element = default_exception_handler
+) -> Element = "(doc,namespace,qualifiedName) => doc.createElementNS(namespace, qualifiedName)"
+
+///|
 pub extern "js" fn Document::create_text_node(
   self : Self,
   str : String
