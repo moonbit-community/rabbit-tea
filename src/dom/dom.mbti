@@ -13,7 +13,15 @@ const DOM_KEY_LOCATION_RIGHT : Int = 0x02
 
 const DOM_KEY_LOCATION_STANDARD : Int = 0x00
 
+fn[E, R] default_exception_handler(E) -> R
+
 fn document() -> Document
+
+let namespace_html : String
+
+let namespace_mathml : String
+
+let namespace_svg : String
 
 fn window() -> Window
 
@@ -102,6 +110,13 @@ fn Clipboard::write_text(Self, String) -> @js.Promise
 type ClipboardEvent
 fn ClipboardEvent::clipboard_data(Self) -> DataTransfer
 
+type DOMException
+fn DOMException::get_message(Self) -> String
+fn DOMException::get_name(Self) -> String
+fn DOMException::new() -> Self
+fn DOMException::new_with_message(String) -> Self
+fn DOMException::new_with_message_and_name(String, String) -> Self
+
 type DOMMatrix2DInit
 
 type DOMRect
@@ -130,6 +145,7 @@ fn DataTransferItemList::remove(Self, Int) -> Unit
 type Document
 fn Document::create_document_fragment(Self) -> DocumentFragment
 fn Document::create_element(Self, String) -> Element
+fn Document::create_element_ns(Self, String, String, on_namespace_error~ : (DOMException) -> Element = .., on_invalid_character_error~ : (DOMException) -> Element = ..) -> Element
 fn Document::create_text_node(Self, String) -> Element
 fn Document::get_element_by_id(Self, String) -> @js.Nullable[Element]
 fn Document::get_elements_by_class_name(Self, String) -> HTMLCollection

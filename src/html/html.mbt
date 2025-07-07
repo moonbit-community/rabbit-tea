@@ -1,5 +1,5 @@
 ///|
-type Html[Msg] @vdom.Node[Msg]
+pub(all) type Html[Msg] @vdom.Node[Msg]
 
 ///|
 pub typealias Html as T

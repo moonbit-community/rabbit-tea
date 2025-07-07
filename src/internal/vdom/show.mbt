@@ -35,8 +35,8 @@ impl[Msg] Show for AttrValue[Msg] with output(self, buf) {
 ///|
 impl[Msg] Show for Node[Msg] with to_string(self) {
   match self {
-    Node(tag, attrs~, childrens~, listeners~) =>
-      "Node(\{tag}, \{attrs}, \{childrens}, Listeners(\{listeners.length()}))"
+    Node(tag, attrs~, childrens~, listeners~, namespace_uri~) =>
+      "Node(\{tag}, \{attrs}, \{childrens}, Listeners(\{listeners.length()}), \{namespace_uri})"
     ExternalNode(_, attrs, width~, height~) =>
       "ExternalNode(\{attrs},\{width},\{height})"
     Text(value) => "Text(\{value})"
