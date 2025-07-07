@@ -52,7 +52,7 @@ fn main {
 }
 ```
 
-For more examples, see the `src/example` directory.
+For more examples, see [rabbit-tea-examples](https://github.com/moonbit-community/rabbit-tea-examples).
 
 # Getting started 
 
