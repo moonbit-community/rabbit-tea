@@ -22,6 +22,8 @@ fn[Msg] link(Array[Attribute[Msg]], Array[Node[Msg]], escape~ : Bool = ..) -> No
 
 fn[Msg] node(String, Array[Attribute[Msg]], Array[Node[Msg]]) -> Node[Msg]
 
+fn[Msg] node_ns(String, String, Array[Attribute[Msg]], Array[Node[Msg]]) -> Node[Msg]
+
 fn[Msg] nothing() -> Node[Msg]
 
 fn[Msg] on(String, Handler[Msg]) -> Attribute[Msg]

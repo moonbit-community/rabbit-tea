@@ -1,0 +1,11 @@
+{
+  "import": [
+    {
+      "path": "Yoorkin/rabbit-tea/internal/vdom",
+      "alias": "vdom"
+    },
+    "Yoorkin/rabbit-tea/variant",
+    "Yoorkin/rabbit-tea/dom",
+    "Yoorkin/rabbit-tea/html"
+  ]
+}

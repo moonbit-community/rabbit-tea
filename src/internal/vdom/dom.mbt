@@ -2,6 +2,7 @@
 enum Node[Msg] {
   Node(
     String,
+    namespace_uri~ : String?,
     attrs~ : Array[Attribute[Msg]],
     childrens~ : Array[Node[Msg]],
     // Store the event listener used in real DOM
@@ -22,10 +23,10 @@ enum Node[Msg] {
 /// This is a expensive operation and should be used rarely.
 pub fn[A, B] map(self : Node[A], f : (A) -> B) -> Node[B] {
   match self {
-    Node(tag, attrs~, childrens~, listeners~) => {
+    Node(tag, attrs~, childrens~, listeners~, namespace_uri~) => {
       let attrs = attrs.map(_.map(f))
       let childrens = childrens.map(_.map(f))
-      Node(tag, attrs~, childrens~, listeners~)
+      Node(tag, attrs~, childrens~, listeners~, namespace_uri~)
     }
     ExternalNode(node, attrs, width~, height~) => {
       let attrs = attrs.map(_.map(_.map(_.map(f))))
@@ -42,7 +43,23 @@ pub fn[Msg] node(
   attrs : Array[Attribute[Msg]],
   childrens : Array[Node[Msg]]
 ) -> Node[Msg] {
-  Node(tag, attrs~, childrens~, listeners=[])
+  Node(tag, attrs~, childrens~, listeners=[], namespace_uri=None)
+}
+
+///|
+pub fn[Msg] node_ns(
+  namespace_uri : String,
+  qualified_name : String,
+  attrs : Array[Attribute[Msg]],
+  childrens : Array[Node[Msg]]
+) -> Node[Msg] {
+  Node(
+    qualified_name,
+    attrs~,
+    childrens~,
+    listeners=[],
+    namespace_uri=Some(namespace_uri),
+  )
 }
 
 ///|
@@ -221,7 +238,7 @@ fn[Msg, Model, View] Node::to_node(
   }
 
   match self {
-    Node(tag, attrs~, childrens~, listeners~) => {
+    Node(tag, attrs~, childrens~, listeners~, namespace_uri~) => {
       // NOTE:
       // This is important for those who want to write a router in the app. 
       // When the `a` tag is clicked, the href is parsed and wrapped in 
@@ -231,8 +248,13 @@ fn[Msg, Model, View] Node::to_node(
       // handle the click event.
       // 
       // If the user hold the meta key or ctrl key, let the browser handle the click event.
-      let element = match (sandbox.get_on_url_request(), tag) {
-        (Some(url_request), NORMAL_LINK_TAG) => {
+      let element = match (namespace_uri, sandbox.get_on_url_request(), tag) {
+        (Some(ns), _, _) => {
+          let element = @dom.document().create_element_ns(ns, tag)
+          attach_attrs(attrs, element, listeners)
+          element
+        }
+        (_, Some(url_request), NORMAL_LINK_TAG) => {
           let element = @dom.document().create_element(tag)
           attach_attrs(attrs, element, listeners)
           element
@@ -263,7 +285,7 @@ fn[Msg, Model, View] Node::to_node(
         }
         // We allow user to create a escaped link, which will not trigger the url_request message.
         // This is useful when user want to create a link that jump to another site directly.
-        (_, ESCAPED_LINK_TAG) => {
+        (_, _, ESCAPED_LINK_TAG) => {
           let element = @dom.document().create_element("a")
           attach_attrs(attrs, element, listeners)
           element

@@ -1,0 +1,30 @@
+package "Yoorkin/rabbit-tea/svg"
+
+import(
+  "Yoorkin/rabbit-tea/html"
+  "Yoorkin/rabbit-tea/internal/vdom"
+  "Yoorkin/rabbit-tea/variant"
+)
+
+// Values
+fn[Msg] attribute(String, String) -> Attribute[Msg]
+
+fn[M] from_string(String) -> @html.Html[M]
+
+fn[M] node(String, Array[Attribute[M]], Array[Svg[M]]) -> Svg[M]
+
+fn[M] property(String, @variant.Variant) -> Attribute[M]
+
+fn[M] svg(Array[Attribute[M]], Array[Svg[M]]) -> @html.Html[M]
+
+// Types and methods
+pub(all) type Attribute[M] @vdom.Attribute[M]
+fn[M] Attribute::inner(Self[M]) -> @vdom.Attribute[M]
+
+pub(all) type Svg[M] @vdom.Node[M]
+fn[M] Svg::inner(Self[M]) -> @vdom.Node[M]
+
+// Type aliases
+
+// Traits
+

@@ -12,6 +12,15 @@ pub extern "js" fn Document::create_element(
 ) -> Element = "(doc,tag) => doc.createElement(tag)"
 
 ///|
+pub let namespace_html = "http://www.w3.org/1999/xhtml"
+
+///|
+pub let namespace_svg = "http://www.w3.org/2000/svg"
+
+///|
+pub let namespace_mathml = "http://www.w3.org/1998/Math/MathML"
+
+///|
 pub extern "js" fn Document::create_element_ns(
   self : Self,
   namespace_uri : String,
