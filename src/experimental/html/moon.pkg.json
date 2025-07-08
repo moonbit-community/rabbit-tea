@@ -1,0 +1,19 @@
+{
+  "import": [
+    {
+      "path": "Yoorkin/rabbit-tea/internal/vdom",
+      "alias": "vdom"
+    },
+    "Yoorkin/rabbit-tea/dom",
+    "rami3l/js-ffi/js",
+    {
+      "path": "Yoorkin/rabbit-tea/html",
+      "alias": "legacy_html"
+    }
+  ],
+  "link": {
+    "js": {
+      "format": "iife"
+    }
+  }
+}

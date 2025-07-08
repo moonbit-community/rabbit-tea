@@ -1,0 +1,166 @@
+package "Yoorkin/rabbit-tea/experimental/html/internal/codegen"
+
+// Values
+
+// Types and methods
+type Attribute
+impl Compare for Attribute
+impl Eq for Attribute
+impl Show for Attribute
+
+type AttributeKind
+impl Show for AttributeKind
+
+type AttributeMeta
+impl Show for AttributeMeta
+
+pub(all) enum AttributeTarget {
+  Global
+  Element(Array[HtmlElement])
+}
+impl Show for AttributeTarget
+
+pub(all) enum HtmlElement {
+  Html
+  Head
+  Title
+  Base
+  Link
+  Meta
+  Style
+  Body
+  Address
+  Article
+  Aside
+  Footer
+  Header
+  H1
+  H2
+  H3
+  H4
+  H5
+  H6
+  Hgroup
+  Main
+  Nav
+  Section
+  Search
+  Blockquote
+  Dd
+  Div
+  Dl
+  Dt
+  Figcaption
+  Figure
+  Hr
+  Li
+  Menu
+  Ol
+  P
+  Pre
+  Ul
+  A
+  Abbr
+  B
+  Bdi
+  Bdo
+  Br
+  Cite
+  Code
+  Data
+  Dfn
+  Em
+  I
+  Kbd
+  Mark
+  Q
+  Rp
+  Rt
+  Ruby
+  S
+  Samp
+  Small
+  Span
+  Strong
+  Sub
+  Sup
+  Time
+  U
+  Var
+  Wbr
+  Area
+  Audio
+  Img
+  Map
+  Track
+  Video
+  Embed
+  Fencedframe
+  Iframe
+  Object
+  Picture
+  Source
+  Svg
+  Math
+  Canvas
+  Noscript
+  Script
+  Del
+  Ins
+  Caption
+  Col
+  Colgroup
+  Table
+  Tbody
+  Td
+  Textarea
+  Tfoot
+  Th
+  Thead
+  Tr
+  Button
+  Datalist
+  Fieldset
+  Form
+  Input
+  Label
+  Legend
+  Meter
+  Optgroup
+  Option
+  Output
+  Progress
+  Select
+  Selectedcontent
+  Details
+  Dialog
+  Summary
+  Slot
+  Template
+  Font
+  Marquee
+  Param
+}
+impl Compare for HtmlElement
+impl Eq for HtmlElement
+impl Show for HtmlElement
+
+pub struct HtmlMeta {
+  html : HtmlElement
+  name : String
+  wrapper_name : String
+}
+
+type MbtParameter
+impl Show for MbtParameter
+
+type MbtParameterKind
+impl Show for MbtParameterKind
+
+type MbtType
+impl Show for MbtType
+
+// Type aliases
+
+// Traits
+
