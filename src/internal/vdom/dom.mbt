@@ -137,19 +137,19 @@ fn[Msg] is_same_type(x : Node[Msg], y : Node[Msg]) -> Bool {
 }
 
 ///|
-impl[Msg] Eq for Handler[Msg] with op_equal(_a, _b) {
-  false // TODO: implement this
-}
+// pub impl[Msg] Eq for Handler[Msg] with op_equal(_a, _b) {
+//   false // TODO: implement this
+// }
 
 ///|
-impl[Msg] Eq for AttrValue[Msg] with op_equal(_a, _b) {
-  false // TODO: implement this
-}
+// impl[Msg] Eq for AttrValue[Msg] with op_equal(_a, _b) {
+//   false // TODO: implement this
+// }
 
 ///|
-impl[Msg] Eq for Attribute[Msg] with op_equal(_a, _b) {
-  false // TODO: implement this
-}
+// impl[Msg] Eq for Attribute[Msg] with op_equal(_a, _b) {
+//   false // TODO: implement this
+// }
 
 ///|
 pub fn[A, B] Handler::map(self : Handler[A], f : (A) -> B) -> Handler[B] {
