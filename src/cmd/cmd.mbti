@@ -5,13 +5,13 @@ import(
 )
 
 // Values
-fn[A, E : Error, M] attempt((Result[A, E]) -> M, () -> A raise E) -> Cmd[M]
+fn[A, E : Error, M] attempt((Result[A, E]) -> M, async () -> A raise E) -> Cmd[M]
 
 fn[M] batch(Array[Cmd[M]]) -> Cmd[M]
 
 fn[M] none() -> Cmd[M]
 
-fn[A, M] perform((A) -> M, () -> A) -> Cmd[M]
+fn[A, M] perform((A) -> M, async () -> A) -> Cmd[M]
 
 fn[M] task(M) -> Cmd[M]
 
