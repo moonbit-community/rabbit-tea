@@ -101,7 +101,7 @@ pub fn[A, E : Error, M] attempt(
   Cmd(events => @js.async_run(() => {
     let msg = try f() catch {
       e => msg(Err(e))
-    } else {
+    } noraise {
       r => msg(Ok(r))
     }
     events.trigger_update(msg)
