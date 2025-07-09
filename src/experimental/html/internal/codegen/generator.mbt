@@ -58,16 +58,12 @@ fn generate_wrapper(html : HtmlMeta) -> String {
   let attrs = attribute_meta_list.filter(x => match x.target {
     Global =>
       match x.attr_kind {
-        EventHandlerAttribute => {
-          x.attribute.get_handler_wrapper() is Some(_)
-        }
+        EventHandlerAttribute => x.attribute.get_handler_wrapper() is Some(_)
         _ => true
       }
     Element(elems) if elems.contains(html.html) =>
       match x.attr_kind {
-        EventHandlerAttribute => {
-          x.attribute.get_handler_wrapper() is Some(_)
-        }
+        EventHandlerAttribute => x.attribute.get_handler_wrapper() is Some(_)
         _ => true
       }
     _ => false
