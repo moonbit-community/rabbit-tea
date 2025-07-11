@@ -109,6 +109,7 @@ fn Clipboard::write_text(Self, String) -> @js.Promise
 
 type ClipboardEvent
 fn ClipboardEvent::clipboard_data(Self) -> DataTransfer
+impl IsEvent for ClipboardEvent
 
 type DOMException
 fn DOMException::get_message(Self) -> String
@@ -160,43 +161,20 @@ type DocumentFragment
 fn DocumentFragment::to_node(Self) -> Node
 
 type Element
-fn Element::append_children(Self, Self) -> Unit
-fn Element::children(Self) -> Array[Self]
-fn Element::get_attribute(Self, String) -> String
-fn Element::get_bounding_client_rect(Self) -> DOMRect
-fn Element::get_property(Self, String) -> String
-fn Element::get_scroll_height(Self) -> Double
-fn Element::get_scroll_left(Self) -> Double
-fn Element::get_scroll_top(Self) -> Double
-fn Element::get_scroll_width(Self) -> Double
-fn Element::remove_attribute(Self, String) -> Unit
-fn Element::remove_children(Self, Self) -> Unit
-fn Element::remove_property(Self, String) -> Unit
-fn Element::scroll_into_view(Self) -> Unit
-fn Element::set_attribute(Self, String, String) -> Unit
-fn Element::set_inner_html(Self, String) -> Unit
-fn Element::set_property(Self, String, @js.Value) -> Unit
-fn Element::set_scroll_left(Self, Double) -> Unit
-fn Element::set_scroll_top(Self, Double) -> Unit
-fn Element::to_html_element(Self) -> @js.Nullable[HTMLElement]
-fn Element::to_node(Self) -> Node
+impl IsElement for Element
+impl IsEventTarget for Element
+impl IsNode for Element
 
 type Event
-fn Event::prevent_default(Self) -> Unit
-fn Event::stop_propagation(Self) -> Unit
-fn Event::target(Self) -> EventTarget
-fn Event::to_clipboard_event(Self) -> @js.Nullable[KeyboardEvent]
-fn Event::to_ui_event(Self) -> @js.Nullable[UIEvent]
+impl IsEvent for Event
 
 type EventTarget
-fn EventTarget::add_event_listener(Self, String, (Event) -> Unit) -> Unit
-fn EventTarget::dispatch_event(Self, Event) -> Unit
-fn EventTarget::remove_event_listener(Self, String, (Event) -> Unit) -> Unit
-fn EventTarget::to_clipboard(Self) -> @js.Nullable[Clipboard]
-fn EventTarget::to_node(Self) -> @js.Nullable[Node]
+impl IsEventTarget for EventTarget
 
 type FocusEvent
 fn FocusEvent::related_target(Self) -> EventTarget
+impl IsEvent for FocusEvent
+impl IsUIEvent for FocusEvent
 
 type GPUCanvasContext
 
@@ -204,7 +182,10 @@ type HTMLCanvasElement
 fn HTMLCanvasElement::get_context(Self, String) -> @js.Union5[CanvasRenderingContext2D, ImageBitmapRenderingContext, WebGLRenderingContext, WebGL2RenderingContext, GPUCanvasContext]
 fn HTMLCanvasElement::get_height(Self) -> Int
 fn HTMLCanvasElement::get_width(Self) -> Int
-fn HTMLCanvasElement::to_html_element(Self) -> HTMLElement
+impl IsElement for HTMLCanvasElement
+impl IsEventTarget for HTMLCanvasElement
+impl IsHtmlElement for HTMLCanvasElement
+impl IsNode for HTMLCanvasElement
 
 type HTMLCollection
 fn HTMLCollection::get_length(Self) -> Double
@@ -218,16 +199,16 @@ fn HTMLDialogElement::request_close(Self, return_value~ : @js.Optional[String] =
 fn HTMLDialogElement::return_value(Self) -> String
 fn HTMLDialogElement::show(Self) -> Unit
 fn HTMLDialogElement::show_modal(Self) -> Unit
+impl IsElement for HTMLDialogElement
+impl IsEventTarget for HTMLDialogElement
+impl IsHtmlElement for HTMLDialogElement
+impl IsNode for HTMLDialogElement
 
 type HTMLElement
-fn HTMLElement::remove_style(Self, String) -> Unit
-fn HTMLElement::set_style(Self, String, String) -> Unit
-fn HTMLElement::to_element(Self) -> Element
-fn HTMLElement::to_html_canvas_element(Self) -> @js.Nullable[HTMLCanvasElement]
-fn HTMLElement::to_html_dialog_element(Self) -> @js.Nullable[HTMLDialogElement]
-fn HTMLElement::to_html_image_element(Self) -> @js.Nullable[HTMLImageElement]
-fn HTMLElement::to_html_input_element(Self) -> @js.Nullable[HTMLInputElement]
-fn HTMLElement::to_html_select_element(Self) -> @js.Nullable[HTMLSelectElement]
+impl IsElement for HTMLElement
+impl IsEventTarget for HTMLElement
+impl IsHtmlElement for HTMLElement
+impl IsNode for HTMLElement
 
 type HTMLImageElement
 fn HTMLImageElement::get_alt(Self) -> String
@@ -264,9 +245,17 @@ fn HTMLImageElement::set_src(Self, String) -> Unit
 fn HTMLImageElement::set_srcset(Self, String) -> Unit
 fn HTMLImageElement::set_use_map(Self, String) -> Unit
 fn HTMLImageElement::set_width(Self, Double) -> Unit
+impl IsElement for HTMLImageElement
+impl IsEventTarget for HTMLImageElement
+impl IsHtmlElement for HTMLImageElement
+impl IsNode for HTMLImageElement
 
 type HTMLInputElement
 fn HTMLInputElement::value(Self) -> String
+impl IsElement for HTMLInputElement
+impl IsEventTarget for HTMLInputElement
+impl IsHtmlElement for HTMLInputElement
+impl IsNode for HTMLInputElement
 
 type HTMLSelectElement
 fn HTMLSelectElement::value(Self) -> String
@@ -292,6 +281,8 @@ type InputEvent
 fn InputEvent::data(Self) -> String
 fn InputEvent::input_type(Self) -> String
 fn InputEvent::is_composing(Self) -> Bool
+impl IsEvent for InputEvent
+impl IsUIEvent for InputEvent
 
 type KeyboardEvent
 fn KeyboardEvent::alt_key(Self) -> Bool
@@ -303,6 +294,8 @@ fn KeyboardEvent::location(Self) -> Int
 fn KeyboardEvent::meta_key(Self) -> Bool
 fn KeyboardEvent::repeat(Self) -> Bool
 fn KeyboardEvent::shift_key(Self) -> Bool
+impl IsEvent for KeyboardEvent
+impl IsUIEvent for KeyboardEvent
 
 type MouseEvent
 fn MouseEvent::alt_key(Self) -> Bool
@@ -315,31 +308,16 @@ fn MouseEvent::offset_y(Self) -> Int
 fn MouseEvent::screen_x(Self) -> Int
 fn MouseEvent::screen_y(Self) -> Int
 fn MouseEvent::shift_key(Self) -> Bool
+impl IsEvent for MouseEvent
+impl IsUIEvent for MouseEvent
 
 #external
 pub type Navigator
 fn Navigator::clipboard(Self) -> Clipboard
 
 type Node
-fn Node::append_child(Self, Self) -> Unit
-fn Node::count_child(Self) -> Int
-fn Node::first_child(Self) -> Self
-fn Node::insert_before(Self, Self, Self) -> Unit
-fn Node::last_child(Self) -> Self
-fn Node::next_sibling(Self) -> Self
-fn Node::node_name(Self) -> String
-fn Node::node_type(Self) -> Int
-fn Node::node_value(Self) -> String
-fn Node::nth_child(Self, Int) -> Self
-fn Node::parent_node(Self) -> Self
-fn Node::previous_sibling(Self) -> Self
-fn Node::remove_child(Self, Self) -> Unit
-fn Node::replace_child(Self, Self, Self) -> Unit
-fn Node::to_document(Self) -> @js.Nullable[Document]
-fn Node::to_document_fragment(Self) -> @js.Nullable[DocumentFragment]
-fn Node::to_element(Self) -> @js.Nullable[Element]
-fn Node::to_event_target(Self) -> EventTarget
-fn Node::to_text(Self) -> @js.Nullable[Text]
+impl IsEventTarget for Node
+impl IsNode for Node
 
 type NodeList
 fn NodeList::get_length(Self) -> Double
@@ -357,11 +335,8 @@ type Text
 fn Text::to_node(Self) -> Node
 
 type UIEvent
-fn UIEvent::to_event(Self) -> Event
-fn UIEvent::to_focus_event(Self) -> @js.Nullable[MouseEvent]
-fn UIEvent::to_input_event(Self) -> @js.Nullable[MouseEvent]
-fn UIEvent::to_keyboard_event(Self) -> @js.Nullable[KeyboardEvent]
-fn UIEvent::to_mouse_event(Self) -> @js.Nullable[MouseEvent]
+impl IsEvent for UIEvent
+impl IsUIEvent for UIEvent
 
 type Uint8ClampedArray
 
@@ -398,4 +373,83 @@ pub typealias (Event) -> Unit as Listener
 pub typealias String as PredefinedColorSpace
 
 // Traits
+pub trait IsElement : IsNode {
+  as_element(Self) -> Element
+  get_children(Self) -> Array[Element]
+  set_attribute(Self, String, String) -> Unit
+  get_attribute(Self, String) -> String
+  remove_attribute(Self, String) -> Unit
+  set_property(Self, String, @js.Value) -> Unit
+  get_property(Self, String) -> String
+  remove_property(Self, String) -> Unit
+  scroll_into_view(Self) -> Unit
+  get_scroll_top(Self) -> Double
+  set_scroll_top(Self, Double) -> Unit
+  get_scroll_left(Self) -> Double
+  set_scroll_left(Self, Double) -> Unit
+  get_scroll_width(Self) -> Double
+  get_scroll_height(Self) -> Double
+  set_inner_html(Self, String) -> Unit
+  get_bounding_client_rect(Self) -> DOMRect
+}
+
+pub trait IsEvent {
+  target(Self) -> EventTarget
+  prevent_default(Self) -> Unit
+  stop_propagation(Self) -> Unit
+  as_event(Self) -> Event
+  to_ui_event(Self) -> UIEvent?
+  to_clipboard_event(Self) -> ClipboardEvent?
+  to_mouse_event(Self) -> MouseEvent?
+  to_input_event(Self) -> MouseEvent?
+  to_focus_event(Self) -> MouseEvent?
+  to_keyboard_event(Self) -> KeyboardEvent?
+}
+
+pub trait IsEventTarget {
+  as_event_target(Self) -> EventTarget
+  add_event_listener(Self, String, (Event) -> Unit) -> Unit
+  remove_event_listener(Self, String, (Event) -> Unit) -> Unit
+  dispatch_event(Self, Event) -> Unit
+  to_clipboard(Self) -> Clipboard?
+  to_node(Self) -> Node?
+  to_document(Self) -> Document?
+  to_document_fragment(Self) -> DocumentFragment?
+  to_element(Self) -> Element?
+  to_html_element(Self) -> HTMLElement?
+  to_html_canvas_element(Self) -> HTMLCanvasElement?
+  to_html_input_element(Self) -> HTMLInputElement?
+  to_html_dialog_element(Self) -> HTMLDialogElement?
+  to_html_image_element(Self) -> HTMLImageElement?
+  to_html_select_element(Self) -> HTMLSelectElement?
+  to_text(Self) -> Text?
+}
+
+pub trait IsHtmlElement : IsElement {
+  as_html_element(Self) -> HTMLElement
+  set_style(Self, String, String) -> Unit
+  remove_style(Self, String) -> Unit
+}
+
+pub trait IsNode : IsEventTarget {
+  as_node(Self) -> Node
+  get_node_type(Self) -> Int
+  get_node_name(Self) -> String
+  get_node_value(Self) -> String
+  get_first_child(Self) -> Node
+  get_last_child(Self) -> Node
+  get_next_sibling(Self) -> Node
+  get_previous_sibling(Self) -> Node
+  get_parent_node(Self) -> Node
+  append_child(Self, Node) -> Unit
+  remove_child(Self, Node) -> Unit
+  replace_child(Self, Node, Node) -> Unit
+  insert_before(Self, Node, Node) -> Unit
+  get_child(Self, Int) -> Node
+  get_child_count(Self) -> Int
+}
+
+pub trait IsUIEvent : IsEvent {
+  as_ui_event(Self) -> UIEvent
+}
 

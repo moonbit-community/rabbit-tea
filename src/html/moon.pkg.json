@@ -5,7 +5,6 @@
         "alias": "vdom"
       },
       "Yoorkin/rabbit-tea/dom",
-      "rami3l/js-ffi/js",
       "Yoorkin/rabbit-tea/variant"
     ],
     "link": {

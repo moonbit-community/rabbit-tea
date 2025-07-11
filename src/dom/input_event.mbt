@@ -3,6 +3,12 @@
 type InputEvent
 
 ///|
+pub impl IsEvent for InputEvent
+
+///|
+pub impl IsUIEvent for InputEvent
+
+///|
 pub extern "js" fn InputEvent::data(self : Self) -> String = "(e) => e.data"
 
 ///|

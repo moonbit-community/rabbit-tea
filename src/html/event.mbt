@@ -45,12 +45,7 @@ pub fn Scroll::height(self : Self) -> Int {
 
 ///|
 fn[Msg] on_mouse(event : String, msg : (Mouse) -> Msg) -> Attribute[Msg] {
-  @vdom.on(
-    event,
-    HandleEvent(event => msg(
-      event.to_ui_event().unwrap().to_mouse_event().unwrap(),
-    )),
-  )
+  @vdom.on(event, HandleEvent(event => msg(event.to_mouse_event().unwrap())))
 }
 
 ///|
@@ -63,15 +58,8 @@ pub fn[Msg] on_input(msg : (String) -> Msg) -> Attribute[Msg] {
   @vdom.on(
     "input",
     HandleEvent(event => {
-      // TODO: eliminate to_option
       let value : String = event
         .target()
-        .to_node()
-        .unwrap()
-        .to_element()
-        .unwrap()
-        .to_html_element()
-        .unwrap()
         .to_html_input_element()
         .unwrap()
         .value()
@@ -85,18 +73,10 @@ pub fn[Msg] on_change(msg : (String) -> Msg) -> Attribute[Msg] {
   @vdom.on(
     "change",
     HandleEvent(event => {
-      // TODO: eliminate to_option
-      let html_element = event
-        .target()
-        .to_node()
-        .unwrap()
-        .to_element()
-        .unwrap()
-        .to_html_element()
-        .unwrap()
-      let value = if html_element.to_html_input_element().to_option() is Some(x) {
+      let target = event.target()
+      let value = if target.to_html_input_element() is Some(x) {
         x.value()
-      } else if html_element.to_html_select_element().to_option() is Some(x) {
+      } else if target.to_html_select_element() is Some(x) {
         x.value()
       } else {
         panic() // TODO: check for other HTMLElement types
@@ -150,9 +130,6 @@ pub fn[Msg] on_mouse_out(msg : (Mouse) -> Msg) -> Attribute[Msg] {
 pub fn[M] on_scroll(msg : (Scroll) -> M) -> Attribute[M] {
   @vdom.on(
     "scroll",
-    HandleEvent(event => msg(
-      // TODO: eliminate to_option
-      event.target().to_node().unwrap().to_element().unwrap(),
-    )),
+    HandleEvent(event => msg(event.target().to_element().unwrap())),
   )
 }

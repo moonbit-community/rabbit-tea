@@ -226,7 +226,7 @@ fn[Msg, Model, View] Node::to_node(
               sandbox.update(msg)
             }
         }
-        element.to_node().to_event_target().add_event_listener(event, listener)
+        element.add_event_listener(event, listener)
         generated_listeners.push((event, listener))
       }
       Attribute((key, AttrString(value))) => element.set_attribute(key, value)
@@ -257,10 +257,7 @@ fn[Msg, Model, View] Node::to_node(
         (_, Some(url_request), NORMAL_LINK_TAG) => {
           let element = @dom.document().create_element(tag)
           attach_attrs(attrs, element, listeners)
-          element
-          .to_node()
-          .to_event_target()
-          .add_event_listener("click", event => {
+          element.add_event_listener("click", event => {
             let mouse_event = event
               .to_ui_event()
               .unwrap()
@@ -297,9 +294,9 @@ fn[Msg, Model, View] Node::to_node(
         }
       }
       for child in childrens {
-        element.to_node().append_child(child.to_node(sandbox))
+        element.append_child(child.to_node(sandbox))
       }
-      element.to_node()
+      element.as_node()
     }
     ExternalNode(node, attrs, width~, height~) => {
       match attrs.val {
@@ -312,10 +309,10 @@ fn[Msg, Model, View] Node::to_node(
       let element = @dom.document().create_element("div")
       element.to_html_element().unwrap().set_style("width", width.to_string())
       element.to_html_element().unwrap().set_style("height", height.to_string())
-      element..append_children(node.to_element().unwrap()).to_node()
+      element..append_child(node).as_node()
     }
-    Text(value) => @dom.document().create_text_node(value).to_node()
-    Nothing => @dom.document().create_text_node("").to_node()
+    Text(value) => @dom.document().create_text_node(value).as_node()
+    Nothing => @dom.document().create_text_node("").as_node()
   }
 }
 
@@ -341,16 +338,16 @@ pub fn[Msg, Model, View] patch(
     match patches {
       Drop(index, length) =>
         for i in 0..<length {
-          current.remove_child(current.nth_child(index))
+          current.remove_child(current.get_child(index))
         }
-      Remove(index) => current.remove_child(current.nth_child(index))
+      Remove(index) => current.remove_child(current.get_child(index))
       Replace(index, node) =>
-        current.replace_child(node.to_node(sandbox), current.nth_child(index))
+        current.replace_child(node.to_node(sandbox), current.get_child(index))
       InsertBefore(index, node) =>
-        if current.count_child() == 0 {
+        if current.get_child_count() == 0 {
           current.append_child(node.to_node(sandbox))
         } else {
-          current.insert_before(node.to_node(sandbox), current.nth_child(index))
+          current.insert_before(node.to_node(sandbox), current.get_child(index))
         }
       Append(nodes) =>
         for node in nodes {
@@ -359,7 +356,7 @@ pub fn[Msg, Model, View] patch(
       Update(update) =>
         match update {
           UpdateNode(index, attrs_patches, childs_patches, new_listeners) => {
-            let node = current.nth_child(index)
+            let node = current.get_child(index)
             let element = node.to_element().unwrap()
             for patch in attrs_patches {
               match patch {
@@ -373,10 +370,7 @@ pub fn[Msg, Model, View] patch(
                   element.set_property(key, variant_to_js_value(value))
                 PropertyRemove(key) => element.remove_property(key)
                 EventRemove(key, listener) =>
-                  element
-                  .to_node()
-                  .to_event_target()
-                  .remove_event_listener(key, listener)
+                  element.as_event_target().remove_event_listener(key, listener)
                 EventAdd(key, handler) => {
                   let listener = match handler {
                     Normal(msg) => _ => sandbox.update(msg)
@@ -392,10 +386,7 @@ pub fn[Msg, Model, View] patch(
                         sandbox.update(msg)
                       }
                   }
-                  element
-                  .to_node()
-                  .to_event_target()
-                  .add_event_listener(key, listener)
+                  element.add_event_listener(key, listener)
                   new_listeners.push((key, listener))
                 }
               }
@@ -406,13 +397,13 @@ pub fn[Msg, Model, View] patch(
           }
           UpdateText(index, value) => {
             let text_node = @dom.document().create_text_node(value)
-            current.replace_child(text_node.to_node(), current.nth_child(index))
+            current.replace_child(text_node.as_node(), current.get_child(index))
           }
         }
     }
   }
 
-  let root = @dom.document().get_element_by_id(mount).unwrap().to_node()
+  let root = @dom.document().get_element_by_id(mount).unwrap().as_node()
   aux(patches, root)
 }
 

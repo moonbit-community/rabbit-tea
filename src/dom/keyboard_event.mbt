@@ -3,6 +3,12 @@
 type KeyboardEvent
 
 ///|
+pub impl IsEvent for KeyboardEvent
+
+///|
+pub impl IsUIEvent for KeyboardEvent
+
+///|
 pub extern "js" fn KeyboardEvent::key(self : Self) -> String = "(e) => e.key"
 
 ///|
