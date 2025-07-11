@@ -3,6 +3,12 @@
 type MouseEvent
 
 ///|
+pub impl IsEvent for MouseEvent
+
+///|
+pub impl IsUIEvent for MouseEvent
+
+///|
 pub extern "js" fn MouseEvent::screen_x(self : Self) -> Int = "(e) => e.screenX"
 
 ///|

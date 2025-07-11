@@ -2,6 +2,18 @@
 #external
 type HTMLImageElement
 
+///|
+pub impl IsEventTarget for HTMLImageElement
+
+///|
+pub impl IsNode for HTMLImageElement
+
+///|
+pub impl IsElement for HTMLImageElement
+
+///|
+pub impl IsHtmlElement for HTMLImageElement
+
 ///| https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/Image
 pub extern "js" fn HTMLImageElement::new() -> Self = "() => new Image()"
 

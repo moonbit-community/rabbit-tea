@@ -39,16 +39,11 @@ pub fn[Msg] new(
     })
     @ref.new(Some(attrs))
   }
-  let element = canvas
-    .to_html_element()
-    .unwrap()
-    .to_html_canvas_element()
-    .unwrap()
-  let node = canvas.to_node()
+  let element = canvas.to_html_canvas_element().unwrap()
   {
     element,
     wrapper: @html.external(
-      node,
+      canvas.as_node(),
       attributes,
       width=width.to_int(),
       height=height.to_int(),

@@ -3,6 +3,18 @@
 type HTMLDialogElement
 
 ///|
+pub impl IsEventTarget for HTMLDialogElement
+
+///|
+pub impl IsNode for HTMLDialogElement
+
+///|
+pub impl IsElement for HTMLDialogElement
+
+///|
+pub impl IsHtmlElement for HTMLDialogElement
+
+///|
 pub extern "js" fn HTMLDialogElement::open(self : Self) -> Bool = "(self) => self.open"
 
 ///|

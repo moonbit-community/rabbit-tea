@@ -3,9 +3,16 @@
 type HTMLCanvasElement
 
 ///|
-pub extern "js" fn HTMLCanvasElement::to_html_element(
-  self : Self
-) -> HTMLElement = "(x) => x"
+pub impl IsEventTarget for HTMLCanvasElement
+
+///|
+pub impl IsNode for HTMLCanvasElement
+
+///|
+pub impl IsElement for HTMLCanvasElement
+
+///|
+pub impl IsHtmlElement for HTMLCanvasElement
 
 ///|
 pub extern "js" fn HTMLCanvasElement::get_width(self : Self) -> Int = "(x) => x.width"
