@@ -263,7 +263,7 @@ fn[Msg, Model, View] Node::to_node(
               .unwrap()
               .to_mouse_event()
               .unwrap()
-            if not(mouse_event.meta_key() || mouse_event.ctrl_key()) {
+            if not(mouse_event.get_meta_key() || mouse_event.get_ctrl_key()) {
               event.prevent_default()
               let href = element.get_property("href")
               guard (try? @url.parse(@dom.window().current_url())) is Ok(curr)

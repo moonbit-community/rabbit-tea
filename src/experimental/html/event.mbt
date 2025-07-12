@@ -9,17 +9,17 @@ pub(all) struct Pos {
 
 ///|
 pub fn Mouse::screen_pos(self : Mouse) -> Pos {
-  { x: self.inner().screen_x(), y: self.inner().screen_y() }
+  { x: self.inner().get_screen_x(), y: self.inner().get_screen_y() }
 }
 
 ///|
 pub fn Mouse::offset_pos(self : Mouse) -> Pos {
-  { x: self.inner().offset_x(), y: self.inner().offset_y() }
+  { x: self.inner().get_offset_x(), y: self.inner().get_offset_y() }
 }
 
 ///|
 pub fn Mouse::client_pos(self : Mouse) -> Pos {
-  { x: self.inner().client_x(), y: self.inner().client_y() }
+  { x: self.inner().get_client_x(), y: self.inner().get_client_y() }
 }
 
 ///|
