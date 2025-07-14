@@ -37,6 +37,16 @@ pub impl IsUIEvent for MouseEvent
 pub impl IsMouseEvent for MouseEvent
 
 ///|
+pub impl @js.Cast for MouseEvent with into(value) {
+  value |> ffi_to_mouse_event |> _.to_option()
+}
+
+///|
+pub impl @js.Cast for MouseEvent with from(value) {
+  value |> js_identity
+}
+
+///|
 impl IsMouseEvent with as_mouse_event(s) {
   s |> js_identity
 }

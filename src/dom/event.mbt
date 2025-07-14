@@ -8,7 +8,7 @@ fn[A, B] js_identity(a : A) -> B {
 }
 
 ///|
-pub trait IsEvent {
+pub trait IsEvent: @js.Cast {
   target(Self) -> EventTarget = _
   prevent_default(Self) -> Unit = _
   stop_propagation(Self) -> Unit = _
@@ -16,8 +16,8 @@ pub trait IsEvent {
   to_ui_event(Self) -> UIEvent? = _
   to_clipboard_event(Self) -> ClipboardEvent? = _
   to_mouse_event(Self) -> MouseEvent? = _
-  to_input_event(Self) -> MouseEvent? = _
-  to_focus_event(Self) -> MouseEvent? = _
+  to_input_event(Self) -> InputEvent? = _
+  to_focus_event(Self) -> FocusEvent? = _
   to_keyboard_event(Self) -> KeyboardEvent? = _
   to_animation_event(Self) -> AnimationEvent? = _
   to_before_unload_event(Self) -> BeforeUnloadEvent? = _
@@ -31,6 +31,16 @@ pub trait IsEvent {
 
 ///|
 pub impl IsEvent for Event
+
+///|
+pub impl @js.Cast for Event with into(value) {
+  value |> ffi_to_event |> _.to_option()
+}
+
+///|
+pub impl @js.Cast for Event with from(value) {
+  value |> js_identity
+}
 
 ///|
 impl IsEvent with target(s) {
@@ -146,11 +156,11 @@ extern "js" fn ffi_to_mouse_event(x : @js.Value) -> @js.Nullable[MouseEvent] =
   #| (e) => e instanceof MouseEvent ? e : null
 
 ///|
-extern "js" fn ffi_to_input_event(x : @js.Value) -> @js.Nullable[MouseEvent] =
+extern "js" fn ffi_to_input_event(x : @js.Value) -> @js.Nullable[InputEvent] =
   #| (e) => e instanceof InputEvent ? e : null
 
 ///|
-extern "js" fn ffi_to_focus_event(x : @js.Value) -> @js.Nullable[MouseEvent] =
+extern "js" fn ffi_to_focus_event(x : @js.Value) -> @js.Nullable[FocusEvent] =
   #| (e) => e instanceof FocusEvent ? e : null
 
 ///|
@@ -196,3 +206,7 @@ extern "js" fn ffi_to_drag_event(x : @js.Value) -> @js.Nullable[DragEvent] =
 ///|
 extern "js" fn ffi_to_wheel_event(x : @js.Value) -> @js.Nullable[WheelEvent] =
   #| (e) => e instanceof WheelEvent ? e : null
+
+///|
+extern "js" fn ffi_to_event(x : @js.Value) -> @js.Nullable[Event] =
+  #| (e) => e instanceof Event ? e : null

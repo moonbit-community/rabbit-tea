@@ -5,6 +5,16 @@ type CloseEvent
 pub impl IsEvent for CloseEvent
 
 ///|
+pub impl @js.Cast for CloseEvent with into(value) {
+  value |> ffi_to_close_event |> _.to_option()
+}
+
+///|
+pub impl @js.Cast for CloseEvent with from(value) {
+  value |> js_identity
+}
+
+///|
 pub extern "js" fn CloseEvent::get_code(self : Self) -> Int = "(e) => e.code"
 
 ///|

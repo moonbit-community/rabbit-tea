@@ -31,9 +31,11 @@ fn AnimationEvent::get_animation_name(Self) -> String
 fn AnimationEvent::get_elapsed_time(Self) -> Double
 fn AnimationEvent::get_pseudo_element(Self) -> String
 impl IsEvent for AnimationEvent
+impl @js.Cast for AnimationEvent
 
 type BeforeUnloadEvent
 impl IsEvent for BeforeUnloadEvent
+impl @js.Cast for BeforeUnloadEvent
 
 type Blob
 
@@ -42,6 +44,7 @@ fn BlobEvent::get_data(Self) -> Blob
 fn BlobEvent::get_timecode(Self) -> Double
 fn BlobEvent::new() -> Self
 impl IsEvent for BlobEvent
+impl @js.Cast for BlobEvent
 
 type CanvasGradient
 fn CanvasGradient::add_color_stop(Self, Double, String) -> Unit
@@ -127,23 +130,27 @@ fn Clipboard::write_text(Self, String) -> @js.Promise
 type ClipboardEvent
 fn ClipboardEvent::clipboard_data(Self) -> DataTransfer
 impl IsEvent for ClipboardEvent
+impl @js.Cast for ClipboardEvent
 
 type CloseEvent
 fn CloseEvent::get_code(Self) -> Int
 fn CloseEvent::get_reason(Self) -> String
 fn CloseEvent::get_was_clean(Self) -> Bool
 impl IsEvent for CloseEvent
+impl @js.Cast for CloseEvent
 
 type CompositionEvent
 fn CompositionEvent::get_data(Self) -> String
 fn CompositionEvent::new() -> Self
 impl IsEvent for CompositionEvent
 impl IsUIEvent for CompositionEvent
+impl @js.Cast for CompositionEvent
 
 type CustomEvent
 fn CustomEvent::get_detail(Self) -> @js.Value
 fn CustomEvent::new(String, detail~ : @js.Optional[@js.Value] = ..) -> Self
 impl IsEvent for CustomEvent
+impl @js.Cast for CustomEvent
 
 type DOMException
 fn DOMException::get_message(Self) -> String
@@ -199,6 +206,7 @@ fn DragEvent::get_data_transfer(Self) -> DataTransfer
 impl IsEvent for DragEvent
 impl IsMouseEvent for DragEvent
 impl IsUIEvent for DragEvent
+impl @js.Cast for DragEvent
 
 type Element
 impl IsElement for Element
@@ -207,6 +215,7 @@ impl IsNode for Element
 
 type Event
 impl IsEvent for Event
+impl @js.Cast for Event
 
 type EventTarget
 impl IsEventTarget for EventTarget
@@ -215,6 +224,7 @@ type FocusEvent
 fn FocusEvent::related_target(Self) -> EventTarget
 impl IsEvent for FocusEvent
 impl IsUIEvent for FocusEvent
+impl @js.Cast for FocusEvent
 
 type GPUCanvasContext
 
@@ -323,6 +333,7 @@ fn InputEvent::input_type(Self) -> String
 fn InputEvent::is_composing(Self) -> Bool
 impl IsEvent for InputEvent
 impl IsUIEvent for InputEvent
+impl @js.Cast for InputEvent
 
 type KeyboardEvent
 fn KeyboardEvent::alt_key(Self) -> Bool
@@ -336,11 +347,13 @@ fn KeyboardEvent::repeat(Self) -> Bool
 fn KeyboardEvent::shift_key(Self) -> Bool
 impl IsEvent for KeyboardEvent
 impl IsUIEvent for KeyboardEvent
+impl @js.Cast for KeyboardEvent
 
 type MouseEvent
 impl IsEvent for MouseEvent
 impl IsMouseEvent for MouseEvent
 impl IsUIEvent for MouseEvent
+impl @js.Cast for MouseEvent
 
 #external
 pub type Navigator
@@ -368,6 +381,7 @@ fn Text::to_node(Self) -> Node
 type UIEvent
 impl IsEvent for UIEvent
 impl IsUIEvent for UIEvent
+impl @js.Cast for UIEvent
 
 type Uint8ClampedArray
 
@@ -385,6 +399,7 @@ fn WheelEvent::get_delta_z(Self) -> Double
 impl IsEvent for WheelEvent
 impl IsMouseEvent for WheelEvent
 impl IsUIEvent for WheelEvent
+impl @js.Cast for WheelEvent
 
 type Window
 fn Window::alert(Self, String) -> Unit
@@ -433,7 +448,7 @@ pub trait IsElement : IsNode {
   get_bounding_client_rect(Self) -> DOMRect
 }
 
-pub trait IsEvent {
+pub trait IsEvent : @js.Cast {
   target(Self) -> EventTarget
   prevent_default(Self) -> Unit
   stop_propagation(Self) -> Unit
@@ -441,8 +456,8 @@ pub trait IsEvent {
   to_ui_event(Self) -> UIEvent?
   to_clipboard_event(Self) -> ClipboardEvent?
   to_mouse_event(Self) -> MouseEvent?
-  to_input_event(Self) -> MouseEvent?
-  to_focus_event(Self) -> MouseEvent?
+  to_input_event(Self) -> InputEvent?
+  to_focus_event(Self) -> FocusEvent?
   to_keyboard_event(Self) -> KeyboardEvent?
   to_animation_event(Self) -> AnimationEvent?
   to_before_unload_event(Self) -> BeforeUnloadEvent?

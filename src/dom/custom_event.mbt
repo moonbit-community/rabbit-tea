@@ -5,6 +5,16 @@ type CustomEvent
 pub impl IsEvent for CustomEvent
 
 ///|
+pub impl @js.Cast for CustomEvent with into(value) {
+  value |> ffi_to_custom_event |> _.to_option()
+}
+
+///|
+pub impl @js.Cast for CustomEvent with from(value) {
+  value |> js_identity
+}
+
+///|
 pub extern "js" fn CustomEvent::new(
   type_ : String,
   detail~ : @js.Optional[@js.Value] = @js.Optional::undefined()
