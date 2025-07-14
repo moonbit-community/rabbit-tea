@@ -13,6 +13,16 @@ pub trait IsHtmlElement: IsElement {
 pub impl IsEventTarget for HTMLElement
 
 ///|
+pub impl @js.Cast for HTMLElement with into(value) {
+  value |> ffi_to_html_element |> _.to_option()
+}
+
+///|
+pub impl @js.Cast for HTMLElement with from(value) {
+  value |> js_identity
+}
+
+///|
 pub impl IsNode for HTMLElement
 
 ///|

@@ -6,6 +6,16 @@ type HTMLImageElement
 pub impl IsEventTarget for HTMLImageElement
 
 ///|
+pub impl @js.Cast for HTMLImageElement with into(value) {
+  value |> ffi_to_html_image_element |> _.to_option()
+}
+
+///|
+pub impl @js.Cast for HTMLImageElement with from(value) {
+  value |> js_identity
+}
+
+///|
 pub impl IsNode for HTMLImageElement
 
 ///|

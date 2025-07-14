@@ -6,6 +6,16 @@ type HTMLDialogElement
 pub impl IsEventTarget for HTMLDialogElement
 
 ///|
+pub impl @js.Cast for HTMLDialogElement with into(value) {
+  value |> ffi_to_html_dialog_element |> _.to_option()
+}
+
+///|
+pub impl @js.Cast for HTMLDialogElement with from(value) {
+  value |> js_identity
+}
+
+///|
 pub impl IsNode for HTMLDialogElement
 
 ///|

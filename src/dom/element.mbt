@@ -27,6 +27,16 @@ pub trait IsElement: IsNode {
 pub impl IsEventTarget for Element
 
 ///|
+pub impl @js.Cast for Element with into(value) {
+  value |> ffi_to_element |> _.to_option()
+}
+
+///|
+pub impl @js.Cast for Element with from(value) {
+  value |> js_identity
+}
+
+///|
 pub impl IsNode for Element
 
 ///|

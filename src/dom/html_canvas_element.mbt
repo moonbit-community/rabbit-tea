@@ -6,6 +6,16 @@ type HTMLCanvasElement
 pub impl IsEventTarget for HTMLCanvasElement
 
 ///|
+pub impl @js.Cast for HTMLCanvasElement with into(value) {
+  value |> ffi_to_html_canvas_element |> _.to_option()
+}
+
+///|
+pub impl @js.Cast for HTMLCanvasElement with from(value) {
+  value |> js_identity
+}
+
+///|
 pub impl IsNode for HTMLCanvasElement
 
 ///|

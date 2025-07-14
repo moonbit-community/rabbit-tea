@@ -212,6 +212,7 @@ type Element
 impl IsElement for Element
 impl IsEventTarget for Element
 impl IsNode for Element
+impl @js.Cast for Element
 
 type Event
 impl IsEvent for Event
@@ -219,6 +220,7 @@ impl @js.Cast for Event
 
 type EventTarget
 impl IsEventTarget for EventTarget
+impl @js.Cast for EventTarget
 
 type FocusEvent
 fn FocusEvent::related_target(Self) -> EventTarget
@@ -236,6 +238,7 @@ impl IsElement for HTMLCanvasElement
 impl IsEventTarget for HTMLCanvasElement
 impl IsHtmlElement for HTMLCanvasElement
 impl IsNode for HTMLCanvasElement
+impl @js.Cast for HTMLCanvasElement
 
 type HTMLCollection
 fn HTMLCollection::get_length(Self) -> Double
@@ -253,12 +256,14 @@ impl IsElement for HTMLDialogElement
 impl IsEventTarget for HTMLDialogElement
 impl IsHtmlElement for HTMLDialogElement
 impl IsNode for HTMLDialogElement
+impl @js.Cast for HTMLDialogElement
 
 type HTMLElement
 impl IsElement for HTMLElement
 impl IsEventTarget for HTMLElement
 impl IsHtmlElement for HTMLElement
 impl IsNode for HTMLElement
+impl @js.Cast for HTMLElement
 
 type HTMLImageElement
 fn HTMLImageElement::get_alt(Self) -> String
@@ -299,6 +304,7 @@ impl IsElement for HTMLImageElement
 impl IsEventTarget for HTMLImageElement
 impl IsHtmlElement for HTMLImageElement
 impl IsNode for HTMLImageElement
+impl @js.Cast for HTMLImageElement
 
 type HTMLInputElement
 fn HTMLInputElement::value(Self) -> String
@@ -306,6 +312,7 @@ impl IsElement for HTMLInputElement
 impl IsEventTarget for HTMLInputElement
 impl IsHtmlElement for HTMLInputElement
 impl IsNode for HTMLInputElement
+impl @js.Cast for HTMLInputElement
 
 type HTMLSelectElement
 fn HTMLSelectElement::value(Self) -> String
@@ -362,6 +369,7 @@ fn Navigator::clipboard(Self) -> Clipboard
 type Node
 impl IsEventTarget for Node
 impl IsNode for Node
+impl @js.Cast for Node
 
 type NodeList
 fn NodeList::get_length(Self) -> Double
@@ -469,7 +477,7 @@ pub trait IsEvent : @js.Cast {
   to_wheel_event(Self) -> WheelEvent?
 }
 
-pub trait IsEventTarget {
+pub trait IsEventTarget : @js.Cast {
   as_event_target(Self) -> EventTarget
   add_event_listener(Self, String, (Event) -> Unit) -> Unit
   remove_event_listener(Self, String, (Event) -> Unit) -> Unit
