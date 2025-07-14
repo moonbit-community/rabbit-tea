@@ -169,7 +169,7 @@ pub extern "js" fn CanvasRenderingContext2D::stroke_rect(
   y : Double,
   w : Double,
   h : Double
-) = "(self,x,y,w,h) => self.stroke_rect(x,y,w,h)"
+) = "(self,x,y,w,h) => self.strokeRect(x,y,w,h)"
 
 // TODO: add interface CanvasDrawPath
 
