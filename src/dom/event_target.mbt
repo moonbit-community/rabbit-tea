@@ -3,7 +3,7 @@
 type EventTarget
 
 ///|
-pub trait IsEventTarget {
+pub trait IsEventTarget: @js.Cast {
   as_event_target(Self) -> EventTarget = _
   add_event_listener(Self, String, Listener) -> Unit = _
   remove_event_listener(Self, String, Listener) -> Unit = _
@@ -27,6 +27,16 @@ pub typealias (Event) -> Unit as Listener
 
 ///|
 pub impl IsEventTarget for EventTarget
+
+///|
+pub impl @js.Cast for EventTarget with into(value) {
+  value |> ffi_to_event_target |> _.to_option()
+}
+
+///|
+pub impl @js.Cast for EventTarget with from(value) {
+  value |> js_identity
+}
 
 ///|
 impl IsEventTarget with add_event_listener(s, type_, callback) {
@@ -187,3 +197,7 @@ extern "js" fn ffi_to_html_image_element(
   x : @js.Value
 ) -> @js.Nullable[HTMLImageElement] =
   #| (x) => x instanceof HTMLImageElement ? x : null
+
+///|
+extern "js" fn ffi_to_event_target(x : @js.Value) -> @js.Nullable[EventTarget] =
+  #| (self) => self instanceof EventTarget ? self : null
