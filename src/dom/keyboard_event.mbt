@@ -9,6 +9,16 @@ pub impl IsEvent for KeyboardEvent
 pub impl IsUIEvent for KeyboardEvent
 
 ///|
+pub impl @js.Cast for KeyboardEvent with into(value) {
+  value |> ffi_to_keyboard_event |> _.to_option()
+}
+
+///|
+pub impl @js.Cast for KeyboardEvent with from(value) {
+  value |> js_identity
+}
+
+///|
 pub extern "js" fn KeyboardEvent::key(self : Self) -> String = "(e) => e.key"
 
 ///|

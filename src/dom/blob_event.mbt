@@ -5,6 +5,16 @@ type BlobEvent
 pub impl IsEvent for BlobEvent
 
 ///|
+pub impl @js.Cast for BlobEvent with into(value) {
+  value |> ffi_to_blob_event |> _.to_option()
+}
+
+///|
+pub impl @js.Cast for BlobEvent with from(value) {
+  value |> js_identity
+}
+
+///|
 pub extern "js" fn BlobEvent::new() -> BlobEvent = "() => new BlobEvent()"
 
 ///|

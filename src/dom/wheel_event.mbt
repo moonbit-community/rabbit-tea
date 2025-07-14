@@ -11,6 +11,16 @@ pub impl IsUIEvent for WheelEvent
 pub impl IsMouseEvent for WheelEvent
 
 ///|
+pub impl @js.Cast for WheelEvent with into(value) {
+  value |> ffi_to_wheel_event |> _.to_option()
+}
+
+///|
+pub impl @js.Cast for WheelEvent with from(value) {
+  value |> js_identity
+}
+
+///|
 pub extern "js" fn WheelEvent::get_delta_x(self : Self) -> Double = "(e) => e.deltaX"
 
 ///|
