@@ -58,6 +58,8 @@ fn CSSStyleDeclaration::get_parent_rule(Self) -> CSSRule?
 fn CSSStyleDeclaration::get_property_priority(Self, String) -> String
 fn CSSStyleDeclaration::get_property_value(Self, String) -> String
 fn CSSStyleDeclaration::item(Self, Int) -> String
+fn CSSStyleDeclaration::op_get(Self, String) -> String
+fn CSSStyleDeclaration::op_set(Self, String, String) -> Unit
 fn CSSStyleDeclaration::remove_property(Self, String) -> String
 fn CSSStyleDeclaration::set_css_float(Self, String) -> Unit
 fn CSSStyleDeclaration::set_css_text(Self, String) -> Unit
@@ -514,6 +516,8 @@ fn Window::scroll_to(Self, Int, Int) -> Unit
 fn Window::scroll_to_bottom(Self) -> Unit
 fn Window::scroll_to_top(Self) -> Unit
 fn Window::to_event_target(Self) -> EventTarget
+impl IsEventTarget for Window
+impl @js.Cast for Window
 
 // Type aliases
 pub typealias @js.Union7[HTMLImageElement, SVGImageElement, HTMLVideoElement, HTMLCanvasElement, ImageBitmap, OffscreenCanvas, VideoFrame] as ImageUnion
@@ -586,6 +590,7 @@ pub trait IsEventTarget : @js.Cast {
   to_svg_element(Self) -> SVGElement?
   to_svg_graphics_element(Self) -> SVGGraphicsElement?
   to_svg_image_element(Self) -> SVGImageElement?
+  to_window(Self) -> Window?
 }
 
 pub trait IsHTMLMediaElement : IsHtmlElement {
