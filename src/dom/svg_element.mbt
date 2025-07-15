@@ -20,9 +20,6 @@ type StylePropertyMap
 type DOMStringMap
 
 ///|
-type CSSStyleDeclaration
-
-///|
 pub trait IsSVGElement: IsElement {
   as_svg_element(Self) -> SVGElement = _
   get_attribute_style_map(Self) -> StylePropertyMap = _
