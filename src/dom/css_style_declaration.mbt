@@ -18,6 +18,20 @@ pub impl @js.Cast for CSSStyleDeclaration with from(value) {
   value |> js_identity
 }
 
+///| Same as `get_property_value`
+pub fn CSSStyleDeclaration::op_get(self : Self, property : String) -> String {
+  self.get_property_value(property)
+}
+
+///| Same as `set_property`
+pub fn CSSStyleDeclaration::op_set(
+  self : Self,
+  property : String,
+  value : String
+) -> Unit {
+  self.set_property(property, value)
+}
+
 ///| Textual representation of the declaration block, if and only if it is exposed via HTMLElement.style.
 pub extern "js" fn CSSStyleDeclaration::get_css_text(self : Self) -> String = "(self) => self.cssText"
 

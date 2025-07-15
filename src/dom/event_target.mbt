@@ -149,6 +149,7 @@ impl IsEventTarget with to_html_video_element(s) {
   s |> js_identity |> ffi_to_html_video_element |> _.to_option()
 }
 
+///|
 impl IsEventTarget with to_window(s) {
   s |> js_identity |> ffi_to_window |> _.to_option()
 }
@@ -257,6 +258,5 @@ extern "js" fn ffi_to_html_video_element(
   x : @js.Value
 ) -> @js.Nullable[HTMLVideoElement] = "(x) => x instanceof HTMLVideoElement ? x : null"
 
-extern "js" fn ffi_to_window(
-  value : @js.Value
-) -> @js.Nullable[Window] = "(value) => value instanceof Window ? value : null"
+///|
+extern "js" fn ffi_to_window(value : @js.Value) -> @js.Nullable[Window] = "(value) => value instanceof Window ? value : null"
