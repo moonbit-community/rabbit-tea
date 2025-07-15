@@ -48,7 +48,22 @@ fn BlobEvent::new() -> Self
 impl IsEvent for BlobEvent
 impl @js.Cast for BlobEvent
 
+type CSSRule
+
 type CSSStyleDeclaration
+fn CSSStyleDeclaration::get_css_float(Self) -> String
+fn CSSStyleDeclaration::get_css_text(Self) -> String
+fn CSSStyleDeclaration::get_length(Self) -> Int
+fn CSSStyleDeclaration::get_parent_rule(Self) -> CSSRule?
+fn CSSStyleDeclaration::get_property_priority(Self, String) -> String
+fn CSSStyleDeclaration::get_property_value(Self, String) -> String
+fn CSSStyleDeclaration::item(Self, Int) -> String
+fn CSSStyleDeclaration::remove_property(Self, String) -> String
+fn CSSStyleDeclaration::set_css_float(Self, String) -> Unit
+fn CSSStyleDeclaration::set_css_text(Self, String) -> Unit
+fn CSSStyleDeclaration::set_property(Self, String, String) -> Unit
+fn CSSStyleDeclaration::set_property_with_priority(Self, String, String, String) -> Unit
+impl @js.Cast for CSSStyleDeclaration
 
 type CanvasGradient
 fn CanvasGradient::add_color_stop(Self, Double, String) -> Unit
@@ -219,11 +234,15 @@ impl IsMouseEvent for DragEvent
 impl IsUIEvent for DragEvent
 impl @js.Cast for DragEvent
 
+type EditContext
+
 type Element
 impl IsElement for Element
 impl IsEventTarget for Element
 impl IsNode for Element
 impl @js.Cast for Element
+
+type ElementInternals
 
 type Event
 impl IsEvent for Event
@@ -630,8 +649,71 @@ pub trait IsHTMLMediaElement : IsHtmlElement {
 
 pub trait IsHtmlElement : IsElement {
   as_html_element(Self) -> HTMLElement
-  set_style(Self, String, String) -> Unit
-  remove_style(Self, String) -> Unit
+  get_access_key(Self) -> String
+  set_access_key(Self, String) -> Unit
+  get_access_key_label(Self) -> String
+  get_anchor_element(Self) -> Element?
+  get_attribute_style_map(Self) -> StylePropertyMap
+  get_auto_capitalize(Self) -> String
+  set_auto_capitalize(Self, String) -> Unit
+  get_auto_focus(Self) -> Bool
+  set_auto_focus(Self, Bool) -> Unit
+  get_auto_correct(Self) -> Bool
+  set_auto_correct(Self, Bool) -> Unit
+  get_content_editable(Self) -> String
+  set_content_editable(Self, String) -> Unit
+  get_dataset(Self) -> DOMStringMap
+  get_dir(Self) -> String
+  set_dir(Self, String) -> Unit
+  get_draggable(Self) -> Bool
+  set_draggable(Self, Bool) -> Unit
+  get_edit_context(Self) -> EditContext?
+  set_edit_context(Self, EditContext?) -> Unit
+  get_enter_key_hint(Self) -> String
+  set_enter_key_hint(Self, String) -> Unit
+  get_hidden(Self) -> @js.Value
+  set_hidden(Self, @js.Value) -> Unit
+  get_inert(Self) -> Bool
+  set_inert(Self, Bool) -> Unit
+  get_inner_text(Self) -> String
+  set_inner_text(Self, String) -> Unit
+  get_input_mode(Self) -> String
+  set_input_mode(Self, String) -> Unit
+  get_is_content_editable(Self) -> Bool
+  get_lang(Self) -> String
+  set_lang(Self, String) -> Unit
+  get_nonce(Self) -> String
+  set_nonce(Self, String) -> Unit
+  get_offset_height(Self) -> Double
+  get_offset_left(Self) -> Double
+  get_offset_parent(Self) -> Element?
+  get_offset_top(Self) -> Double
+  get_offset_width(Self) -> Double
+  get_outer_text(Self) -> String
+  set_outer_text(Self, String) -> Unit
+  get_popover(Self) -> String?
+  set_popover(Self, String?) -> Unit
+  get_spellcheck(Self) -> Bool
+  set_spellcheck(Self, Bool) -> Unit
+  get_style(Self) -> CSSStyleDeclaration
+  set_style_declaration(Self, CSSStyleDeclaration) -> Unit
+  get_tab_index(Self) -> Int
+  set_tab_index(Self, Int) -> Unit
+  get_title(Self) -> String
+  set_title(Self, String) -> Unit
+  get_translate(Self) -> Bool
+  set_translate(Self, Bool) -> Unit
+  get_virtual_keyboard_policy(Self) -> String
+  set_virtual_keyboard_policy(Self, String) -> Unit
+  get_writing_suggestions(Self) -> String
+  set_writing_suggestions(Self, String) -> Unit
+  attach_internals(Self) -> ElementInternals
+  blur(Self) -> Unit
+  click(Self) -> Unit
+  focus(Self) -> Unit
+  hide_popover(Self) -> Unit
+  show_popover(Self) -> Unit
+  toggle_popover(Self, Bool?) -> Bool
 }
 
 pub trait IsMouseEvent : IsUIEvent {

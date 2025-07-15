@@ -231,7 +231,7 @@ fn[Msg, Model, View] Node::to_node(
       }
       Attribute((key, AttrString(value))) => element.set_attribute(key, value)
       Attribute((key, AttrStyle(value))) =>
-        element.to_html_element().unwrap().set_style(key, value)
+        element.to_html_element().unwrap().get_style().set_property(key, value)
       Attribute((key, AttrProperty(value))) =>
         element.set_property(key, variant_to_js_value(value))
     })
@@ -307,8 +307,12 @@ fn[Msg, Model, View] Node::to_node(
         None => ()
       }
       let element = @dom.document().create_element("div")
-      element.to_html_element().unwrap().set_style("width", width.to_string())
-      element.to_html_element().unwrap().set_style("height", height.to_string())
+      element
+      .to_html_element()
+      .unwrap()
+      .get_style()
+      ..set_property("width", width.to_string())
+      ..set_property("height", height.to_string())
       element..append_child(node).as_node()
     }
     Text(value) => @dom.document().create_text_node(value).as_node()
@@ -362,10 +366,14 @@ pub fn[Msg, Model, View] patch(
               match patch {
                 AttrRemove(key) => element.remove_attribute(key)
                 AttrAdd(key, value) => element.set_attribute(key, value)
-                StyleAdd(key, value) =>
-                  element.to_html_element().unwrap().set_style(key, value)
-                StyleRemove(key) =>
-                  element.to_html_element().unwrap().remove_style(key)
+                StyleAdd(key, value) => {
+                  let element = element.to_html_element().unwrap()
+                  element.get_style().set_property(key, value)
+                }
+                StyleRemove(key) => {
+                  let element = element.to_html_element().unwrap()
+                  ignore(element.get_style().remove_property(key))
+                }
                 PropertyAdd(key, value) =>
                   element.set_property(key, variant_to_js_value(value))
                 PropertyRemove(key) => element.remove_property(key)
