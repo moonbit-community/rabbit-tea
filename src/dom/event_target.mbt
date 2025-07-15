@@ -25,6 +25,7 @@ pub trait IsEventTarget: @js.Cast {
   to_svg_element(Self) -> SVGElement? = _
   to_svg_graphics_element(Self) -> SVGGraphicsElement? = _
   to_svg_image_element(Self) -> SVGImageElement? = _
+  to_window(Self) -> Window? = _
 }
 
 ///|
@@ -148,6 +149,10 @@ impl IsEventTarget with to_html_video_element(s) {
   s |> js_identity |> ffi_to_html_video_element |> _.to_option()
 }
 
+impl IsEventTarget with to_window(s) {
+  s |> js_identity |> ffi_to_window |> _.to_option()
+}
+
 ///|
 extern "js" fn ffi_to_node(x : @js.Value) -> @js.Nullable[Node] =
   #| (x) => x instanceof Node ? x : null
@@ -251,3 +256,7 @@ extern "js" fn ffi_to_svg_image_element(
 extern "js" fn ffi_to_html_video_element(
   x : @js.Value
 ) -> @js.Nullable[HTMLVideoElement] = "(x) => x instanceof HTMLVideoElement ? x : null"
+
+extern "js" fn ffi_to_window(
+  value : @js.Value
+) -> @js.Nullable[Window] = "(value) => value instanceof Window ? value : null"

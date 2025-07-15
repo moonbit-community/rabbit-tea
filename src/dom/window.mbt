@@ -1,6 +1,18 @@
 ///|
-#external
 type Window
+
+///|
+pub impl IsEventTarget for Window
+
+///|
+pub impl @js.Cast for Window with into(value) {
+  value |> ffi_to_window |> _.to_option()
+}
+
+///|
+pub impl @js.Cast for Window with from(value) {
+  value |> js_identity
+}
 
 ///|
 pub extern "js" fn Window::scroll_to(self : Self, x : Int, y : Int) =
