@@ -19,7 +19,12 @@ pub trait IsEventTarget: @js.Cast {
   to_html_dialog_element(Self) -> HTMLDialogElement? = _
   to_html_image_element(Self) -> HTMLImageElement? = _
   to_html_select_element(Self) -> HTMLSelectElement? = _
+  to_html_media_element(Self) -> HTMLMediaElement? = _
+  to_html_video_element(Self) -> HTMLVideoElement? = _
   to_text(Self) -> Text? = _
+  to_svg_element(Self) -> SVGElement? = _
+  to_svg_graphics_element(Self) -> SVGGraphicsElement? = _
+  to_svg_image_element(Self) -> SVGImageElement? = _
 }
 
 ///|
@@ -119,6 +124,31 @@ impl IsEventTarget with to_text(s) {
 }
 
 ///|
+impl IsEventTarget with to_svg_element(s) {
+  s |> js_identity |> ffi_to_svg_element |> _.to_option()
+}
+
+///|
+impl IsEventTarget with to_svg_graphics_element(s) {
+  s |> js_identity |> ffi_to_svg_graphics_element |> _.to_option()
+}
+
+///|
+impl IsEventTarget with to_svg_image_element(s) {
+  s |> js_identity |> ffi_to_svg_image_element |> _.to_option()
+}
+
+///|
+impl IsEventTarget with to_html_media_element(s) {
+  s |> js_identity |> ffi_to_html_media_element |> _.to_option()
+}
+
+///|
+impl IsEventTarget with to_html_video_element(s) {
+  s |> js_identity |> ffi_to_html_video_element |> _.to_option()
+}
+
+///|
 extern "js" fn ffi_to_node(x : @js.Value) -> @js.Nullable[Node] =
   #| (x) => x instanceof Node ? x : null
 
@@ -201,3 +231,23 @@ extern "js" fn ffi_to_html_image_element(
 ///|
 extern "js" fn ffi_to_event_target(x : @js.Value) -> @js.Nullable[EventTarget] =
   #| (self) => self instanceof EventTarget ? self : null
+
+///|
+extern "js" fn ffi_to_svg_element(x : @js.Value) -> @js.Nullable[SVGElement] = "(x) => x instanceof SVGElement ? x : null"
+
+///|
+extern "js" fn ffi_to_svg_graphics_element(
+  x : @js.Value
+) -> @js.Nullable[SVGGraphicsElement] = "(x) => x instanceof SVGGraphicsElement ? x : null"
+
+///|
+extern "js" fn ffi_to_svg_image_element(
+  x : @js.Value
+) -> @js.Nullable[SVGImageElement] = "(x) => x instanceof SVGImageElement ? x : null"
+
+///|
+
+///|
+extern "js" fn ffi_to_html_video_element(
+  x : @js.Value
+) -> @js.Nullable[HTMLVideoElement] = "(x) => x instanceof HTMLVideoElement ? x : null"
