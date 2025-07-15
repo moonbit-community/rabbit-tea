@@ -131,6 +131,21 @@ pub extern "js" fn CanvasRenderingContext2D::create_linear_gradient(
 ) -> CanvasGradient = "(x,x0,y0,x1,y1) => x.createLinearGradient(x0,y0,x1,y1)"
 
 ///|
+pub extern "js" fn CanvasRenderingContext2D::create_pattern(
+  self : Self,
+  image : @js.Union7[
+    HTMLImageElement,
+    SVGImageElement,
+    HTMLVideoElement,
+    HTMLCanvasElement,
+    ImageBitmap,
+    OffscreenCanvas,
+    VideoFrame,
+  ],
+  repetition : String
+) -> CanvasPattern = "(self,image,repetition) => self.createPattern(image,repetition)"
+
+///|
 pub extern "js" fn CanvasRenderingContext2D::create_radial_gradient(
   self : Self,
   x0 : Double,

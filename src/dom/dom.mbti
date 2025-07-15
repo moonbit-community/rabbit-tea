@@ -33,6 +33,8 @@ fn AnimationEvent::get_pseudo_element(Self) -> String
 impl IsEvent for AnimationEvent
 impl @js.Cast for AnimationEvent
 
+type AudioTrackList
+
 type BeforeUnloadEvent
 impl IsEvent for BeforeUnloadEvent
 impl @js.Cast for BeforeUnloadEvent
@@ -45,6 +47,8 @@ fn BlobEvent::get_timecode(Self) -> Double
 fn BlobEvent::new() -> Self
 impl IsEvent for BlobEvent
 impl @js.Cast for BlobEvent
+
+type CSSStyleDeclaration
 
 type CanvasGradient
 fn CanvasGradient::add_color_stop(Self, Double, String) -> Unit
@@ -70,6 +74,7 @@ fn CanvasRenderingContext2D::close_path(Self) -> Unit
 fn CanvasRenderingContext2D::create_image_data(Self, Double, Double, settings~ : @js.Optional[ImageDataSettings] = ..) -> ImageData
 fn CanvasRenderingContext2D::create_image_data_with_data(Self, ImageData) -> ImageData
 fn CanvasRenderingContext2D::create_linear_gradient(Self, Double, Double, Double, Double) -> CanvasGradient
+fn CanvasRenderingContext2D::create_pattern(Self, @js.Union7[HTMLImageElement, SVGImageElement, HTMLVideoElement, HTMLCanvasElement, ImageBitmap, OffscreenCanvas, VideoFrame], String) -> CanvasPattern
 fn CanvasRenderingContext2D::create_radial_gradient(Self, Double, Double, Double, Double, Double, Double) -> CanvasGradient
 fn CanvasRenderingContext2D::draw_image(Self, @js.Union7[HTMLImageElement, SVGImageElement, HTMLVideoElement, HTMLCanvasElement, ImageBitmap, OffscreenCanvas, VideoFrame], Double, Double) -> Unit
 fn CanvasRenderingContext2D::draw_image_with_size(Self, @js.Union7[HTMLImageElement, SVGImageElement, HTMLVideoElement, HTMLCanvasElement, ImageBitmap, OffscreenCanvas, VideoFrame], Double, Double, Double, Double) -> Unit
@@ -159,6 +164,8 @@ fn DOMException::new() -> Self
 fn DOMException::new_with_message(String) -> Self
 fn DOMException::new_with_message_and_name(String, String) -> Self
 
+type DOMMatrix
+
 type DOMMatrix2DInit
 
 type DOMRect
@@ -170,6 +177,10 @@ fn DOMRect::get_top(Self) -> Double
 fn DOMRect::get_width(Self) -> Double
 fn DOMRect::get_x(Self) -> Double
 fn DOMRect::get_y(Self) -> Double
+
+type DOMStringMap
+
+type DOMTokenList
 
 type DataTransfer
 fn DataTransfer::drop_effect(Self) -> String
@@ -314,12 +325,27 @@ impl IsHtmlElement for HTMLInputElement
 impl IsNode for HTMLInputElement
 impl @js.Cast for HTMLInputElement
 
+type HTMLMediaElement
+impl IsElement for HTMLMediaElement
+impl IsEventTarget for HTMLMediaElement
+impl IsHTMLMediaElement for HTMLMediaElement
+impl IsHtmlElement for HTMLMediaElement
+impl IsNode for HTMLMediaElement
+impl @js.Cast for HTMLMediaElement
+
 type HTMLSelectElement
 fn HTMLSelectElement::value(Self) -> String
 
 type HTMLVideoElement
+impl IsElement for HTMLVideoElement
+impl IsEventTarget for HTMLVideoElement
+impl IsHTMLMediaElement for HTMLVideoElement
+impl IsHtmlElement for HTMLVideoElement
+impl IsNode for HTMLVideoElement
+impl @js.Cast for HTMLVideoElement
 
 type ImageBitmap
+impl @js.Cast for ImageBitmap
 
 type ImageBitmapRenderingContext
 
@@ -356,6 +382,12 @@ impl IsEvent for KeyboardEvent
 impl IsUIEvent for KeyboardEvent
 impl @js.Cast for KeyboardEvent
 
+type MediaError
+
+type MediaKeys
+
+type MediaStream
+
 type MouseEvent
 impl IsEvent for MouseEvent
 impl IsMouseEvent for MouseEvent
@@ -381,10 +413,44 @@ type Path2D
 fn Path2D::add_path(Self, Self, transform~ : @js.Optional[DOMMatrix2DInit] = ..) -> Unit
 fn Path2D::new(path~ : @js.Optional[@js.Union2[Self, String]] = ..) -> Self
 
+type RemotePlayback
+
+type SVGAnimatedTransformList
+
+type SVGElement
+impl IsElement for SVGElement
+impl IsEventTarget for SVGElement
+impl IsNode for SVGElement
+impl IsSVGElement for SVGElement
+impl @js.Cast for SVGElement
+
+type SVGGraphicsElement
+impl IsElement for SVGGraphicsElement
+impl IsEventTarget for SVGGraphicsElement
+impl IsNode for SVGGraphicsElement
+impl IsSVGElement for SVGGraphicsElement
+impl IsSVGGraphicsElement for SVGGraphicsElement
+impl @js.Cast for SVGGraphicsElement
+
 type SVGImageElement
+impl IsElement for SVGImageElement
+impl IsEventTarget for SVGImageElement
+impl IsNode for SVGImageElement
+impl IsSVGElement for SVGImageElement
+impl @js.Cast for SVGImageElement
+
+type SVGStringList
+
+type StylePropertyMap
 
 type Text
 fn Text::to_node(Self) -> Node
+
+type TextTrack
+
+type TextTrackList
+
+type TimeRanges
 
 type UIEvent
 impl IsEvent for UIEvent
@@ -394,6 +460,8 @@ impl @js.Cast for UIEvent
 type Uint8ClampedArray
 
 type VideoFrame
+
+type VideoTrackList
 
 type WebGL2RenderingContext
 
@@ -493,7 +561,71 @@ pub trait IsEventTarget : @js.Cast {
   to_html_dialog_element(Self) -> HTMLDialogElement?
   to_html_image_element(Self) -> HTMLImageElement?
   to_html_select_element(Self) -> HTMLSelectElement?
+  to_html_media_element(Self) -> HTMLMediaElement?
+  to_html_video_element(Self) -> HTMLVideoElement?
   to_text(Self) -> Text?
+  to_svg_element(Self) -> SVGElement?
+  to_svg_graphics_element(Self) -> SVGGraphicsElement?
+  to_svg_image_element(Self) -> SVGImageElement?
+}
+
+pub trait IsHTMLMediaElement : IsHtmlElement {
+  as_html_media_element(Self) -> HTMLMediaElement
+  get_audio_tracks(Self) -> AudioTrackList
+  get_autoplay(Self) -> Bool
+  set_autoplay(Self, Bool) -> Unit
+  get_buffered(Self) -> TimeRanges
+  get_controls(Self) -> Bool
+  set_controls(Self, Bool) -> Unit
+  get_controls_list(Self) -> DOMTokenList
+  get_cross_origin(Self) -> String?
+  set_cross_origin(Self, String?) -> Unit
+  get_current_src(Self) -> String
+  get_current_time(Self) -> Double
+  set_current_time(Self, Double) -> Unit
+  get_default_muted(Self) -> Bool
+  set_default_muted(Self, Bool) -> Unit
+  get_default_playback_rate(Self) -> Double
+  set_default_playback_rate(Self, Double) -> Unit
+  get_disable_remote_playback(Self) -> Bool
+  set_disable_remote_playback(Self, Bool) -> Unit
+  get_duration(Self) -> Double
+  get_ended(Self) -> Bool
+  get_error(Self) -> MediaError?
+  get_loop(Self) -> Bool
+  set_loop(Self, Bool) -> Unit
+  get_media_keys(Self) -> MediaKeys?
+  get_muted(Self) -> Bool
+  set_muted(Self, Bool) -> Unit
+  get_network_state(Self) -> Int
+  get_paused(Self) -> Bool
+  get_playback_rate(Self) -> Double
+  set_playback_rate(Self, Double) -> Unit
+  get_played(Self) -> TimeRanges
+  get_preload(Self) -> String
+  set_preload(Self, String) -> Unit
+  get_preserves_pitch(Self) -> Bool
+  set_preserves_pitch(Self, Bool) -> Unit
+  get_ready_state(Self) -> Int
+  get_remote(Self) -> RemotePlayback
+  get_seekable(Self) -> TimeRanges
+  get_seeking(Self) -> Bool
+  get_sink_id(Self) -> String
+  get_src(Self) -> String
+  set_src(Self, String) -> Unit
+  get_src_object(Self) -> @js.Value?
+  set_src_object(Self, @js.Value?) -> Unit
+  get_text_tracks(Self) -> TextTrackList
+  get_video_tracks(Self) -> VideoTrackList
+  get_volume(Self) -> Double
+  set_volume(Self, Double) -> Unit
+  add_text_track(Self, String, String?, String?) -> TextTrack
+  capture_stream(Self) -> MediaStream
+  can_play_type(Self, String) -> String
+  fast_seek(Self, Double) -> Unit
+  load(Self) -> Unit
+  pause(Self) -> Unit
+  seek_to_next_frame(Self) -> Unit
 }
 
 pub trait IsHtmlElement : IsElement {
@@ -542,6 +674,34 @@ pub trait IsNode : IsEventTarget {
   insert_before(Self, Node, Node) -> Unit
   get_child(Self, Int) -> Node
   get_child_count(Self) -> Int
+}
+
+pub trait IsSVGElement : IsElement {
+  as_svg_element(Self) -> SVGElement
+  get_attribute_style_map(Self) -> StylePropertyMap
+  get_auto_focus(Self) -> Bool
+  set_auto_focus(Self, Bool) -> Unit
+  get_data_set(Self) -> DOMStringMap
+  get_nonce(Self) -> String
+  set_nonce(Self, String) -> Unit
+  get_owner_svg_element(Self) -> SVGElement?
+  get_style(Self) -> CSSStyleDeclaration
+  set_style(Self, CSSStyleDeclaration) -> Unit
+  get_tab_index(Self) -> Int
+  set_tab_index(Self, Int) -> Unit
+  get_viewport_element(Self) -> SVGElement?
+  blur(Self) -> Unit
+  focus(Self) -> Unit
+}
+
+pub trait IsSVGGraphicsElement : IsSVGElement {
+  as_svg_graphics_element(Self) -> SVGGraphicsElement
+  get_required_extensions(Self) -> String
+  get_system_language(Self) -> SVGStringList
+  get_transform(Self) -> SVGAnimatedTransformList
+  get_bbox(Self) -> DOMRect
+  get_ctm(Self) -> DOMMatrix
+  get_screen_ctm(Self) -> DOMMatrix
 }
 
 pub trait IsUIEvent : IsEvent {
