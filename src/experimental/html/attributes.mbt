@@ -12,9 +12,9 @@ fn[Msg] attribute(key : String, value : String) -> Attribute[Msg] {
 }
 
 ///|
-// fn[M] property(key : String, value : @variant.Variant) -> Attribute[M] {
-//   @vdom.property(key, value)
-// }
+fn[M] property(key : String, value : @variant.Variant) -> Attribute[M] {
+  @vdom.property(key, value)
+}
 
 ///|
 // fn[Msg] href(value : String) -> Attribute[Msg] {

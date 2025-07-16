@@ -78,6 +78,10 @@ fn generate_wrapper(html : HtmlMeta) -> String {
         "if \{x.parameter.argument} { Some(attribute(\"\{x.name}\", \"\")) } else { None }"
       EventHandlerAttribute =>
         "\{x.parameter.argument}.map(\{x.attribute.get_handler_wrapper().unwrap()}(_))"
+      StringProperty =>
+        "\{x.parameter.argument}.map(x => property(\"\{x.name}\", String(x)))"
+      // DoubleProperty => 
+      //   "\{x.parameter.argument}.map(x => property(\"\{x.name}\", Floating(x)))"
     })
     .join(", ")
   let positional_args = attrs
@@ -88,6 +92,8 @@ fn generate_wrapper(html : HtmlMeta) -> String {
         BooleanAttribute => panic()
         EventHandlerAttribute =>
           "\{x.attribute.get_handler_wrapper().unwrap()}(_)"
+        StringProperty =>
+          "property(\"\{x.name}\", String(\{x.parameter.argument}))"
       }
       "attribute(\"\{x.name}\", \{value_expr})"
     })
