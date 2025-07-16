@@ -149,7 +149,6 @@ pub(all) enum HtmlElement {
   // Obsolete and deprecated elements (included for completeness/compatibility)
   Font
   Marquee
-  Param
 } derive(Show, Compare, Eq)
 
 ///|
@@ -316,7 +315,6 @@ let html_meta_list : Array[HtmlMeta] = [
   // Obsolete and deprecated elements (included for completeness/compatibility)
   { html: Font, name: "font", wrapper_name: "font" },
   { html: Marquee, name: "marquee", wrapper_name: "marquee" },
-  { html: Param, name: "param", wrapper_name: "param" },
 ]
 
 ///|
@@ -532,6 +530,8 @@ enum AttributeKind {
   StringAttribute
   BooleanAttribute
   EventHandlerAttribute
+  StringProperty
+  // DoubleProperty
 } derive(Show)
 
 ///|
@@ -1236,7 +1236,6 @@ let attribute_meta_list : Array[AttributeMeta] = [
       Textarea,
       Map,
       Meta,
-      Param,
     ]),
     parameter: { argument: "name", kind: Optional(String) },
   },
@@ -1581,8 +1580,8 @@ let attribute_meta_list : Array[AttributeMeta] = [
   {
     attribute: Value,
     name: "value",
-    attr_kind: StringAttribute,
-    target: Element([Button, Data, Input, Li, Meter, Option, Progress, Param]),
+    attr_kind: StringProperty,
+    target: Element([Button, Data, Input, Li, Meter, Option, Progress]),
     parameter: { argument: "value", kind: Optional(String) },
   },
   {

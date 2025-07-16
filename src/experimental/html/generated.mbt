@@ -2775,7 +2775,7 @@ pub fn[M] li(
       } else {
         None
       },
-      value.map(attribute("value", _)),
+      value.map(x => property("value", String(x))),
       on_change.map(change_event(_)),
       on_click.map(click_event(_)),
       on_dbl_click.map(dblclick_event(_)),
@@ -3951,7 +3951,7 @@ pub fn[M] data_(
       } else {
         None
       },
-      value.map(attribute("value", _)),
+      value.map(x => property("value", String(x))),
       on_change.map(change_event(_)),
       on_click.map(click_event(_)),
       on_dbl_click.map(dblclick_event(_)),
@@ -8558,7 +8558,7 @@ pub fn[M] button(
         None
       },
       type_.map(attribute("type", _)),
-      value.map(attribute("value", _)),
+      value.map(x => property("value", String(x))),
       on_change.map(change_event(_)),
       on_click.map(click_event(_)),
       on_dbl_click.map(dblclick_event(_)),
@@ -9009,7 +9009,7 @@ pub fn[M] input(
       },
       type_.map(attribute("type", _)),
       usemap.map(attribute("usemap", _)),
-      value.map(attribute("value", _)),
+      value.map(x => property("value", String(x))),
       width.map(attribute("width", _)),
       on_change.map(change_event(_)),
       on_click.map(click_event(_)),
@@ -9277,7 +9277,7 @@ pub fn[M] meter(
       } else {
         None
       },
-      value.map(attribute("value", _)),
+      value.map(x => property("value", String(x))),
       on_change.map(change_event(_)),
       on_click.map(click_event(_)),
       on_dbl_click.map(dblclick_event(_)),
@@ -9467,7 +9467,7 @@ pub fn[M] option(
       } else {
         None
       },
-      value.map(attribute("value", _)),
+      value.map(x => property("value", String(x))),
       on_change.map(change_event(_)),
       on_click.map(click_event(_)),
       on_dbl_click.map(dblclick_event(_)),
@@ -9645,7 +9645,7 @@ pub fn[M] progress(
       } else {
         None
       },
-      value.map(attribute("value", _)),
+      value.map(x => property("value", String(x))),
       on_change.map(change_event(_)),
       on_click.map(click_event(_)),
       on_dbl_click.map(dblclick_event(_)),
@@ -10441,93 +10441,6 @@ pub fn[M] marquee(
       } else {
         None
       },
-      on_change.map(change_event(_)),
-      on_click.map(click_event(_)),
-      on_dbl_click.map(dblclick_event(_)),
-      on_input.map(input_event(_)),
-      on_mouse_down.map(mouse_down_event(_)),
-      on_mouse_enter.map(mouse_enter_event(_)),
-      on_mouse_leave.map(mouse_leave_event(_)),
-      on_mouse_move.map(mouse_move_event(_)),
-      on_mouse_out.map(mouse_out_event(_)),
-      on_mouse_over.map(mouse_over_event(_)),
-      on_mouse_up.map(mouse_up_event(_)),
-      on_scroll.map(scroll_event(_)),
-    ],
-    childrens,
-  )
-}
-
-///|
-pub fn[M] param(
-  accesskey? : String,
-  autocapitalize? : String,
-  class? : String,
-  contenteditable? : String,
-  dir? : String,
-  draggable? : String,
-  hidden~ : Bool = false,
-  id? : String,
-  itemprop? : String,
-  lang? : String,
-  name? : String,
-  role? : String,
-  slot? : String,
-  spellcheck~ : Bool = false,
-  style? : String,
-  tabindex? : String,
-  title? : String,
-  translate~ : Bool = false,
-  value? : String,
-  on_change? : (String) -> M,
-  on_click? : (Mouse) -> M,
-  on_dbl_click? : (Mouse) -> M,
-  on_input? : (String) -> M,
-  on_mouse_down? : (Mouse) -> M,
-  on_mouse_enter? : (Mouse) -> M,
-  on_mouse_leave? : (Mouse) -> M,
-  on_mouse_move? : (Mouse) -> M,
-  on_mouse_out? : (Mouse) -> M,
-  on_mouse_over? : (Mouse) -> M,
-  on_mouse_up? : (Mouse) -> M,
-  on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
-) -> Html[M] {
-  make_node(
-    "param",
-    positional=[],
-    optional=[
-      accesskey.map(attribute("accesskey", _)),
-      autocapitalize.map(attribute("autocapitalize", _)),
-      class.map(attribute("class", _)),
-      contenteditable.map(attribute("contenteditable", _)),
-      dir.map(attribute("dir", _)),
-      draggable.map(attribute("draggable", _)),
-      if hidden {
-        Some(attribute("hidden", ""))
-      } else {
-        None
-      },
-      id.map(attribute("id", _)),
-      itemprop.map(attribute("itemprop", _)),
-      lang.map(attribute("lang", _)),
-      name.map(attribute("name", _)),
-      role.map(attribute("role", _)),
-      slot.map(attribute("slot", _)),
-      if spellcheck {
-        Some(attribute("spellcheck", ""))
-      } else {
-        None
-      },
-      style.map(attribute("style", _)),
-      tabindex.map(attribute("tabindex", _)),
-      title.map(attribute("title", _)),
-      if translate {
-        Some(attribute("translate", ""))
-      } else {
-        None
-      },
-      value.map(attribute("value", _)),
       on_change.map(change_event(_)),
       on_click.map(click_event(_)),
       on_dbl_click.map(dblclick_event(_)),

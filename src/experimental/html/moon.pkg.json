@@ -5,6 +5,7 @@
       "alias": "vdom"
     },
     "Yoorkin/rabbit-tea/dom",
+    "Yoorkin/rabbit-tea/variant",
     {
       "path": "Yoorkin/rabbit-tea/html",
       "alias": "legacy_html"

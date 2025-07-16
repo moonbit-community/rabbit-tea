@@ -139,7 +139,6 @@ pub(all) enum HtmlElement {
   Template
   Font
   Marquee
-  Param
 }
 impl Compare for HtmlElement
 impl Eq for HtmlElement
