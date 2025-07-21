@@ -42,12 +42,10 @@ extern "js" fn js_request(
   #| (url,method,contentType,body,hasBody,succeed,failed) => {
   #|   var config = { method: method, headers: { 'Content-Type': contentType } }; 
   #|   if (hasBody) { config.body = body };
-  #|   console.log("Requesting: ",url,config);
   #|   fetch(url, config)
   #|     .then(response => response.text())
   #|     .then(json => succeed(json))
   #|     .catch(error => {
-  #|       console.log(error);
   #|       failed(error.toString())
   #|     })
   #| }
