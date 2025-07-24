@@ -246,6 +246,15 @@ impl @js.Cast for Element
 
 type ElementInternals
 
+type ErrorEvent
+fn ErrorEvent::get_colno(Self) -> Int
+fn ErrorEvent::get_error(Self) -> @js.Value
+fn ErrorEvent::get_filename(Self) -> String
+fn ErrorEvent::get_lineno(Self) -> Int
+fn ErrorEvent::get_message(Self) -> String
+impl IsEvent for ErrorEvent
+impl @js.Cast for ErrorEvent
+
 type Event
 impl IsEvent for Event
 impl @js.Cast for Event
@@ -566,6 +575,7 @@ pub trait IsEvent : @js.Cast {
   to_custom_event(Self) -> CustomEvent?
   to_drag_event(Self) -> DragEvent?
   to_wheel_event(Self) -> WheelEvent?
+  to_error_event(Self) -> ErrorEvent?
 }
 
 pub trait IsEventTarget : @js.Cast {
