@@ -27,6 +27,7 @@ pub trait IsEvent: @js.Cast {
   to_custom_event(Self) -> CustomEvent? = _
   to_drag_event(Self) -> DragEvent? = _
   to_wheel_event(Self) -> WheelEvent? = _
+  to_transition_event(Self) -> TransitionEvent? = _
 }
 
 ///|
@@ -133,6 +134,11 @@ impl IsEvent with to_wheel_event(s) {
 }
 
 ///|
+impl IsEvent with to_transition_event(s) {
+  s |> js_identity |> ffi_to_transition_event |> _.to_option()
+}
+
+///|
 extern "js" fn ffi_event_target(x : @js.Value) -> EventTarget = "(self) => self.target"
 
 ///|
@@ -206,6 +212,12 @@ extern "js" fn ffi_to_drag_event(x : @js.Value) -> @js.Nullable[DragEvent] =
 ///|
 extern "js" fn ffi_to_wheel_event(x : @js.Value) -> @js.Nullable[WheelEvent] =
   #| (e) => e instanceof WheelEvent ? e : null
+
+///|
+extern "js" fn ffi_to_transition_event(
+  x : @js.Value
+) -> @js.Nullable[TransitionEvent] =
+  #| (e) => e instanceof TransitionEvent ? e : null
 
 ///|
 extern "js" fn ffi_to_event(x : @js.Value) -> @js.Nullable[Event] =

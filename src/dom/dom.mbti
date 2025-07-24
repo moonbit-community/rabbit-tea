@@ -1,3 +1,4 @@
+// Generated using `moon info`, DON'T EDIT IT
 package "Yoorkin/rabbit-tea/dom"
 
 import(
@@ -473,6 +474,13 @@ type TextTrackList
 
 type TimeRanges
 
+type TransitionEvent
+fn TransitionEvent::get_elapsed_time(Self) -> Double
+fn TransitionEvent::get_property_name(Self) -> String
+fn TransitionEvent::get_pseudo_element(Self) -> String
+impl IsEvent for TransitionEvent
+impl @js.Cast for TransitionEvent
+
 type UIEvent
 impl IsEvent for UIEvent
 impl IsUIEvent for UIEvent
@@ -566,6 +574,7 @@ pub trait IsEvent : @js.Cast {
   to_custom_event(Self) -> CustomEvent?
   to_drag_event(Self) -> DragEvent?
   to_wheel_event(Self) -> WheelEvent?
+  to_transition_event(Self) -> TransitionEvent?
 }
 
 pub trait IsEventTarget : @js.Cast {
