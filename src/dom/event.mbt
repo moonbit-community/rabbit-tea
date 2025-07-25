@@ -141,7 +141,7 @@ extern "js" fn ffi_to_ui_event(x : @js.Value) -> @js.Nullable[UIEvent] =
 
 ///|
 extern "js" fn ffi_to_clipboard_event(
-  x : @js.Value
+  x : @js.Value,
 ) -> @js.Nullable[ClipboardEvent] =
   #| (x) => x instanceof ClipboardEvent ? x : null
 
@@ -165,19 +165,19 @@ extern "js" fn ffi_to_focus_event(x : @js.Value) -> @js.Nullable[FocusEvent] =
 
 ///|
 extern "js" fn ffi_to_keyboard_event(
-  x : @js.Value
+  x : @js.Value,
 ) -> @js.Nullable[KeyboardEvent] =
   #| (e) => e instanceof KeyboardEvent ? e : null
 
 ///|
 extern "js" fn ffi_to_animation_event(
-  x : @js.Value
+  x : @js.Value,
 ) -> @js.Nullable[AnimationEvent] =
   #| (e) => e instanceof AnimationEvent ? e : null
 
 ///|
 extern "js" fn ffi_to_before_unload_event(
-  x : @js.Value
+  x : @js.Value,
 ) -> @js.Nullable[BeforeUnloadEvent] =
   #| (e) => e instanceof BeforeUnloadEvent ? e : null
 
@@ -191,7 +191,7 @@ extern "js" fn ffi_to_close_event(x : @js.Value) -> @js.Nullable[CloseEvent] =
 
 ///|
 extern "js" fn ffi_to_composition_event(
-  x : @js.Value
+  x : @js.Value,
 ) -> @js.Nullable[CompositionEvent] =
   #| (e) => e instanceof CompositionEvent ? e : null
 

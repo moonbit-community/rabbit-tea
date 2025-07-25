@@ -16,7 +16,7 @@ pub extern "js" fn DataTransfer::set_drog_image(
   self : Self,
   image : Element,
   x : Int,
-  y : Int
+  y : Int,
 ) = "(t, image, x, y) => t.setDragImage(image, x, y)"
 
 ///|
@@ -33,7 +33,7 @@ pub extern "js" fn DataTransferItemList::op_get(self : Self, index : Int) = "(l,
 pub extern "js" fn DataTransferItemList::add(
   self : Self,
   data : String,
-  type_ : String
+  type_ : String,
 ) = "(l, d, t) => l.add(d, t)"
 
 ///|

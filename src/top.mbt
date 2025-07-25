@@ -19,7 +19,7 @@ pub fn[Model, Message] startup(
   model~ : Model,
   update~ : (Message, Model) -> (Cmd[Message], Model),
   view~ : (Model) -> @html.Html[Message],
-  mount~ : String = "app"
+  mount~ : String = "app",
 ) -> Unit {
   @dom.document()
   .get_element_by_id(mount)
@@ -50,7 +50,7 @@ pub fn[Model, Msg] application(
   view~ : (Model) -> @html.Html[Msg],
   url_changed? : (@url.Url) -> Msg,
   url_request? : (@url.UrlRequest) -> Msg,
-  mount~ : String = "app"
+  mount~ : String = "app",
 ) -> Unit {
   @dom.document()
   .get_element_by_id(mount)

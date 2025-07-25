@@ -41,7 +41,7 @@ pub fn[A, B] map(self : Node[A], f : (A) -> B) -> Node[B] {
 pub fn[Msg] node(
   tag : String,
   attrs : Array[Attribute[Msg]],
-  childrens : Array[Node[Msg]]
+  childrens : Array[Node[Msg]],
 ) -> Node[Msg] {
   Node(tag, attrs~, childrens~, listeners=[], namespace_uri=None)
 }
@@ -51,7 +51,7 @@ pub fn[Msg] node_ns(
   namespace_uri : String,
   qualified_name : String,
   attrs : Array[Attribute[Msg]],
-  childrens : Array[Node[Msg]]
+  childrens : Array[Node[Msg]],
 ) -> Node[Msg] {
   Node(
     qualified_name,
@@ -73,7 +73,7 @@ const NORMAL_LINK_TAG = "a"
 pub fn[Msg] link(
   attrs : Array[Attribute[Msg]],
   childrens : Array[Node[Msg]],
-  escape~ : Bool = false
+  escape~ : Bool = false,
 ) -> Node[Msg] {
   let tag = if escape { ESCAPED_LINK_TAG } else { NORMAL_LINK_TAG }
   node(tag, attrs, childrens)
@@ -84,7 +84,7 @@ pub fn[Msg] external(
   node : @dom.Node,
   attrs : Ref[Array[Attribute[Msg]]?],
   width~ : Int,
-  height~ : Int
+  height~ : Int,
 ) -> Node[Msg] {
   ExternalNode(node, attrs, width~, height~)
 }
@@ -196,7 +196,7 @@ pub fn[Msg] style(key : String, value : String) -> Attribute[Msg] {
 ///| Convert virtual DOM to real DOM
 fn[Msg, Model, View] Node::to_node(
   self : Node[Msg],
-  sandbox : @adapter.Sandbox[Msg, Model, View]
+  sandbox : @adapter.Sandbox[Msg, Model, View],
 ) -> @dom.Node {
   // NOTE:
   // In Elm, the sandbox is a spacial type and handled in the runtime. But in Moonbit,
@@ -208,7 +208,7 @@ fn[Msg, Model, View] Node::to_node(
   fn attach_attrs(
     attrs : Array[Attribute[Msg]],
     element : @dom.Element,
-    generated_listeners : Array[(String, @dom.Listener)]
+    generated_listeners : Array[(String, @dom.Listener)],
   ) {
     attrs.each(x => match x {
       Attribute((event, AttrEvent(handler))) => {
@@ -335,7 +335,7 @@ pub fn[Msg, Model, View] patch(
   self : Node[Msg],
   old : Node[Msg],
   sandbox : @adapter.Sandbox[Msg, Model, View],
-  mount~ : String
+  mount~ : String,
 ) -> Unit {
   let patches = diff(old, self)
   fn aux(patches : Patch[Msg], current : @dom.Node) -> Unit {
@@ -497,7 +497,7 @@ fn[Msg] attrs_diff(
   new : Array[Attribute[Msg]],
   // We think the event is different although they never changed.
   // The listeners is used to remove the event listener when the attribute is removed.
-  listeners : Array[(String, @dom.Listener)]
+  listeners : Array[(String, @dom.Listener)],
 ) -> Array[AttrsUpdate[Msg]] {
   let old_map = Map::from_iter(old.iter().map(_.inner()))
   let new_map = Map::from_iter(new.iter().map(_.inner()))
@@ -565,13 +565,13 @@ fn[Msg] attrs_diff(
 ///|
 pub fn[Msg] diff_without_key(
   old : Array[Node[Msg]],
-  new : Array[Node[Msg]]
+  new : Array[Node[Msg]],
 ) -> Array[Patch[Msg]] {
   fn aux(
     xs : ArrayView[Node[Msg]],
     ys : ArrayView[Node[Msg]],
     patches : Array[Patch[Msg]],
-    index : Int
+    index : Int,
   ) -> Unit {
     match (xs, ys) {
       ([], []) => ()

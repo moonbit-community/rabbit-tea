@@ -18,7 +18,7 @@ fn[M] make_node(
   tag : String,
   positional~ : Array[Attribute[M]],
   optional~ : Array[Attribute[M]?],
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   let attrs = [
       ..optional.iter().filter_map(x => x).map(_.inner()),

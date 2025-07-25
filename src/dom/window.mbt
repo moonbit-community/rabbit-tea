@@ -61,13 +61,13 @@ pub extern "js" fn Window::replace_url(self : Self, url : String) =
 ///| https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame
 pub extern "js" fn Window::request_animation_frame(
   self : Self,
-  f : (DOMHighResTimeStamp) -> Unit
+  f : (DOMHighResTimeStamp) -> Unit,
 ) -> Double = "(self,f) => self.requestAnimationFrame(f)"
 
 ///| https://developer.mozilla.org/en-US/docs/Web/API/Window/cancelAnimationFrame
 pub extern "js" fn Window::cancel_animation_frame(
   self : Self,
-  request_id : Double
+  request_id : Double,
 ) = "(self,id) => self.cancelAnimationFrame(id)"
 
 ///|

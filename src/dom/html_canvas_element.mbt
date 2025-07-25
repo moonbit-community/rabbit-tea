@@ -33,7 +33,7 @@ pub extern "js" fn HTMLCanvasElement::get_height(self : Self) -> Int = "(x) => x
 ///|
 pub extern "js" fn HTMLCanvasElement::get_context(
   self : Self,
-  context_id : String
+  context_id : String,
 ) -> @js.Union5[
   CanvasRenderingContext2D,
   ImageBitmapRenderingContext,

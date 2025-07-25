@@ -30,7 +30,7 @@ pub extern "js" fn HTMLImageElement::new() -> Self = "() => new Image()"
 ///| https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/Image
 pub extern "js" fn HTMLImageElement::new_with_size(
   width : Double,
-  height : Double
+  height : Double,
 ) -> Self = "(w,h) => new Image(w, h)"
 
 ///| https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/alt
@@ -48,7 +48,7 @@ pub extern "js" fn HTMLImageElement::get_cross_origin(self : Self) -> String = "
 ///| https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/crossOrigin
 pub extern "js" fn HTMLImageElement::set_cross_origin(
   self : Self,
-  value : String
+  value : String,
 ) = "(self, value) => self.crossOrigin = value"
 
 ///| https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/currentSrc
@@ -84,7 +84,7 @@ pub extern "js" fn HTMLImageElement::get_natural_height(self : Self) -> Double =
 ///| https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/naturalHeight
 pub extern "js" fn HTMLImageElement::set_natural_height(
   self : Self,
-  value : Double
+  value : Double,
 ) = "(self, value) => self.naturalHeight = value"
 
 ///| https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/naturalWidth
@@ -93,7 +93,7 @@ pub extern "js" fn HTMLImageElement::get_natural_width(self : Self) -> Double = 
 ///| https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/naturalWidth
 pub extern "js" fn HTMLImageElement::set_natural_width(
   self : Self,
-  value : Double
+  value : Double,
 ) = "(self, value) => self.naturalWidth = value"
 
 ///| https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/referrerPolicy
@@ -102,7 +102,7 @@ pub extern "js" fn HTMLImageElement::get_referrer_policy(self : Self) -> String 
 ///| https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/referrerPolicy
 pub extern "js" fn HTMLImageElement::set_referrer_policy(
   self : Self,
-  value : String
+  value : String,
 ) = "(self, value) => self.referrerPolicy = value"
 
 ///| https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/sizes

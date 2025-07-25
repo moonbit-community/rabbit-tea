@@ -6,12 +6,12 @@ type CanvasGradient
 pub extern "js" fn CanvasGradient::add_color_stop(
   self : CanvasGradient,
   offset : Double,
-  color : String
+  color : String,
 ) = "(self,offset,color) => self.addColorStop(offset,color)"
 
 ///|
 extern "js" fn checked_to_canvas_gradient(
-  value : @js.Value
+  value : @js.Value,
 ) -> @js.Nullable[CanvasGradient] =
   #| (value) => value instanceof CanvasGradient ? value : null
 

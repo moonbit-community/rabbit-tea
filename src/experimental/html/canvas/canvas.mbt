@@ -18,7 +18,7 @@ pub fn[Msg] new(
   mousedown? : (@html.Mouse) -> Msg,
   mouseup? : (@html.Mouse) -> Msg,
   mouseenter? : (@html.Mouse) -> Msg,
-  mouseleave? : (@html.Mouse) -> Msg
+  mouseleave? : (@html.Mouse) -> Msg,
 ) -> Model[Msg] {
   let canvas = @dom.document().create_element("canvas")
   let attributes = {

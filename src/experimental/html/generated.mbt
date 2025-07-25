@@ -31,7 +31,7 @@ pub fn[M] html(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "html",
@@ -114,7 +114,7 @@ pub fn[M] head(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "head",
@@ -197,7 +197,7 @@ pub fn[M] title_(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "title",
@@ -282,7 +282,7 @@ pub fn[M] base(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "base",
@@ -377,7 +377,7 @@ pub fn[M] link(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "link",
@@ -474,7 +474,7 @@ pub fn[M] meta(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "meta",
@@ -564,7 +564,7 @@ pub fn[M] style(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "style",
@@ -656,7 +656,7 @@ pub fn[M] body(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "body",
@@ -741,7 +741,7 @@ pub fn[M] address(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "address",
@@ -824,7 +824,7 @@ pub fn[M] article(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "article",
@@ -907,7 +907,7 @@ pub fn[M] aside(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "aside",
@@ -990,7 +990,7 @@ pub fn[M] footer(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "footer",
@@ -1073,7 +1073,7 @@ pub fn[M] header(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "header",
@@ -1156,7 +1156,7 @@ pub fn[M] h1(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "h1",
@@ -1239,7 +1239,7 @@ pub fn[M] h2(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "h2",
@@ -1322,7 +1322,7 @@ pub fn[M] h3(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "h3",
@@ -1405,7 +1405,7 @@ pub fn[M] h4(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "h4",
@@ -1488,7 +1488,7 @@ pub fn[M] h5(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "h5",
@@ -1571,7 +1571,7 @@ pub fn[M] h6(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "h6",
@@ -1654,7 +1654,7 @@ pub fn[M] hgroup(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "hgroup",
@@ -1737,7 +1737,7 @@ pub fn[M] main_(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "main",
@@ -1820,7 +1820,7 @@ pub fn[M] nav(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "nav",
@@ -1903,7 +1903,7 @@ pub fn[M] section(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "section",
@@ -1986,7 +1986,7 @@ pub fn[M] search(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "search",
@@ -2070,7 +2070,7 @@ pub fn[M] blockquote(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "blockquote",
@@ -2154,7 +2154,7 @@ pub fn[M] dd(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "dd",
@@ -2237,7 +2237,7 @@ pub fn[M] div(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "div",
@@ -2320,7 +2320,7 @@ pub fn[M] dl(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "dl",
@@ -2403,7 +2403,7 @@ pub fn[M] dt(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "dt",
@@ -2486,7 +2486,7 @@ pub fn[M] figcaption(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "figcaption",
@@ -2569,7 +2569,7 @@ pub fn[M] figure(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "figure",
@@ -2654,7 +2654,7 @@ pub fn[M] hr(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "hr",
@@ -2740,7 +2740,7 @@ pub fn[M] li(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "li",
@@ -2825,7 +2825,7 @@ pub fn[M] menu(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "menu",
@@ -2912,7 +2912,7 @@ pub fn[M] ol(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "ol",
@@ -3002,7 +3002,7 @@ pub fn[M] p(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "p",
@@ -3085,7 +3085,7 @@ pub fn[M] pre(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "pre",
@@ -3168,7 +3168,7 @@ pub fn[M] ul(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "ul",
@@ -3251,7 +3251,7 @@ pub fn[M] a(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "a",
@@ -3334,7 +3334,7 @@ pub fn[M] abbr(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "abbr",
@@ -3417,7 +3417,7 @@ pub fn[M] b(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "b",
@@ -3500,7 +3500,7 @@ pub fn[M] bdi(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "bdi",
@@ -3583,7 +3583,7 @@ pub fn[M] bdo(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "bdo",
@@ -3666,7 +3666,7 @@ pub fn[M] br(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "br",
@@ -3749,7 +3749,7 @@ pub fn[M] cite(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "cite",
@@ -3832,7 +3832,7 @@ pub fn[M] code(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "code",
@@ -3916,7 +3916,7 @@ pub fn[M] data_(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "data",
@@ -4000,7 +4000,7 @@ pub fn[M] dfn(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "dfn",
@@ -4083,7 +4083,7 @@ pub fn[M] em(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "em",
@@ -4166,7 +4166,7 @@ pub fn[M] i(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "i",
@@ -4249,7 +4249,7 @@ pub fn[M] kbd(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "kbd",
@@ -4332,7 +4332,7 @@ pub fn[M] mark(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "mark",
@@ -4415,7 +4415,7 @@ pub fn[M] q(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "q",
@@ -4498,7 +4498,7 @@ pub fn[M] rp(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "rp",
@@ -4581,7 +4581,7 @@ pub fn[M] rt(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "rt",
@@ -4664,7 +4664,7 @@ pub fn[M] ruby(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "ruby",
@@ -4747,7 +4747,7 @@ pub fn[M] s(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "s",
@@ -4830,7 +4830,7 @@ pub fn[M] samp(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "samp",
@@ -4913,7 +4913,7 @@ pub fn[M] small(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "small",
@@ -4996,7 +4996,7 @@ pub fn[M] span(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "span",
@@ -5079,7 +5079,7 @@ pub fn[M] strong(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "strong",
@@ -5162,7 +5162,7 @@ pub fn[M] sub(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "sub",
@@ -5245,7 +5245,7 @@ pub fn[M] sup(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "sup",
@@ -5329,7 +5329,7 @@ pub fn[M] time_(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "time",
@@ -5413,7 +5413,7 @@ pub fn[M] u(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "u",
@@ -5496,7 +5496,7 @@ pub fn[M] var_(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "var",
@@ -5579,7 +5579,7 @@ pub fn[M] wbr(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "wbr",
@@ -5672,7 +5672,7 @@ pub fn[M] area(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "area",
@@ -5772,7 +5772,7 @@ pub fn[M] audio(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "audio",
@@ -5894,7 +5894,7 @@ pub fn[M] img(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "img",
@@ -5998,7 +5998,7 @@ pub fn[M] map(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "map",
@@ -6087,7 +6087,7 @@ pub fn[M] track(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "track",
@@ -6191,7 +6191,7 @@ pub fn[M] video(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "video",
@@ -6310,7 +6310,7 @@ pub fn[M] embed(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "embed",
@@ -6397,7 +6397,7 @@ pub fn[M] fencedframe(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "fencedframe",
@@ -6491,7 +6491,7 @@ pub fn[M] iframe(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "iframe",
@@ -6593,7 +6593,7 @@ pub fn[M] object_(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "object",
@@ -6684,7 +6684,7 @@ pub fn[M] picture(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "picture",
@@ -6772,7 +6772,7 @@ pub fn[M] source(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "source",
@@ -6860,7 +6860,7 @@ pub fn[M] svg(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "svg",
@@ -6943,7 +6943,7 @@ pub fn[M] math_(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "math",
@@ -7028,7 +7028,7 @@ pub fn[M] canvas(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "canvas",
@@ -7113,7 +7113,7 @@ pub fn[M] noscript(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "noscript",
@@ -7204,7 +7204,7 @@ pub fn[M] script(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "script",
@@ -7305,7 +7305,7 @@ pub fn[M] del_(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "del",
@@ -7392,7 +7392,7 @@ pub fn[M] ins(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "ins",
@@ -7478,7 +7478,7 @@ pub fn[M] caption(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "caption",
@@ -7565,7 +7565,7 @@ pub fn[M] col(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "col",
@@ -7654,7 +7654,7 @@ pub fn[M] colgroup(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "colgroup",
@@ -7745,7 +7745,7 @@ pub fn[M] table(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "table",
@@ -7835,7 +7835,7 @@ pub fn[M] tbody(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "tbody",
@@ -7926,7 +7926,7 @@ pub fn[M] td(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "td",
@@ -8030,7 +8030,7 @@ pub fn[M] textarea(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "textarea",
@@ -8142,7 +8142,7 @@ pub fn[M] tfoot(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "tfoot",
@@ -8234,7 +8234,7 @@ pub fn[M] th(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "th",
@@ -8325,7 +8325,7 @@ pub fn[M] thead(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "thead",
@@ -8411,7 +8411,7 @@ pub fn[M] tr(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "tr",
@@ -8506,7 +8506,7 @@ pub fn[M] button(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "button",
@@ -8607,7 +8607,7 @@ pub fn[M] datalist(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "datalist",
@@ -8693,7 +8693,7 @@ pub fn[M] fieldset(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "fieldset",
@@ -8792,7 +8792,7 @@ pub fn[M] form(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "form",
@@ -8920,7 +8920,7 @@ pub fn[M] input(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "input",
@@ -9061,7 +9061,7 @@ pub fn[M] label(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "label",
@@ -9146,7 +9146,7 @@ pub fn[M] legend(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "legend",
@@ -9236,7 +9236,7 @@ pub fn[M] meter(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "meter",
@@ -9328,7 +9328,7 @@ pub fn[M] optgroup(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "optgroup",
@@ -9421,7 +9421,7 @@ pub fn[M] option(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "option",
@@ -9519,7 +9519,7 @@ pub fn[M] output(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "output",
@@ -9608,7 +9608,7 @@ pub fn[M] progress(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "progress",
@@ -9701,7 +9701,7 @@ pub fn[M] select(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "select",
@@ -9803,7 +9803,7 @@ pub fn[M] selectedcontent(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "selectedcontent",
@@ -9887,7 +9887,7 @@ pub fn[M] details(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "details",
@@ -9976,7 +9976,7 @@ pub fn[M] dialog(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "dialog",
@@ -10064,7 +10064,7 @@ pub fn[M] summary(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "summary",
@@ -10147,7 +10147,7 @@ pub fn[M] slot(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "slot",
@@ -10230,7 +10230,7 @@ pub fn[M] template(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "template",
@@ -10314,7 +10314,7 @@ pub fn[M] font(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "font",
@@ -10400,7 +10400,7 @@ pub fn[M] marquee(
   on_mouse_over? : (Mouse) -> M,
   on_mouse_up? : (Mouse) -> M,
   on_scroll? : (Scroll) -> M,
-  childrens : Array[Html[M]]
+  childrens : Array[Html[M]],
 ) -> Html[M] {
   make_node(
     "marquee",
