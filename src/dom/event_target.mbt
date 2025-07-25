@@ -166,7 +166,7 @@ extern "js" fn ffi_to_clipboard(x : @js.Value) -> @js.Nullable[Clipboard] =
 extern "js" fn ffi_add_event_listener(
   x : @js.Value,
   type_ : String,
-  callback : Listener
+  callback : Listener,
 ) =
   #| (target, type, listener) => target.addEventListener(type, listener)
 
@@ -174,7 +174,7 @@ extern "js" fn ffi_add_event_listener(
 extern "js" fn ffi_remove_event_listener(
   x : @js.Value,
   type_ : String,
-  callback : Listener
+  callback : Listener,
 ) =
   #| (target, type, listener) => target.removeEventListener(type, listener)
 
@@ -188,7 +188,7 @@ extern "js" fn ffi_to_document(x : @js.Value) -> @js.Nullable[Document] =
 
 ///|
 extern "js" fn ffi_to_document_fragment(
-  x : @js.Value
+  x : @js.Value,
 ) -> @js.Nullable[DocumentFragment] =
   #| (x) => x.nodeType===11 ? x : null
 
@@ -206,31 +206,31 @@ extern "js" fn ffi_to_html_element(x : @js.Value) -> @js.Nullable[HTMLElement] =
 
 ///|
 extern "js" fn ffi_to_html_canvas_element(
-  x : @js.Value
+  x : @js.Value,
 ) -> @js.Nullable[HTMLCanvasElement] =
   #| (x) => x instanceof HTMLCanvasElement ? x : null
 
 ///|
 extern "js" fn ffi_to_html_input_element(
-  x : @js.Value
+  x : @js.Value,
 ) -> @js.Nullable[HTMLInputElement] =
   #| (x) => x instanceof HTMLInputElement ? x : null
 
 ///|
 extern "js" fn ffi_to_html_select_element(
-  x : @js.Value
+  x : @js.Value,
 ) -> @js.Nullable[HTMLSelectElement] =
   #| (x) => x instanceof HTMLSelectElement ? x : null
 
 ///|
 extern "js" fn ffi_to_html_dialog_element(
-  x : @js.Value
+  x : @js.Value,
 ) -> @js.Nullable[HTMLDialogElement] =
   #| (x) => x instanceof HTMLDialogElement ? x : null
 
 ///|
 extern "js" fn ffi_to_html_image_element(
-  x : @js.Value
+  x : @js.Value,
 ) -> @js.Nullable[HTMLImageElement] =
   #| (x) => x instanceof HTMLImageElement ? x : null
 
@@ -243,19 +243,19 @@ extern "js" fn ffi_to_svg_element(x : @js.Value) -> @js.Nullable[SVGElement] = "
 
 ///|
 extern "js" fn ffi_to_svg_graphics_element(
-  x : @js.Value
+  x : @js.Value,
 ) -> @js.Nullable[SVGGraphicsElement] = "(x) => x instanceof SVGGraphicsElement ? x : null"
 
 ///|
 extern "js" fn ffi_to_svg_image_element(
-  x : @js.Value
+  x : @js.Value,
 ) -> @js.Nullable[SVGImageElement] = "(x) => x instanceof SVGImageElement ? x : null"
 
 ///|
 
 ///|
 extern "js" fn ffi_to_html_video_element(
-  x : @js.Value
+  x : @js.Value,
 ) -> @js.Nullable[HTMLVideoElement] = "(x) => x instanceof HTMLVideoElement ? x : null"
 
 ///|

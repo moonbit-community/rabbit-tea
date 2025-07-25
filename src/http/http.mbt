@@ -37,7 +37,7 @@ extern "js" fn js_request(
   body~ : String,
   has_body~ : Bool,
   succeed~ : (String) -> Unit,
-  failed~ : (String) -> Unit
+  failed~ : (String) -> Unit,
 ) =
   #| (url,method,contentType,body,hasBody,succeed,failed) => {
   #|   var config = { method: method, headers: { 'Content-Type': contentType } }; 
@@ -55,7 +55,7 @@ fn[Msg, Model] request(
   url : String,
   http_method : String,
   expect~ : Expecting[Msg, Model],
-  body~ : Body
+  body~ : Body,
 ) -> @cmd.Cmd[Msg] {
   let launch = fn(events : @cmd.Events[Msg]) {
     let has_body = match body {
@@ -102,7 +102,7 @@ fn[Msg, Model] request(
 ///| Create a command to send a GET request.
 pub fn[Msg, Model] get(
   url : String,
-  expect~ : Expecting[Msg, Model]
+  expect~ : Expecting[Msg, Model],
 ) -> @cmd.Cmd[Msg] {
   request(url, "GET", expect~, body=Empty)
 }
@@ -110,7 +110,7 @@ pub fn[Msg, Model] get(
 ///| Create a command to send a PUT request.
 pub fn[Msg, Model] delete(
   url : String,
-  expect~ : Expecting[Msg, Model]
+  expect~ : Expecting[Msg, Model],
 ) -> @cmd.Cmd[Msg] {
   request(url, "DELETE", expect~, body=Empty)
 }
@@ -119,7 +119,7 @@ pub fn[Msg, Model] delete(
 pub fn[Msg, Model] post(
   url : String,
   body : Body,
-  expect~ : Expecting[Msg, Model]
+  expect~ : Expecting[Msg, Model],
 ) -> @cmd.Cmd[Msg] {
   request(url, "POST", body~, expect~)
 }
@@ -128,7 +128,7 @@ pub fn[Msg, Model] post(
 pub fn[Msg, Model] patch(
   url : String,
   body : Body,
-  expect~ : Expecting[Msg, Model]
+  expect~ : Expecting[Msg, Model],
 ) -> @cmd.Cmd[Msg] {
   request(url, "PATCH", body~, expect~)
 }

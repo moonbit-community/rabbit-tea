@@ -4,7 +4,7 @@ type CanvasPattern
 
 ///|
 extern "js" fn checked_to_canvas_pattern(
-  value : @js.Value
+  value : @js.Value,
 ) -> @js.Nullable[CanvasPattern] =
   #| (value) => value instanceof CanvasPattern ? value : null
 
@@ -21,5 +21,5 @@ pub impl @js.Cast for CanvasPattern with from(value) {
 ///|
 pub extern "js" fn CanvasPattern::set_transform(
   self : Self,
-  transform : @js.Optional[DOMMatrix2DInit]
+  transform : @js.Optional[DOMMatrix2DInit],
 ) = "(self,transform) => self.setTransform(transform)"

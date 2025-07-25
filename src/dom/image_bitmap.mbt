@@ -14,5 +14,5 @@ pub impl @js.Cast for ImageBitmap with from(value) {
 
 ///|
 extern "js" fn ffi_to_image_bitmap(
-  value : @js.Value
+  value : @js.Value,
 ) -> @js.Nullable[ImageBitmap] = "(value) => value instanceof ImageBitmap ? value : null"

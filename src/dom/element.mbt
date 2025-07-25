@@ -139,13 +139,13 @@ extern "js" fn ffi_element_children(x : @js.Value) -> Array[Element] =
 extern "js" fn ffi_element_set_attribute(
   x : @js.Value,
   attr : String,
-  value : String
+  value : String,
 ) = "(self,attr,value) => self.setAttribute(attr, value)"
 
 ///|
 extern "js" fn ffi_element_get_attribute(
   x : @js.Value,
-  attr : String
+  attr : String,
 ) -> String = "(self,attr) => self.getAttribute(attr)"
 
 ///|
@@ -155,7 +155,7 @@ extern "js" fn ffi_element_remove_attribute(x : @js.Value, attr : String) = "(se
 extern "js" fn ffi_element_set_property(
   x : @js.Value,
   prop : String,
-  value : @js.Value
+  value : @js.Value,
 ) = "(self,prop,value) => self[prop] = value"
 
 ///|

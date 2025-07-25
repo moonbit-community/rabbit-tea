@@ -416,109 +416,109 @@ impl IsHTMLMediaElement with seek_to_next_frame(s) {
 
 ///|
 extern "js" fn ffi_to_html_media_element(
-  x : @js.Value
+  x : @js.Value,
 ) -> @js.Nullable[HTMLMediaElement] = "(x) => x instanceof HTMLMediaElement ? x : null"
 
 ///|
 extern "js" fn ffi_html_media_element_get_audio_tracks(
-  s : HTMLMediaElement
+  s : HTMLMediaElement,
 ) -> AudioTrackList = "(s) => s.audioTracks"
 
 ///|
 extern "js" fn ffi_html_media_element_get_autoplay(
-  s : HTMLMediaElement
+  s : HTMLMediaElement,
 ) -> Bool = "(s) => s.autoplay"
 
 ///|
 extern "js" fn ffi_html_media_element_set_autoplay(
   s : HTMLMediaElement,
-  value : Bool
+  value : Bool,
 ) -> Unit = "(s, value) => s.autoplay = value"
 
 ///|
 extern "js" fn ffi_html_media_element_get_buffered(
-  s : HTMLMediaElement
+  s : HTMLMediaElement,
 ) -> TimeRanges = "(s) => s.buffered"
 
 ///|
 extern "js" fn ffi_html_media_element_get_controls(
-  s : HTMLMediaElement
+  s : HTMLMediaElement,
 ) -> Bool = "(s) => s.controls"
 
 ///|
 extern "js" fn ffi_html_media_element_set_controls(
   s : HTMLMediaElement,
-  value : Bool
+  value : Bool,
 ) -> Unit = "(s, value) => s.controls = value"
 
 ///|
 extern "js" fn ffi_html_media_element_get_controls_list(
-  s : HTMLMediaElement
+  s : HTMLMediaElement,
 ) -> DOMTokenList = "(s) => s.controlsList"
 
 ///|
 extern "js" fn ffi_html_media_element_get_cross_origin(
-  s : HTMLMediaElement
+  s : HTMLMediaElement,
 ) -> @js.Nullable[String] = "(s) => s.crossOrigin"
 
 ///|
 extern "js" fn ffi_html_media_element_set_cross_origin(
   s : HTMLMediaElement,
-  value : String?
+  value : String?,
 ) -> Unit = "(s, value) => s.crossOrigin = value"
 
 ///|
 extern "js" fn ffi_html_media_element_get_current_src(
-  s : HTMLMediaElement
+  s : HTMLMediaElement,
 ) -> String = "(s) => s.currentSrc"
 
 ///|
 extern "js" fn ffi_html_media_element_get_current_time(
-  s : HTMLMediaElement
+  s : HTMLMediaElement,
 ) -> Double = "(s) => s.currentTime"
 
 ///|
 extern "js" fn ffi_html_media_element_set_current_time(
   s : HTMLMediaElement,
-  value : Double
+  value : Double,
 ) -> Unit = "(s, value) => s.currentTime = value"
 
 ///|
 extern "js" fn ffi_html_media_element_get_default_muted(
-  s : HTMLMediaElement
+  s : HTMLMediaElement,
 ) -> Bool = "(s) => s.defaultMuted"
 
 ///|
 extern "js" fn ffi_html_media_element_set_default_muted(
   s : HTMLMediaElement,
-  value : Bool
+  value : Bool,
 ) -> Unit = "(s, value) => s.defaultMuted = value"
 
 ///|
 extern "js" fn ffi_html_media_element_get_default_playback_rate(
-  s : HTMLMediaElement
+  s : HTMLMediaElement,
 ) -> Double = "(s) => s.defaultPlaybackRate"
 
 ///|
 extern "js" fn ffi_html_media_element_set_default_playback_rate(
   s : HTMLMediaElement,
-  value : Double
+  value : Double,
 ) -> Unit = "(s, value) => s.defaultPlaybackRate = value"
 
 ///|
 extern "js" fn ffi_html_media_element_get_disable_remote_playback(
-  s : HTMLMediaElement
+  s : HTMLMediaElement,
 ) -> Bool = "(s) => s.disableRemotePlayback"
 
 ///|
 extern "js" fn ffi_html_media_element_set_disable_remote_playback(
   s : HTMLMediaElement,
-  value : Bool
+  value : Bool,
 ) -> Unit = "(s, value) => s.disableRemotePlayback = value"
 
 ///|
 extern "js" fn ffi_html_media_element_get_duration(
-  s : HTMLMediaElement
+  s : HTMLMediaElement,
 ) -> Double = "(s) => s.duration"
 
 ///|
@@ -526,7 +526,7 @@ extern "js" fn ffi_html_media_element_get_ended(s : HTMLMediaElement) -> Bool = 
 
 ///|
 extern "js" fn ffi_html_media_element_get_error(
-  s : HTMLMediaElement
+  s : HTMLMediaElement,
 ) -> @js.Nullable[MediaError] = "(s) => s.error"
 
 ///|
@@ -535,12 +535,12 @@ extern "js" fn ffi_html_media_element_get_loop(s : HTMLMediaElement) -> Bool = "
 ///|
 extern "js" fn ffi_html_media_element_set_loop(
   s : HTMLMediaElement,
-  value : Bool
+  value : Bool,
 ) -> Unit = "(s, value) => s.loop = value"
 
 ///|
 extern "js" fn ffi_html_media_element_get_media_keys(
-  s : HTMLMediaElement
+  s : HTMLMediaElement,
 ) -> @js.Nullable[MediaKeys] = "(s) => s.mediaKeys"
 
 ///|
@@ -549,12 +549,12 @@ extern "js" fn ffi_html_media_element_get_muted(s : HTMLMediaElement) -> Bool = 
 ///|
 extern "js" fn ffi_html_media_element_set_muted(
   s : HTMLMediaElement,
-  value : Bool
+  value : Bool,
 ) -> Unit = "(s, value) => s.muted = value"
 
 ///|
 extern "js" fn ffi_html_media_element_get_network_state(
-  s : HTMLMediaElement
+  s : HTMLMediaElement,
 ) -> Int = "(s) => s.networkState"
 
 ///|
@@ -562,55 +562,55 @@ extern "js" fn ffi_html_media_element_get_paused(s : HTMLMediaElement) -> Bool =
 
 ///|
 extern "js" fn ffi_html_media_element_get_playback_rate(
-  s : HTMLMediaElement
+  s : HTMLMediaElement,
 ) -> Double = "(s) => s.playbackRate"
 
 ///|
 extern "js" fn ffi_html_media_element_set_playback_rate(
   s : HTMLMediaElement,
-  value : Double
+  value : Double,
 ) -> Unit = "(s, value) => s.playbackRate = value"
 
 ///|
 extern "js" fn ffi_html_media_element_get_played(
-  s : HTMLMediaElement
+  s : HTMLMediaElement,
 ) -> TimeRanges = "(s) => s.played"
 
 ///|
 extern "js" fn ffi_html_media_element_get_preload(
-  s : HTMLMediaElement
+  s : HTMLMediaElement,
 ) -> String = "(s) => s.preload"
 
 ///|
 extern "js" fn ffi_html_media_element_set_preload(
   s : HTMLMediaElement,
-  value : String
+  value : String,
 ) -> Unit = "(s, value) => s.preload = value"
 
 ///|
 extern "js" fn ffi_html_media_element_get_preserves_pitch(
-  s : HTMLMediaElement
+  s : HTMLMediaElement,
 ) -> Bool = "(s) => s.preservesPitch"
 
 ///|
 extern "js" fn ffi_html_media_element_set_preserves_pitch(
   s : HTMLMediaElement,
-  value : Bool
+  value : Bool,
 ) -> Unit = "(s, value) => s.preservesPitch = value"
 
 ///|
 extern "js" fn ffi_html_media_element_get_ready_state(
-  s : HTMLMediaElement
+  s : HTMLMediaElement,
 ) -> Int = "(s) => s.readyState"
 
 ///|
 extern "js" fn ffi_html_media_element_get_remote(
-  s : HTMLMediaElement
+  s : HTMLMediaElement,
 ) -> RemotePlayback = "(s) => s.remote"
 
 ///|
 extern "js" fn ffi_html_media_element_get_seekable(
-  s : HTMLMediaElement
+  s : HTMLMediaElement,
 ) -> TimeRanges = "(s) => s.seekable"
 
 ///|
@@ -618,7 +618,7 @@ extern "js" fn ffi_html_media_element_get_seeking(s : HTMLMediaElement) -> Bool 
 
 ///|
 extern "js" fn ffi_html_media_element_get_sink_id(
-  s : HTMLMediaElement
+  s : HTMLMediaElement,
 ) -> String = "(s) => s.sinkId"
 
 ///|
@@ -627,39 +627,39 @@ extern "js" fn ffi_html_media_element_get_src(s : HTMLMediaElement) -> String = 
 ///|
 extern "js" fn ffi_html_media_element_set_src(
   s : HTMLMediaElement,
-  value : String
+  value : String,
 ) -> Unit = "(s, value) => s.src = value"
 
 ///|
 extern "js" fn ffi_html_media_element_get_src_object(
-  s : HTMLMediaElement
+  s : HTMLMediaElement,
 ) -> @js.Nullable[@js.Value] = "(s) => s.srcObject"
 
 ///|
 extern "js" fn ffi_html_media_element_set_src_object(
   s : HTMLMediaElement,
-  value : @js.Value?
+  value : @js.Value?,
 ) -> Unit = "(s, value) => s.srcObject = value"
 
 ///|
 extern "js" fn ffi_html_media_element_get_text_tracks(
-  s : HTMLMediaElement
+  s : HTMLMediaElement,
 ) -> TextTrackList = "(s) => s.textTracks"
 
 ///|
 extern "js" fn ffi_html_media_element_get_video_tracks(
-  s : HTMLMediaElement
+  s : HTMLMediaElement,
 ) -> VideoTrackList = "(s) => s.videoTracks"
 
 ///|
 extern "js" fn ffi_html_media_element_get_volume(
-  s : HTMLMediaElement
+  s : HTMLMediaElement,
 ) -> Double = "(s) => s.volume"
 
 ///|
 extern "js" fn ffi_html_media_element_set_volume(
   s : HTMLMediaElement,
-  value : Double
+  value : Double,
 ) -> Unit = "(s, value) => s.volume = value"
 
 ///|
@@ -667,24 +667,24 @@ extern "js" fn ffi_html_media_element_add_text_track(
   s : HTMLMediaElement,
   kind : String,
   label : String?,
-  language : String?
+  language : String?,
 ) -> TextTrack = "(s, kind, label, language) => s.addTextTrack(kind, label, language)"
 
 ///|
 extern "js" fn ffi_html_media_element_capture_stream(
-  s : HTMLMediaElement
+  s : HTMLMediaElement,
 ) -> MediaStream = "(s) => s.captureStream()"
 
 ///|
 extern "js" fn ffi_html_media_element_can_play_type(
   s : HTMLMediaElement,
-  mime_type : String
+  mime_type : String,
 ) -> String = "(s, mimeType) => s.canPlayType(mimeType)"
 
 ///|
 extern "js" fn ffi_html_media_element_fast_seek(
   s : HTMLMediaElement,
-  time : Double
+  time : Double,
 ) -> Unit = "(s, time) => s.fastSeek(time)"
 
 ///|
@@ -695,5 +695,5 @@ extern "js" fn ffi_html_media_element_pause(s : HTMLMediaElement) -> Unit = "(s)
 
 ///|
 extern "js" fn ffi_html_media_element_seek_to_next_frame(
-  s : HTMLMediaElement
+  s : HTMLMediaElement,
 ) -> Unit = "(s) => s.seekToNextFrame()"

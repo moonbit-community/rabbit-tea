@@ -441,7 +441,7 @@ extern "js" fn ffi_html_element_get_access_key(s : HTMLElement) -> String = "(s)
 ///|
 extern "js" fn ffi_html_element_set_access_key(
   s : HTMLElement,
-  value : String
+  value : String,
 ) -> Unit = "(s, value) => s.accessKey = value"
 
 ///|
@@ -449,12 +449,12 @@ extern "js" fn ffi_html_element_get_access_key_label(s : HTMLElement) -> String 
 
 ///|
 extern "js" fn ffi_html_element_get_anchor_element(
-  s : HTMLElement
+  s : HTMLElement,
 ) -> @js.Nullable[Element] = "(s) => s.anchorElement"
 
 ///|
 extern "js" fn ffi_html_element_get_attribute_style_map(
-  s : HTMLElement
+  s : HTMLElement,
 ) -> StylePropertyMap = "(s) => s.attributeStyleMap"
 
 ///|
@@ -463,7 +463,7 @@ extern "js" fn ffi_html_element_get_autocapitalize(s : HTMLElement) -> String = 
 ///|
 extern "js" fn ffi_html_element_set_autocapitalize(
   s : HTMLElement,
-  value : String
+  value : String,
 ) -> Unit = "(s, value) => s.autocapitalize = value"
 
 ///|
@@ -472,7 +472,7 @@ extern "js" fn ffi_html_element_get_autofocus(s : HTMLElement) -> Bool = "(s) =>
 ///|
 extern "js" fn ffi_html_element_set_autofocus(
   s : HTMLElement,
-  value : Bool
+  value : Bool,
 ) -> Unit = "(s, value) => s.autofocus = value"
 
 ///|
@@ -481,7 +481,7 @@ extern "js" fn ffi_html_element_get_autocorrect(s : HTMLElement) -> Bool = "(s) 
 ///|
 extern "js" fn ffi_html_element_set_autocorrect(
   s : HTMLElement,
-  value : Bool
+  value : Bool,
 ) -> Unit = "(s, value) => s.autocorrect = value"
 
 ///|
@@ -490,7 +490,7 @@ extern "js" fn ffi_html_element_get_content_editable(s : HTMLElement) -> String 
 ///|
 extern "js" fn ffi_html_element_set_content_editable(
   s : HTMLElement,
-  value : String
+  value : String,
 ) -> Unit = "(s, value) => s.contentEditable = value"
 
 ///|
@@ -502,7 +502,7 @@ extern "js" fn ffi_html_element_get_dir(s : HTMLElement) -> String = "(s) => s.d
 ///|
 extern "js" fn ffi_html_element_set_dir(
   s : HTMLElement,
-  value : String
+  value : String,
 ) -> Unit = "(s, value) => s.dir = value"
 
 ///|
@@ -511,18 +511,18 @@ extern "js" fn ffi_html_element_get_draggable(s : HTMLElement) -> Bool = "(s) =>
 ///|
 extern "js" fn ffi_html_element_set_draggable(
   s : HTMLElement,
-  value : Bool
+  value : Bool,
 ) -> Unit = "(s, value) => s.draggable = value"
 
 ///|
 extern "js" fn ffi_html_element_get_edit_context(
-  s : HTMLElement
+  s : HTMLElement,
 ) -> @js.Nullable[EditContext] = "(s) => s.editContext"
 
 ///|
 extern "js" fn ffi_html_element_set_edit_context(
   s : HTMLElement,
-  value : EditContext?
+  value : EditContext?,
 ) -> Unit = "(s, value) => s.editContext = value"
 
 ///|
@@ -531,7 +531,7 @@ extern "js" fn ffi_html_element_get_enter_key_hint(s : HTMLElement) -> String = 
 ///|
 extern "js" fn ffi_html_element_set_enter_key_hint(
   s : HTMLElement,
-  value : String
+  value : String,
 ) -> Unit = "(s, value) => s.enterKeyHint = value"
 
 ///|
@@ -540,7 +540,7 @@ extern "js" fn ffi_html_element_get_hidden(s : HTMLElement) -> @js.Value = "(s) 
 ///|
 extern "js" fn ffi_html_element_set_hidden(
   s : HTMLElement,
-  value : @js.Value
+  value : @js.Value,
 ) -> Unit = "(s, value) => s.hidden = value"
 
 ///|
@@ -549,7 +549,7 @@ extern "js" fn ffi_html_element_get_inert(s : HTMLElement) -> Bool = "(s) => s.i
 ///|
 extern "js" fn ffi_html_element_set_inert(
   s : HTMLElement,
-  value : Bool
+  value : Bool,
 ) -> Unit = "(s, value) => s.inert = value"
 
 ///|
@@ -558,7 +558,7 @@ extern "js" fn ffi_html_element_get_inner_text(s : HTMLElement) -> String = "(s)
 ///|
 extern "js" fn ffi_html_element_set_inner_text(
   s : HTMLElement,
-  value : String
+  value : String,
 ) -> Unit = "(s, value) => s.innerText = value"
 
 ///|
@@ -567,12 +567,12 @@ extern "js" fn ffi_html_element_get_input_mode(s : HTMLElement) -> String = "(s)
 ///|
 extern "js" fn ffi_html_element_set_input_mode(
   s : HTMLElement,
-  value : String
+  value : String,
 ) -> Unit = "(s, value) => s.inputMode = value"
 
 ///|
 extern "js" fn ffi_html_element_get_is_content_editable(
-  s : HTMLElement
+  s : HTMLElement,
 ) -> Bool = "(s) => s.isContentEditable"
 
 ///|
@@ -581,7 +581,7 @@ extern "js" fn ffi_html_element_get_lang(s : HTMLElement) -> String = "(s) => s.
 ///|
 extern "js" fn ffi_html_element_set_lang(
   s : HTMLElement,
-  value : String
+  value : String,
 ) -> Unit = "(s, value) => s.lang = value"
 
 ///|
@@ -590,7 +590,7 @@ extern "js" fn ffi_html_element_get_nonce(s : HTMLElement) -> String = "(s) => s
 ///|
 extern "js" fn ffi_html_element_set_nonce(
   s : HTMLElement,
-  value : String
+  value : String,
 ) -> Unit = "(s, value) => s.nonce = value"
 
 ///|
@@ -601,7 +601,7 @@ extern "js" fn ffi_html_element_get_offset_left(s : HTMLElement) -> Double = "(s
 
 ///|
 extern "js" fn ffi_html_element_get_offset_parent(
-  s : HTMLElement
+  s : HTMLElement,
 ) -> @js.Nullable[Element] = "(s) => s.offsetParent"
 
 ///|
@@ -616,18 +616,18 @@ extern "js" fn ffi_html_element_get_outer_text(s : HTMLElement) -> String = "(s)
 ///|
 extern "js" fn ffi_html_element_set_outer_text(
   s : HTMLElement,
-  value : String
+  value : String,
 ) -> Unit = "(s, value) => s.outerText = value"
 
 ///|
 extern "js" fn ffi_html_element_get_popover(
-  s : HTMLElement
+  s : HTMLElement,
 ) -> @js.Nullable[String] = "(s) => s.popover"
 
 ///|
 extern "js" fn ffi_html_element_set_popover(
   s : HTMLElement,
-  value : String?
+  value : String?,
 ) -> Unit = "(s, value) => s.popover = value"
 
 ///|
@@ -636,18 +636,18 @@ extern "js" fn ffi_html_element_get_spellcheck(s : HTMLElement) -> Bool = "(s) =
 ///|
 extern "js" fn ffi_html_element_set_spellcheck(
   s : HTMLElement,
-  value : Bool
+  value : Bool,
 ) -> Unit = "(s, value) => s.spellcheck = value"
 
 ///|
 extern "js" fn ffi_html_element_get_style(
-  s : HTMLElement
+  s : HTMLElement,
 ) -> CSSStyleDeclaration = "(s) => s.style"
 
 ///|
 extern "js" fn ffi_html_element_set_style_declaration(
   s : HTMLElement,
-  value : CSSStyleDeclaration
+  value : CSSStyleDeclaration,
 ) -> Unit = "(s, value) => s.style = value"
 
 ///|
@@ -656,7 +656,7 @@ extern "js" fn ffi_html_element_get_tab_index(s : HTMLElement) -> Int = "(s) => 
 ///|
 extern "js" fn ffi_html_element_set_tab_index(
   s : HTMLElement,
-  value : Int
+  value : Int,
 ) -> Unit = "(s, value) => s.tabIndex = value"
 
 ///|
@@ -665,7 +665,7 @@ extern "js" fn ffi_html_element_get_title(s : HTMLElement) -> String = "(s) => s
 ///|
 extern "js" fn ffi_html_element_set_title(
   s : HTMLElement,
-  value : String
+  value : String,
 ) -> Unit = "(s, value) => s.title = value"
 
 ///|
@@ -674,34 +674,34 @@ extern "js" fn ffi_html_element_get_translate(s : HTMLElement) -> Bool = "(s) =>
 ///|
 extern "js" fn ffi_html_element_set_translate(
   s : HTMLElement,
-  value : Bool
+  value : Bool,
 ) -> Unit = "(s, value) => s.translate = value"
 
 ///|
 extern "js" fn ffi_html_element_get_virtual_keyboard_policy(
-  s : HTMLElement
+  s : HTMLElement,
 ) -> String = "(s) => s.virtualKeyboardPolicy"
 
 ///|
 extern "js" fn ffi_html_element_set_virtual_keyboard_policy(
   s : HTMLElement,
-  value : String
+  value : String,
 ) -> Unit = "(s, value) => s.virtualKeyboardPolicy = value"
 
 ///|
 extern "js" fn ffi_html_element_get_writing_suggestions(
-  s : HTMLElement
+  s : HTMLElement,
 ) -> String = "(s) => s.writingSuggestions"
 
 ///|
 extern "js" fn ffi_html_element_set_writing_suggestions(
   s : HTMLElement,
-  value : String
+  value : String,
 ) -> Unit = "(s, value) => s.writingSuggestions = value"
 
 ///|
 extern "js" fn ffi_html_element_attach_internals(
-  s : HTMLElement
+  s : HTMLElement,
 ) -> ElementInternals = "(s) => s.attachInternals()"
 
 ///|
@@ -722,5 +722,5 @@ extern "js" fn ffi_html_element_show_popover(s : HTMLElement) -> Unit = "(s) => 
 ///|
 extern "js" fn ffi_html_element_toggle_popover(
   s : HTMLElement,
-  force : Bool?
+  force : Bool?,
 ) -> Bool = "(s, force) => s.togglePopover(force)"

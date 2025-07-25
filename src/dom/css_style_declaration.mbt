@@ -27,7 +27,7 @@ pub fn CSSStyleDeclaration::op_get(self : Self, property : String) -> String {
 pub fn CSSStyleDeclaration::op_set(
   self : Self,
   property : String,
-  value : String
+  value : String,
 ) -> Unit {
   self.set_property(property, value)
 }
@@ -38,7 +38,7 @@ pub extern "js" fn CSSStyleDeclaration::get_css_text(self : Self) -> String = "(
 ///| Textual representation of the declaration block, if and only if it is exposed via HTMLElement.style.
 pub extern "js" fn CSSStyleDeclaration::set_css_text(
   self : Self,
-  value : String
+  value : String,
 ) = "(self, value) => self.cssText = value"
 
 ///| The number of properties.
@@ -55,38 +55,38 @@ pub extern "js" fn CSSStyleDeclaration::get_css_float(self : Self) -> String = "
 ///| Special alias for the float CSS property.
 pub extern "js" fn CSSStyleDeclaration::set_css_float(
   self : Self,
-  value : String
+  value : String,
 ) = "(self, value) => self.cssFloat = value"
 
 ///| Returns the optional priority, "important".
 pub extern "js" fn CSSStyleDeclaration::get_property_priority(
   self : Self,
-  property : String
+  property : String,
 ) -> String = "(self, property) => self.getPropertyPriority(property)"
 
 ///| Returns the property value given a property name.
 pub extern "js" fn CSSStyleDeclaration::get_property_value(
   self : Self,
-  property : String
+  property : String,
 ) -> String = "(self, property) => self.getPropertyValue(property)"
 
 ///| Returns a CSS property name by its index, or the empty string if the index is out-of-bounds.
 pub extern "js" fn CSSStyleDeclaration::item(
   self : Self,
-  index : Int
+  index : Int,
 ) -> String = "(self, index) => self.item(index)"
 
 ///| Removes a property from the CSS declaration block.
 pub extern "js" fn CSSStyleDeclaration::remove_property(
   self : Self,
-  property : String
+  property : String,
 ) -> String = "(self, property) => self.removeProperty(property)"
 
 ///| Modifies an existing CSS property or creates a new CSS property in the declaration block.
 pub extern "js" fn CSSStyleDeclaration::set_property(
   self : Self,
   property : String,
-  value : String
+  value : String,
 ) -> Unit = "(self, property, value) => self.setProperty(property, value)"
 
 ///| Modifies an existing CSS property or creates a new CSS property in the declaration block with priority.
@@ -95,15 +95,15 @@ pub extern "js" fn CSSStyleDeclaration::set_property_with_priority(
   self : Self,
   property : String,
   value : String,
-  priority : String
+  priority : String,
 ) = "(self, property, value, priority) => self.setProperty(property, value, priority)"
 
 ///|
 extern "js" fn ffi_css_style_declaration_get_parent_rule(
-  s : CSSStyleDeclaration
+  s : CSSStyleDeclaration,
 ) -> @js.Nullable[CSSRule] = "(s) => s.parentRule"
 
 ///|
 extern "js" fn ffi_to_css_style_declaration(
-  x : @js.Value
+  x : @js.Value,
 ) -> @js.Nullable[CSSStyleDeclaration] = "(x) => x instanceof CSSStyleDeclaration ? x : null"

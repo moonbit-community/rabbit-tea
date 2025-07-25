@@ -9,7 +9,7 @@ struct Events[M] {
 pub fn[M] Events::new(
   on_url_changed : (@url.Url) -> Unit,
   on_url_request : (@url.UrlRequest) -> Unit,
-  on_update : (M) -> Unit
+  on_update : (M) -> Unit,
 ) -> Events[M] {
   { on_url_changed, on_url_request, on_update }
 }
@@ -22,7 +22,7 @@ pub fn[M] Events::trigger_url_changed(self : Events[M], url : @url.Url) -> Unit 
 ///| Trigger the update function with `url_request` message config by the user.
 pub fn[M] Events::trigger_url_request(
   self : Events[M],
-  url : @url.UrlRequest
+  url : @url.UrlRequest,
 ) -> Unit {
   (self.on_url_request)(url)
 }
@@ -86,7 +86,7 @@ pub fn[M] task(message : M) -> Cmd[M] {
 /// 
 /// The async function `f` will be called, and the result will be wrapped in a 
 /// message `msg`, then trigger another update with this message.
-pub fn[A, M] perform(msg : (A) -> M, f : async () -> A) -> Cmd[M] {
+pub fn[A, M] perform(msg : (A) -> M, f : async () -> A noraise) -> Cmd[M] {
   Cmd(events => @js.async_run(() => events.trigger_update(msg(f()))))
 }
 
@@ -96,7 +96,7 @@ pub fn[A, M] perform(msg : (A) -> M, f : async () -> A) -> Cmd[M] {
 /// or thrown error into a `Result`.
 pub fn[A, E : Error, M] attempt(
   msg : (Result[A, E]) -> M,
-  f : async () -> A raise E
+  f : async () -> A raise E,
 ) -> Cmd[M] {
   Cmd(events => @js.async_run(() => {
     let msg = try f() catch {

@@ -21,7 +21,7 @@ pub type Clipboard
 ///|
 pub extern "js" fn Clipboard::write_text(
   self : Clipboard,
-  text : String
+  text : String,
 ) -> @js.Promise =
   #| (self,text) => self.writeText(text)
 

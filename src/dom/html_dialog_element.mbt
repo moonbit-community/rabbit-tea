@@ -33,13 +33,13 @@ pub extern "js" fn HTMLDialogElement::return_value(self : Self) -> String = "(se
 ///|
 pub extern "js" fn HTMLDialogElement::close(
   self : Self,
-  return_value~ : @js.Optional[String] = @js.Optional::undefined()
+  return_value~ : @js.Optional[String] = @js.Optional::undefined(),
 ) = "(self,returnValue) => self.close(returnValue)"
 
 ///|
 pub extern "js" fn HTMLDialogElement::request_close(
   self : Self,
-  return_value~ : @js.Optional[String] = @js.Optional::undefined()
+  return_value~ : @js.Optional[String] = @js.Optional::undefined(),
 ) = "(self, returnValue) => self.requestClose(returnValue)"
 
 ///|

@@ -67,7 +67,7 @@ pub fn fill_rect(
   x : Double,
   y : Double,
   width : Double,
-  height : Double
+  height : Double,
 ) -> Unit {
   self.inner().fill_rect(x, y, width, height)
 }
@@ -78,7 +78,7 @@ pub fn clear_rect(
   x : Double,
   y : Double,
   width : Double,
-  height : Double
+  height : Double,
 ) -> Unit {
   self.inner().clear_rect(x, y, width, height)
 }
@@ -88,7 +88,7 @@ pub fn fill_text(
   self : Context2D,
   text : String,
   x : Double,
-  y : Double
+  y : Double,
 ) -> Unit {
   self.inner().fill_text(text, x, y)
 }
