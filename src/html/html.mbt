@@ -557,7 +557,7 @@ pub fn[M] label(
   if for_ is Some(for_) {
     attrs.push(attribute("for", for_))
   }
-  common_node(style~, class?, id?, "form", attrs, childrens)
+  common_node(style~, class?, id?, "label", attrs, childrens)
 }
 
 ///|
