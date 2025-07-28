@@ -28,11 +28,17 @@ Rather than providing an elegant and convenient API, this package offers a low-l
 The partial inheritance hierarchy of DOM types in JavaScript is as follows: 
 
 ```plaintext
-Event <-+-- ClipboardEvent
-        +-- UIEvent <--+-- MouseEvent
-                       +-- InputEvent
-                       +-- FocusEvent
-                       +-- KeyboardEvent
+Event <--+-- AnimationEvent
+         +-- BlobEvent
+         +-- BeforeUnloadEvent
+         +-- ClipboardEvent
+         +-- CloseEvent
+         +-- CompositionEvent
+         +-- CustomEvent
+         +-- UIEvent <--+-- MouseEvent <--+-- DragEvent
+                        +-- FocusEvent
+                        +-- InputEvent
+                        +-- KeyboardEvent
 
 EventTarget <---+--Clipboard 
                 +--Node <--+-- Document
