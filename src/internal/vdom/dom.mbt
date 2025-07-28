@@ -4,7 +4,7 @@ enum Node[Msg] {
     String,
     namespace_uri~ : String?,
     attrs~ : Array[Attribute[Msg]],
-    childrens~ : Array[Node[Msg]],
+    children~ : Array[Node[Msg]],
     // Store the event listener used in real DOM
     listeners~ : Array[(String, @dom.Listener)]
   )
@@ -23,10 +23,10 @@ enum Node[Msg] {
 /// This is a expensive operation and should be used rarely.
 pub fn[A, B] map(self : Node[A], f : (A) -> B) -> Node[B] {
   match self {
-    Node(tag, attrs~, childrens~, listeners~, namespace_uri~) => {
+    Node(tag, attrs~, children~, listeners~, namespace_uri~) => {
       let attrs = attrs.map(_.map(f))
-      let childrens = childrens.map(_.map(f))
-      Node(tag, attrs~, childrens~, listeners~, namespace_uri~)
+      let children = children.map(_.map(f))
+      Node(tag, attrs~, children~, listeners~, namespace_uri~)
     }
     ExternalNode(node, attrs, width~, height~) => {
       let attrs = attrs.map(_.map(_.map(_.map(f))))
@@ -41,9 +41,9 @@ pub fn[A, B] map(self : Node[A], f : (A) -> B) -> Node[B] {
 pub fn[Msg] node(
   tag : String,
   attrs : Array[Attribute[Msg]],
-  childrens : Array[Node[Msg]],
+  children : Array[Node[Msg]],
 ) -> Node[Msg] {
-  Node(tag, attrs~, childrens~, listeners=[], namespace_uri=None)
+  Node(tag, attrs~, children~, listeners=[], namespace_uri=None)
 }
 
 ///|
@@ -51,12 +51,12 @@ pub fn[Msg] node_ns(
   namespace_uri : String,
   qualified_name : String,
   attrs : Array[Attribute[Msg]],
-  childrens : Array[Node[Msg]],
+  children : Array[Node[Msg]],
 ) -> Node[Msg] {
   Node(
     qualified_name,
     attrs~,
-    childrens~,
+    children~,
     listeners=[],
     namespace_uri=Some(namespace_uri),
   )
@@ -72,11 +72,11 @@ const NORMAL_LINK_TAG = "a"
 /// The `escape` parameter is used to create a link that will not trigger the `url_request` message.
 pub fn[Msg] link(
   attrs : Array[Attribute[Msg]],
-  childrens : Array[Node[Msg]],
+  children : Array[Node[Msg]],
   escape~ : Bool = false,
 ) -> Node[Msg] {
   let tag = if escape { ESCAPED_LINK_TAG } else { NORMAL_LINK_TAG }
-  node(tag, attrs, childrens)
+  node(tag, attrs, children)
 }
 
 ///|
@@ -238,7 +238,7 @@ fn[Msg, Model, View] Node::to_node(
   }
 
   match self {
-    Node(tag, attrs~, childrens~, listeners~, namespace_uri~) => {
+    Node(tag, attrs~, children~, listeners~, namespace_uri~) => {
       // NOTE:
       // This is important for those who want to write a router in the app. 
       // When the `a` tag is clicked, the href is parsed and wrapped in 
@@ -293,7 +293,7 @@ fn[Msg, Model, View] Node::to_node(
           element
         }
       }
-      for child in childrens {
+      for child in children {
         element.append_child(child.to_node(sandbox))
       }
       element.as_node()
@@ -472,18 +472,18 @@ pub fn[Msg] diff(root_old : Node[Msg], root_new : Node[Msg]) -> Patch[Msg] {
 
 ///|
 pub fn[Msg] do_diff(old : Node[Msg], new : Node[Msg]) -> Array[Patch[Msg]] {
-  let childrens_old = match old {
-    Node(_, childrens~, ..) => childrens
+  let children_old = match old {
+    Node(_, children~, ..) => children
     _ => abort("old is not a node or fragment")
   }
-  let childrens_new = match new {
-    Node(_, childrens~, ..) => childrens
+  let children_new = match new {
+    Node(_, children~, ..) => children
     _ => abort("new is not a node or fragment")
   }
-  if childrens_old.length() == 0 && childrens_new.length() == 0 {
+  if children_old.length() == 0 && children_new.length() == 0 {
     []
   } else {
-    diff_without_key(childrens_old, childrens_new)
+    diff_without_key(children_old, children_new)
   }
 }
 

@@ -8,13 +8,13 @@ pub(all) type Attribute[M] @vdom.Attribute[M]
 pub fn[M] node(
   tag : String,
   attrs : Array[Attribute[M]],
-  childrens : Array[Svg[M]],
+  children : Array[Svg[M]],
 ) -> Svg[M] {
   @vdom.node_ns(
     @dom.namespace_svg,
     tag,
     attrs.map(_.inner()),
-    childrens.map(_.inner()),
+    children.map(_.inner()),
   )
 }
 
@@ -31,13 +31,13 @@ pub fn[M] property(key : String, value : @variant.Variant) -> Attribute[M] {
 ///|
 pub fn[M] svg(
   attrs : Array[Attribute[M]],
-  childrens : Array[Svg[M]],
+  children : Array[Svg[M]],
 ) -> @html.Html[M] {
   @vdom.node_ns(
     @dom.namespace_svg,
     "svg",
     attrs.map(_.inner()),
-    childrens.map(_.inner()),
+    children.map(_.inner()),
   )
 }
 
