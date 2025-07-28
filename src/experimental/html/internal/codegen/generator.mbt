@@ -98,8 +98,8 @@ fn generate_wrapper(html : HtmlMeta) -> String {
       "attribute(\"\{x.name}\", \{value_expr})"
     })
     .join(", ")
-  let body = "make_node(\"\{html.name}\", positional=[\{positional_args}], optional=[\{optional_args}], childrens)"
-  "///|\npub fn[M] \{html.wrapper_name}(\{params}, childrens : Array[Html[M]]) -> Html[M] { \{body} }"
+  let body = "make_node(\"\{html.name}\", positional=[\{positional_args}], optional=[\{optional_args}], children)"
+  "///|\npub fn[M] \{html.wrapper_name}(\{params}, children : Array[Html[M]]) -> Html[M] { \{body} }"
 }
 
 ///|

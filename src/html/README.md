@@ -1,4 +1,3 @@
-
 # Html 
 
 This package provides the helper functions to build Html.
@@ -32,7 +31,7 @@ pub fn div[M](
   id? : String,
   klass? : String,
   click? : M,
-  childrens : Array[Html[M]]
+  children : Array[Html[M]]
 ) -> Html[M] 
 ```
 
