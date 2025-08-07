@@ -28,6 +28,8 @@ fn[M] scroll_to_pos(Int, Int) -> @cmd.Cmd[M]
 
 fn[M] scroll_to_top() -> @cmd.Cmd[M]
 
+// Errors
+
 // Types and methods
 
 // Type aliases

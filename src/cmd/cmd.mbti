@@ -16,8 +16,10 @@ fn[A, M] perform((A) -> M, async () -> A) -> Cmd[M]
 
 fn[M] task(M) -> Cmd[M]
 
+// Errors
+
 // Types and methods
-pub(all) type Cmd[M] (Events[M]) -> Unit
+pub(all) struct Cmd[M]((Events[M]) -> Unit)
 fn[M] Cmd::inner(Self[M]) -> (Events[M]) -> Unit
 fn[A, B] Cmd::map(Self[A], (A) -> B) -> Self[B]
 

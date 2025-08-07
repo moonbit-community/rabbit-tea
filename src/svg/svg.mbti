@@ -18,11 +18,13 @@ fn[M] property(String, @variant.Variant) -> Attribute[M]
 
 fn[M] svg(Array[Attribute[M]], Array[Svg[M]]) -> @html.Html[M]
 
+// Errors
+
 // Types and methods
-pub(all) type Attribute[M] @vdom.Attribute[M]
+pub(all) struct Attribute[M](@vdom.Attribute[M])
 fn[M] Attribute::inner(Self[M]) -> @vdom.Attribute[M]
 
-pub(all) type Svg[M] @vdom.Node[M]
+pub(all) struct Svg[M](@vdom.Node[M])
 fn[M] Svg::inner(Self[M]) -> @vdom.Node[M]
 
 // Type aliases

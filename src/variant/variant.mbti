@@ -3,6 +3,8 @@ package "Yoorkin/rabbit-tea/variant"
 
 // Values
 
+// Errors
+
 // Types and methods
 pub(all) enum Variant {
   Boolean(Bool)
