@@ -100,7 +100,7 @@ pub fn[Msg] nothing() -> Node[Msg] {
 }
 
 ///|
-type Attribute[Msg] (String, AttrValue[Msg])
+struct Attribute[Msg]((String, AttrValue[Msg]))
 
 ///|
 priv enum AttrValue[Msg] {
@@ -175,22 +175,22 @@ pub fn[A, B] Attribute::map(self : Attribute[A], f : (A) -> B) -> Attribute[B] {
 
 ///| Create an custom event handler
 pub fn[Msg] on(event : String, handler : Handler[Msg]) -> Attribute[Msg] {
-  (event, AttrEvent(handler))
+  Attribute((event, AttrEvent(handler)))
 }
 
 ///| Create an attribute
 pub fn[Msg] attribute(key : String, value : String) -> Attribute[Msg] {
-  (key, AttrString(value))
+  Attribute((key, AttrString(value)))
 }
 
 ///| Create an property
 pub fn[Msg] property(key : String, value : @variant.Variant) -> Attribute[Msg] {
-  (key, AttrProperty(value))
+  Attribute((key, AttrProperty(value)))
 }
 
 ///| Create an style attribute
 pub fn[Msg] style(key : String, value : String) -> Attribute[Msg] {
-  (key, AttrStyle(value))
+  Attribute((key, AttrStyle(value)))
 }
 
 ///| Convert virtual DOM to real DOM
