@@ -49,7 +49,7 @@ pub fn[M] Events::trigger_update(self : Events[M], msg : M) -> Unit {
 /// 
 /// extern "js" fn set_timeout(f : () -> Unit, ms : Int) = "(f,ms) => setTimeout(f, ms)"
 /// ```
-pub(all) type Cmd[M] (Events[M]) -> Unit
+pub(all) struct Cmd[M]((Events[M]) -> Unit)
 
 ///|
 pub typealias Cmd as Command

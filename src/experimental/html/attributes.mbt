@@ -1,5 +1,5 @@
 ///|
-priv type Attribute[Msg] @vdom.Attribute[Msg]
+priv struct Attribute[Msg](@vdom.Attribute[Msg])
 
 ///| Specify an style
 // fn[Msg] style_(key : String, value : String) -> Attribute[Msg] {
