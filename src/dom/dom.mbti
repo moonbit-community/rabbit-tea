@@ -26,6 +26,8 @@ let namespace_svg : String
 
 fn window() -> Window
 
+// Errors
+
 // Types and methods
 type AnimationEvent
 fn AnimationEvent::get_animation_name(Self) -> String
@@ -81,15 +83,15 @@ fn CanvasPattern::set_transform(Self, @js.Optional[DOMMatrix2DInit]) -> Unit
 impl @js.Cast for CanvasPattern
 
 type CanvasRenderingContext2D
-fn CanvasRenderingContext2D::arc(Self, Double, Double, Double, Double, Double, anticlockwise~ : Bool = ..) -> Unit
+fn CanvasRenderingContext2D::arc(Self, Double, Double, Double, Double, Double, anticlockwise? : Bool) -> Unit
 fn CanvasRenderingContext2D::arc_to(Self, Double, Double, Double, Double, Double) -> Unit
 fn CanvasRenderingContext2D::begin_path(Self) -> Unit
 fn CanvasRenderingContext2D::bezier_curve_to(Self, Double, Double, Double, Double, Double, Double) -> Unit
 fn CanvasRenderingContext2D::clear_rect(Self, Double, Double, Double, Double) -> Unit
-fn CanvasRenderingContext2D::clip(Self, fill_rule~ : String = ..) -> Unit
-fn CanvasRenderingContext2D::clip_with_path(Self, Path2D, fill_rule~ : String = ..) -> Unit
+fn CanvasRenderingContext2D::clip(Self, fill_rule? : String) -> Unit
+fn CanvasRenderingContext2D::clip_with_path(Self, Path2D, fill_rule? : String) -> Unit
 fn CanvasRenderingContext2D::close_path(Self) -> Unit
-fn CanvasRenderingContext2D::create_image_data(Self, Double, Double, settings~ : @js.Optional[ImageDataSettings] = ..) -> ImageData
+fn CanvasRenderingContext2D::create_image_data(Self, Double, Double, settings? : @js.Optional[ImageDataSettings]) -> ImageData
 fn CanvasRenderingContext2D::create_image_data_with_data(Self, ImageData) -> ImageData
 fn CanvasRenderingContext2D::create_linear_gradient(Self, Double, Double, Double, Double) -> CanvasGradient
 fn CanvasRenderingContext2D::create_pattern(Self, @js.Union7[HTMLImageElement, SVGImageElement, HTMLVideoElement, HTMLCanvasElement, ImageBitmap, OffscreenCanvas, VideoFrame], String) -> CanvasPattern
@@ -97,14 +99,14 @@ fn CanvasRenderingContext2D::create_radial_gradient(Self, Double, Double, Double
 fn CanvasRenderingContext2D::draw_image(Self, @js.Union7[HTMLImageElement, SVGImageElement, HTMLVideoElement, HTMLCanvasElement, ImageBitmap, OffscreenCanvas, VideoFrame], Double, Double) -> Unit
 fn CanvasRenderingContext2D::draw_image_with_size(Self, @js.Union7[HTMLImageElement, SVGImageElement, HTMLVideoElement, HTMLCanvasElement, ImageBitmap, OffscreenCanvas, VideoFrame], Double, Double, Double, Double) -> Unit
 fn CanvasRenderingContext2D::draw_image_with_src_and_dst_size(Self, @js.Union7[HTMLImageElement, SVGImageElement, HTMLVideoElement, HTMLCanvasElement, ImageBitmap, OffscreenCanvas, VideoFrame], Double, Double, Double, Double, Double, Double, Double, Double) -> Unit
-fn CanvasRenderingContext2D::ellipse(Self, Double, Double, Double, Double, Double, Double, Double, anticlockwise~ : Bool = ..) -> Unit
-fn CanvasRenderingContext2D::fill(Self, fill_rule~ : String = ..) -> Unit
-fn CanvasRenderingContext2D::fill_path(Self, Path2D, fill_rule~ : String = ..) -> Unit
+fn CanvasRenderingContext2D::ellipse(Self, Double, Double, Double, Double, Double, Double, Double, anticlockwise? : Bool) -> Unit
+fn CanvasRenderingContext2D::fill(Self, fill_rule? : String) -> Unit
+fn CanvasRenderingContext2D::fill_path(Self, Path2D, fill_rule? : String) -> Unit
 fn CanvasRenderingContext2D::fill_rect(Self, Double, Double, Double, Double) -> Unit
-fn CanvasRenderingContext2D::fill_text(Self, String, Double, Double, max_width~ : @js.Optional[Double] = ..) -> Unit
+fn CanvasRenderingContext2D::fill_text(Self, String, Double, Double, max_width? : @js.Optional[Double]) -> Unit
 fn CanvasRenderingContext2D::get_fill_style(Self) -> @js.Union3[String, CanvasGradient, CanvasPattern]
 fn CanvasRenderingContext2D::get_font(Self) -> String
-fn CanvasRenderingContext2D::get_image_data(Self, Double, Double, Double, Double, settings~ : @js.Optional[ImageDataSettings] = ..) -> ImageData
+fn CanvasRenderingContext2D::get_image_data(Self, Double, Double, Double, Double, settings? : @js.Optional[ImageDataSettings]) -> ImageData
 fn CanvasRenderingContext2D::get_image_smoothing_quality(Self) -> String
 fn CanvasRenderingContext2D::get_line_cap(Self) -> CanvasLineCap
 fn CanvasRenderingContext2D::get_line_join(Self) -> CanvasLineJoin
@@ -112,8 +114,8 @@ fn CanvasRenderingContext2D::get_line_with(Self) -> Double
 fn CanvasRenderingContext2D::get_stroke_style(Self) -> @js.Union3[String, CanvasGradient, CanvasPattern]
 fn CanvasRenderingContext2D::image_smoothing_enabled(Self) -> Bool
 fn CanvasRenderingContext2D::is_context_lost(Self) -> Bool
-fn CanvasRenderingContext2D::is_point_in_path(Self, Double, Double, fill_rule~ : String = ..) -> Bool
-fn CanvasRenderingContext2D::is_point_in_path_with_path(Self, Path2D, Double, Double, fill_rule~ : String = ..) -> Bool
+fn CanvasRenderingContext2D::is_point_in_path(Self, Double, Double, fill_rule? : String) -> Bool
+fn CanvasRenderingContext2D::is_point_in_path_with_path(Self, Path2D, Double, Double, fill_rule? : String) -> Bool
 fn CanvasRenderingContext2D::is_point_in_stroke(Self, Double, Double) -> Bool
 fn CanvasRenderingContext2D::is_point_in_stroke_with_path(Self, Path2D, Double, Double) -> Bool
 fn CanvasRenderingContext2D::line_to(Self, Double, Double) -> Unit
@@ -139,7 +141,7 @@ fn CanvasRenderingContext2D::set_stroke_style(Self, @js.Union3[String, CanvasGra
 fn CanvasRenderingContext2D::set_transform(Self, Double, Double, Double, Double, Double, Double) -> Unit
 fn CanvasRenderingContext2D::stroke(Self) -> Unit
 fn CanvasRenderingContext2D::stroke_rect(Self, Double, Double, Double, Double) -> Unit
-fn CanvasRenderingContext2D::stroke_text(Self, String, Double, Double, max_width~ : @js.Optional[Double] = ..) -> Unit
+fn CanvasRenderingContext2D::stroke_text(Self, String, Double, Double, max_width? : @js.Optional[Double]) -> Unit
 fn CanvasRenderingContext2D::stroke_with_path(Self, Path2D) -> Unit
 fn CanvasRenderingContext2D::transform(Self, Double, Double, Double, Double, Double, Double) -> Unit
 fn CanvasRenderingContext2D::translate(Self, Double, Double) -> Unit
@@ -171,7 +173,7 @@ impl @js.Cast for CompositionEvent
 
 type CustomEvent
 fn CustomEvent::get_detail(Self) -> @js.Value
-fn CustomEvent::new(String, detail~ : @js.Optional[@js.Value] = ..) -> Self
+fn CustomEvent::new(String, detail? : @js.Optional[@js.Value]) -> Self
 impl IsEvent for CustomEvent
 impl @js.Cast for CustomEvent
 
@@ -216,7 +218,7 @@ fn DataTransferItemList::remove(Self, Int) -> Unit
 type Document
 fn Document::create_document_fragment(Self) -> DocumentFragment
 fn Document::create_element(Self, String) -> Element
-fn Document::create_element_ns(Self, String, String, on_namespace_error~ : (DOMException) -> Element = .., on_invalid_character_error~ : (DOMException) -> Element = ..) -> Element
+fn Document::create_element_ns(Self, String, String, on_namespace_error? : (DOMException) -> Element, on_invalid_character_error? : (DOMException) -> Element) -> Element
 fn Document::create_text_node(Self, String) -> Element
 fn Document::get_element_by_id(Self, String) -> @js.Nullable[Element]
 fn Document::get_elements_by_class_name(Self, String) -> HTMLCollection
@@ -279,9 +281,9 @@ fn HTMLCollection::item(Self, Double) -> @js.Nullable[Element]
 fn HTMLCollection::named_item(Self, String) -> @js.Nullable[Element]
 
 type HTMLDialogElement
-fn HTMLDialogElement::close(Self, return_value~ : @js.Optional[String] = ..) -> Unit
+fn HTMLDialogElement::close(Self, return_value? : @js.Optional[String]) -> Unit
 fn HTMLDialogElement::open(Self) -> Bool
-fn HTMLDialogElement::request_close(Self, return_value~ : @js.Optional[String] = ..) -> Unit
+fn HTMLDialogElement::request_close(Self, return_value? : @js.Optional[String]) -> Unit
 fn HTMLDialogElement::return_value(Self) -> String
 fn HTMLDialogElement::show(Self) -> Unit
 fn HTMLDialogElement::show_modal(Self) -> Unit
@@ -377,7 +379,7 @@ fn ImageData::get_data(Self) -> Uint8ClampedArray
 fn ImageData::get_height(Self) -> Int
 fn ImageData::get_width(Self) -> Int
 fn ImageData::new(Int, Int, @js.Optional[ImageDataSettings]) -> Self
-fn ImageData::new_with_data(Uint8ClampedArray, Int, Int, settings~ : @js.Optional[ImageDataSettings] = ..) -> Self
+fn ImageData::new_with_data(Uint8ClampedArray, Int, Int, settings? : @js.Optional[ImageDataSettings]) -> Self
 
 type ImageDataSettings
 fn ImageDataSettings::new(String) -> Self
@@ -432,8 +434,8 @@ fn NodeList::item(Self, Double) -> @js.Nullable[Node]
 type OffscreenCanvas
 
 type Path2D
-fn Path2D::add_path(Self, Self, transform~ : @js.Optional[DOMMatrix2DInit] = ..) -> Unit
-fn Path2D::new(path~ : @js.Optional[@js.Union2[Self, String]] = ..) -> Self
+fn Path2D::add_path(Self, Self, transform? : @js.Optional[DOMMatrix2DInit]) -> Unit
+fn Path2D::new(path? : @js.Optional[@js.Union2[Self, String]]) -> Self
 
 type RemotePlayback
 

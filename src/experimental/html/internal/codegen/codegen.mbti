@@ -3,6 +3,8 @@ package "Yoorkin/rabbit-tea/experimental/html/internal/codegen"
 
 // Values
 
+// Errors
+
 // Types and methods
 type Attribute
 impl Compare for Attribute

@@ -9,6 +9,8 @@ import(
 // Values
 fn[Msg] new(width~ : Double, height~ : Double, click? : (@html.Mouse) -> Msg, mousemove? : (@html.Mouse) -> Msg, mousedown? : (@html.Mouse) -> Msg, mouseup? : (@html.Mouse) -> Msg, mouseenter? : (@html.Mouse) -> Msg, mouseleave? : (@html.Mouse) -> Msg) -> Model[Msg]
 
+// Errors
+
 // Types and methods
 pub(all) enum Color {
   RGB(Int, Int, Int)

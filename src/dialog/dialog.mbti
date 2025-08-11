@@ -10,7 +10,9 @@ fn[M] close(String, return_value? : String) -> @cmd.Cmd[M]
 
 fn[M] request_close(String, return_value? : String) -> @cmd.Cmd[M]
 
-fn[M] show(String, modal~ : Bool = ..) -> @cmd.Cmd[M]
+fn[M] show(String, modal? : Bool) -> @cmd.Cmd[M]
+
+// Errors
 
 // Types and methods
 

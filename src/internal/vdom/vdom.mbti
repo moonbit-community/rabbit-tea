@@ -19,7 +19,7 @@ fn[Msg] do_diff(Node[Msg], Node[Msg]) -> Array[Patch[Msg]]
 
 fn[Msg] external(@dom.Node, Ref[Array[Attribute[Msg]]?], width~ : Int, height~ : Int) -> Node[Msg]
 
-fn[Msg] link(Array[Attribute[Msg]], Array[Node[Msg]], escape~ : Bool = ..) -> Node[Msg]
+fn[Msg] link(Array[Attribute[Msg]], Array[Node[Msg]], escape? : Bool) -> Node[Msg]
 
 fn[Msg] node(String, Array[Attribute[Msg]], Array[Node[Msg]]) -> Node[Msg]
 
@@ -36,6 +36,8 @@ fn[Msg] style(String, String) -> Attribute[Msg]
 fn[Msg] text(String) -> Node[Msg]
 
 fn variant_to_js_value(@variant.Variant) -> @js.Value
+
+// Errors
 
 // Types and methods
 type Attribute[Msg]
