@@ -82,8 +82,7 @@ impl[Msg] Show for Update[Msg] with output(self, buf) {
 
 ///|
 impl[Msg] Show for Attribute[Msg] with to_string(self) {
-  let Attribute((key, value)) = self
-  "Attribute(\{key}, \{value})"
+  "Attribute(\{self.0}, \{self.1})"
 }
 
 ///|
