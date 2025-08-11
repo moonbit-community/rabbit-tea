@@ -100,7 +100,7 @@ pub fn[Msg] nothing() -> Node[Msg] {
 }
 
 ///|
-type Attribute[Msg] (String, AttrValue[Msg])
+struct Attribute[Msg](String,AttrValue[Msg])
 
 ///|
 priv enum AttrValue[Msg] {
@@ -163,34 +163,38 @@ pub fn[A, B] Handler::map(self : Handler[A], f : (A) -> B) -> Handler[B] {
 
 ///|
 pub fn[A, B] Attribute::map(self : Attribute[A], f : (A) -> B) -> Attribute[B] {
-  let Attribute((key, value)) = self
-  let value = match value {
+  let value = match self.1 {
     AttrEvent(handler) => AttrEvent(handler.map(f))
     AttrStyle(value) => AttrStyle(value)
     AttrString(value) => AttrString(value)
     AttrProperty(value) => AttrProperty(value)
   }
-  Attribute((key, value))
+  Attribute(self.0, value)
+}
+
+///| Get the inner tuple from Attribute
+fn[Msg] Attribute::inner(self : Attribute[Msg]) -> (String, AttrValue[Msg]) {
+  (self.0, self.1)
 }
 
 ///| Create an custom event handler
 pub fn[Msg] on(event : String, handler : Handler[Msg]) -> Attribute[Msg] {
-  (event, AttrEvent(handler))
+  Attribute(event, AttrEvent(handler))
 }
 
 ///| Create an attribute
 pub fn[Msg] attribute(key : String, value : String) -> Attribute[Msg] {
-  (key, AttrString(value))
+  Attribute(key, AttrString(value))
 }
 
 ///| Create an property
 pub fn[Msg] property(key : String, value : @variant.Variant) -> Attribute[Msg] {
-  (key, AttrProperty(value))
+  Attribute(key, AttrProperty(value))
 }
 
 ///| Create an style attribute
 pub fn[Msg] style(key : String, value : String) -> Attribute[Msg] {
-  (key, AttrStyle(value))
+  Attribute(key, AttrStyle(value))
 }
 
 ///| Convert virtual DOM to real DOM
@@ -211,7 +215,7 @@ fn[Msg, Model, View] Node::to_node(
     generated_listeners : Array[(String, @dom.Listener)],
   ) {
     attrs.each(x => match x {
-      Attribute((event, AttrEvent(handler))) => {
+      Attribute(event, AttrEvent(handler)) => {
         let listener = match handler {
           Normal(msg) => _ => sandbox.update(msg)
           HandleEvent(f) => event => sandbox.update(f(event))
@@ -229,10 +233,10 @@ fn[Msg, Model, View] Node::to_node(
         element.add_event_listener(event, listener)
         generated_listeners.push((event, listener))
       }
-      Attribute((key, AttrString(value))) => element.set_attribute(key, value)
-      Attribute((key, AttrStyle(value))) =>
+      Attribute(key, AttrString(value)) => element.set_attribute(key, value)
+      Attribute(key, AttrStyle(value)) =>
         element.to_html_element().unwrap().get_style().set_property(key, value)
-      Attribute((key, AttrProperty(value))) =>
+      Attribute(key, AttrProperty(value)) =>
         element.set_property(key, variant_to_js_value(value))
     })
   }
