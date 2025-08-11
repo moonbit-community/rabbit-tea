@@ -14,6 +14,8 @@ fn[Msg, Model] patch(String, Body, expect~ : Expecting[Msg, Model]) -> @cmd.Cmd[
 
 fn[Msg, Model] post(String, Body, expect~ : Expecting[Msg, Model]) -> @cmd.Cmd[Msg]
 
+// Errors
+
 // Types and methods
 pub(all) enum Body {
   Json(Json)
