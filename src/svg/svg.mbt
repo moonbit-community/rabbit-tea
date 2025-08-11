@@ -1,8 +1,8 @@
 ///|
-pub(all) type Svg[M] @vdom.Node[M]
+pub(all) struct Svg[M](@vdom.Node[M])
 
 ///|
-pub(all) type Attribute[M] @vdom.Attribute[M]
+pub(all) struct Attribute[M](@vdom.Attribute[M])
 
 ///|
 pub fn[M] node(

@@ -1,5 +1,5 @@
 ///|
-type Context2D @dom.CanvasRenderingContext2D
+struct Context2D(@dom.CanvasRenderingContext2D)
 
 ///| Get the underlying `CanvasRenderingContext2D` js object.
 /// 

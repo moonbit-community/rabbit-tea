@@ -1,5 +1,5 @@
 ///|
-type Mouse @dom.MouseEvent
+struct Mouse(@dom.MouseEvent)
 
 ///|
 pub(all) struct Pos {
@@ -23,7 +23,7 @@ pub fn Mouse::client_pos(self : Mouse) -> Pos {
 }
 
 ///|
-type Scroll @dom.Element
+struct Scroll(@dom.Element)
 
 ///|
 pub fn Scroll::offset_pos(self : Self) -> Pos {
