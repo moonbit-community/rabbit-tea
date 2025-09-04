@@ -1,4 +1,5 @@
-///| https://developer.mozilla.org/en-US/docs/Web/API/BlobEvent
+///|
+/// https://developer.mozilla.org/en-US/docs/Web/API/BlobEvent
 type BlobEvent
 
 ///|

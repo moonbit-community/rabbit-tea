@@ -99,7 +99,8 @@ fn[Msg, Model] request(
   Cmd(launch)
 }
 
-///| Create a command to send a GET request.
+///|
+/// Create a command to send a GET request.
 pub fn[Msg, Model] get(
   url : String,
   expect~ : Expecting[Msg, Model],
@@ -107,7 +108,8 @@ pub fn[Msg, Model] get(
   request(url, "GET", expect~, body=Empty)
 }
 
-///| Create a command to send a PUT request.
+///|
+/// Create a command to send a PUT request.
 pub fn[Msg, Model] delete(
   url : String,
   expect~ : Expecting[Msg, Model],
@@ -115,7 +117,8 @@ pub fn[Msg, Model] delete(
   request(url, "DELETE", expect~, body=Empty)
 }
 
-///| Create a command to send a POST request.
+///|
+/// Create a command to send a POST request.
 pub fn[Msg, Model] post(
   url : String,
   body : Body,
@@ -124,7 +127,8 @@ pub fn[Msg, Model] post(
   request(url, "POST", body~, expect~)
 }
 
-///| Create a command to send a PATCH request.
+///|
+/// Create a command to send a PATCH request.
 pub fn[Msg, Model] patch(
   url : String,
   body : Body,

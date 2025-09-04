@@ -16,7 +16,7 @@ fn[M] batch(Array[@cmd.Cmd[M]]) -> @cmd.Cmd[M]
 
 fn[M] none() -> @cmd.Cmd[M]
 
-fn[A, M] perform((A) -> M, async () -> A) -> @cmd.Cmd[M]
+fn[A, M] perform((A) -> M, async () -> A noraise) -> @cmd.Cmd[M]
 
 fn[Model, Message] startup(model~ : Model, update~ : (Message, Model) -> (@cmd.Cmd[Message], Model), view~ : (Model) -> @html.Html[Message], mount? : String) -> Unit
 

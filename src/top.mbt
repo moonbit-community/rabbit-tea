@@ -4,7 +4,8 @@ pub typealias @cmd.(Cmd, Command)
 ///|
 pub fnalias @cmd.(none, batch, task, perform, attempt)
 
-///| Start the application.
+///|
+/// Start the application.
 /// 
 /// - `model` is the state of your application.
 /// - `view` is a way to turn your model into HTML.
@@ -19,7 +20,7 @@ pub fn[Model, Message] startup(
   model~ : Model,
   update~ : (Message, Model) -> (Cmd[Message], Model),
   view~ : (Model) -> @html.Html[Message],
-  mount~ : String = "app",
+  mount? : String = "app",
 ) -> Unit {
   @dom.document()
   .get_element_by_id(mount)
@@ -38,7 +39,8 @@ pub fn[Model, Message] startup(
   sandbox.unwrap().refresh()
 }
 
-///| Start the application with initial URL. 
+///|
+/// Start the application with initial URL. 
 /// 
 /// - `url_changed` is a message that will be passed when the URL is changed by the navigation API in the `@browser` package.
 /// - `url_request` is a message that will be passed when an `<a>` tag is clicked.
@@ -50,7 +52,7 @@ pub fn[Model, Msg] application(
   view~ : (Model) -> @html.Html[Msg],
   url_changed? : (@url.Url) -> Msg,
   url_request? : (@url.UrlRequest) -> Msg,
-  mount~ : String = "app",
+  mount? : String = "app",
 ) -> Unit {
   @dom.document()
   .get_element_by_id(mount)

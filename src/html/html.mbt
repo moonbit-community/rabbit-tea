@@ -4,7 +4,8 @@ pub(all) struct Html[Msg](@vdom.Node[Msg])
 ///|
 pub typealias Html as T
 
-///| Convert msg type of Html.
+///|
+/// Convert msg type of Html.
 /// 
 /// This is a expensive operation and should be used rarely.
 pub fn[A, B] map(self : Html[A], f : (A) -> B) -> Html[B] {
@@ -17,7 +18,7 @@ pub fn[Msg] to_virtual_dom(self : Html[Msg]) -> @vdom.Node[Msg] {
   node("root", [], [self]).inner()
 }
 
-///| 
+///|
 pub fn[Msg] node(
   tag : String,
   attributes : Array[Attribute[Msg]],
@@ -28,7 +29,7 @@ pub fn[Msg] node(
 
 ///|
 fn[Msg] common_node(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   tag : String,
@@ -48,14 +49,15 @@ fn[Msg] common_node(
   node(tag, attributes + attrs, children)
 }
 
-///| Represents an empty element
+///|
+/// Represents an empty element
 pub fn[M] nothing() -> Html[M] {
   @vdom.nothing()
 }
 
 ///|
 pub fn[M] button(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   click? : M,
@@ -70,7 +72,7 @@ pub fn[M] button(
 
 ///|
 pub fn[M] h1(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   children : Array[Html[M]],
@@ -80,7 +82,7 @@ pub fn[M] h1(
 
 ///|
 pub fn[M] h2(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   children : Array[Html[M]],
@@ -90,7 +92,7 @@ pub fn[M] h2(
 
 ///|
 pub fn[M] h3(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   children : Array[Html[M]],
@@ -100,7 +102,7 @@ pub fn[M] h3(
 
 ///|
 pub fn[M] h4(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   children : Array[Html[M]],
@@ -110,7 +112,7 @@ pub fn[M] h4(
 
 ///|
 pub fn[M] h5(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   children : Array[Html[M]],
@@ -120,7 +122,7 @@ pub fn[M] h5(
 
 ///|
 pub fn[M] h6(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   children : Array[Html[M]],
@@ -132,7 +134,7 @@ pub fn[M] h6(
 
 ///|
 pub fn[M] div(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   click? : M,
@@ -147,7 +149,7 @@ pub fn[M] div(
 
 ///|
 pub fn[M] p(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   children : Array[Html[M]],
@@ -157,17 +159,17 @@ pub fn[M] p(
 
 ///|
 pub fn[M] hr(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
-  children~ : Array[Html[M]] = [],
+  children? : Array[Html[M]] = [],
 ) -> Html[M] {
   common_node(style~, class?, id?, "hr", [], children)
 }
 
 ///|
 pub fn[M] pre(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   children : Array[Html[M]],
@@ -177,7 +179,7 @@ pub fn[M] pre(
 
 ///|
 pub fn[M] blockquote(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   children : Array[Html[M]],
@@ -187,7 +189,7 @@ pub fn[M] blockquote(
 
 ///|
 pub fn[M] section(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   children : Array[Html[M]],
@@ -199,7 +201,7 @@ pub fn[M] section(
 
 ///|
 pub fn[M] span(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   children : Array[Html[M]],
@@ -207,7 +209,8 @@ pub fn[M] span(
   common_node(style~, class?, id?, "span", [], children)
 }
 
-///| Create `a` element.
+///|
+/// Create `a` element.
 /// 
 /// # Parameters
 /// 
@@ -223,13 +226,13 @@ pub fn[M] span(
 /// If the user holds the `ctrl` key (or the command key on macOS) while clicking the link,
 /// the click event will be handled by the browser, and the `UrlRequest` will not be triggered either.
 pub fn[M] a(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   href~ : String,
-  target~ : Target = Self,
+  target? : Target = Self,
   children : Array[Html[M]],
-  escape~ : Bool = false,
+  escape? : Bool = false,
 ) -> Html[M] {
   let attrs = [
     @vdom.attribute("href", href),
@@ -249,7 +252,7 @@ pub fn[M] a(
 
 ///|
 pub fn[M] code(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   children : Array[Html[M]],
@@ -259,7 +262,7 @@ pub fn[M] code(
 
 ///|
 pub fn[M] em(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   children : Array[Html[M]],
@@ -269,7 +272,7 @@ pub fn[M] em(
 
 ///|
 pub fn[M] strong(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   children : Array[Html[M]],
@@ -279,7 +282,7 @@ pub fn[M] strong(
 
 ///|
 pub fn[M] i(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   children : Array[Html[M]],
@@ -289,7 +292,7 @@ pub fn[M] i(
 
 ///|
 pub fn[M] b(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   children : Array[Html[M]],
@@ -299,7 +302,7 @@ pub fn[M] b(
 
 ///|
 pub fn[M] u(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   children : Array[Html[M]],
@@ -309,7 +312,7 @@ pub fn[M] u(
 
 ///|
 pub fn[M] sub(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   children : Array[Html[M]],
@@ -319,7 +322,7 @@ pub fn[M] sub(
 
 ///|
 pub fn[M] sup(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   children : Array[Html[M]],
@@ -336,7 +339,7 @@ pub fn[Msg] text(str : String) -> Html[Msg] {
 
 ///|
 pub fn[M] ul(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   click? : M,
@@ -349,10 +352,11 @@ pub fn[M] ul(
   common_node(style~, class?, id?, "ul", attrs, children)
 }
 
-///| Notice that the `type` attribute for `ol` is not important for the browser now.
+///|
+/// Notice that the `type` attribute for `ol` is not important for the browser now.
 /// If you want to change the type of the list, you should use the `list-style-type` property in CSS.
 pub fn[M] ol(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   reversed? : Bool,
   start? : Int,
   id? : String,
@@ -373,7 +377,7 @@ pub fn[M] ol(
 
 ///|
 pub fn[M] li(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   value? : Int,
   id? : String,
   class? : String,
@@ -392,7 +396,7 @@ pub fn[M] li(
 
 ///|
 pub fn[M] dl(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   children : Array[Html[M]],
@@ -402,7 +406,7 @@ pub fn[M] dl(
 
 ///|
 pub fn[M] dt(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   children : Array[Html[M]],
@@ -412,7 +416,7 @@ pub fn[M] dt(
 
 ///|
 pub fn[M] dd(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   children : Array[Html[M]],
@@ -424,7 +428,7 @@ pub fn[M] dd(
 
 ///|
 pub fn[M] img(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   src? : String,
@@ -459,7 +463,7 @@ pub fn[M] img(
 
 ///|
 pub fn[M] iframe(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   src? : String,
@@ -487,7 +491,7 @@ pub fn[M] iframe(
 
 ///|
 pub fn[M] br(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
 ) -> Html[M] {
@@ -528,7 +532,7 @@ pub(all) enum AutoComplete {
 
 ///|
 pub fn[M] form(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   action? : String,
@@ -547,7 +551,7 @@ pub fn[M] form(
 
 ///|
 pub fn[M] label(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   for_? : String,
@@ -562,7 +566,7 @@ pub fn[M] label(
 
 ///|
 pub fn[M] input(
-  input_type~ : InputType = Text,
+  input_type? : InputType = Text,
   name? : String,
   value? : String,
   checked? : Bool,
@@ -571,7 +575,7 @@ pub fn[M] input(
   accept? : String,
   placeholder? : String,
   auto_complete? : AutoComplete,
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   max? : Int,
   min? : Int,
   step? : Int,
@@ -583,7 +587,7 @@ pub fn[M] input(
   height? : Int,
   id? : String,
   class? : String,
-  children~ : Array[Html[M]] = [],
+  children? : Array[Html[M]] = [],
   change? : (String) -> M,
   input? : (String) -> M,
 ) -> Html[M] {
@@ -677,7 +681,7 @@ pub fn[M] input(
 
 ///|
 pub fn[M] select(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   disabled? : Bool,
@@ -710,12 +714,12 @@ pub fn[M] select(
 
 ///|
 pub fn[M] option(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   disabled? : Bool,
   value? : String,
-  selected~ : Bool = false,
+  selected? : Bool = false,
   children : Array[Html[M]],
 ) -> Html[M] {
   // TODO: support more attribute for option tag
@@ -755,7 +759,7 @@ pub fn[Msg] external(
 
 ///|
 pub fn[M] table(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   children : Array[Html[M]],
@@ -765,7 +769,7 @@ pub fn[M] table(
 
 ///|
 pub fn[M] caption(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   children : Array[Html[M]],
@@ -775,7 +779,7 @@ pub fn[M] caption(
 
 ///|
 pub fn[M] thead(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   children : Array[Html[M]],
@@ -785,7 +789,7 @@ pub fn[M] thead(
 
 ///|
 pub fn[M] tbody(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   children : Array[Html[M]],
@@ -795,7 +799,7 @@ pub fn[M] tbody(
 
 ///|
 pub fn[M] col(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   span? : Int,
   class? : String,
@@ -810,7 +814,7 @@ pub fn[M] col(
 
 ///|
 pub fn[M] colgroup(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   span? : Int,
   class? : String,
@@ -825,7 +829,7 @@ pub fn[M] colgroup(
 
 ///|
 pub fn[M] tr(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   children : Array[Html[M]],
@@ -835,7 +839,7 @@ pub fn[M] tr(
 
 ///|
 pub fn[M] td(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   colspan? : Int,
   rowspan? : Int,
@@ -866,7 +870,7 @@ pub(all) enum Scope {
 
 ///|
 pub fn[M] th(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   abbr? : String,
   colspan? : Int,
@@ -907,7 +911,7 @@ pub fn[M] th(
 
 ///|
 pub fn[M] tfoot(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   children : Array[Html[M]],
@@ -915,7 +919,8 @@ pub fn[M] tfoot(
   common_node("tfoot", [], style~, id?, class?, children)
 }
 
-///| Dialog element. 
+///|
+/// Dialog element. 
 /// 
 /// Hint: You can use the `show` and `close` commands in the `@dialog` package
 /// to manipulate the dialog.
@@ -972,7 +977,7 @@ pub fn[M] tfoot(
 /// ```
 /// 
 pub fn[M] dialog(
-  style~ : Array[String] = [],
+  style? : Array[String] = [],
   id? : String,
   class? : String,
   open? : Bool,

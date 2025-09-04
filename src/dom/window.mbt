@@ -58,13 +58,15 @@ pub extern "js" fn Window::current_url(self : Self) -> String =
 pub extern "js" fn Window::replace_url(self : Self, url : String) =
   #| (self,url) => { self.history.replaceState(null, '', url); }
 
-///| https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame
+///|
+/// https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame
 pub extern "js" fn Window::request_animation_frame(
   self : Self,
   f : (DOMHighResTimeStamp) -> Unit,
 ) -> Double = "(self,f) => self.requestAnimationFrame(f)"
 
-///| https://developer.mozilla.org/en-US/docs/Web/API/Window/cancelAnimationFrame
+///|
+/// https://developer.mozilla.org/en-US/docs/Web/API/Window/cancelAnimationFrame
 pub extern "js" fn Window::cancel_animation_frame(
   self : Self,
   request_id : Double,

@@ -18,7 +18,8 @@ enum Node[Msg] {
   Nothing
 }
 
-///| Convert msg type of Node.
+///|
+/// Convert msg type of Node.
 /// 
 /// This is a expensive operation and should be used rarely.
 pub fn[A, B] map(self : Node[A], f : (A) -> B) -> Node[B] {
@@ -37,7 +38,8 @@ pub fn[A, B] map(self : Node[A], f : (A) -> B) -> Node[B] {
   }
 }
 
-///| Create a DOM node 
+///|
+/// Create a DOM node 
 pub fn[Msg] node(
   tag : String,
   attrs : Array[Attribute[Msg]],
@@ -68,12 +70,13 @@ const ESCAPED_LINK_TAG = "RABBIT-TEA-ESCAPED-LINK"
 ///|
 const NORMAL_LINK_TAG = "a"
 
-///| Create a link node.
+///|
+/// Create a link node.
 /// The `escape` parameter is used to create a link that will not trigger the `url_request` message.
 pub fn[Msg] link(
   attrs : Array[Attribute[Msg]],
   children : Array[Node[Msg]],
-  escape~ : Bool = false,
+  escape? : Bool = false,
 ) -> Node[Msg] {
   let tag = if escape { ESCAPED_LINK_TAG } else { NORMAL_LINK_TAG }
   node(tag, attrs, children)
@@ -89,12 +92,14 @@ pub fn[Msg] external(
   ExternalNode(node, attrs, width~, height~)
 }
 
-///| Create a plain text
+///|
+/// Create a plain text
 pub fn[Msg] text(value : String) -> Node[Msg] {
   Text(value)
 }
 
-///| Create a dummy node
+///|
+/// Create a dummy node
 pub fn[Msg] nothing() -> Node[Msg] {
   Nothing
 }
@@ -172,32 +177,38 @@ pub fn[A, B] Attribute::map(self : Attribute[A], f : (A) -> B) -> Attribute[B] {
   Attribute(self.0, value)
 }
 
-///| Get the inner tuple from Attribute
+///|
+/// Get the inner tuple from Attribute
 fn[Msg] Attribute::inner(self : Attribute[Msg]) -> (String, AttrValue[Msg]) {
   (self.0, self.1)
 }
 
-///| Create an custom event handler
+///|
+/// Create an custom event handler
 pub fn[Msg] on(event : String, handler : Handler[Msg]) -> Attribute[Msg] {
   Attribute(event, AttrEvent(handler))
 }
 
-///| Create an attribute
+///|
+/// Create an attribute
 pub fn[Msg] attribute(key : String, value : String) -> Attribute[Msg] {
   Attribute(key, AttrString(value))
 }
 
-///| Create an property
+///|
+/// Create an property
 pub fn[Msg] property(key : String, value : @variant.Variant) -> Attribute[Msg] {
   Attribute(key, AttrProperty(value))
 }
 
-///| Create an style attribute
+///|
+/// Create an style attribute
 pub fn[Msg] style(key : String, value : String) -> Attribute[Msg] {
   Attribute(key, AttrStyle(value))
 }
 
-///| Convert virtual DOM to real DOM
+///|
+/// Convert virtual DOM to real DOM
 fn[Msg, Model, View] Node::to_node(
   self : Node[Msg],
   sandbox : @adapter.Sandbox[Msg, Model, View],

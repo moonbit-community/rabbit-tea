@@ -27,7 +27,8 @@ fn[M] make_node(
   @vdom.node(tag, attrs, children.map(_.inner()))
 }
 
-///| Represents an empty element
+///|
+/// Represents an empty element
 pub fn[M] nothing() -> Html[M] {
   @vdom.nothing()
 }

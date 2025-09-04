@@ -1,4 +1,5 @@
-///| https://developer.mozilla.org/en-US/docs/Web/API/CompositionEvent
+///|
+/// https://developer.mozilla.org/en-US/docs/Web/API/CompositionEvent
 type CompositionEvent
 
 ///|

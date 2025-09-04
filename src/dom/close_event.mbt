@@ -1,4 +1,5 @@
-///| https://developer.mozilla.org/en-US/docs/Web/API/CloseEvent
+///|
+/// https://developer.mozilla.org/en-US/docs/Web/API/CloseEvent
 type CloseEvent
 
 ///|

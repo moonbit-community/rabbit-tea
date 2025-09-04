@@ -1,4 +1,5 @@
-///| https://developer.mozilla.org/en-US/docs/Web/API/SVGElement
+///|
+/// https://developer.mozilla.org/en-US/docs/Web/API/SVGElement
 type SVGElement
 
 ///|
