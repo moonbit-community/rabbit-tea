@@ -1,4 +1,5 @@
-///| https://developer.mozilla.org/en-US/docs/Web/API/AnimationEvent
+///|
+/// https://developer.mozilla.org/en-US/docs/Web/API/AnimationEvent
 type AnimationEvent
 
 ///|

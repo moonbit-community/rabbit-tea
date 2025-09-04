@@ -1,4 +1,5 @@
-///| https://developer.mozilla.org/en-US/docs/Web/API/SVGGraphicsElement
+///|
+/// https://developer.mozilla.org/en-US/docs/Web/API/SVGGraphicsElement
 type SVGGraphicsElement
 
 ///|

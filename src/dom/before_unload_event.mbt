@@ -1,4 +1,5 @@
-///| https://developer.mozilla.org/en-US/docs/Web/API/BeforeUnloadEvent
+///|
+/// https://developer.mozilla.org/en-US/docs/Web/API/BeforeUnloadEvent
 type BeforeUnloadEvent
 
 ///|

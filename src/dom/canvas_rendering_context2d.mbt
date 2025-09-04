@@ -89,7 +89,8 @@ pub extern "js" fn CanvasRenderingContext2D::get_image_smoothing_quality(
   self : Self,
 ) -> String = "(x) => x.imageSmoothingQuality"
 
-///| Possible values are "low", "medium", and "high".
+///|
+/// Possible values are "low", "medium", and "high".
 pub extern "js" fn CanvasRenderingContext2D::set_image_smoothing_quality(
   self : Self,
   value : String,
@@ -194,14 +195,14 @@ pub extern "js" fn CanvasRenderingContext2D::begin_path(self : Self) = "(self) =
 ///|
 pub extern "js" fn CanvasRenderingContext2D::fill(
   self : Self,
-  fill_rule~ : String = "nonzero",
+  fill_rule? : String = "nonzero",
 ) = "(self, fillRule) => self.fill(fillRule)"
 
 ///|
 pub extern "js" fn CanvasRenderingContext2D::fill_path(
   self : Self,
   path : Path2D,
-  fill_rule~ : String = "nonzero",
+  fill_rule? : String = "nonzero",
 ) = "(self,path,fillRule) => self.stroke(path,fillRule)"
 
 ///|
@@ -216,14 +217,14 @@ pub extern "js" fn CanvasRenderingContext2D::stroke_with_path(
 ///|
 pub extern "js" fn CanvasRenderingContext2D::clip(
   self : Self,
-  fill_rule~ : String = "nonzero",
+  fill_rule? : String = "nonzero",
 ) = "(self, fillRule) => self.clip(fillRule)"
 
 ///|
 pub extern "js" fn CanvasRenderingContext2D::clip_with_path(
   self : Self,
   path : Path2D,
-  fill_rule~ : String = "nonzero",
+  fill_rule? : String = "nonzero",
 ) = "(self,path,fillRule) => self.clip(path,fillRule)"
 
 ///|
@@ -231,7 +232,7 @@ pub extern "js" fn CanvasRenderingContext2D::is_point_in_path(
   self : Self,
   x : Double,
   y : Double,
-  fill_rule~ : String = "nonzero",
+  fill_rule? : String = "nonzero",
 ) -> Bool = "(self,x,y,fillRule) => self.isPointInPath(x,y,fillRule)"
 
 ///|
@@ -240,7 +241,7 @@ pub extern "js" fn CanvasRenderingContext2D::is_point_in_path_with_path(
   path : Path2D,
   x : Double,
   y : Double,
-  fill_rule~ : String = "nonzero",
+  fill_rule? : String = "nonzero",
 ) -> Bool = "(self,path,x,y,fillRule) => self.isPointInPath(path,x,y,fillRule)"
 
 ///|
@@ -266,7 +267,7 @@ pub extern "js" fn CanvasRenderingContext2D::fill_text(
   text : String,
   x : Double,
   y : Double,
-  max_width~ : @js.Optional[Double] = @js.Optional::undefined(),
+  max_width? : @js.Optional[Double] = @js.Optional::undefined(),
 ) = "(self,text,x,y,maxWidth) => self.fillText(text,x,y,maxWidth)"
 
 ///|
@@ -275,10 +276,11 @@ pub extern "js" fn CanvasRenderingContext2D::stroke_text(
   text : String,
   x : Double,
   y : Double,
-  max_width~ : @js.Optional[Double] = @js.Optional::undefined(),
+  max_width? : @js.Optional[Double] = @js.Optional::undefined(),
 ) = "(self,text,x,y,maxWidth) => self.strokeText(text,x,y,maxWidth)"
 
-///| https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage
+///|
+/// https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage
 pub typealias @js.Union7[
   HTMLImageElement,
   SVGImageElement,
@@ -289,7 +291,8 @@ pub typealias @js.Union7[
   VideoFrame,
 ] as ImageUnion
 
-///| https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage
+///|
+/// https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage
 pub extern "js" fn CanvasRenderingContext2D::draw_image(
   self : Self,
   image : ImageUnion,
@@ -297,7 +300,8 @@ pub extern "js" fn CanvasRenderingContext2D::draw_image(
   dy : Double,
 ) = "(self,image,dx,dy) => self.drawImage(image,dx,dy)"
 
-///| https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage
+///|
+/// https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage
 pub extern "js" fn CanvasRenderingContext2D::draw_image_with_size(
   self : Self,
   image : ImageUnion,
@@ -307,7 +311,8 @@ pub extern "js" fn CanvasRenderingContext2D::draw_image_with_size(
   dh : Double,
 ) = "(self,image,dx,dy,dw,dh) => self.drawImage(image,dx,dy,dw,dh)"
 
-///| https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage
+///|
+/// https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage
 pub extern "js" fn CanvasRenderingContext2D::draw_image_with_src_and_dst_size(
   self : Self,
   image : ImageUnion,
@@ -326,7 +331,7 @@ pub extern "js" fn CanvasRenderingContext2D::create_image_data(
   self : Self,
   sw : Double,
   sh : Double,
-  settings~ : @js.Optional[ImageDataSettings] = @js.Optional::undefined(),
+  settings? : @js.Optional[ImageDataSettings] = @js.Optional::undefined(),
 ) -> ImageData = "(self,sw,sh,settings) => self.createImageData(sw,sh,settings)"
 
 ///|
@@ -342,7 +347,7 @@ pub extern "js" fn CanvasRenderingContext2D::get_image_data(
   sy : Double,
   sw : Double,
   sh : Double,
-  settings~ : @js.Optional[ImageDataSettings] = @js.Optional::undefined(),
+  settings? : @js.Optional[ImageDataSettings] = @js.Optional::undefined(),
 ) -> ImageData = "(self,sx,sy,sw,sh) => self.getImageData(sx,sy,sw,sh)"
 
 ///|
@@ -478,7 +483,7 @@ pub extern "js" fn CanvasRenderingContext2D::arc(
   radius : Double,
   start_angle : Double,
   end_angle : Double,
-  anticlockwise~ : Bool = false,
+  anticlockwise? : Bool = false,
 ) = "(self,x,y,radius,startAngle,endAngle,anticlockwise) => self.arc(x,y,radius,startAngle,endAngle,anticlockwise)"
 
 ///|
@@ -491,13 +496,15 @@ pub extern "js" fn CanvasRenderingContext2D::ellipse(
   rotation : Double,
   start_angle : Double,
   end_angle : Double,
-  anticlockwise~ : Bool = false,
+  anticlockwise? : Bool = false,
 ) = "(self,x,y,radiusX,radiusY,rotation,startAngle,endAngle,anticlockwise) => self.ellipse(x,y,radiusX,radiusY,rotation,startAngle,endAngle,anticlockwise)"
 
-///| https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/font 
+///|
+/// https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/font 
 pub extern "js" fn CanvasRenderingContext2D::get_font(self : Self) -> String = "(self) => self.font"
 
-///| https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/font
+///|
+/// https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/font
 pub extern "js" fn CanvasRenderingContext2D::set_font(
   self : Self,
   value : String,

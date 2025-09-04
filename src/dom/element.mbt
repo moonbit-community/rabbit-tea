@@ -151,7 +151,7 @@ extern "js" fn ffi_element_get_attribute(
 ///|
 extern "js" fn ffi_element_remove_attribute(x : @js.Value, attr : String) = "(self,attr) => self.removeAttribute(attr)"
 
-///| 
+///|
 extern "js" fn ffi_element_set_property(
   x : @js.Value,
   prop : String,
@@ -164,25 +164,32 @@ extern "js" fn ffi_element_remove_property(x : @js.Value, prop : String) = "(sel
 ///|
 extern "js" fn ffi_element_get_property(x : @js.Value, prop : String) -> String = "(self,prop) => self[prop]"
 
-///| https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView
+///|
+/// https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView
 extern "js" fn ffi_element_scroll_into_view(x : @js.Value) = "(self) => self.scrollIntoView()"
 
-///| https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTop
+///|
+/// https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTop
 extern "js" fn ffi_element_get_scroll_top(x : @js.Value) -> Double = "(self) => self.scrollTop"
 
-///| https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTop
+///|
+/// https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTop
 extern "js" fn ffi_element_set_scroll_top(x : @js.Value, value : Double) = "(s,v) => s.scrollTop = v"
 
-///| https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollLeft
+///|
+/// https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollLeft
 extern "js" fn ffi_element_get_scroll_left(x : @js.Value) -> Double = "(self) => self.scrollLeft"
 
-///| https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollLeft
+///|
+/// https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollLeft
 extern "js" fn ffi_element_set_scroll_left(x : @js.Value, value : Double) = "(s,v) => s.scrollLeft = v"
 
-///| https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollWidth
+///|
+/// https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollWidth
 extern "js" fn ffi_element_get_scroll_width(x : @js.Value) -> Double = "(self) => self.scrollWidth"
 
-///| https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollHeight
+///|
+/// https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollHeight
 extern "js" fn ffi_element_get_scroll_height(x : @js.Value) -> Double = "(self) => self.scrollHeight"
 
 ///|

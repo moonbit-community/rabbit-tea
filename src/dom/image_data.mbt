@@ -14,7 +14,7 @@ pub extern "js" fn ImageData::new_with_data(
   data : Uint8ClampedArray,
   sw : Int,
   sh : Int,
-  settings~ : @js.Optional[ImageDataSettings] = @js.Optional::undefined(),
+  settings? : @js.Optional[ImageDataSettings] = @js.Optional::undefined(),
 ) -> ImageData = "(data,sw,sh,settings) => new ImageData(data,sw,sh,settings)"
 
 ///|
@@ -33,5 +33,6 @@ pub extern "js" fn ImageData::get_color_space(
   self : ImageData,
 ) -> PredefinedColorSpace = "(self) => self.colorSpace"
 
-///| Possible values are "srgb" and "display-p3".
+///|
+/// Possible values are "srgb" and "display-p3".
 pub typealias String as PredefinedColorSpace

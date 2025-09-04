@@ -1,4 +1,5 @@
-///| Represent the URL change request from the user, trigger by `@html.a` tag.
+///|
+/// Represent the URL change request from the user, trigger by `@html.a` tag.
 /// The `Internal` means the target URL is in the same domain.
 /// The `External` means the target URL is in another site.
 pub(all) enum UrlRequest {
@@ -6,7 +7,8 @@ pub(all) enum UrlRequest {
   External(String)
 } derive(Show, Eq, Compare)
 
-///| Url
+///|
+/// Url
 /// 
 /// ```text
 ///  https://example.com:8042/over/there?name=ferret#nose

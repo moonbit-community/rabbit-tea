@@ -8,7 +8,7 @@ pub extern "js" fn DataTransfer::drop_effect(self : Self) -> String = "(t) => t.
 ///|
 pub extern "js" fn DataTransfer::effect_allowed(self : Self) -> String = "(t) => t.effectAllowed"
 
-///| 
+///|
 pub extern "js" fn DataTransfer::items(self : Self) -> DataTransferItemList = "(t) => t.items"
 
 ///|

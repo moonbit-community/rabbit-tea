@@ -1,4 +1,5 @@
-///| https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
+///|
+/// https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
 #external
 type HTMLElement
 

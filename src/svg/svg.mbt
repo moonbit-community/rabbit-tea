@@ -41,7 +41,8 @@ pub fn[M] svg(
   )
 }
 
-///| Create an SVG element from a svg string.
+///|
+/// Create an SVG element from a svg string.
 pub fn[M] from_string(svg : String) -> @html.Html[M] {
   @vdom.node_ns(
     @dom.namespace_svg,

@@ -32,7 +32,8 @@ pub fn[Msg, Model, View] get_on_url_request(
   self.on_url_request
 }
 
-///| Update the model and launch commands.
+///|
+/// Update the model and launch commands.
 pub fn[Msg, Model, View] update(
   self : Sandbox[Msg, Model, View],
   message : Msg,
@@ -47,7 +48,8 @@ pub fn[Msg, Model, View] update(
   self.launch(cmd)
 }
 
-///| Refresh the view.
+///|
+/// Refresh the view.
 /// This function will call the view function and patch the result to the DOM.
 pub fn[Msg, Model, View] refresh(self : Sandbox[Msg, Model, View]) -> Unit {
   let view = (self.view)(self.model)

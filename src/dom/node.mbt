@@ -153,7 +153,7 @@ extern "js" fn insert_before(x : @js.Value, value : Node, before : Node) = "(p,v
 // ---------- some specific node API --------------
 // Note: the childNodes property is a NodeList, not an array, so we can't use the Array type.
 
-///|  
+///|
 extern "js" fn ffi_nth_child(x : @js.Value, index : Int) -> Node =
   #| (x,i) => { 
   #|   const r = x.childNodes[i]; 

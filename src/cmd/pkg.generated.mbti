@@ -12,7 +12,7 @@ fn[M] batch(Array[Cmd[M]]) -> Cmd[M]
 
 fn[M] none() -> Cmd[M]
 
-fn[A, M] perform((A) -> M, async () -> A) -> Cmd[M]
+fn[A, M] perform((A) -> M, async () -> A noraise) -> Cmd[M]
 
 fn[M] task(M) -> Cmd[M]
 

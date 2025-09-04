@@ -3,7 +3,8 @@ pub(all) enum Item {
   Text(String)
 }
 
-///| Returns a command that copies the given item to the clipboard.
+///|
+/// Returns a command that copies the given item to the clipboard.
 /// 
 /// # Message
 /// 
@@ -26,7 +27,8 @@ pub fn[M] copy(item : Item, copied? : M, failed? : (String) -> M) -> Cmd[M] {
   })
 }
 
-///| Returns a command that pastes the clipboard content and returns it as an item.
+///|
+/// Returns a command that pastes the clipboard content and returns it as an item.
 /// 
 /// # Message
 /// - `pasted` is triggered with the pasted item if the paste operation is successful.

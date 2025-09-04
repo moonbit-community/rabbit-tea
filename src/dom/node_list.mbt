@@ -1,11 +1,14 @@
-///| https://developer.mozilla.org/en-US/docs/Web/API/NodeList
+///|
+/// https://developer.mozilla.org/en-US/docs/Web/API/NodeList
 #external
 type NodeList
 
-///| https://developer.mozilla.org/en-US/docs/Web/API/NodeList/length
+///|
+/// https://developer.mozilla.org/en-US/docs/Web/API/NodeList/length
 pub extern "js" fn NodeList::get_length(self : Self) -> Double = "(self) => self.length"
 
-///| https://developer.mozilla.org/en-US/docs/Web/API/NodeList/item
+///|
+/// https://developer.mozilla.org/en-US/docs/Web/API/NodeList/item
 pub extern "js" fn NodeList::item(
   self : Self,
   index : Double,

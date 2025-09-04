@@ -1,7 +1,8 @@
 ///|
 struct Attribute[Msg](@vdom.Attribute[Msg])
 
-///| Specify an style
+///|
+/// Specify an style
 pub fn[Msg] style(key : String, value : String) -> Attribute[Msg] {
   @vdom.style(key, value)
 }
