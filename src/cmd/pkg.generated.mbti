@@ -20,6 +20,7 @@ fn[M] task(M) -> Cmd[M]
 
 // Types and methods
 pub(all) struct Cmd[M]((Events[M]) -> Unit)
+#deprecated
 fn[M] Cmd::inner(Self[M]) -> (Events[M]) -> Unit
 fn[A, B] Cmd::map(Self[A], (A) -> B) -> Self[B]
 

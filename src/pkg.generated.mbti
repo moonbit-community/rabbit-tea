@@ -8,7 +8,7 @@ import(
 )
 
 // Values
-fn[Model, Msg] application(initialize~ : (@url.Url) -> (@cmd.Cmd[Msg], Model), update~ : (Msg, Model) -> (@cmd.Cmd[Msg], Model), view~ : (Model) -> @html.Html[Msg], url_changed? : (@url.Url) -> Msg, url_request? : (@url.UrlRequest) -> Msg, mount? : String) -> Unit
+fn[Model, Msg] application(initialize~ : (@url.Url) -> (@cmd.Cmd[Msg], Model), update~ : (Msg, Model) -> (@cmd.Cmd[Msg], Model), view~ : (Model) -> @html.Html[Msg], url_changed? : (@url.Url) -> Msg, url_request? : (@url.UrlRequest) -> Msg, mount? : String) -> App[Msg, Model]
 
 fn[A, E : Error, M] attempt((Result[A, E]) -> M, async () -> A raise E) -> @cmd.Cmd[M]
 
@@ -18,13 +18,17 @@ fn[M] none() -> @cmd.Cmd[M]
 
 fn[A, M] perform((A) -> M, async () -> A noraise) -> @cmd.Cmd[M]
 
-fn[Model, Message] startup(model~ : Model, update~ : (Message, Model) -> (@cmd.Cmd[Message], Model), view~ : (Model) -> @html.Html[Message], mount? : String) -> Unit
+fn[Model, Message] startup(model~ : Model, update~ : (Message, Model) -> (@cmd.Cmd[Message], Model), view~ : (Model) -> @html.Html[Message], mount? : String) -> App[Message, Model]
 
 fn[M] task(M) -> @cmd.Cmd[M]
 
 // Errors
 
 // Types and methods
+pub struct App[Msg, Model] {
+  // private fields
+}
+fn[Msg, Model] App::trigger(Self[Msg, Model], Msg) -> Unit
 
 // Type aliases
 pub typealias @cmd.Cmd as Cmd

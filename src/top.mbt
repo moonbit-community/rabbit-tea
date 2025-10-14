@@ -21,7 +21,7 @@ pub fn[Model, Message] startup(
   update~ : (Message, Model) -> (Cmd[Message], Model),
   view~ : (Model) -> @html.Html[Message],
   mount? : String = "app",
-) -> Unit {
+) -> App[Message, Model] {
   @dom.document()
   .get_element_by_id(mount)
   .unwrap()
@@ -35,8 +35,21 @@ pub fn[Model, Message] startup(
     curr_dom = new_dom
   }
 
-  sandbox = Some(@browser.Sandbox::new(model, update, view, after_update~))
-  sandbox.unwrap().refresh()
+  let sb = @browser.Sandbox::new(model, update, view, after_update~)
+  sandbox = Some(sb)
+  sb.refresh()
+  App::{ sandbox: sb }
+}
+
+///|
+pub struct App[Msg, Model] {
+  priv sandbox : @browser.Sandbox[Msg, Model, @html.Html[Msg]]
+}
+
+///|
+/// run the update function of the application.
+pub fn[Msg, Model] App::trigger(self : App[Msg, Model], msg : Msg) -> Unit {
+  self.sandbox.update(msg)
 }
 
 ///|
@@ -53,7 +66,7 @@ pub fn[Model, Msg] application(
   url_changed? : (@url.Url) -> Msg,
   url_request? : (@url.UrlRequest) -> Msg,
   mount? : String = "app",
-) -> Unit {
+) -> App[Msg, Model] {
   @dom.document()
   .get_element_by_id(mount)
   .unwrap()
@@ -79,4 +92,5 @@ pub fn[Model, Msg] application(
   )
   sandbox_ref = Some(sandbox)
   sandbox..launch(cmd)..refresh()
+  App::{ sandbox, }
 }

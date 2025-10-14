@@ -157,6 +157,7 @@ pub(all) enum AutoComplete {
 }
 
 pub(all) struct Html[Msg](@vdom.Node[Msg])
+#deprecated
 fn[Msg] Html::inner(Self[Msg]) -> @vdom.Node[Msg]
 fn[A, B] Html::map(Self[A], (A) -> B) -> Self[B]
 fn[Msg] Html::to_virtual_dom(Self[Msg]) -> @vdom.Node[Msg]

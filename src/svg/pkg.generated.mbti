@@ -22,9 +22,11 @@ fn[M] svg(Array[Attribute[M]], Array[Svg[M]]) -> @html.Html[M]
 
 // Types and methods
 pub(all) struct Attribute[M](@vdom.Attribute[M])
+#deprecated
 fn[M] Attribute::inner(Self[M]) -> @vdom.Attribute[M]
 
 pub(all) struct Svg[M](@vdom.Node[M])
+#deprecated
 fn[M] Svg::inner(Self[M]) -> @vdom.Node[M]
 
 // Type aliases
