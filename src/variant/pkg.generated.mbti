@@ -12,6 +12,14 @@ pub(all) enum Variant {
   Floating(Double)
   String(String)
 }
+fn Variant::compare(Self, Self) -> Int // from trait `Compare`
+fn Variant::equal(Self, Self) -> Bool // from trait `Eq`
+fn Variant::hash(Self) -> Int // from trait `Hash`
+fn Variant::hash_combine(Self, Hasher) -> Unit // from trait `Hash`
+#deprecated
+fn Variant::op_equal(Self, Self) -> Bool // from trait `Eq`
+fn Variant::output(Self, &Logger) -> Unit // from trait `Show`
+fn Variant::to_string(Self) -> String // from trait `Show`
 impl Compare for Variant
 impl Eq for Variant
 impl Hash for Variant
