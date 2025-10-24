@@ -34,9 +34,7 @@ fn[M] property(String, @variant.Variant) -> Attribute[M]
 
 fn[M] rect(id? : String, class? : String, style? : Array[String], x~ : Int, y~ : Int, width~ : Int, height~ : Int, rx? : Int, ry? : Int, fill? : String, stroke? : String, stroke_width? : Int) -> Svg[M]
 
-fn[M] svg(Array[Attribute[M]], Array[Svg[M]]) -> @html.Html[M]
-
-fn[M] svg_element(id? : String, class? : String, style? : Array[String], width~ : Int, height~ : Int, Array[Svg[M]], view_box? : String, xmlns? : String) -> @html.Html[M]
+fn[M] svg(Array[Attribute[M]], Array[Svg[M]], id? : String, class? : String, style? : Array[String], width? : Int, height? : Int, view_box? : String, xmlns? : String) -> @html.Html[M]
 
 fn[M] svg_text(id? : String, class? : String, style? : Array[String], x~ : Int, y~ : Int, text~ : String, dx? : Int, dy? : Int, rotate? : String, length_adjust? : String, text_length? : Int) -> Svg[M]
 
@@ -48,9 +46,11 @@ fn[M] view(id? : String, class? : String, style? : Array[String], view_box? : St
 
 // Types and methods
 pub(all) struct Attribute[M](@vdom.Attribute[M])
+#deprecated
 fn[M] Attribute::inner(Self[M]) -> @vdom.Attribute[M]
 
 pub(all) struct Svg[M](@vdom.Node[M])
+#deprecated
 fn[M] Svg::inner(Self[M]) -> @vdom.Node[M]
 
 // Type aliases

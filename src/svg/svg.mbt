@@ -32,7 +32,40 @@ pub fn[M] property(key : String, value : @variant.Variant) -> Attribute[M] {
 pub fn[M] svg(
   attrs : Array[Attribute[M]],
   children : Array[Svg[M]],
+  // common attributes
+  id? : String,
+  class? : String,
+  style? : Array[String],
+  // required
+  width? : Int,
+  height? : Int,
+  // optional
+  view_box? : String,
+  xmlns? : String,
 ) -> @html.Html[M] {
+  let attrs : Array[Attribute[M]] = [..attrs]
+  if width is Some(val) {
+    attrs.push(attribute("width", val.to_string()))
+  }
+  if height is Some(val) {
+    attrs.push(attribute("height", val.to_string()))
+  }
+  if id is Some(val) {
+    attrs.push(attribute("id", val))
+  }
+  if class is Some(val) {
+    attrs.push(attribute("class", val))
+  }
+  if style is Some(val) {
+    attrs.push(attribute("style", val.join(";")))
+  }
+  let attrs : Array[Attribute[M]] = []
+  if view_box is Some(val) {
+    attrs.push(attribute("viewBox", val))
+  }
+  if xmlns is Some(val) {
+    attrs.push(attribute("xmlns", val))
+  }
   @vdom.node_ns(
     @dom.namespace_svg,
     "svg",
@@ -76,44 +109,6 @@ fn[M] common_svg_node(
     attrs.push(attribute("style", val.join(";")))
   }
   node(tag_name, attrs, children.unwrap_or([]))
-}
-
-///|
-/// <svg > element
-pub fn[M] svg_element(
-  // common attributes
-  id? : String,
-  class? : String,
-  style? : Array[String],
-  // required
-  width~ : Int,
-  height~ : Int,
-  children : Array[Svg[M]],
-  // optional
-  view_box? : String,
-  xmlns? : String,
-) -> @html.Html[M] {
-  let attrs : Array[Attribute[M]] = []
-  if id is Some(val) {
-    attrs.push(attribute("id", val))
-  }
-  if class is Some(val) {
-    attrs.push(attribute("class", val))
-  }
-  if style is Some(val) {
-    attrs.push(attribute("style", val.join(";")))
-  }
-  let attrs : Array[Attribute[M]] = [
-    attribute("width", width.to_string()),
-    attribute("height", height.to_string()),
-  ]
-  if view_box is Some(val) {
-    attrs.push(attribute("viewBox", val))
-  }
-  if xmlns is Some(val) {
-    attrs.push(attribute("xmlns", val))
-  }
-  svg(attrs, children)
 }
 
 ///|
