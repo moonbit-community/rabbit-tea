@@ -30,98 +30,36 @@ fn window() -> Window
 
 // Types and methods
 type AnimationEvent
-fn AnimationEvent::as_event(Self) -> Event // from trait `IsEvent`
-fn AnimationEvent::from(Self) -> @js.Value // from trait `@js.Cast`
 fn AnimationEvent::get_animation_name(Self) -> String
 fn AnimationEvent::get_elapsed_time(Self) -> Double
 fn AnimationEvent::get_pseudo_element(Self) -> String
-fn AnimationEvent::into(@js.Value) -> Self? // from trait `@js.Cast`
-fn AnimationEvent::prevent_default(Self) -> Unit // from trait `IsEvent`
-fn AnimationEvent::stop_propagation(Self) -> Unit // from trait `IsEvent`
-fn AnimationEvent::target(Self) -> EventTarget // from trait `IsEvent`
-fn AnimationEvent::to_animation_event(Self) -> Self? // from trait `IsEvent`
-fn AnimationEvent::to_before_unload_event(Self) -> BeforeUnloadEvent? // from trait `IsEvent`
-fn AnimationEvent::to_blob_event(Self) -> BlobEvent? // from trait `IsEvent`
-fn AnimationEvent::to_clipboard_event(Self) -> ClipboardEvent? // from trait `IsEvent`
-fn AnimationEvent::to_close_event(Self) -> CloseEvent? // from trait `IsEvent`
-fn AnimationEvent::to_composition_event(Self) -> CompositionEvent? // from trait `IsEvent`
-fn AnimationEvent::to_custom_event(Self) -> CustomEvent? // from trait `IsEvent`
-fn AnimationEvent::to_drag_event(Self) -> DragEvent? // from trait `IsEvent`
-fn AnimationEvent::to_focus_event(Self) -> FocusEvent? // from trait `IsEvent`
-fn AnimationEvent::to_input_event(Self) -> InputEvent? // from trait `IsEvent`
-fn AnimationEvent::to_keyboard_event(Self) -> KeyboardEvent? // from trait `IsEvent`
-fn AnimationEvent::to_mouse_event(Self) -> MouseEvent? // from trait `IsEvent`
-fn AnimationEvent::to_ui_event(Self) -> UIEvent? // from trait `IsEvent`
-fn AnimationEvent::to_wheel_event(Self) -> WheelEvent? // from trait `IsEvent`
 impl IsEvent for AnimationEvent
 impl @js.Cast for AnimationEvent
 
 type AudioTrackList
 
 type BeforeUnloadEvent
-fn BeforeUnloadEvent::as_event(Self) -> Event // from trait `IsEvent`
-fn BeforeUnloadEvent::from(Self) -> @js.Value // from trait `@js.Cast`
-fn BeforeUnloadEvent::into(@js.Value) -> Self? // from trait `@js.Cast`
-fn BeforeUnloadEvent::prevent_default(Self) -> Unit // from trait `IsEvent`
-fn BeforeUnloadEvent::stop_propagation(Self) -> Unit // from trait `IsEvent`
-fn BeforeUnloadEvent::target(Self) -> EventTarget // from trait `IsEvent`
-fn BeforeUnloadEvent::to_animation_event(Self) -> AnimationEvent? // from trait `IsEvent`
-fn BeforeUnloadEvent::to_before_unload_event(Self) -> Self? // from trait `IsEvent`
-fn BeforeUnloadEvent::to_blob_event(Self) -> BlobEvent? // from trait `IsEvent`
-fn BeforeUnloadEvent::to_clipboard_event(Self) -> ClipboardEvent? // from trait `IsEvent`
-fn BeforeUnloadEvent::to_close_event(Self) -> CloseEvent? // from trait `IsEvent`
-fn BeforeUnloadEvent::to_composition_event(Self) -> CompositionEvent? // from trait `IsEvent`
-fn BeforeUnloadEvent::to_custom_event(Self) -> CustomEvent? // from trait `IsEvent`
-fn BeforeUnloadEvent::to_drag_event(Self) -> DragEvent? // from trait `IsEvent`
-fn BeforeUnloadEvent::to_focus_event(Self) -> FocusEvent? // from trait `IsEvent`
-fn BeforeUnloadEvent::to_input_event(Self) -> InputEvent? // from trait `IsEvent`
-fn BeforeUnloadEvent::to_keyboard_event(Self) -> KeyboardEvent? // from trait `IsEvent`
-fn BeforeUnloadEvent::to_mouse_event(Self) -> MouseEvent? // from trait `IsEvent`
-fn BeforeUnloadEvent::to_ui_event(Self) -> UIEvent? // from trait `IsEvent`
-fn BeforeUnloadEvent::to_wheel_event(Self) -> WheelEvent? // from trait `IsEvent`
 impl IsEvent for BeforeUnloadEvent
 impl @js.Cast for BeforeUnloadEvent
 
 type Blob
 
 type BlobEvent
-fn BlobEvent::as_event(Self) -> Event // from trait `IsEvent`
-fn BlobEvent::from(Self) -> @js.Value // from trait `@js.Cast`
 fn BlobEvent::get_data(Self) -> Blob
 fn BlobEvent::get_timecode(Self) -> Double
-fn BlobEvent::into(@js.Value) -> Self? // from trait `@js.Cast`
 fn BlobEvent::new() -> Self
-fn BlobEvent::prevent_default(Self) -> Unit // from trait `IsEvent`
-fn BlobEvent::stop_propagation(Self) -> Unit // from trait `IsEvent`
-fn BlobEvent::target(Self) -> EventTarget // from trait `IsEvent`
-fn BlobEvent::to_animation_event(Self) -> AnimationEvent? // from trait `IsEvent`
-fn BlobEvent::to_before_unload_event(Self) -> BeforeUnloadEvent? // from trait `IsEvent`
-fn BlobEvent::to_blob_event(Self) -> Self? // from trait `IsEvent`
-fn BlobEvent::to_clipboard_event(Self) -> ClipboardEvent? // from trait `IsEvent`
-fn BlobEvent::to_close_event(Self) -> CloseEvent? // from trait `IsEvent`
-fn BlobEvent::to_composition_event(Self) -> CompositionEvent? // from trait `IsEvent`
-fn BlobEvent::to_custom_event(Self) -> CustomEvent? // from trait `IsEvent`
-fn BlobEvent::to_drag_event(Self) -> DragEvent? // from trait `IsEvent`
-fn BlobEvent::to_focus_event(Self) -> FocusEvent? // from trait `IsEvent`
-fn BlobEvent::to_input_event(Self) -> InputEvent? // from trait `IsEvent`
-fn BlobEvent::to_keyboard_event(Self) -> KeyboardEvent? // from trait `IsEvent`
-fn BlobEvent::to_mouse_event(Self) -> MouseEvent? // from trait `IsEvent`
-fn BlobEvent::to_ui_event(Self) -> UIEvent? // from trait `IsEvent`
-fn BlobEvent::to_wheel_event(Self) -> WheelEvent? // from trait `IsEvent`
 impl IsEvent for BlobEvent
 impl @js.Cast for BlobEvent
 
 type CSSRule
 
 type CSSStyleDeclaration
-fn CSSStyleDeclaration::from(Self) -> @js.Value // from trait `@js.Cast`
 fn CSSStyleDeclaration::get_css_float(Self) -> String
 fn CSSStyleDeclaration::get_css_text(Self) -> String
 fn CSSStyleDeclaration::get_length(Self) -> Int
 fn CSSStyleDeclaration::get_parent_rule(Self) -> CSSRule?
 fn CSSStyleDeclaration::get_property_priority(Self, String) -> String
 fn CSSStyleDeclaration::get_property_value(Self, String) -> String
-fn CSSStyleDeclaration::into(@js.Value) -> Self? // from trait `@js.Cast`
 fn CSSStyleDeclaration::item(Self, Int) -> String
 fn CSSStyleDeclaration::op_get(Self, String) -> String
 fn CSSStyleDeclaration::op_set(Self, String, String) -> Unit
@@ -134,8 +72,6 @@ impl @js.Cast for CSSStyleDeclaration
 
 type CanvasGradient
 fn CanvasGradient::add_color_stop(Self, Double, String) -> Unit
-fn CanvasGradient::from(Self) -> @js.Value // from trait `@js.Cast`
-fn CanvasGradient::into(@js.Value) -> Self? // from trait `@js.Cast`
 impl @js.Cast for CanvasGradient
 
 type CanvasLineCap
@@ -143,8 +79,6 @@ type CanvasLineCap
 type CanvasLineJoin
 
 type CanvasPattern
-fn CanvasPattern::from(Self) -> @js.Value // from trait `@js.Cast`
-fn CanvasPattern::into(@js.Value) -> Self? // from trait `@js.Cast`
 fn CanvasPattern::set_transform(Self, @js.Optional[DOMMatrix2DInit]) -> Unit
 impl @js.Cast for CanvasPattern
 
@@ -170,7 +104,6 @@ fn CanvasRenderingContext2D::fill(Self, fill_rule? : String) -> Unit
 fn CanvasRenderingContext2D::fill_path(Self, Path2D, fill_rule? : String) -> Unit
 fn CanvasRenderingContext2D::fill_rect(Self, Double, Double, Double, Double) -> Unit
 fn CanvasRenderingContext2D::fill_text(Self, String, Double, Double, max_width? : @js.Optional[Double]) -> Unit
-fn CanvasRenderingContext2D::from(Self) -> @js.Value // from trait `@js.Cast`
 fn CanvasRenderingContext2D::get_fill_style(Self) -> @js.Union3[String, CanvasGradient, CanvasPattern]
 fn CanvasRenderingContext2D::get_font(Self) -> String
 fn CanvasRenderingContext2D::get_image_data(Self, Double, Double, Double, Double, settings? : @js.Optional[ImageDataSettings]) -> ImageData
@@ -180,7 +113,6 @@ fn CanvasRenderingContext2D::get_line_join(Self) -> CanvasLineJoin
 fn CanvasRenderingContext2D::get_line_with(Self) -> Double
 fn CanvasRenderingContext2D::get_stroke_style(Self) -> @js.Union3[String, CanvasGradient, CanvasPattern]
 fn CanvasRenderingContext2D::image_smoothing_enabled(Self) -> Bool
-fn CanvasRenderingContext2D::into(@js.Value) -> Self? // from trait `@js.Cast`
 fn CanvasRenderingContext2D::is_context_lost(Self) -> Bool
 fn CanvasRenderingContext2D::is_point_in_path(Self, Double, Double, fill_rule? : String) -> Bool
 fn CanvasRenderingContext2D::is_point_in_path_with_path(Self, Path2D, Double, Double, fill_rule? : String) -> Bool
@@ -221,108 +153,27 @@ fn Clipboard::read_text(Self) -> @js.Promise
 fn Clipboard::write_text(Self, String) -> @js.Promise
 
 type ClipboardEvent
-fn ClipboardEvent::as_event(Self) -> Event // from trait `IsEvent`
 fn ClipboardEvent::clipboard_data(Self) -> DataTransfer
-fn ClipboardEvent::from(Self) -> @js.Value // from trait `@js.Cast`
-fn ClipboardEvent::into(@js.Value) -> Self? // from trait `@js.Cast`
-fn ClipboardEvent::prevent_default(Self) -> Unit // from trait `IsEvent`
-fn ClipboardEvent::stop_propagation(Self) -> Unit // from trait `IsEvent`
-fn ClipboardEvent::target(Self) -> EventTarget // from trait `IsEvent`
-fn ClipboardEvent::to_animation_event(Self) -> AnimationEvent? // from trait `IsEvent`
-fn ClipboardEvent::to_before_unload_event(Self) -> BeforeUnloadEvent? // from trait `IsEvent`
-fn ClipboardEvent::to_blob_event(Self) -> BlobEvent? // from trait `IsEvent`
-fn ClipboardEvent::to_clipboard_event(Self) -> Self? // from trait `IsEvent`
-fn ClipboardEvent::to_close_event(Self) -> CloseEvent? // from trait `IsEvent`
-fn ClipboardEvent::to_composition_event(Self) -> CompositionEvent? // from trait `IsEvent`
-fn ClipboardEvent::to_custom_event(Self) -> CustomEvent? // from trait `IsEvent`
-fn ClipboardEvent::to_drag_event(Self) -> DragEvent? // from trait `IsEvent`
-fn ClipboardEvent::to_focus_event(Self) -> FocusEvent? // from trait `IsEvent`
-fn ClipboardEvent::to_input_event(Self) -> InputEvent? // from trait `IsEvent`
-fn ClipboardEvent::to_keyboard_event(Self) -> KeyboardEvent? // from trait `IsEvent`
-fn ClipboardEvent::to_mouse_event(Self) -> MouseEvent? // from trait `IsEvent`
-fn ClipboardEvent::to_ui_event(Self) -> UIEvent? // from trait `IsEvent`
-fn ClipboardEvent::to_wheel_event(Self) -> WheelEvent? // from trait `IsEvent`
 impl IsEvent for ClipboardEvent
 impl @js.Cast for ClipboardEvent
 
 type CloseEvent
-fn CloseEvent::as_event(Self) -> Event // from trait `IsEvent`
-fn CloseEvent::from(Self) -> @js.Value // from trait `@js.Cast`
 fn CloseEvent::get_code(Self) -> Int
 fn CloseEvent::get_reason(Self) -> String
 fn CloseEvent::get_was_clean(Self) -> Bool
-fn CloseEvent::into(@js.Value) -> Self? // from trait `@js.Cast`
-fn CloseEvent::prevent_default(Self) -> Unit // from trait `IsEvent`
-fn CloseEvent::stop_propagation(Self) -> Unit // from trait `IsEvent`
-fn CloseEvent::target(Self) -> EventTarget // from trait `IsEvent`
-fn CloseEvent::to_animation_event(Self) -> AnimationEvent? // from trait `IsEvent`
-fn CloseEvent::to_before_unload_event(Self) -> BeforeUnloadEvent? // from trait `IsEvent`
-fn CloseEvent::to_blob_event(Self) -> BlobEvent? // from trait `IsEvent`
-fn CloseEvent::to_clipboard_event(Self) -> ClipboardEvent? // from trait `IsEvent`
-fn CloseEvent::to_close_event(Self) -> Self? // from trait `IsEvent`
-fn CloseEvent::to_composition_event(Self) -> CompositionEvent? // from trait `IsEvent`
-fn CloseEvent::to_custom_event(Self) -> CustomEvent? // from trait `IsEvent`
-fn CloseEvent::to_drag_event(Self) -> DragEvent? // from trait `IsEvent`
-fn CloseEvent::to_focus_event(Self) -> FocusEvent? // from trait `IsEvent`
-fn CloseEvent::to_input_event(Self) -> InputEvent? // from trait `IsEvent`
-fn CloseEvent::to_keyboard_event(Self) -> KeyboardEvent? // from trait `IsEvent`
-fn CloseEvent::to_mouse_event(Self) -> MouseEvent? // from trait `IsEvent`
-fn CloseEvent::to_ui_event(Self) -> UIEvent? // from trait `IsEvent`
-fn CloseEvent::to_wheel_event(Self) -> WheelEvent? // from trait `IsEvent`
 impl IsEvent for CloseEvent
 impl @js.Cast for CloseEvent
 
 type CompositionEvent
-fn CompositionEvent::as_event(Self) -> Event // from trait `IsEvent`
-fn CompositionEvent::as_ui_event(Self) -> UIEvent // from trait `IsUIEvent`
-fn CompositionEvent::from(Self) -> @js.Value // from trait `@js.Cast`
 fn CompositionEvent::get_data(Self) -> String
-fn CompositionEvent::into(@js.Value) -> Self? // from trait `@js.Cast`
 fn CompositionEvent::new() -> Self
-fn CompositionEvent::prevent_default(Self) -> Unit // from trait `IsEvent`
-fn CompositionEvent::stop_propagation(Self) -> Unit // from trait `IsEvent`
-fn CompositionEvent::target(Self) -> EventTarget // from trait `IsEvent`
-fn CompositionEvent::to_animation_event(Self) -> AnimationEvent? // from trait `IsEvent`
-fn CompositionEvent::to_before_unload_event(Self) -> BeforeUnloadEvent? // from trait `IsEvent`
-fn CompositionEvent::to_blob_event(Self) -> BlobEvent? // from trait `IsEvent`
-fn CompositionEvent::to_clipboard_event(Self) -> ClipboardEvent? // from trait `IsEvent`
-fn CompositionEvent::to_close_event(Self) -> CloseEvent? // from trait `IsEvent`
-fn CompositionEvent::to_composition_event(Self) -> Self? // from trait `IsEvent`
-fn CompositionEvent::to_custom_event(Self) -> CustomEvent? // from trait `IsEvent`
-fn CompositionEvent::to_drag_event(Self) -> DragEvent? // from trait `IsEvent`
-fn CompositionEvent::to_focus_event(Self) -> FocusEvent? // from trait `IsEvent`
-fn CompositionEvent::to_input_event(Self) -> InputEvent? // from trait `IsEvent`
-fn CompositionEvent::to_keyboard_event(Self) -> KeyboardEvent? // from trait `IsEvent`
-fn CompositionEvent::to_mouse_event(Self) -> MouseEvent? // from trait `IsEvent`
-fn CompositionEvent::to_ui_event(Self) -> UIEvent? // from trait `IsEvent`
-fn CompositionEvent::to_wheel_event(Self) -> WheelEvent? // from trait `IsEvent`
 impl IsEvent for CompositionEvent
 impl IsUIEvent for CompositionEvent
 impl @js.Cast for CompositionEvent
 
 type CustomEvent
-fn CustomEvent::as_event(Self) -> Event // from trait `IsEvent`
-fn CustomEvent::from(Self) -> @js.Value // from trait `@js.Cast`
 fn CustomEvent::get_detail(Self) -> @js.Value
-fn CustomEvent::into(@js.Value) -> Self? // from trait `@js.Cast`
 fn CustomEvent::new(String, detail? : @js.Optional[@js.Value]) -> Self
-fn CustomEvent::prevent_default(Self) -> Unit // from trait `IsEvent`
-fn CustomEvent::stop_propagation(Self) -> Unit // from trait `IsEvent`
-fn CustomEvent::target(Self) -> EventTarget // from trait `IsEvent`
-fn CustomEvent::to_animation_event(Self) -> AnimationEvent? // from trait `IsEvent`
-fn CustomEvent::to_before_unload_event(Self) -> BeforeUnloadEvent? // from trait `IsEvent`
-fn CustomEvent::to_blob_event(Self) -> BlobEvent? // from trait `IsEvent`
-fn CustomEvent::to_clipboard_event(Self) -> ClipboardEvent? // from trait `IsEvent`
-fn CustomEvent::to_close_event(Self) -> CloseEvent? // from trait `IsEvent`
-fn CustomEvent::to_composition_event(Self) -> CompositionEvent? // from trait `IsEvent`
-fn CustomEvent::to_custom_event(Self) -> Self? // from trait `IsEvent`
-fn CustomEvent::to_drag_event(Self) -> DragEvent? // from trait `IsEvent`
-fn CustomEvent::to_focus_event(Self) -> FocusEvent? // from trait `IsEvent`
-fn CustomEvent::to_input_event(Self) -> InputEvent? // from trait `IsEvent`
-fn CustomEvent::to_keyboard_event(Self) -> KeyboardEvent? // from trait `IsEvent`
-fn CustomEvent::to_mouse_event(Self) -> MouseEvent? // from trait `IsEvent`
-fn CustomEvent::to_ui_event(Self) -> UIEvent? // from trait `IsEvent`
-fn CustomEvent::to_wheel_event(Self) -> WheelEvent? // from trait `IsEvent`
 impl IsEvent for CustomEvent
 impl @js.Cast for CustomEvent
 
@@ -382,49 +233,7 @@ type DocumentFragment
 fn DocumentFragment::to_node(Self) -> Node
 
 type DragEvent
-fn DragEvent::as_event(Self) -> Event // from trait `IsEvent`
-fn DragEvent::as_mouse_event(Self) -> MouseEvent // from trait `IsMouseEvent`
-fn DragEvent::as_ui_event(Self) -> UIEvent // from trait `IsUIEvent`
-fn DragEvent::from(Self) -> @js.Value // from trait `@js.Cast`
-fn DragEvent::get_alt_key(Self) -> Bool // from trait `IsMouseEvent`
-fn DragEvent::get_button(Self) -> Int // from trait `IsMouseEvent`
-fn DragEvent::get_buttons(Self) -> Int // from trait `IsMouseEvent`
-fn DragEvent::get_client_x(Self) -> Int // from trait `IsMouseEvent`
-fn DragEvent::get_client_y(Self) -> Int // from trait `IsMouseEvent`
-fn DragEvent::get_ctrl_key(Self) -> Bool // from trait `IsMouseEvent`
 fn DragEvent::get_data_transfer(Self) -> DataTransfer
-fn DragEvent::get_meta_key(Self) -> Bool // from trait `IsMouseEvent`
-fn DragEvent::get_modifier_state(Self) -> Int // from trait `IsMouseEvent`
-fn DragEvent::get_movement_x(Self) -> Int // from trait `IsMouseEvent`
-fn DragEvent::get_movement_y(Self) -> Int // from trait `IsMouseEvent`
-fn DragEvent::get_offset_x(Self) -> Int // from trait `IsMouseEvent`
-fn DragEvent::get_offset_y(Self) -> Int // from trait `IsMouseEvent`
-fn DragEvent::get_page_x(Self) -> Int // from trait `IsMouseEvent`
-fn DragEvent::get_page_y(Self) -> Int // from trait `IsMouseEvent`
-fn DragEvent::get_related_target(Self) -> EventTarget // from trait `IsMouseEvent`
-fn DragEvent::get_screen_x(Self) -> Int // from trait `IsMouseEvent`
-fn DragEvent::get_screen_y(Self) -> Int // from trait `IsMouseEvent`
-fn DragEvent::get_shift_key(Self) -> Bool // from trait `IsMouseEvent`
-fn DragEvent::get_x(Self) -> Int // from trait `IsMouseEvent`
-fn DragEvent::get_y(Self) -> Int // from trait `IsMouseEvent`
-fn DragEvent::into(@js.Value) -> Self? // from trait `@js.Cast`
-fn DragEvent::prevent_default(Self) -> Unit // from trait `IsEvent`
-fn DragEvent::stop_propagation(Self) -> Unit // from trait `IsEvent`
-fn DragEvent::target(Self) -> EventTarget // from trait `IsEvent`
-fn DragEvent::to_animation_event(Self) -> AnimationEvent? // from trait `IsEvent`
-fn DragEvent::to_before_unload_event(Self) -> BeforeUnloadEvent? // from trait `IsEvent`
-fn DragEvent::to_blob_event(Self) -> BlobEvent? // from trait `IsEvent`
-fn DragEvent::to_clipboard_event(Self) -> ClipboardEvent? // from trait `IsEvent`
-fn DragEvent::to_close_event(Self) -> CloseEvent? // from trait `IsEvent`
-fn DragEvent::to_composition_event(Self) -> CompositionEvent? // from trait `IsEvent`
-fn DragEvent::to_custom_event(Self) -> CustomEvent? // from trait `IsEvent`
-fn DragEvent::to_drag_event(Self) -> Self? // from trait `IsEvent`
-fn DragEvent::to_focus_event(Self) -> FocusEvent? // from trait `IsEvent`
-fn DragEvent::to_input_event(Self) -> InputEvent? // from trait `IsEvent`
-fn DragEvent::to_keyboard_event(Self) -> KeyboardEvent? // from trait `IsEvent`
-fn DragEvent::to_mouse_event(Self) -> MouseEvent? // from trait `IsEvent`
-fn DragEvent::to_ui_event(Self) -> UIEvent? // from trait `IsEvent`
-fn DragEvent::to_wheel_event(Self) -> WheelEvent? // from trait `IsEvent`
 impl IsEvent for DragEvent
 impl IsMouseEvent for DragEvent
 impl IsUIEvent for DragEvent
@@ -433,62 +242,6 @@ impl @js.Cast for DragEvent
 type EditContext
 
 type Element
-fn Element::add_event_listener(Self, String, (Event) -> Unit) -> Unit // from trait `IsEventTarget`
-fn Element::append_child(Self, Node) -> Unit // from trait `IsNode`
-fn Element::as_element(Self) -> Self // from trait `IsElement`
-fn Element::as_event_target(Self) -> EventTarget // from trait `IsEventTarget`
-fn Element::as_node(Self) -> Node // from trait `IsNode`
-fn Element::dispatch_event(Self, Event) -> Unit // from trait `IsEventTarget`
-fn Element::from(Self) -> @js.Value // from trait `@js.Cast`
-fn Element::get_attribute(Self, String) -> String // from trait `IsElement`
-fn Element::get_bounding_client_rect(Self) -> DOMRect // from trait `IsElement`
-fn Element::get_child(Self, Int) -> Node // from trait `IsNode`
-fn Element::get_child_count(Self) -> Int // from trait `IsNode`
-fn Element::get_children(Self) -> Array[Self] // from trait `IsElement`
-fn Element::get_first_child(Self) -> Node // from trait `IsNode`
-fn Element::get_last_child(Self) -> Node // from trait `IsNode`
-fn Element::get_next_sibling(Self) -> Node // from trait `IsNode`
-fn Element::get_node_name(Self) -> String // from trait `IsNode`
-fn Element::get_node_type(Self) -> Int // from trait `IsNode`
-fn Element::get_node_value(Self) -> String // from trait `IsNode`
-fn Element::get_parent_node(Self) -> Node // from trait `IsNode`
-fn Element::get_previous_sibling(Self) -> Node // from trait `IsNode`
-fn Element::get_property(Self, String) -> String // from trait `IsElement`
-fn Element::get_scroll_height(Self) -> Double // from trait `IsElement`
-fn Element::get_scroll_left(Self) -> Double // from trait `IsElement`
-fn Element::get_scroll_top(Self) -> Double // from trait `IsElement`
-fn Element::get_scroll_width(Self) -> Double // from trait `IsElement`
-fn Element::insert_before(Self, Node, Node) -> Unit // from trait `IsNode`
-fn Element::into(@js.Value) -> Self? // from trait `@js.Cast`
-fn Element::remove_attribute(Self, String) -> Unit // from trait `IsElement`
-fn Element::remove_child(Self, Node) -> Unit // from trait `IsNode`
-fn Element::remove_event_listener(Self, String, (Event) -> Unit) -> Unit // from trait `IsEventTarget`
-fn Element::remove_property(Self, String) -> Unit // from trait `IsElement`
-fn Element::replace_child(Self, Node, Node) -> Unit // from trait `IsNode`
-fn Element::scroll_into_view(Self) -> Unit // from trait `IsElement`
-fn Element::set_attribute(Self, String, String) -> Unit // from trait `IsElement`
-fn Element::set_inner_html(Self, String) -> Unit // from trait `IsElement`
-fn Element::set_property(Self, String, @js.Value) -> Unit // from trait `IsElement`
-fn Element::set_scroll_left(Self, Double) -> Unit // from trait `IsElement`
-fn Element::set_scroll_top(Self, Double) -> Unit // from trait `IsElement`
-fn Element::to_clipboard(Self) -> Clipboard? // from trait `IsEventTarget`
-fn Element::to_document(Self) -> Document? // from trait `IsEventTarget`
-fn Element::to_document_fragment(Self) -> DocumentFragment? // from trait `IsEventTarget`
-fn Element::to_element(Self) -> Self? // from trait `IsEventTarget`
-fn Element::to_html_canvas_element(Self) -> HTMLCanvasElement? // from trait `IsEventTarget`
-fn Element::to_html_dialog_element(Self) -> HTMLDialogElement? // from trait `IsEventTarget`
-fn Element::to_html_element(Self) -> HTMLElement? // from trait `IsEventTarget`
-fn Element::to_html_image_element(Self) -> HTMLImageElement? // from trait `IsEventTarget`
-fn Element::to_html_input_element(Self) -> HTMLInputElement? // from trait `IsEventTarget`
-fn Element::to_html_media_element(Self) -> HTMLMediaElement? // from trait `IsEventTarget`
-fn Element::to_html_select_element(Self) -> HTMLSelectElement? // from trait `IsEventTarget`
-fn Element::to_html_video_element(Self) -> HTMLVideoElement? // from trait `IsEventTarget`
-fn Element::to_node(Self) -> Node? // from trait `IsEventTarget`
-fn Element::to_svg_element(Self) -> SVGElement? // from trait `IsEventTarget`
-fn Element::to_svg_graphics_element(Self) -> SVGGraphicsElement? // from trait `IsEventTarget`
-fn Element::to_svg_image_element(Self) -> SVGImageElement? // from trait `IsEventTarget`
-fn Element::to_text(Self) -> Text? // from trait `IsEventTarget`
-fn Element::to_window(Self) -> Window? // from trait `IsEventTarget`
 impl IsElement for Element
 impl IsEventTarget for Element
 impl IsNode for Element
@@ -497,80 +250,15 @@ impl @js.Cast for Element
 type ElementInternals
 
 type Event
-fn Event::as_event(Self) -> Self // from trait `IsEvent`
-fn Event::from(Self) -> @js.Value // from trait `@js.Cast`
-fn Event::into(@js.Value) -> Self? // from trait `@js.Cast`
-fn Event::prevent_default(Self) -> Unit // from trait `IsEvent`
-fn Event::stop_propagation(Self) -> Unit // from trait `IsEvent`
-fn Event::target(Self) -> EventTarget // from trait `IsEvent`
-fn Event::to_animation_event(Self) -> AnimationEvent? // from trait `IsEvent`
-fn Event::to_before_unload_event(Self) -> BeforeUnloadEvent? // from trait `IsEvent`
-fn Event::to_blob_event(Self) -> BlobEvent? // from trait `IsEvent`
-fn Event::to_clipboard_event(Self) -> ClipboardEvent? // from trait `IsEvent`
-fn Event::to_close_event(Self) -> CloseEvent? // from trait `IsEvent`
-fn Event::to_composition_event(Self) -> CompositionEvent? // from trait `IsEvent`
-fn Event::to_custom_event(Self) -> CustomEvent? // from trait `IsEvent`
-fn Event::to_drag_event(Self) -> DragEvent? // from trait `IsEvent`
-fn Event::to_focus_event(Self) -> FocusEvent? // from trait `IsEvent`
-fn Event::to_input_event(Self) -> InputEvent? // from trait `IsEvent`
-fn Event::to_keyboard_event(Self) -> KeyboardEvent? // from trait `IsEvent`
-fn Event::to_mouse_event(Self) -> MouseEvent? // from trait `IsEvent`
-fn Event::to_ui_event(Self) -> UIEvent? // from trait `IsEvent`
-fn Event::to_wheel_event(Self) -> WheelEvent? // from trait `IsEvent`
 impl IsEvent for Event
 impl @js.Cast for Event
 
 type EventTarget
-fn EventTarget::add_event_listener(Self, String, (Event) -> Unit) -> Unit // from trait `IsEventTarget`
-fn EventTarget::as_event_target(Self) -> Self // from trait `IsEventTarget`
-fn EventTarget::dispatch_event(Self, Event) -> Unit // from trait `IsEventTarget`
-fn EventTarget::from(Self) -> @js.Value // from trait `@js.Cast`
-fn EventTarget::into(@js.Value) -> Self? // from trait `@js.Cast`
-fn EventTarget::remove_event_listener(Self, String, (Event) -> Unit) -> Unit // from trait `IsEventTarget`
-fn EventTarget::to_clipboard(Self) -> Clipboard? // from trait `IsEventTarget`
-fn EventTarget::to_document(Self) -> Document? // from trait `IsEventTarget`
-fn EventTarget::to_document_fragment(Self) -> DocumentFragment? // from trait `IsEventTarget`
-fn EventTarget::to_element(Self) -> Element? // from trait `IsEventTarget`
-fn EventTarget::to_html_canvas_element(Self) -> HTMLCanvasElement? // from trait `IsEventTarget`
-fn EventTarget::to_html_dialog_element(Self) -> HTMLDialogElement? // from trait `IsEventTarget`
-fn EventTarget::to_html_element(Self) -> HTMLElement? // from trait `IsEventTarget`
-fn EventTarget::to_html_image_element(Self) -> HTMLImageElement? // from trait `IsEventTarget`
-fn EventTarget::to_html_input_element(Self) -> HTMLInputElement? // from trait `IsEventTarget`
-fn EventTarget::to_html_media_element(Self) -> HTMLMediaElement? // from trait `IsEventTarget`
-fn EventTarget::to_html_select_element(Self) -> HTMLSelectElement? // from trait `IsEventTarget`
-fn EventTarget::to_html_video_element(Self) -> HTMLVideoElement? // from trait `IsEventTarget`
-fn EventTarget::to_node(Self) -> Node? // from trait `IsEventTarget`
-fn EventTarget::to_svg_element(Self) -> SVGElement? // from trait `IsEventTarget`
-fn EventTarget::to_svg_graphics_element(Self) -> SVGGraphicsElement? // from trait `IsEventTarget`
-fn EventTarget::to_svg_image_element(Self) -> SVGImageElement? // from trait `IsEventTarget`
-fn EventTarget::to_text(Self) -> Text? // from trait `IsEventTarget`
-fn EventTarget::to_window(Self) -> Window? // from trait `IsEventTarget`
 impl IsEventTarget for EventTarget
 impl @js.Cast for EventTarget
 
 type FocusEvent
-fn FocusEvent::as_event(Self) -> Event // from trait `IsEvent`
-fn FocusEvent::as_ui_event(Self) -> UIEvent // from trait `IsUIEvent`
-fn FocusEvent::from(Self) -> @js.Value // from trait `@js.Cast`
-fn FocusEvent::into(@js.Value) -> Self? // from trait `@js.Cast`
-fn FocusEvent::prevent_default(Self) -> Unit // from trait `IsEvent`
 fn FocusEvent::related_target(Self) -> EventTarget
-fn FocusEvent::stop_propagation(Self) -> Unit // from trait `IsEvent`
-fn FocusEvent::target(Self) -> EventTarget // from trait `IsEvent`
-fn FocusEvent::to_animation_event(Self) -> AnimationEvent? // from trait `IsEvent`
-fn FocusEvent::to_before_unload_event(Self) -> BeforeUnloadEvent? // from trait `IsEvent`
-fn FocusEvent::to_blob_event(Self) -> BlobEvent? // from trait `IsEvent`
-fn FocusEvent::to_clipboard_event(Self) -> ClipboardEvent? // from trait `IsEvent`
-fn FocusEvent::to_close_event(Self) -> CloseEvent? // from trait `IsEvent`
-fn FocusEvent::to_composition_event(Self) -> CompositionEvent? // from trait `IsEvent`
-fn FocusEvent::to_custom_event(Self) -> CustomEvent? // from trait `IsEvent`
-fn FocusEvent::to_drag_event(Self) -> DragEvent? // from trait `IsEvent`
-fn FocusEvent::to_focus_event(Self) -> Self? // from trait `IsEvent`
-fn FocusEvent::to_input_event(Self) -> InputEvent? // from trait `IsEvent`
-fn FocusEvent::to_keyboard_event(Self) -> KeyboardEvent? // from trait `IsEvent`
-fn FocusEvent::to_mouse_event(Self) -> MouseEvent? // from trait `IsEvent`
-fn FocusEvent::to_ui_event(Self) -> UIEvent? // from trait `IsEvent`
-fn FocusEvent::to_wheel_event(Self) -> WheelEvent? // from trait `IsEvent`
 impl IsEvent for FocusEvent
 impl IsUIEvent for FocusEvent
 impl @js.Cast for FocusEvent
@@ -578,131 +266,9 @@ impl @js.Cast for FocusEvent
 type GPUCanvasContext
 
 type HTMLCanvasElement
-fn HTMLCanvasElement::add_event_listener(Self, String, (Event) -> Unit) -> Unit // from trait `IsEventTarget`
-fn HTMLCanvasElement::append_child(Self, Node) -> Unit // from trait `IsNode`
-fn HTMLCanvasElement::as_element(Self) -> Element // from trait `IsElement`
-fn HTMLCanvasElement::as_event_target(Self) -> EventTarget // from trait `IsEventTarget`
-fn HTMLCanvasElement::as_html_element(Self) -> HTMLElement // from trait `IsHtmlElement`
-fn HTMLCanvasElement::as_node(Self) -> Node // from trait `IsNode`
-fn HTMLCanvasElement::attach_internals(Self) -> ElementInternals // from trait `IsHtmlElement`
-fn HTMLCanvasElement::blur(Self) -> Unit // from trait `IsHtmlElement`
-fn HTMLCanvasElement::click(Self) -> Unit // from trait `IsHtmlElement`
-fn HTMLCanvasElement::dispatch_event(Self, Event) -> Unit // from trait `IsEventTarget`
-fn HTMLCanvasElement::focus(Self) -> Unit // from trait `IsHtmlElement`
-fn HTMLCanvasElement::from(Self) -> @js.Value // from trait `@js.Cast`
-fn HTMLCanvasElement::get_access_key(Self) -> String // from trait `IsHtmlElement`
-fn HTMLCanvasElement::get_access_key_label(Self) -> String // from trait `IsHtmlElement`
-fn HTMLCanvasElement::get_anchor_element(Self) -> Element? // from trait `IsHtmlElement`
-fn HTMLCanvasElement::get_attribute(Self, String) -> String // from trait `IsElement`
-fn HTMLCanvasElement::get_attribute_style_map(Self) -> StylePropertyMap // from trait `IsHtmlElement`
-fn HTMLCanvasElement::get_auto_capitalize(Self) -> String // from trait `IsHtmlElement`
-fn HTMLCanvasElement::get_auto_correct(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLCanvasElement::get_auto_focus(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLCanvasElement::get_bounding_client_rect(Self) -> DOMRect // from trait `IsElement`
-fn HTMLCanvasElement::get_child(Self, Int) -> Node // from trait `IsNode`
-fn HTMLCanvasElement::get_child_count(Self) -> Int // from trait `IsNode`
-fn HTMLCanvasElement::get_children(Self) -> Array[Element] // from trait `IsElement`
-fn HTMLCanvasElement::get_content_editable(Self) -> String // from trait `IsHtmlElement`
 fn HTMLCanvasElement::get_context(Self, String) -> @js.Union5[CanvasRenderingContext2D, ImageBitmapRenderingContext, WebGLRenderingContext, WebGL2RenderingContext, GPUCanvasContext]
-fn HTMLCanvasElement::get_dataset(Self) -> DOMStringMap // from trait `IsHtmlElement`
-fn HTMLCanvasElement::get_dir(Self) -> String // from trait `IsHtmlElement`
-fn HTMLCanvasElement::get_draggable(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLCanvasElement::get_edit_context(Self) -> EditContext? // from trait `IsHtmlElement`
-fn HTMLCanvasElement::get_enter_key_hint(Self) -> String // from trait `IsHtmlElement`
-fn HTMLCanvasElement::get_first_child(Self) -> Node // from trait `IsNode`
 fn HTMLCanvasElement::get_height(Self) -> Int
-fn HTMLCanvasElement::get_hidden(Self) -> @js.Value // from trait `IsHtmlElement`
-fn HTMLCanvasElement::get_inert(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLCanvasElement::get_inner_text(Self) -> String // from trait `IsHtmlElement`
-fn HTMLCanvasElement::get_input_mode(Self) -> String // from trait `IsHtmlElement`
-fn HTMLCanvasElement::get_is_content_editable(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLCanvasElement::get_lang(Self) -> String // from trait `IsHtmlElement`
-fn HTMLCanvasElement::get_last_child(Self) -> Node // from trait `IsNode`
-fn HTMLCanvasElement::get_next_sibling(Self) -> Node // from trait `IsNode`
-fn HTMLCanvasElement::get_node_name(Self) -> String // from trait `IsNode`
-fn HTMLCanvasElement::get_node_type(Self) -> Int // from trait `IsNode`
-fn HTMLCanvasElement::get_node_value(Self) -> String // from trait `IsNode`
-fn HTMLCanvasElement::get_nonce(Self) -> String // from trait `IsHtmlElement`
-fn HTMLCanvasElement::get_offset_height(Self) -> Double // from trait `IsHtmlElement`
-fn HTMLCanvasElement::get_offset_left(Self) -> Double // from trait `IsHtmlElement`
-fn HTMLCanvasElement::get_offset_parent(Self) -> Element? // from trait `IsHtmlElement`
-fn HTMLCanvasElement::get_offset_top(Self) -> Double // from trait `IsHtmlElement`
-fn HTMLCanvasElement::get_offset_width(Self) -> Double // from trait `IsHtmlElement`
-fn HTMLCanvasElement::get_outer_text(Self) -> String // from trait `IsHtmlElement`
-fn HTMLCanvasElement::get_parent_node(Self) -> Node // from trait `IsNode`
-fn HTMLCanvasElement::get_popover(Self) -> String? // from trait `IsHtmlElement`
-fn HTMLCanvasElement::get_previous_sibling(Self) -> Node // from trait `IsNode`
-fn HTMLCanvasElement::get_property(Self, String) -> String // from trait `IsElement`
-fn HTMLCanvasElement::get_scroll_height(Self) -> Double // from trait `IsElement`
-fn HTMLCanvasElement::get_scroll_left(Self) -> Double // from trait `IsElement`
-fn HTMLCanvasElement::get_scroll_top(Self) -> Double // from trait `IsElement`
-fn HTMLCanvasElement::get_scroll_width(Self) -> Double // from trait `IsElement`
-fn HTMLCanvasElement::get_spellcheck(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLCanvasElement::get_style(Self) -> CSSStyleDeclaration // from trait `IsHtmlElement`
-fn HTMLCanvasElement::get_tab_index(Self) -> Int // from trait `IsHtmlElement`
-fn HTMLCanvasElement::get_title(Self) -> String // from trait `IsHtmlElement`
-fn HTMLCanvasElement::get_translate(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLCanvasElement::get_virtual_keyboard_policy(Self) -> String // from trait `IsHtmlElement`
 fn HTMLCanvasElement::get_width(Self) -> Int
-fn HTMLCanvasElement::get_writing_suggestions(Self) -> String // from trait `IsHtmlElement`
-fn HTMLCanvasElement::hide_popover(Self) -> Unit // from trait `IsHtmlElement`
-fn HTMLCanvasElement::insert_before(Self, Node, Node) -> Unit // from trait `IsNode`
-fn HTMLCanvasElement::into(@js.Value) -> Self? // from trait `@js.Cast`
-fn HTMLCanvasElement::remove_attribute(Self, String) -> Unit // from trait `IsElement`
-fn HTMLCanvasElement::remove_child(Self, Node) -> Unit // from trait `IsNode`
-fn HTMLCanvasElement::remove_event_listener(Self, String, (Event) -> Unit) -> Unit // from trait `IsEventTarget`
-fn HTMLCanvasElement::remove_property(Self, String) -> Unit // from trait `IsElement`
-fn HTMLCanvasElement::replace_child(Self, Node, Node) -> Unit // from trait `IsNode`
-fn HTMLCanvasElement::scroll_into_view(Self) -> Unit // from trait `IsElement`
-fn HTMLCanvasElement::set_access_key(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLCanvasElement::set_attribute(Self, String, String) -> Unit // from trait `IsElement`
-fn HTMLCanvasElement::set_auto_capitalize(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLCanvasElement::set_auto_correct(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLCanvasElement::set_auto_focus(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLCanvasElement::set_content_editable(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLCanvasElement::set_dir(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLCanvasElement::set_draggable(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLCanvasElement::set_edit_context(Self, EditContext?) -> Unit // from trait `IsHtmlElement`
-fn HTMLCanvasElement::set_enter_key_hint(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLCanvasElement::set_hidden(Self, @js.Value) -> Unit // from trait `IsHtmlElement`
-fn HTMLCanvasElement::set_inert(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLCanvasElement::set_inner_html(Self, String) -> Unit // from trait `IsElement`
-fn HTMLCanvasElement::set_inner_text(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLCanvasElement::set_input_mode(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLCanvasElement::set_lang(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLCanvasElement::set_nonce(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLCanvasElement::set_outer_text(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLCanvasElement::set_popover(Self, String?) -> Unit // from trait `IsHtmlElement`
-fn HTMLCanvasElement::set_property(Self, String, @js.Value) -> Unit // from trait `IsElement`
-fn HTMLCanvasElement::set_scroll_left(Self, Double) -> Unit // from trait `IsElement`
-fn HTMLCanvasElement::set_scroll_top(Self, Double) -> Unit // from trait `IsElement`
-fn HTMLCanvasElement::set_spellcheck(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLCanvasElement::set_style_declaration(Self, CSSStyleDeclaration) -> Unit // from trait `IsHtmlElement`
-fn HTMLCanvasElement::set_tab_index(Self, Int) -> Unit // from trait `IsHtmlElement`
-fn HTMLCanvasElement::set_title(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLCanvasElement::set_translate(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLCanvasElement::set_virtual_keyboard_policy(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLCanvasElement::set_writing_suggestions(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLCanvasElement::show_popover(Self) -> Unit // from trait `IsHtmlElement`
-fn HTMLCanvasElement::to_clipboard(Self) -> Clipboard? // from trait `IsEventTarget`
-fn HTMLCanvasElement::to_document(Self) -> Document? // from trait `IsEventTarget`
-fn HTMLCanvasElement::to_document_fragment(Self) -> DocumentFragment? // from trait `IsEventTarget`
-fn HTMLCanvasElement::to_element(Self) -> Element? // from trait `IsEventTarget`
-fn HTMLCanvasElement::to_html_canvas_element(Self) -> Self? // from trait `IsEventTarget`
-fn HTMLCanvasElement::to_html_dialog_element(Self) -> HTMLDialogElement? // from trait `IsEventTarget`
-fn HTMLCanvasElement::to_html_element(Self) -> HTMLElement? // from trait `IsEventTarget`
-fn HTMLCanvasElement::to_html_image_element(Self) -> HTMLImageElement? // from trait `IsEventTarget`
-fn HTMLCanvasElement::to_html_input_element(Self) -> HTMLInputElement? // from trait `IsEventTarget`
-fn HTMLCanvasElement::to_html_media_element(Self) -> HTMLMediaElement? // from trait `IsEventTarget`
-fn HTMLCanvasElement::to_html_select_element(Self) -> HTMLSelectElement? // from trait `IsEventTarget`
-fn HTMLCanvasElement::to_html_video_element(Self) -> HTMLVideoElement? // from trait `IsEventTarget`
-fn HTMLCanvasElement::to_node(Self) -> Node? // from trait `IsEventTarget`
-fn HTMLCanvasElement::to_svg_element(Self) -> SVGElement? // from trait `IsEventTarget`
-fn HTMLCanvasElement::to_svg_graphics_element(Self) -> SVGGraphicsElement? // from trait `IsEventTarget`
-fn HTMLCanvasElement::to_svg_image_element(Self) -> SVGImageElement? // from trait `IsEventTarget`
-fn HTMLCanvasElement::to_text(Self) -> Text? // from trait `IsEventTarget`
-fn HTMLCanvasElement::to_window(Self) -> Window? // from trait `IsEventTarget`
-fn HTMLCanvasElement::toggle_popover(Self, Bool?) -> Bool // from trait `IsHtmlElement`
 impl IsElement for HTMLCanvasElement
 impl IsEventTarget for HTMLCanvasElement
 impl IsHtmlElement for HTMLCanvasElement
@@ -715,134 +281,12 @@ fn HTMLCollection::item(Self, Double) -> @js.Nullable[Element]
 fn HTMLCollection::named_item(Self, String) -> @js.Nullable[Element]
 
 type HTMLDialogElement
-fn HTMLDialogElement::add_event_listener(Self, String, (Event) -> Unit) -> Unit // from trait `IsEventTarget`
-fn HTMLDialogElement::append_child(Self, Node) -> Unit // from trait `IsNode`
-fn HTMLDialogElement::as_element(Self) -> Element // from trait `IsElement`
-fn HTMLDialogElement::as_event_target(Self) -> EventTarget // from trait `IsEventTarget`
-fn HTMLDialogElement::as_html_element(Self) -> HTMLElement // from trait `IsHtmlElement`
-fn HTMLDialogElement::as_node(Self) -> Node // from trait `IsNode`
-fn HTMLDialogElement::attach_internals(Self) -> ElementInternals // from trait `IsHtmlElement`
-fn HTMLDialogElement::blur(Self) -> Unit // from trait `IsHtmlElement`
-fn HTMLDialogElement::click(Self) -> Unit // from trait `IsHtmlElement`
 fn HTMLDialogElement::close(Self, return_value? : @js.Optional[String]) -> Unit
-fn HTMLDialogElement::dispatch_event(Self, Event) -> Unit // from trait `IsEventTarget`
-fn HTMLDialogElement::focus(Self) -> Unit // from trait `IsHtmlElement`
-fn HTMLDialogElement::from(Self) -> @js.Value // from trait `@js.Cast`
-fn HTMLDialogElement::get_access_key(Self) -> String // from trait `IsHtmlElement`
-fn HTMLDialogElement::get_access_key_label(Self) -> String // from trait `IsHtmlElement`
-fn HTMLDialogElement::get_anchor_element(Self) -> Element? // from trait `IsHtmlElement`
-fn HTMLDialogElement::get_attribute(Self, String) -> String // from trait `IsElement`
-fn HTMLDialogElement::get_attribute_style_map(Self) -> StylePropertyMap // from trait `IsHtmlElement`
-fn HTMLDialogElement::get_auto_capitalize(Self) -> String // from trait `IsHtmlElement`
-fn HTMLDialogElement::get_auto_correct(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLDialogElement::get_auto_focus(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLDialogElement::get_bounding_client_rect(Self) -> DOMRect // from trait `IsElement`
-fn HTMLDialogElement::get_child(Self, Int) -> Node // from trait `IsNode`
-fn HTMLDialogElement::get_child_count(Self) -> Int // from trait `IsNode`
-fn HTMLDialogElement::get_children(Self) -> Array[Element] // from trait `IsElement`
-fn HTMLDialogElement::get_content_editable(Self) -> String // from trait `IsHtmlElement`
-fn HTMLDialogElement::get_dataset(Self) -> DOMStringMap // from trait `IsHtmlElement`
-fn HTMLDialogElement::get_dir(Self) -> String // from trait `IsHtmlElement`
-fn HTMLDialogElement::get_draggable(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLDialogElement::get_edit_context(Self) -> EditContext? // from trait `IsHtmlElement`
-fn HTMLDialogElement::get_enter_key_hint(Self) -> String // from trait `IsHtmlElement`
-fn HTMLDialogElement::get_first_child(Self) -> Node // from trait `IsNode`
-fn HTMLDialogElement::get_hidden(Self) -> @js.Value // from trait `IsHtmlElement`
-fn HTMLDialogElement::get_inert(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLDialogElement::get_inner_text(Self) -> String // from trait `IsHtmlElement`
-fn HTMLDialogElement::get_input_mode(Self) -> String // from trait `IsHtmlElement`
-fn HTMLDialogElement::get_is_content_editable(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLDialogElement::get_lang(Self) -> String // from trait `IsHtmlElement`
-fn HTMLDialogElement::get_last_child(Self) -> Node // from trait `IsNode`
-fn HTMLDialogElement::get_next_sibling(Self) -> Node // from trait `IsNode`
-fn HTMLDialogElement::get_node_name(Self) -> String // from trait `IsNode`
-fn HTMLDialogElement::get_node_type(Self) -> Int // from trait `IsNode`
-fn HTMLDialogElement::get_node_value(Self) -> String // from trait `IsNode`
-fn HTMLDialogElement::get_nonce(Self) -> String // from trait `IsHtmlElement`
-fn HTMLDialogElement::get_offset_height(Self) -> Double // from trait `IsHtmlElement`
-fn HTMLDialogElement::get_offset_left(Self) -> Double // from trait `IsHtmlElement`
-fn HTMLDialogElement::get_offset_parent(Self) -> Element? // from trait `IsHtmlElement`
-fn HTMLDialogElement::get_offset_top(Self) -> Double // from trait `IsHtmlElement`
-fn HTMLDialogElement::get_offset_width(Self) -> Double // from trait `IsHtmlElement`
-fn HTMLDialogElement::get_outer_text(Self) -> String // from trait `IsHtmlElement`
-fn HTMLDialogElement::get_parent_node(Self) -> Node // from trait `IsNode`
-fn HTMLDialogElement::get_popover(Self) -> String? // from trait `IsHtmlElement`
-fn HTMLDialogElement::get_previous_sibling(Self) -> Node // from trait `IsNode`
-fn HTMLDialogElement::get_property(Self, String) -> String // from trait `IsElement`
-fn HTMLDialogElement::get_scroll_height(Self) -> Double // from trait `IsElement`
-fn HTMLDialogElement::get_scroll_left(Self) -> Double // from trait `IsElement`
-fn HTMLDialogElement::get_scroll_top(Self) -> Double // from trait `IsElement`
-fn HTMLDialogElement::get_scroll_width(Self) -> Double // from trait `IsElement`
-fn HTMLDialogElement::get_spellcheck(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLDialogElement::get_style(Self) -> CSSStyleDeclaration // from trait `IsHtmlElement`
-fn HTMLDialogElement::get_tab_index(Self) -> Int // from trait `IsHtmlElement`
-fn HTMLDialogElement::get_title(Self) -> String // from trait `IsHtmlElement`
-fn HTMLDialogElement::get_translate(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLDialogElement::get_virtual_keyboard_policy(Self) -> String // from trait `IsHtmlElement`
-fn HTMLDialogElement::get_writing_suggestions(Self) -> String // from trait `IsHtmlElement`
-fn HTMLDialogElement::hide_popover(Self) -> Unit // from trait `IsHtmlElement`
-fn HTMLDialogElement::insert_before(Self, Node, Node) -> Unit // from trait `IsNode`
-fn HTMLDialogElement::into(@js.Value) -> Self? // from trait `@js.Cast`
 fn HTMLDialogElement::open(Self) -> Bool
-fn HTMLDialogElement::remove_attribute(Self, String) -> Unit // from trait `IsElement`
-fn HTMLDialogElement::remove_child(Self, Node) -> Unit // from trait `IsNode`
-fn HTMLDialogElement::remove_event_listener(Self, String, (Event) -> Unit) -> Unit // from trait `IsEventTarget`
-fn HTMLDialogElement::remove_property(Self, String) -> Unit // from trait `IsElement`
-fn HTMLDialogElement::replace_child(Self, Node, Node) -> Unit // from trait `IsNode`
 fn HTMLDialogElement::request_close(Self, return_value? : @js.Optional[String]) -> Unit
 fn HTMLDialogElement::return_value(Self) -> String
-fn HTMLDialogElement::scroll_into_view(Self) -> Unit // from trait `IsElement`
-fn HTMLDialogElement::set_access_key(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLDialogElement::set_attribute(Self, String, String) -> Unit // from trait `IsElement`
-fn HTMLDialogElement::set_auto_capitalize(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLDialogElement::set_auto_correct(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLDialogElement::set_auto_focus(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLDialogElement::set_content_editable(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLDialogElement::set_dir(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLDialogElement::set_draggable(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLDialogElement::set_edit_context(Self, EditContext?) -> Unit // from trait `IsHtmlElement`
-fn HTMLDialogElement::set_enter_key_hint(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLDialogElement::set_hidden(Self, @js.Value) -> Unit // from trait `IsHtmlElement`
-fn HTMLDialogElement::set_inert(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLDialogElement::set_inner_html(Self, String) -> Unit // from trait `IsElement`
-fn HTMLDialogElement::set_inner_text(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLDialogElement::set_input_mode(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLDialogElement::set_lang(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLDialogElement::set_nonce(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLDialogElement::set_outer_text(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLDialogElement::set_popover(Self, String?) -> Unit // from trait `IsHtmlElement`
-fn HTMLDialogElement::set_property(Self, String, @js.Value) -> Unit // from trait `IsElement`
-fn HTMLDialogElement::set_scroll_left(Self, Double) -> Unit // from trait `IsElement`
-fn HTMLDialogElement::set_scroll_top(Self, Double) -> Unit // from trait `IsElement`
-fn HTMLDialogElement::set_spellcheck(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLDialogElement::set_style_declaration(Self, CSSStyleDeclaration) -> Unit // from trait `IsHtmlElement`
-fn HTMLDialogElement::set_tab_index(Self, Int) -> Unit // from trait `IsHtmlElement`
-fn HTMLDialogElement::set_title(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLDialogElement::set_translate(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLDialogElement::set_virtual_keyboard_policy(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLDialogElement::set_writing_suggestions(Self, String) -> Unit // from trait `IsHtmlElement`
 fn HTMLDialogElement::show(Self) -> Unit
 fn HTMLDialogElement::show_modal(Self) -> Unit
-fn HTMLDialogElement::show_popover(Self) -> Unit // from trait `IsHtmlElement`
-fn HTMLDialogElement::to_clipboard(Self) -> Clipboard? // from trait `IsEventTarget`
-fn HTMLDialogElement::to_document(Self) -> Document? // from trait `IsEventTarget`
-fn HTMLDialogElement::to_document_fragment(Self) -> DocumentFragment? // from trait `IsEventTarget`
-fn HTMLDialogElement::to_element(Self) -> Element? // from trait `IsEventTarget`
-fn HTMLDialogElement::to_html_canvas_element(Self) -> HTMLCanvasElement? // from trait `IsEventTarget`
-fn HTMLDialogElement::to_html_dialog_element(Self) -> Self? // from trait `IsEventTarget`
-fn HTMLDialogElement::to_html_element(Self) -> HTMLElement? // from trait `IsEventTarget`
-fn HTMLDialogElement::to_html_image_element(Self) -> HTMLImageElement? // from trait `IsEventTarget`
-fn HTMLDialogElement::to_html_input_element(Self) -> HTMLInputElement? // from trait `IsEventTarget`
-fn HTMLDialogElement::to_html_media_element(Self) -> HTMLMediaElement? // from trait `IsEventTarget`
-fn HTMLDialogElement::to_html_select_element(Self) -> HTMLSelectElement? // from trait `IsEventTarget`
-fn HTMLDialogElement::to_html_video_element(Self) -> HTMLVideoElement? // from trait `IsEventTarget`
-fn HTMLDialogElement::to_node(Self) -> Node? // from trait `IsEventTarget`
-fn HTMLDialogElement::to_svg_element(Self) -> SVGElement? // from trait `IsEventTarget`
-fn HTMLDialogElement::to_svg_graphics_element(Self) -> SVGGraphicsElement? // from trait `IsEventTarget`
-fn HTMLDialogElement::to_svg_image_element(Self) -> SVGImageElement? // from trait `IsEventTarget`
-fn HTMLDialogElement::to_text(Self) -> Text? // from trait `IsEventTarget`
-fn HTMLDialogElement::to_window(Self) -> Window? // from trait `IsEventTarget`
-fn HTMLDialogElement::toggle_popover(Self, Bool?) -> Bool // from trait `IsHtmlElement`
 impl IsElement for HTMLDialogElement
 impl IsEventTarget for HTMLDialogElement
 impl IsHtmlElement for HTMLDialogElement
@@ -850,128 +294,6 @@ impl IsNode for HTMLDialogElement
 impl @js.Cast for HTMLDialogElement
 
 type HTMLElement
-fn HTMLElement::add_event_listener(Self, String, (Event) -> Unit) -> Unit // from trait `IsEventTarget`
-fn HTMLElement::append_child(Self, Node) -> Unit // from trait `IsNode`
-fn HTMLElement::as_element(Self) -> Element // from trait `IsElement`
-fn HTMLElement::as_event_target(Self) -> EventTarget // from trait `IsEventTarget`
-fn HTMLElement::as_html_element(Self) -> Self // from trait `IsHtmlElement`
-fn HTMLElement::as_node(Self) -> Node // from trait `IsNode`
-fn HTMLElement::attach_internals(Self) -> ElementInternals // from trait `IsHtmlElement`
-fn HTMLElement::blur(Self) -> Unit // from trait `IsHtmlElement`
-fn HTMLElement::click(Self) -> Unit // from trait `IsHtmlElement`
-fn HTMLElement::dispatch_event(Self, Event) -> Unit // from trait `IsEventTarget`
-fn HTMLElement::focus(Self) -> Unit // from trait `IsHtmlElement`
-fn HTMLElement::from(Self) -> @js.Value // from trait `@js.Cast`
-fn HTMLElement::get_access_key(Self) -> String // from trait `IsHtmlElement`
-fn HTMLElement::get_access_key_label(Self) -> String // from trait `IsHtmlElement`
-fn HTMLElement::get_anchor_element(Self) -> Element? // from trait `IsHtmlElement`
-fn HTMLElement::get_attribute(Self, String) -> String // from trait `IsElement`
-fn HTMLElement::get_attribute_style_map(Self) -> StylePropertyMap // from trait `IsHtmlElement`
-fn HTMLElement::get_auto_capitalize(Self) -> String // from trait `IsHtmlElement`
-fn HTMLElement::get_auto_correct(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLElement::get_auto_focus(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLElement::get_bounding_client_rect(Self) -> DOMRect // from trait `IsElement`
-fn HTMLElement::get_child(Self, Int) -> Node // from trait `IsNode`
-fn HTMLElement::get_child_count(Self) -> Int // from trait `IsNode`
-fn HTMLElement::get_children(Self) -> Array[Element] // from trait `IsElement`
-fn HTMLElement::get_content_editable(Self) -> String // from trait `IsHtmlElement`
-fn HTMLElement::get_dataset(Self) -> DOMStringMap // from trait `IsHtmlElement`
-fn HTMLElement::get_dir(Self) -> String // from trait `IsHtmlElement`
-fn HTMLElement::get_draggable(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLElement::get_edit_context(Self) -> EditContext? // from trait `IsHtmlElement`
-fn HTMLElement::get_enter_key_hint(Self) -> String // from trait `IsHtmlElement`
-fn HTMLElement::get_first_child(Self) -> Node // from trait `IsNode`
-fn HTMLElement::get_hidden(Self) -> @js.Value // from trait `IsHtmlElement`
-fn HTMLElement::get_inert(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLElement::get_inner_text(Self) -> String // from trait `IsHtmlElement`
-fn HTMLElement::get_input_mode(Self) -> String // from trait `IsHtmlElement`
-fn HTMLElement::get_is_content_editable(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLElement::get_lang(Self) -> String // from trait `IsHtmlElement`
-fn HTMLElement::get_last_child(Self) -> Node // from trait `IsNode`
-fn HTMLElement::get_next_sibling(Self) -> Node // from trait `IsNode`
-fn HTMLElement::get_node_name(Self) -> String // from trait `IsNode`
-fn HTMLElement::get_node_type(Self) -> Int // from trait `IsNode`
-fn HTMLElement::get_node_value(Self) -> String // from trait `IsNode`
-fn HTMLElement::get_nonce(Self) -> String // from trait `IsHtmlElement`
-fn HTMLElement::get_offset_height(Self) -> Double // from trait `IsHtmlElement`
-fn HTMLElement::get_offset_left(Self) -> Double // from trait `IsHtmlElement`
-fn HTMLElement::get_offset_parent(Self) -> Element? // from trait `IsHtmlElement`
-fn HTMLElement::get_offset_top(Self) -> Double // from trait `IsHtmlElement`
-fn HTMLElement::get_offset_width(Self) -> Double // from trait `IsHtmlElement`
-fn HTMLElement::get_outer_text(Self) -> String // from trait `IsHtmlElement`
-fn HTMLElement::get_parent_node(Self) -> Node // from trait `IsNode`
-fn HTMLElement::get_popover(Self) -> String? // from trait `IsHtmlElement`
-fn HTMLElement::get_previous_sibling(Self) -> Node // from trait `IsNode`
-fn HTMLElement::get_property(Self, String) -> String // from trait `IsElement`
-fn HTMLElement::get_scroll_height(Self) -> Double // from trait `IsElement`
-fn HTMLElement::get_scroll_left(Self) -> Double // from trait `IsElement`
-fn HTMLElement::get_scroll_top(Self) -> Double // from trait `IsElement`
-fn HTMLElement::get_scroll_width(Self) -> Double // from trait `IsElement`
-fn HTMLElement::get_spellcheck(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLElement::get_style(Self) -> CSSStyleDeclaration // from trait `IsHtmlElement`
-fn HTMLElement::get_tab_index(Self) -> Int // from trait `IsHtmlElement`
-fn HTMLElement::get_title(Self) -> String // from trait `IsHtmlElement`
-fn HTMLElement::get_translate(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLElement::get_virtual_keyboard_policy(Self) -> String // from trait `IsHtmlElement`
-fn HTMLElement::get_writing_suggestions(Self) -> String // from trait `IsHtmlElement`
-fn HTMLElement::hide_popover(Self) -> Unit // from trait `IsHtmlElement`
-fn HTMLElement::insert_before(Self, Node, Node) -> Unit // from trait `IsNode`
-fn HTMLElement::into(@js.Value) -> Self? // from trait `@js.Cast`
-fn HTMLElement::remove_attribute(Self, String) -> Unit // from trait `IsElement`
-fn HTMLElement::remove_child(Self, Node) -> Unit // from trait `IsNode`
-fn HTMLElement::remove_event_listener(Self, String, (Event) -> Unit) -> Unit // from trait `IsEventTarget`
-fn HTMLElement::remove_property(Self, String) -> Unit // from trait `IsElement`
-fn HTMLElement::replace_child(Self, Node, Node) -> Unit // from trait `IsNode`
-fn HTMLElement::scroll_into_view(Self) -> Unit // from trait `IsElement`
-fn HTMLElement::set_access_key(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLElement::set_attribute(Self, String, String) -> Unit // from trait `IsElement`
-fn HTMLElement::set_auto_capitalize(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLElement::set_auto_correct(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLElement::set_auto_focus(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLElement::set_content_editable(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLElement::set_dir(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLElement::set_draggable(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLElement::set_edit_context(Self, EditContext?) -> Unit // from trait `IsHtmlElement`
-fn HTMLElement::set_enter_key_hint(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLElement::set_hidden(Self, @js.Value) -> Unit // from trait `IsHtmlElement`
-fn HTMLElement::set_inert(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLElement::set_inner_html(Self, String) -> Unit // from trait `IsElement`
-fn HTMLElement::set_inner_text(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLElement::set_input_mode(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLElement::set_lang(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLElement::set_nonce(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLElement::set_outer_text(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLElement::set_popover(Self, String?) -> Unit // from trait `IsHtmlElement`
-fn HTMLElement::set_property(Self, String, @js.Value) -> Unit // from trait `IsElement`
-fn HTMLElement::set_scroll_left(Self, Double) -> Unit // from trait `IsElement`
-fn HTMLElement::set_scroll_top(Self, Double) -> Unit // from trait `IsElement`
-fn HTMLElement::set_spellcheck(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLElement::set_style_declaration(Self, CSSStyleDeclaration) -> Unit // from trait `IsHtmlElement`
-fn HTMLElement::set_tab_index(Self, Int) -> Unit // from trait `IsHtmlElement`
-fn HTMLElement::set_title(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLElement::set_translate(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLElement::set_virtual_keyboard_policy(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLElement::set_writing_suggestions(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLElement::show_popover(Self) -> Unit // from trait `IsHtmlElement`
-fn HTMLElement::to_clipboard(Self) -> Clipboard? // from trait `IsEventTarget`
-fn HTMLElement::to_document(Self) -> Document? // from trait `IsEventTarget`
-fn HTMLElement::to_document_fragment(Self) -> DocumentFragment? // from trait `IsEventTarget`
-fn HTMLElement::to_element(Self) -> Element? // from trait `IsEventTarget`
-fn HTMLElement::to_html_canvas_element(Self) -> HTMLCanvasElement? // from trait `IsEventTarget`
-fn HTMLElement::to_html_dialog_element(Self) -> HTMLDialogElement? // from trait `IsEventTarget`
-fn HTMLElement::to_html_element(Self) -> Self? // from trait `IsEventTarget`
-fn HTMLElement::to_html_image_element(Self) -> HTMLImageElement? // from trait `IsEventTarget`
-fn HTMLElement::to_html_input_element(Self) -> HTMLInputElement? // from trait `IsEventTarget`
-fn HTMLElement::to_html_media_element(Self) -> HTMLMediaElement? // from trait `IsEventTarget`
-fn HTMLElement::to_html_select_element(Self) -> HTMLSelectElement? // from trait `IsEventTarget`
-fn HTMLElement::to_html_video_element(Self) -> HTMLVideoElement? // from trait `IsEventTarget`
-fn HTMLElement::to_node(Self) -> Node? // from trait `IsEventTarget`
-fn HTMLElement::to_svg_element(Self) -> SVGElement? // from trait `IsEventTarget`
-fn HTMLElement::to_svg_graphics_element(Self) -> SVGGraphicsElement? // from trait `IsEventTarget`
-fn HTMLElement::to_svg_image_element(Self) -> SVGImageElement? // from trait `IsEventTarget`
-fn HTMLElement::to_text(Self) -> Text? // from trait `IsEventTarget`
-fn HTMLElement::to_window(Self) -> Window? // from trait `IsEventTarget`
-fn HTMLElement::toggle_popover(Self, Bool?) -> Bool // from trait `IsHtmlElement`
 impl IsElement for HTMLElement
 impl IsEventTarget for HTMLElement
 impl IsHtmlElement for HTMLElement
@@ -979,162 +301,40 @@ impl IsNode for HTMLElement
 impl @js.Cast for HTMLElement
 
 type HTMLImageElement
-fn HTMLImageElement::add_event_listener(Self, String, (Event) -> Unit) -> Unit // from trait `IsEventTarget`
-fn HTMLImageElement::append_child(Self, Node) -> Unit // from trait `IsNode`
-fn HTMLImageElement::as_element(Self) -> Element // from trait `IsElement`
-fn HTMLImageElement::as_event_target(Self) -> EventTarget // from trait `IsEventTarget`
-fn HTMLImageElement::as_html_element(Self) -> HTMLElement // from trait `IsHtmlElement`
-fn HTMLImageElement::as_node(Self) -> Node // from trait `IsNode`
-fn HTMLImageElement::attach_internals(Self) -> ElementInternals // from trait `IsHtmlElement`
-fn HTMLImageElement::blur(Self) -> Unit // from trait `IsHtmlElement`
-fn HTMLImageElement::click(Self) -> Unit // from trait `IsHtmlElement`
-fn HTMLImageElement::dispatch_event(Self, Event) -> Unit // from trait `IsEventTarget`
-fn HTMLImageElement::focus(Self) -> Unit // from trait `IsHtmlElement`
-fn HTMLImageElement::from(Self) -> @js.Value // from trait `@js.Cast`
-fn HTMLImageElement::get_access_key(Self) -> String // from trait `IsHtmlElement`
-fn HTMLImageElement::get_access_key_label(Self) -> String // from trait `IsHtmlElement`
 fn HTMLImageElement::get_alt(Self) -> String
-fn HTMLImageElement::get_anchor_element(Self) -> Element? // from trait `IsHtmlElement`
-fn HTMLImageElement::get_attribute(Self, String) -> String // from trait `IsElement`
-fn HTMLImageElement::get_attribute_style_map(Self) -> StylePropertyMap // from trait `IsHtmlElement`
-fn HTMLImageElement::get_auto_capitalize(Self) -> String // from trait `IsHtmlElement`
-fn HTMLImageElement::get_auto_correct(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLImageElement::get_auto_focus(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLImageElement::get_bounding_client_rect(Self) -> DOMRect // from trait `IsElement`
-fn HTMLImageElement::get_child(Self, Int) -> Node // from trait `IsNode`
-fn HTMLImageElement::get_child_count(Self) -> Int // from trait `IsNode`
-fn HTMLImageElement::get_children(Self) -> Array[Element] // from trait `IsElement`
 fn HTMLImageElement::get_complete(Self) -> Bool
-fn HTMLImageElement::get_content_editable(Self) -> String // from trait `IsHtmlElement`
 fn HTMLImageElement::get_cross_origin(Self) -> String
 fn HTMLImageElement::get_current_src(Self) -> String
-fn HTMLImageElement::get_dataset(Self) -> DOMStringMap // from trait `IsHtmlElement`
 fn HTMLImageElement::get_decoding(Self) -> String
-fn HTMLImageElement::get_dir(Self) -> String // from trait `IsHtmlElement`
-fn HTMLImageElement::get_draggable(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLImageElement::get_edit_context(Self) -> EditContext? // from trait `IsHtmlElement`
-fn HTMLImageElement::get_enter_key_hint(Self) -> String // from trait `IsHtmlElement`
-fn HTMLImageElement::get_first_child(Self) -> Node // from trait `IsNode`
 fn HTMLImageElement::get_height(Self) -> Double
-fn HTMLImageElement::get_hidden(Self) -> @js.Value // from trait `IsHtmlElement`
-fn HTMLImageElement::get_inert(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLImageElement::get_inner_text(Self) -> String // from trait `IsHtmlElement`
-fn HTMLImageElement::get_input_mode(Self) -> String // from trait `IsHtmlElement`
-fn HTMLImageElement::get_is_content_editable(Self) -> Bool // from trait `IsHtmlElement`
 fn HTMLImageElement::get_is_map(Self) -> Bool
-fn HTMLImageElement::get_lang(Self) -> String // from trait `IsHtmlElement`
-fn HTMLImageElement::get_last_child(Self) -> Node // from trait `IsNode`
 fn HTMLImageElement::get_loading(Self) -> String
 fn HTMLImageElement::get_natural_height(Self) -> Double
 fn HTMLImageElement::get_natural_width(Self) -> Double
-fn HTMLImageElement::get_next_sibling(Self) -> Node // from trait `IsNode`
-fn HTMLImageElement::get_node_name(Self) -> String // from trait `IsNode`
-fn HTMLImageElement::get_node_type(Self) -> Int // from trait `IsNode`
-fn HTMLImageElement::get_node_value(Self) -> String // from trait `IsNode`
-fn HTMLImageElement::get_nonce(Self) -> String // from trait `IsHtmlElement`
-fn HTMLImageElement::get_offset_height(Self) -> Double // from trait `IsHtmlElement`
-fn HTMLImageElement::get_offset_left(Self) -> Double // from trait `IsHtmlElement`
-fn HTMLImageElement::get_offset_parent(Self) -> Element? // from trait `IsHtmlElement`
-fn HTMLImageElement::get_offset_top(Self) -> Double // from trait `IsHtmlElement`
-fn HTMLImageElement::get_offset_width(Self) -> Double // from trait `IsHtmlElement`
-fn HTMLImageElement::get_outer_text(Self) -> String // from trait `IsHtmlElement`
-fn HTMLImageElement::get_parent_node(Self) -> Node // from trait `IsNode`
-fn HTMLImageElement::get_popover(Self) -> String? // from trait `IsHtmlElement`
-fn HTMLImageElement::get_previous_sibling(Self) -> Node // from trait `IsNode`
-fn HTMLImageElement::get_property(Self, String) -> String // from trait `IsElement`
 fn HTMLImageElement::get_referrer_policy(Self) -> String
-fn HTMLImageElement::get_scroll_height(Self) -> Double // from trait `IsElement`
-fn HTMLImageElement::get_scroll_left(Self) -> Double // from trait `IsElement`
-fn HTMLImageElement::get_scroll_top(Self) -> Double // from trait `IsElement`
-fn HTMLImageElement::get_scroll_width(Self) -> Double // from trait `IsElement`
 fn HTMLImageElement::get_sizes(Self) -> String
-fn HTMLImageElement::get_spellcheck(Self) -> Bool // from trait `IsHtmlElement`
 fn HTMLImageElement::get_src(Self) -> String
 fn HTMLImageElement::get_srcset(Self) -> String
-fn HTMLImageElement::get_style(Self) -> CSSStyleDeclaration // from trait `IsHtmlElement`
-fn HTMLImageElement::get_tab_index(Self) -> Int // from trait `IsHtmlElement`
-fn HTMLImageElement::get_title(Self) -> String // from trait `IsHtmlElement`
-fn HTMLImageElement::get_translate(Self) -> Bool // from trait `IsHtmlElement`
 fn HTMLImageElement::get_use_map(Self) -> String
-fn HTMLImageElement::get_virtual_keyboard_policy(Self) -> String // from trait `IsHtmlElement`
 fn HTMLImageElement::get_width(Self) -> Double
-fn HTMLImageElement::get_writing_suggestions(Self) -> String // from trait `IsHtmlElement`
 fn HTMLImageElement::get_x(Self) -> Double
 fn HTMLImageElement::get_y(Self) -> Double
-fn HTMLImageElement::hide_popover(Self) -> Unit // from trait `IsHtmlElement`
-fn HTMLImageElement::insert_before(Self, Node, Node) -> Unit // from trait `IsNode`
-fn HTMLImageElement::into(@js.Value) -> Self? // from trait `@js.Cast`
 fn HTMLImageElement::new() -> Self
 fn HTMLImageElement::new_with_size(Double, Double) -> Self
-fn HTMLImageElement::remove_attribute(Self, String) -> Unit // from trait `IsElement`
-fn HTMLImageElement::remove_child(Self, Node) -> Unit // from trait `IsNode`
-fn HTMLImageElement::remove_event_listener(Self, String, (Event) -> Unit) -> Unit // from trait `IsEventTarget`
-fn HTMLImageElement::remove_property(Self, String) -> Unit // from trait `IsElement`
-fn HTMLImageElement::replace_child(Self, Node, Node) -> Unit // from trait `IsNode`
-fn HTMLImageElement::scroll_into_view(Self) -> Unit // from trait `IsElement`
-fn HTMLImageElement::set_access_key(Self, String) -> Unit // from trait `IsHtmlElement`
 fn HTMLImageElement::set_alt(Self, String) -> Unit
-fn HTMLImageElement::set_attribute(Self, String, String) -> Unit // from trait `IsElement`
-fn HTMLImageElement::set_auto_capitalize(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLImageElement::set_auto_correct(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLImageElement::set_auto_focus(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLImageElement::set_content_editable(Self, String) -> Unit // from trait `IsHtmlElement`
 fn HTMLImageElement::set_cross_origin(Self, String) -> Unit
 fn HTMLImageElement::set_decoding(Self, String) -> Unit
-fn HTMLImageElement::set_dir(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLImageElement::set_draggable(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLImageElement::set_edit_context(Self, EditContext?) -> Unit // from trait `IsHtmlElement`
-fn HTMLImageElement::set_enter_key_hint(Self, String) -> Unit // from trait `IsHtmlElement`
 fn HTMLImageElement::set_height(Self, Double) -> Unit
-fn HTMLImageElement::set_hidden(Self, @js.Value) -> Unit // from trait `IsHtmlElement`
-fn HTMLImageElement::set_inert(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLImageElement::set_inner_html(Self, String) -> Unit // from trait `IsElement`
-fn HTMLImageElement::set_inner_text(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLImageElement::set_input_mode(Self, String) -> Unit // from trait `IsHtmlElement`
 fn HTMLImageElement::set_is_map(Self, Bool) -> Unit
-fn HTMLImageElement::set_lang(Self, String) -> Unit // from trait `IsHtmlElement`
 fn HTMLImageElement::set_loading(Self, String) -> Unit
 fn HTMLImageElement::set_natural_height(Self, Double) -> Unit
 fn HTMLImageElement::set_natural_width(Self, Double) -> Unit
-fn HTMLImageElement::set_nonce(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLImageElement::set_outer_text(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLImageElement::set_popover(Self, String?) -> Unit // from trait `IsHtmlElement`
-fn HTMLImageElement::set_property(Self, String, @js.Value) -> Unit // from trait `IsElement`
 fn HTMLImageElement::set_referrer_policy(Self, String) -> Unit
-fn HTMLImageElement::set_scroll_left(Self, Double) -> Unit // from trait `IsElement`
-fn HTMLImageElement::set_scroll_top(Self, Double) -> Unit // from trait `IsElement`
 fn HTMLImageElement::set_sizes(Self, String) -> Unit
-fn HTMLImageElement::set_spellcheck(Self, Bool) -> Unit // from trait `IsHtmlElement`
 fn HTMLImageElement::set_src(Self, String) -> Unit
 fn HTMLImageElement::set_srcset(Self, String) -> Unit
-fn HTMLImageElement::set_style_declaration(Self, CSSStyleDeclaration) -> Unit // from trait `IsHtmlElement`
-fn HTMLImageElement::set_tab_index(Self, Int) -> Unit // from trait `IsHtmlElement`
-fn HTMLImageElement::set_title(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLImageElement::set_translate(Self, Bool) -> Unit // from trait `IsHtmlElement`
 fn HTMLImageElement::set_use_map(Self, String) -> Unit
-fn HTMLImageElement::set_virtual_keyboard_policy(Self, String) -> Unit // from trait `IsHtmlElement`
 fn HTMLImageElement::set_width(Self, Double) -> Unit
-fn HTMLImageElement::set_writing_suggestions(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLImageElement::show_popover(Self) -> Unit // from trait `IsHtmlElement`
-fn HTMLImageElement::to_clipboard(Self) -> Clipboard? // from trait `IsEventTarget`
-fn HTMLImageElement::to_document(Self) -> Document? // from trait `IsEventTarget`
-fn HTMLImageElement::to_document_fragment(Self) -> DocumentFragment? // from trait `IsEventTarget`
-fn HTMLImageElement::to_element(Self) -> Element? // from trait `IsEventTarget`
-fn HTMLImageElement::to_html_canvas_element(Self) -> HTMLCanvasElement? // from trait `IsEventTarget`
-fn HTMLImageElement::to_html_dialog_element(Self) -> HTMLDialogElement? // from trait `IsEventTarget`
-fn HTMLImageElement::to_html_element(Self) -> HTMLElement? // from trait `IsEventTarget`
-fn HTMLImageElement::to_html_image_element(Self) -> Self? // from trait `IsEventTarget`
-fn HTMLImageElement::to_html_input_element(Self) -> HTMLInputElement? // from trait `IsEventTarget`
-fn HTMLImageElement::to_html_media_element(Self) -> HTMLMediaElement? // from trait `IsEventTarget`
-fn HTMLImageElement::to_html_select_element(Self) -> HTMLSelectElement? // from trait `IsEventTarget`
-fn HTMLImageElement::to_html_video_element(Self) -> HTMLVideoElement? // from trait `IsEventTarget`
-fn HTMLImageElement::to_node(Self) -> Node? // from trait `IsEventTarget`
-fn HTMLImageElement::to_svg_element(Self) -> SVGElement? // from trait `IsEventTarget`
-fn HTMLImageElement::to_svg_graphics_element(Self) -> SVGGraphicsElement? // from trait `IsEventTarget`
-fn HTMLImageElement::to_svg_image_element(Self) -> SVGImageElement? // from trait `IsEventTarget`
-fn HTMLImageElement::to_text(Self) -> Text? // from trait `IsEventTarget`
-fn HTMLImageElement::to_window(Self) -> Window? // from trait `IsEventTarget`
-fn HTMLImageElement::toggle_popover(Self, Bool?) -> Bool // from trait `IsHtmlElement`
 impl IsElement for HTMLImageElement
 impl IsEventTarget for HTMLImageElement
 impl IsHtmlElement for HTMLImageElement
@@ -1142,128 +342,6 @@ impl IsNode for HTMLImageElement
 impl @js.Cast for HTMLImageElement
 
 type HTMLInputElement
-fn HTMLInputElement::add_event_listener(Self, String, (Event) -> Unit) -> Unit // from trait `IsEventTarget`
-fn HTMLInputElement::append_child(Self, Node) -> Unit // from trait `IsNode`
-fn HTMLInputElement::as_element(Self) -> Element // from trait `IsElement`
-fn HTMLInputElement::as_event_target(Self) -> EventTarget // from trait `IsEventTarget`
-fn HTMLInputElement::as_html_element(Self) -> HTMLElement // from trait `IsHtmlElement`
-fn HTMLInputElement::as_node(Self) -> Node // from trait `IsNode`
-fn HTMLInputElement::attach_internals(Self) -> ElementInternals // from trait `IsHtmlElement`
-fn HTMLInputElement::blur(Self) -> Unit // from trait `IsHtmlElement`
-fn HTMLInputElement::click(Self) -> Unit // from trait `IsHtmlElement`
-fn HTMLInputElement::dispatch_event(Self, Event) -> Unit // from trait `IsEventTarget`
-fn HTMLInputElement::focus(Self) -> Unit // from trait `IsHtmlElement`
-fn HTMLInputElement::from(Self) -> @js.Value // from trait `@js.Cast`
-fn HTMLInputElement::get_access_key(Self) -> String // from trait `IsHtmlElement`
-fn HTMLInputElement::get_access_key_label(Self) -> String // from trait `IsHtmlElement`
-fn HTMLInputElement::get_anchor_element(Self) -> Element? // from trait `IsHtmlElement`
-fn HTMLInputElement::get_attribute(Self, String) -> String // from trait `IsElement`
-fn HTMLInputElement::get_attribute_style_map(Self) -> StylePropertyMap // from trait `IsHtmlElement`
-fn HTMLInputElement::get_auto_capitalize(Self) -> String // from trait `IsHtmlElement`
-fn HTMLInputElement::get_auto_correct(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLInputElement::get_auto_focus(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLInputElement::get_bounding_client_rect(Self) -> DOMRect // from trait `IsElement`
-fn HTMLInputElement::get_child(Self, Int) -> Node // from trait `IsNode`
-fn HTMLInputElement::get_child_count(Self) -> Int // from trait `IsNode`
-fn HTMLInputElement::get_children(Self) -> Array[Element] // from trait `IsElement`
-fn HTMLInputElement::get_content_editable(Self) -> String // from trait `IsHtmlElement`
-fn HTMLInputElement::get_dataset(Self) -> DOMStringMap // from trait `IsHtmlElement`
-fn HTMLInputElement::get_dir(Self) -> String // from trait `IsHtmlElement`
-fn HTMLInputElement::get_draggable(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLInputElement::get_edit_context(Self) -> EditContext? // from trait `IsHtmlElement`
-fn HTMLInputElement::get_enter_key_hint(Self) -> String // from trait `IsHtmlElement`
-fn HTMLInputElement::get_first_child(Self) -> Node // from trait `IsNode`
-fn HTMLInputElement::get_hidden(Self) -> @js.Value // from trait `IsHtmlElement`
-fn HTMLInputElement::get_inert(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLInputElement::get_inner_text(Self) -> String // from trait `IsHtmlElement`
-fn HTMLInputElement::get_input_mode(Self) -> String // from trait `IsHtmlElement`
-fn HTMLInputElement::get_is_content_editable(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLInputElement::get_lang(Self) -> String // from trait `IsHtmlElement`
-fn HTMLInputElement::get_last_child(Self) -> Node // from trait `IsNode`
-fn HTMLInputElement::get_next_sibling(Self) -> Node // from trait `IsNode`
-fn HTMLInputElement::get_node_name(Self) -> String // from trait `IsNode`
-fn HTMLInputElement::get_node_type(Self) -> Int // from trait `IsNode`
-fn HTMLInputElement::get_node_value(Self) -> String // from trait `IsNode`
-fn HTMLInputElement::get_nonce(Self) -> String // from trait `IsHtmlElement`
-fn HTMLInputElement::get_offset_height(Self) -> Double // from trait `IsHtmlElement`
-fn HTMLInputElement::get_offset_left(Self) -> Double // from trait `IsHtmlElement`
-fn HTMLInputElement::get_offset_parent(Self) -> Element? // from trait `IsHtmlElement`
-fn HTMLInputElement::get_offset_top(Self) -> Double // from trait `IsHtmlElement`
-fn HTMLInputElement::get_offset_width(Self) -> Double // from trait `IsHtmlElement`
-fn HTMLInputElement::get_outer_text(Self) -> String // from trait `IsHtmlElement`
-fn HTMLInputElement::get_parent_node(Self) -> Node // from trait `IsNode`
-fn HTMLInputElement::get_popover(Self) -> String? // from trait `IsHtmlElement`
-fn HTMLInputElement::get_previous_sibling(Self) -> Node // from trait `IsNode`
-fn HTMLInputElement::get_property(Self, String) -> String // from trait `IsElement`
-fn HTMLInputElement::get_scroll_height(Self) -> Double // from trait `IsElement`
-fn HTMLInputElement::get_scroll_left(Self) -> Double // from trait `IsElement`
-fn HTMLInputElement::get_scroll_top(Self) -> Double // from trait `IsElement`
-fn HTMLInputElement::get_scroll_width(Self) -> Double // from trait `IsElement`
-fn HTMLInputElement::get_spellcheck(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLInputElement::get_style(Self) -> CSSStyleDeclaration // from trait `IsHtmlElement`
-fn HTMLInputElement::get_tab_index(Self) -> Int // from trait `IsHtmlElement`
-fn HTMLInputElement::get_title(Self) -> String // from trait `IsHtmlElement`
-fn HTMLInputElement::get_translate(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLInputElement::get_virtual_keyboard_policy(Self) -> String // from trait `IsHtmlElement`
-fn HTMLInputElement::get_writing_suggestions(Self) -> String // from trait `IsHtmlElement`
-fn HTMLInputElement::hide_popover(Self) -> Unit // from trait `IsHtmlElement`
-fn HTMLInputElement::insert_before(Self, Node, Node) -> Unit // from trait `IsNode`
-fn HTMLInputElement::into(@js.Value) -> Self? // from trait `@js.Cast`
-fn HTMLInputElement::remove_attribute(Self, String) -> Unit // from trait `IsElement`
-fn HTMLInputElement::remove_child(Self, Node) -> Unit // from trait `IsNode`
-fn HTMLInputElement::remove_event_listener(Self, String, (Event) -> Unit) -> Unit // from trait `IsEventTarget`
-fn HTMLInputElement::remove_property(Self, String) -> Unit // from trait `IsElement`
-fn HTMLInputElement::replace_child(Self, Node, Node) -> Unit // from trait `IsNode`
-fn HTMLInputElement::scroll_into_view(Self) -> Unit // from trait `IsElement`
-fn HTMLInputElement::set_access_key(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLInputElement::set_attribute(Self, String, String) -> Unit // from trait `IsElement`
-fn HTMLInputElement::set_auto_capitalize(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLInputElement::set_auto_correct(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLInputElement::set_auto_focus(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLInputElement::set_content_editable(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLInputElement::set_dir(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLInputElement::set_draggable(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLInputElement::set_edit_context(Self, EditContext?) -> Unit // from trait `IsHtmlElement`
-fn HTMLInputElement::set_enter_key_hint(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLInputElement::set_hidden(Self, @js.Value) -> Unit // from trait `IsHtmlElement`
-fn HTMLInputElement::set_inert(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLInputElement::set_inner_html(Self, String) -> Unit // from trait `IsElement`
-fn HTMLInputElement::set_inner_text(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLInputElement::set_input_mode(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLInputElement::set_lang(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLInputElement::set_nonce(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLInputElement::set_outer_text(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLInputElement::set_popover(Self, String?) -> Unit // from trait `IsHtmlElement`
-fn HTMLInputElement::set_property(Self, String, @js.Value) -> Unit // from trait `IsElement`
-fn HTMLInputElement::set_scroll_left(Self, Double) -> Unit // from trait `IsElement`
-fn HTMLInputElement::set_scroll_top(Self, Double) -> Unit // from trait `IsElement`
-fn HTMLInputElement::set_spellcheck(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLInputElement::set_style_declaration(Self, CSSStyleDeclaration) -> Unit // from trait `IsHtmlElement`
-fn HTMLInputElement::set_tab_index(Self, Int) -> Unit // from trait `IsHtmlElement`
-fn HTMLInputElement::set_title(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLInputElement::set_translate(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLInputElement::set_virtual_keyboard_policy(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLInputElement::set_writing_suggestions(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLInputElement::show_popover(Self) -> Unit // from trait `IsHtmlElement`
-fn HTMLInputElement::to_clipboard(Self) -> Clipboard? // from trait `IsEventTarget`
-fn HTMLInputElement::to_document(Self) -> Document? // from trait `IsEventTarget`
-fn HTMLInputElement::to_document_fragment(Self) -> DocumentFragment? // from trait `IsEventTarget`
-fn HTMLInputElement::to_element(Self) -> Element? // from trait `IsEventTarget`
-fn HTMLInputElement::to_html_canvas_element(Self) -> HTMLCanvasElement? // from trait `IsEventTarget`
-fn HTMLInputElement::to_html_dialog_element(Self) -> HTMLDialogElement? // from trait `IsEventTarget`
-fn HTMLInputElement::to_html_element(Self) -> HTMLElement? // from trait `IsEventTarget`
-fn HTMLInputElement::to_html_image_element(Self) -> HTMLImageElement? // from trait `IsEventTarget`
-fn HTMLInputElement::to_html_input_element(Self) -> Self? // from trait `IsEventTarget`
-fn HTMLInputElement::to_html_media_element(Self) -> HTMLMediaElement? // from trait `IsEventTarget`
-fn HTMLInputElement::to_html_select_element(Self) -> HTMLSelectElement? // from trait `IsEventTarget`
-fn HTMLInputElement::to_html_video_element(Self) -> HTMLVideoElement? // from trait `IsEventTarget`
-fn HTMLInputElement::to_node(Self) -> Node? // from trait `IsEventTarget`
-fn HTMLInputElement::to_svg_element(Self) -> SVGElement? // from trait `IsEventTarget`
-fn HTMLInputElement::to_svg_graphics_element(Self) -> SVGGraphicsElement? // from trait `IsEventTarget`
-fn HTMLInputElement::to_svg_image_element(Self) -> SVGImageElement? // from trait `IsEventTarget`
-fn HTMLInputElement::to_text(Self) -> Text? // from trait `IsEventTarget`
-fn HTMLInputElement::to_window(Self) -> Window? // from trait `IsEventTarget`
-fn HTMLInputElement::toggle_popover(Self, Bool?) -> Bool // from trait `IsHtmlElement`
 fn HTMLInputElement::value(Self) -> String
 impl IsElement for HTMLInputElement
 impl IsEventTarget for HTMLInputElement
@@ -1272,184 +350,6 @@ impl IsNode for HTMLInputElement
 impl @js.Cast for HTMLInputElement
 
 type HTMLMediaElement
-fn HTMLMediaElement::add_event_listener(Self, String, (Event) -> Unit) -> Unit // from trait `IsEventTarget`
-fn HTMLMediaElement::add_text_track(Self, String, String?, String?) -> TextTrack // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::append_child(Self, Node) -> Unit // from trait `IsNode`
-fn HTMLMediaElement::as_element(Self) -> Element // from trait `IsElement`
-fn HTMLMediaElement::as_event_target(Self) -> EventTarget // from trait `IsEventTarget`
-fn HTMLMediaElement::as_html_element(Self) -> HTMLElement // from trait `IsHtmlElement`
-fn HTMLMediaElement::as_html_media_element(Self) -> Self // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::as_node(Self) -> Node // from trait `IsNode`
-fn HTMLMediaElement::attach_internals(Self) -> ElementInternals // from trait `IsHtmlElement`
-fn HTMLMediaElement::blur(Self) -> Unit // from trait `IsHtmlElement`
-fn HTMLMediaElement::can_play_type(Self, String) -> String // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::capture_stream(Self) -> MediaStream // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::click(Self) -> Unit // from trait `IsHtmlElement`
-fn HTMLMediaElement::dispatch_event(Self, Event) -> Unit // from trait `IsEventTarget`
-fn HTMLMediaElement::fast_seek(Self, Double) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::focus(Self) -> Unit // from trait `IsHtmlElement`
-fn HTMLMediaElement::from(Self) -> @js.Value // from trait `@js.Cast`
-fn HTMLMediaElement::get_access_key(Self) -> String // from trait `IsHtmlElement`
-fn HTMLMediaElement::get_access_key_label(Self) -> String // from trait `IsHtmlElement`
-fn HTMLMediaElement::get_anchor_element(Self) -> Element? // from trait `IsHtmlElement`
-fn HTMLMediaElement::get_attribute(Self, String) -> String // from trait `IsElement`
-fn HTMLMediaElement::get_attribute_style_map(Self) -> StylePropertyMap // from trait `IsHtmlElement`
-fn HTMLMediaElement::get_audio_tracks(Self) -> AudioTrackList // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::get_auto_capitalize(Self) -> String // from trait `IsHtmlElement`
-fn HTMLMediaElement::get_auto_correct(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLMediaElement::get_auto_focus(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLMediaElement::get_autoplay(Self) -> Bool // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::get_bounding_client_rect(Self) -> DOMRect // from trait `IsElement`
-fn HTMLMediaElement::get_buffered(Self) -> TimeRanges // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::get_child(Self, Int) -> Node // from trait `IsNode`
-fn HTMLMediaElement::get_child_count(Self) -> Int // from trait `IsNode`
-fn HTMLMediaElement::get_children(Self) -> Array[Element] // from trait `IsElement`
-fn HTMLMediaElement::get_content_editable(Self) -> String // from trait `IsHtmlElement`
-fn HTMLMediaElement::get_controls(Self) -> Bool // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::get_controls_list(Self) -> DOMTokenList // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::get_cross_origin(Self) -> String? // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::get_current_src(Self) -> String // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::get_current_time(Self) -> Double // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::get_dataset(Self) -> DOMStringMap // from trait `IsHtmlElement`
-fn HTMLMediaElement::get_default_muted(Self) -> Bool // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::get_default_playback_rate(Self) -> Double // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::get_dir(Self) -> String // from trait `IsHtmlElement`
-fn HTMLMediaElement::get_disable_remote_playback(Self) -> Bool // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::get_draggable(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLMediaElement::get_duration(Self) -> Double // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::get_edit_context(Self) -> EditContext? // from trait `IsHtmlElement`
-fn HTMLMediaElement::get_ended(Self) -> Bool // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::get_enter_key_hint(Self) -> String // from trait `IsHtmlElement`
-fn HTMLMediaElement::get_error(Self) -> MediaError? // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::get_first_child(Self) -> Node // from trait `IsNode`
-fn HTMLMediaElement::get_hidden(Self) -> @js.Value // from trait `IsHtmlElement`
-fn HTMLMediaElement::get_inert(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLMediaElement::get_inner_text(Self) -> String // from trait `IsHtmlElement`
-fn HTMLMediaElement::get_input_mode(Self) -> String // from trait `IsHtmlElement`
-fn HTMLMediaElement::get_is_content_editable(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLMediaElement::get_lang(Self) -> String // from trait `IsHtmlElement`
-fn HTMLMediaElement::get_last_child(Self) -> Node // from trait `IsNode`
-fn HTMLMediaElement::get_loop(Self) -> Bool // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::get_media_keys(Self) -> MediaKeys? // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::get_muted(Self) -> Bool // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::get_network_state(Self) -> Int // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::get_next_sibling(Self) -> Node // from trait `IsNode`
-fn HTMLMediaElement::get_node_name(Self) -> String // from trait `IsNode`
-fn HTMLMediaElement::get_node_type(Self) -> Int // from trait `IsNode`
-fn HTMLMediaElement::get_node_value(Self) -> String // from trait `IsNode`
-fn HTMLMediaElement::get_nonce(Self) -> String // from trait `IsHtmlElement`
-fn HTMLMediaElement::get_offset_height(Self) -> Double // from trait `IsHtmlElement`
-fn HTMLMediaElement::get_offset_left(Self) -> Double // from trait `IsHtmlElement`
-fn HTMLMediaElement::get_offset_parent(Self) -> Element? // from trait `IsHtmlElement`
-fn HTMLMediaElement::get_offset_top(Self) -> Double // from trait `IsHtmlElement`
-fn HTMLMediaElement::get_offset_width(Self) -> Double // from trait `IsHtmlElement`
-fn HTMLMediaElement::get_outer_text(Self) -> String // from trait `IsHtmlElement`
-fn HTMLMediaElement::get_parent_node(Self) -> Node // from trait `IsNode`
-fn HTMLMediaElement::get_paused(Self) -> Bool // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::get_playback_rate(Self) -> Double // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::get_played(Self) -> TimeRanges // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::get_popover(Self) -> String? // from trait `IsHtmlElement`
-fn HTMLMediaElement::get_preload(Self) -> String // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::get_preserves_pitch(Self) -> Bool // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::get_previous_sibling(Self) -> Node // from trait `IsNode`
-fn HTMLMediaElement::get_property(Self, String) -> String // from trait `IsElement`
-fn HTMLMediaElement::get_ready_state(Self) -> Int // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::get_remote(Self) -> RemotePlayback // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::get_scroll_height(Self) -> Double // from trait `IsElement`
-fn HTMLMediaElement::get_scroll_left(Self) -> Double // from trait `IsElement`
-fn HTMLMediaElement::get_scroll_top(Self) -> Double // from trait `IsElement`
-fn HTMLMediaElement::get_scroll_width(Self) -> Double // from trait `IsElement`
-fn HTMLMediaElement::get_seekable(Self) -> TimeRanges // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::get_seeking(Self) -> Bool // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::get_sink_id(Self) -> String // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::get_spellcheck(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLMediaElement::get_src(Self) -> String // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::get_src_object(Self) -> @js.Value? // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::get_style(Self) -> CSSStyleDeclaration // from trait `IsHtmlElement`
-fn HTMLMediaElement::get_tab_index(Self) -> Int // from trait `IsHtmlElement`
-fn HTMLMediaElement::get_text_tracks(Self) -> TextTrackList // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::get_title(Self) -> String // from trait `IsHtmlElement`
-fn HTMLMediaElement::get_translate(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLMediaElement::get_video_tracks(Self) -> VideoTrackList // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::get_virtual_keyboard_policy(Self) -> String // from trait `IsHtmlElement`
-fn HTMLMediaElement::get_volume(Self) -> Double // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::get_writing_suggestions(Self) -> String // from trait `IsHtmlElement`
-fn HTMLMediaElement::hide_popover(Self) -> Unit // from trait `IsHtmlElement`
-fn HTMLMediaElement::insert_before(Self, Node, Node) -> Unit // from trait `IsNode`
-fn HTMLMediaElement::into(@js.Value) -> Self? // from trait `@js.Cast`
-fn HTMLMediaElement::load(Self) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::pause(Self) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::remove_attribute(Self, String) -> Unit // from trait `IsElement`
-fn HTMLMediaElement::remove_child(Self, Node) -> Unit // from trait `IsNode`
-fn HTMLMediaElement::remove_event_listener(Self, String, (Event) -> Unit) -> Unit // from trait `IsEventTarget`
-fn HTMLMediaElement::remove_property(Self, String) -> Unit // from trait `IsElement`
-fn HTMLMediaElement::replace_child(Self, Node, Node) -> Unit // from trait `IsNode`
-fn HTMLMediaElement::scroll_into_view(Self) -> Unit // from trait `IsElement`
-fn HTMLMediaElement::seek_to_next_frame(Self) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::set_access_key(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLMediaElement::set_attribute(Self, String, String) -> Unit // from trait `IsElement`
-fn HTMLMediaElement::set_auto_capitalize(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLMediaElement::set_auto_correct(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLMediaElement::set_auto_focus(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLMediaElement::set_autoplay(Self, Bool) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::set_content_editable(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLMediaElement::set_controls(Self, Bool) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::set_cross_origin(Self, String?) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::set_current_time(Self, Double) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::set_default_muted(Self, Bool) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::set_default_playback_rate(Self, Double) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::set_dir(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLMediaElement::set_disable_remote_playback(Self, Bool) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::set_draggable(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLMediaElement::set_edit_context(Self, EditContext?) -> Unit // from trait `IsHtmlElement`
-fn HTMLMediaElement::set_enter_key_hint(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLMediaElement::set_hidden(Self, @js.Value) -> Unit // from trait `IsHtmlElement`
-fn HTMLMediaElement::set_inert(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLMediaElement::set_inner_html(Self, String) -> Unit // from trait `IsElement`
-fn HTMLMediaElement::set_inner_text(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLMediaElement::set_input_mode(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLMediaElement::set_lang(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLMediaElement::set_loop(Self, Bool) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::set_muted(Self, Bool) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::set_nonce(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLMediaElement::set_outer_text(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLMediaElement::set_playback_rate(Self, Double) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::set_popover(Self, String?) -> Unit // from trait `IsHtmlElement`
-fn HTMLMediaElement::set_preload(Self, String) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::set_preserves_pitch(Self, Bool) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::set_property(Self, String, @js.Value) -> Unit // from trait `IsElement`
-fn HTMLMediaElement::set_scroll_left(Self, Double) -> Unit // from trait `IsElement`
-fn HTMLMediaElement::set_scroll_top(Self, Double) -> Unit // from trait `IsElement`
-fn HTMLMediaElement::set_spellcheck(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLMediaElement::set_src(Self, String) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::set_src_object(Self, @js.Value?) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::set_style_declaration(Self, CSSStyleDeclaration) -> Unit // from trait `IsHtmlElement`
-fn HTMLMediaElement::set_tab_index(Self, Int) -> Unit // from trait `IsHtmlElement`
-fn HTMLMediaElement::set_title(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLMediaElement::set_translate(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLMediaElement::set_virtual_keyboard_policy(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLMediaElement::set_volume(Self, Double) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLMediaElement::set_writing_suggestions(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLMediaElement::show_popover(Self) -> Unit // from trait `IsHtmlElement`
-fn HTMLMediaElement::to_clipboard(Self) -> Clipboard? // from trait `IsEventTarget`
-fn HTMLMediaElement::to_document(Self) -> Document? // from trait `IsEventTarget`
-fn HTMLMediaElement::to_document_fragment(Self) -> DocumentFragment? // from trait `IsEventTarget`
-fn HTMLMediaElement::to_element(Self) -> Element? // from trait `IsEventTarget`
-fn HTMLMediaElement::to_html_canvas_element(Self) -> HTMLCanvasElement? // from trait `IsEventTarget`
-fn HTMLMediaElement::to_html_dialog_element(Self) -> HTMLDialogElement? // from trait `IsEventTarget`
-fn HTMLMediaElement::to_html_element(Self) -> HTMLElement? // from trait `IsEventTarget`
-fn HTMLMediaElement::to_html_image_element(Self) -> HTMLImageElement? // from trait `IsEventTarget`
-fn HTMLMediaElement::to_html_input_element(Self) -> HTMLInputElement? // from trait `IsEventTarget`
-fn HTMLMediaElement::to_html_media_element(Self) -> Self? // from trait `IsEventTarget`
-fn HTMLMediaElement::to_html_select_element(Self) -> HTMLSelectElement? // from trait `IsEventTarget`
-fn HTMLMediaElement::to_html_video_element(Self) -> HTMLVideoElement? // from trait `IsEventTarget`
-fn HTMLMediaElement::to_node(Self) -> Node? // from trait `IsEventTarget`
-fn HTMLMediaElement::to_svg_element(Self) -> SVGElement? // from trait `IsEventTarget`
-fn HTMLMediaElement::to_svg_graphics_element(Self) -> SVGGraphicsElement? // from trait `IsEventTarget`
-fn HTMLMediaElement::to_svg_image_element(Self) -> SVGImageElement? // from trait `IsEventTarget`
-fn HTMLMediaElement::to_text(Self) -> Text? // from trait `IsEventTarget`
-fn HTMLMediaElement::to_window(Self) -> Window? // from trait `IsEventTarget`
-fn HTMLMediaElement::toggle_popover(Self, Bool?) -> Bool // from trait `IsHtmlElement`
 impl IsElement for HTMLMediaElement
 impl IsEventTarget for HTMLMediaElement
 impl IsHTMLMediaElement for HTMLMediaElement
@@ -1461,184 +361,6 @@ type HTMLSelectElement
 fn HTMLSelectElement::value(Self) -> String
 
 type HTMLVideoElement
-fn HTMLVideoElement::add_event_listener(Self, String, (Event) -> Unit) -> Unit // from trait `IsEventTarget`
-fn HTMLVideoElement::add_text_track(Self, String, String?, String?) -> TextTrack // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::append_child(Self, Node) -> Unit // from trait `IsNode`
-fn HTMLVideoElement::as_element(Self) -> Element // from trait `IsElement`
-fn HTMLVideoElement::as_event_target(Self) -> EventTarget // from trait `IsEventTarget`
-fn HTMLVideoElement::as_html_element(Self) -> HTMLElement // from trait `IsHtmlElement`
-fn HTMLVideoElement::as_html_media_element(Self) -> HTMLMediaElement // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::as_node(Self) -> Node // from trait `IsNode`
-fn HTMLVideoElement::attach_internals(Self) -> ElementInternals // from trait `IsHtmlElement`
-fn HTMLVideoElement::blur(Self) -> Unit // from trait `IsHtmlElement`
-fn HTMLVideoElement::can_play_type(Self, String) -> String // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::capture_stream(Self) -> MediaStream // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::click(Self) -> Unit // from trait `IsHtmlElement`
-fn HTMLVideoElement::dispatch_event(Self, Event) -> Unit // from trait `IsEventTarget`
-fn HTMLVideoElement::fast_seek(Self, Double) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::focus(Self) -> Unit // from trait `IsHtmlElement`
-fn HTMLVideoElement::from(Self) -> @js.Value // from trait `@js.Cast`
-fn HTMLVideoElement::get_access_key(Self) -> String // from trait `IsHtmlElement`
-fn HTMLVideoElement::get_access_key_label(Self) -> String // from trait `IsHtmlElement`
-fn HTMLVideoElement::get_anchor_element(Self) -> Element? // from trait `IsHtmlElement`
-fn HTMLVideoElement::get_attribute(Self, String) -> String // from trait `IsElement`
-fn HTMLVideoElement::get_attribute_style_map(Self) -> StylePropertyMap // from trait `IsHtmlElement`
-fn HTMLVideoElement::get_audio_tracks(Self) -> AudioTrackList // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::get_auto_capitalize(Self) -> String // from trait `IsHtmlElement`
-fn HTMLVideoElement::get_auto_correct(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLVideoElement::get_auto_focus(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLVideoElement::get_autoplay(Self) -> Bool // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::get_bounding_client_rect(Self) -> DOMRect // from trait `IsElement`
-fn HTMLVideoElement::get_buffered(Self) -> TimeRanges // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::get_child(Self, Int) -> Node // from trait `IsNode`
-fn HTMLVideoElement::get_child_count(Self) -> Int // from trait `IsNode`
-fn HTMLVideoElement::get_children(Self) -> Array[Element] // from trait `IsElement`
-fn HTMLVideoElement::get_content_editable(Self) -> String // from trait `IsHtmlElement`
-fn HTMLVideoElement::get_controls(Self) -> Bool // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::get_controls_list(Self) -> DOMTokenList // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::get_cross_origin(Self) -> String? // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::get_current_src(Self) -> String // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::get_current_time(Self) -> Double // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::get_dataset(Self) -> DOMStringMap // from trait `IsHtmlElement`
-fn HTMLVideoElement::get_default_muted(Self) -> Bool // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::get_default_playback_rate(Self) -> Double // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::get_dir(Self) -> String // from trait `IsHtmlElement`
-fn HTMLVideoElement::get_disable_remote_playback(Self) -> Bool // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::get_draggable(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLVideoElement::get_duration(Self) -> Double // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::get_edit_context(Self) -> EditContext? // from trait `IsHtmlElement`
-fn HTMLVideoElement::get_ended(Self) -> Bool // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::get_enter_key_hint(Self) -> String // from trait `IsHtmlElement`
-fn HTMLVideoElement::get_error(Self) -> MediaError? // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::get_first_child(Self) -> Node // from trait `IsNode`
-fn HTMLVideoElement::get_hidden(Self) -> @js.Value // from trait `IsHtmlElement`
-fn HTMLVideoElement::get_inert(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLVideoElement::get_inner_text(Self) -> String // from trait `IsHtmlElement`
-fn HTMLVideoElement::get_input_mode(Self) -> String // from trait `IsHtmlElement`
-fn HTMLVideoElement::get_is_content_editable(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLVideoElement::get_lang(Self) -> String // from trait `IsHtmlElement`
-fn HTMLVideoElement::get_last_child(Self) -> Node // from trait `IsNode`
-fn HTMLVideoElement::get_loop(Self) -> Bool // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::get_media_keys(Self) -> MediaKeys? // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::get_muted(Self) -> Bool // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::get_network_state(Self) -> Int // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::get_next_sibling(Self) -> Node // from trait `IsNode`
-fn HTMLVideoElement::get_node_name(Self) -> String // from trait `IsNode`
-fn HTMLVideoElement::get_node_type(Self) -> Int // from trait `IsNode`
-fn HTMLVideoElement::get_node_value(Self) -> String // from trait `IsNode`
-fn HTMLVideoElement::get_nonce(Self) -> String // from trait `IsHtmlElement`
-fn HTMLVideoElement::get_offset_height(Self) -> Double // from trait `IsHtmlElement`
-fn HTMLVideoElement::get_offset_left(Self) -> Double // from trait `IsHtmlElement`
-fn HTMLVideoElement::get_offset_parent(Self) -> Element? // from trait `IsHtmlElement`
-fn HTMLVideoElement::get_offset_top(Self) -> Double // from trait `IsHtmlElement`
-fn HTMLVideoElement::get_offset_width(Self) -> Double // from trait `IsHtmlElement`
-fn HTMLVideoElement::get_outer_text(Self) -> String // from trait `IsHtmlElement`
-fn HTMLVideoElement::get_parent_node(Self) -> Node // from trait `IsNode`
-fn HTMLVideoElement::get_paused(Self) -> Bool // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::get_playback_rate(Self) -> Double // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::get_played(Self) -> TimeRanges // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::get_popover(Self) -> String? // from trait `IsHtmlElement`
-fn HTMLVideoElement::get_preload(Self) -> String // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::get_preserves_pitch(Self) -> Bool // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::get_previous_sibling(Self) -> Node // from trait `IsNode`
-fn HTMLVideoElement::get_property(Self, String) -> String // from trait `IsElement`
-fn HTMLVideoElement::get_ready_state(Self) -> Int // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::get_remote(Self) -> RemotePlayback // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::get_scroll_height(Self) -> Double // from trait `IsElement`
-fn HTMLVideoElement::get_scroll_left(Self) -> Double // from trait `IsElement`
-fn HTMLVideoElement::get_scroll_top(Self) -> Double // from trait `IsElement`
-fn HTMLVideoElement::get_scroll_width(Self) -> Double // from trait `IsElement`
-fn HTMLVideoElement::get_seekable(Self) -> TimeRanges // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::get_seeking(Self) -> Bool // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::get_sink_id(Self) -> String // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::get_spellcheck(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLVideoElement::get_src(Self) -> String // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::get_src_object(Self) -> @js.Value? // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::get_style(Self) -> CSSStyleDeclaration // from trait `IsHtmlElement`
-fn HTMLVideoElement::get_tab_index(Self) -> Int // from trait `IsHtmlElement`
-fn HTMLVideoElement::get_text_tracks(Self) -> TextTrackList // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::get_title(Self) -> String // from trait `IsHtmlElement`
-fn HTMLVideoElement::get_translate(Self) -> Bool // from trait `IsHtmlElement`
-fn HTMLVideoElement::get_video_tracks(Self) -> VideoTrackList // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::get_virtual_keyboard_policy(Self) -> String // from trait `IsHtmlElement`
-fn HTMLVideoElement::get_volume(Self) -> Double // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::get_writing_suggestions(Self) -> String // from trait `IsHtmlElement`
-fn HTMLVideoElement::hide_popover(Self) -> Unit // from trait `IsHtmlElement`
-fn HTMLVideoElement::insert_before(Self, Node, Node) -> Unit // from trait `IsNode`
-fn HTMLVideoElement::into(@js.Value) -> Self? // from trait `@js.Cast`
-fn HTMLVideoElement::load(Self) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::pause(Self) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::remove_attribute(Self, String) -> Unit // from trait `IsElement`
-fn HTMLVideoElement::remove_child(Self, Node) -> Unit // from trait `IsNode`
-fn HTMLVideoElement::remove_event_listener(Self, String, (Event) -> Unit) -> Unit // from trait `IsEventTarget`
-fn HTMLVideoElement::remove_property(Self, String) -> Unit // from trait `IsElement`
-fn HTMLVideoElement::replace_child(Self, Node, Node) -> Unit // from trait `IsNode`
-fn HTMLVideoElement::scroll_into_view(Self) -> Unit // from trait `IsElement`
-fn HTMLVideoElement::seek_to_next_frame(Self) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::set_access_key(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLVideoElement::set_attribute(Self, String, String) -> Unit // from trait `IsElement`
-fn HTMLVideoElement::set_auto_capitalize(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLVideoElement::set_auto_correct(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLVideoElement::set_auto_focus(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLVideoElement::set_autoplay(Self, Bool) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::set_content_editable(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLVideoElement::set_controls(Self, Bool) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::set_cross_origin(Self, String?) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::set_current_time(Self, Double) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::set_default_muted(Self, Bool) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::set_default_playback_rate(Self, Double) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::set_dir(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLVideoElement::set_disable_remote_playback(Self, Bool) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::set_draggable(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLVideoElement::set_edit_context(Self, EditContext?) -> Unit // from trait `IsHtmlElement`
-fn HTMLVideoElement::set_enter_key_hint(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLVideoElement::set_hidden(Self, @js.Value) -> Unit // from trait `IsHtmlElement`
-fn HTMLVideoElement::set_inert(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLVideoElement::set_inner_html(Self, String) -> Unit // from trait `IsElement`
-fn HTMLVideoElement::set_inner_text(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLVideoElement::set_input_mode(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLVideoElement::set_lang(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLVideoElement::set_loop(Self, Bool) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::set_muted(Self, Bool) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::set_nonce(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLVideoElement::set_outer_text(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLVideoElement::set_playback_rate(Self, Double) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::set_popover(Self, String?) -> Unit // from trait `IsHtmlElement`
-fn HTMLVideoElement::set_preload(Self, String) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::set_preserves_pitch(Self, Bool) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::set_property(Self, String, @js.Value) -> Unit // from trait `IsElement`
-fn HTMLVideoElement::set_scroll_left(Self, Double) -> Unit // from trait `IsElement`
-fn HTMLVideoElement::set_scroll_top(Self, Double) -> Unit // from trait `IsElement`
-fn HTMLVideoElement::set_spellcheck(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLVideoElement::set_src(Self, String) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::set_src_object(Self, @js.Value?) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::set_style_declaration(Self, CSSStyleDeclaration) -> Unit // from trait `IsHtmlElement`
-fn HTMLVideoElement::set_tab_index(Self, Int) -> Unit // from trait `IsHtmlElement`
-fn HTMLVideoElement::set_title(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLVideoElement::set_translate(Self, Bool) -> Unit // from trait `IsHtmlElement`
-fn HTMLVideoElement::set_virtual_keyboard_policy(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLVideoElement::set_volume(Self, Double) -> Unit // from trait `IsHTMLMediaElement`
-fn HTMLVideoElement::set_writing_suggestions(Self, String) -> Unit // from trait `IsHtmlElement`
-fn HTMLVideoElement::show_popover(Self) -> Unit // from trait `IsHtmlElement`
-fn HTMLVideoElement::to_clipboard(Self) -> Clipboard? // from trait `IsEventTarget`
-fn HTMLVideoElement::to_document(Self) -> Document? // from trait `IsEventTarget`
-fn HTMLVideoElement::to_document_fragment(Self) -> DocumentFragment? // from trait `IsEventTarget`
-fn HTMLVideoElement::to_element(Self) -> Element? // from trait `IsEventTarget`
-fn HTMLVideoElement::to_html_canvas_element(Self) -> HTMLCanvasElement? // from trait `IsEventTarget`
-fn HTMLVideoElement::to_html_dialog_element(Self) -> HTMLDialogElement? // from trait `IsEventTarget`
-fn HTMLVideoElement::to_html_element(Self) -> HTMLElement? // from trait `IsEventTarget`
-fn HTMLVideoElement::to_html_image_element(Self) -> HTMLImageElement? // from trait `IsEventTarget`
-fn HTMLVideoElement::to_html_input_element(Self) -> HTMLInputElement? // from trait `IsEventTarget`
-fn HTMLVideoElement::to_html_media_element(Self) -> HTMLMediaElement? // from trait `IsEventTarget`
-fn HTMLVideoElement::to_html_select_element(Self) -> HTMLSelectElement? // from trait `IsEventTarget`
-fn HTMLVideoElement::to_html_video_element(Self) -> Self? // from trait `IsEventTarget`
-fn HTMLVideoElement::to_node(Self) -> Node? // from trait `IsEventTarget`
-fn HTMLVideoElement::to_svg_element(Self) -> SVGElement? // from trait `IsEventTarget`
-fn HTMLVideoElement::to_svg_graphics_element(Self) -> SVGGraphicsElement? // from trait `IsEventTarget`
-fn HTMLVideoElement::to_svg_image_element(Self) -> SVGImageElement? // from trait `IsEventTarget`
-fn HTMLVideoElement::to_text(Self) -> Text? // from trait `IsEventTarget`
-fn HTMLVideoElement::to_window(Self) -> Window? // from trait `IsEventTarget`
-fn HTMLVideoElement::toggle_popover(Self, Bool?) -> Bool // from trait `IsHtmlElement`
 impl IsElement for HTMLVideoElement
 impl IsEventTarget for HTMLVideoElement
 impl IsHTMLMediaElement for HTMLVideoElement
@@ -1647,8 +369,6 @@ impl IsNode for HTMLVideoElement
 impl @js.Cast for HTMLVideoElement
 
 type ImageBitmap
-fn ImageBitmap::from(Self) -> @js.Value // from trait `@js.Cast`
-fn ImageBitmap::into(@js.Value) -> Self? // from trait `@js.Cast`
 impl @js.Cast for ImageBitmap
 
 type ImageBitmapRenderingContext
@@ -1665,65 +385,23 @@ type ImageDataSettings
 fn ImageDataSettings::new(String) -> Self
 
 type InputEvent
-fn InputEvent::as_event(Self) -> Event // from trait `IsEvent`
-fn InputEvent::as_ui_event(Self) -> UIEvent // from trait `IsUIEvent`
 fn InputEvent::data(Self) -> String
-fn InputEvent::from(Self) -> @js.Value // from trait `@js.Cast`
 fn InputEvent::input_type(Self) -> String
-fn InputEvent::into(@js.Value) -> Self? // from trait `@js.Cast`
 fn InputEvent::is_composing(Self) -> Bool
-fn InputEvent::prevent_default(Self) -> Unit // from trait `IsEvent`
-fn InputEvent::stop_propagation(Self) -> Unit // from trait `IsEvent`
-fn InputEvent::target(Self) -> EventTarget // from trait `IsEvent`
-fn InputEvent::to_animation_event(Self) -> AnimationEvent? // from trait `IsEvent`
-fn InputEvent::to_before_unload_event(Self) -> BeforeUnloadEvent? // from trait `IsEvent`
-fn InputEvent::to_blob_event(Self) -> BlobEvent? // from trait `IsEvent`
-fn InputEvent::to_clipboard_event(Self) -> ClipboardEvent? // from trait `IsEvent`
-fn InputEvent::to_close_event(Self) -> CloseEvent? // from trait `IsEvent`
-fn InputEvent::to_composition_event(Self) -> CompositionEvent? // from trait `IsEvent`
-fn InputEvent::to_custom_event(Self) -> CustomEvent? // from trait `IsEvent`
-fn InputEvent::to_drag_event(Self) -> DragEvent? // from trait `IsEvent`
-fn InputEvent::to_focus_event(Self) -> FocusEvent? // from trait `IsEvent`
-fn InputEvent::to_input_event(Self) -> Self? // from trait `IsEvent`
-fn InputEvent::to_keyboard_event(Self) -> KeyboardEvent? // from trait `IsEvent`
-fn InputEvent::to_mouse_event(Self) -> MouseEvent? // from trait `IsEvent`
-fn InputEvent::to_ui_event(Self) -> UIEvent? // from trait `IsEvent`
-fn InputEvent::to_wheel_event(Self) -> WheelEvent? // from trait `IsEvent`
 impl IsEvent for InputEvent
 impl IsUIEvent for InputEvent
 impl @js.Cast for InputEvent
 
 type KeyboardEvent
 fn KeyboardEvent::alt_key(Self) -> Bool
-fn KeyboardEvent::as_event(Self) -> Event // from trait `IsEvent`
-fn KeyboardEvent::as_ui_event(Self) -> UIEvent // from trait `IsUIEvent`
 fn KeyboardEvent::code(Self) -> String
 fn KeyboardEvent::ctrl_key(Self) -> Bool
-fn KeyboardEvent::from(Self) -> @js.Value // from trait `@js.Cast`
-fn KeyboardEvent::into(@js.Value) -> Self? // from trait `@js.Cast`
 fn KeyboardEvent::is_composing(Self) -> Bool
 fn KeyboardEvent::key(Self) -> String
 fn KeyboardEvent::location(Self) -> Int
 fn KeyboardEvent::meta_key(Self) -> Bool
-fn KeyboardEvent::prevent_default(Self) -> Unit // from trait `IsEvent`
 fn KeyboardEvent::repeat(Self) -> Bool
 fn KeyboardEvent::shift_key(Self) -> Bool
-fn KeyboardEvent::stop_propagation(Self) -> Unit // from trait `IsEvent`
-fn KeyboardEvent::target(Self) -> EventTarget // from trait `IsEvent`
-fn KeyboardEvent::to_animation_event(Self) -> AnimationEvent? // from trait `IsEvent`
-fn KeyboardEvent::to_before_unload_event(Self) -> BeforeUnloadEvent? // from trait `IsEvent`
-fn KeyboardEvent::to_blob_event(Self) -> BlobEvent? // from trait `IsEvent`
-fn KeyboardEvent::to_clipboard_event(Self) -> ClipboardEvent? // from trait `IsEvent`
-fn KeyboardEvent::to_close_event(Self) -> CloseEvent? // from trait `IsEvent`
-fn KeyboardEvent::to_composition_event(Self) -> CompositionEvent? // from trait `IsEvent`
-fn KeyboardEvent::to_custom_event(Self) -> CustomEvent? // from trait `IsEvent`
-fn KeyboardEvent::to_drag_event(Self) -> DragEvent? // from trait `IsEvent`
-fn KeyboardEvent::to_focus_event(Self) -> FocusEvent? // from trait `IsEvent`
-fn KeyboardEvent::to_input_event(Self) -> InputEvent? // from trait `IsEvent`
-fn KeyboardEvent::to_keyboard_event(Self) -> Self? // from trait `IsEvent`
-fn KeyboardEvent::to_mouse_event(Self) -> MouseEvent? // from trait `IsEvent`
-fn KeyboardEvent::to_ui_event(Self) -> UIEvent? // from trait `IsEvent`
-fn KeyboardEvent::to_wheel_event(Self) -> WheelEvent? // from trait `IsEvent`
 impl IsEvent for KeyboardEvent
 impl IsUIEvent for KeyboardEvent
 impl @js.Cast for KeyboardEvent
@@ -1735,48 +413,6 @@ type MediaKeys
 type MediaStream
 
 type MouseEvent
-fn MouseEvent::as_event(Self) -> Event // from trait `IsEvent`
-fn MouseEvent::as_mouse_event(Self) -> Self // from trait `IsMouseEvent`
-fn MouseEvent::as_ui_event(Self) -> UIEvent // from trait `IsUIEvent`
-fn MouseEvent::from(Self) -> @js.Value // from trait `@js.Cast`
-fn MouseEvent::get_alt_key(Self) -> Bool // from trait `IsMouseEvent`
-fn MouseEvent::get_button(Self) -> Int // from trait `IsMouseEvent`
-fn MouseEvent::get_buttons(Self) -> Int // from trait `IsMouseEvent`
-fn MouseEvent::get_client_x(Self) -> Int // from trait `IsMouseEvent`
-fn MouseEvent::get_client_y(Self) -> Int // from trait `IsMouseEvent`
-fn MouseEvent::get_ctrl_key(Self) -> Bool // from trait `IsMouseEvent`
-fn MouseEvent::get_meta_key(Self) -> Bool // from trait `IsMouseEvent`
-fn MouseEvent::get_modifier_state(Self) -> Int // from trait `IsMouseEvent`
-fn MouseEvent::get_movement_x(Self) -> Int // from trait `IsMouseEvent`
-fn MouseEvent::get_movement_y(Self) -> Int // from trait `IsMouseEvent`
-fn MouseEvent::get_offset_x(Self) -> Int // from trait `IsMouseEvent`
-fn MouseEvent::get_offset_y(Self) -> Int // from trait `IsMouseEvent`
-fn MouseEvent::get_page_x(Self) -> Int // from trait `IsMouseEvent`
-fn MouseEvent::get_page_y(Self) -> Int // from trait `IsMouseEvent`
-fn MouseEvent::get_related_target(Self) -> EventTarget // from trait `IsMouseEvent`
-fn MouseEvent::get_screen_x(Self) -> Int // from trait `IsMouseEvent`
-fn MouseEvent::get_screen_y(Self) -> Int // from trait `IsMouseEvent`
-fn MouseEvent::get_shift_key(Self) -> Bool // from trait `IsMouseEvent`
-fn MouseEvent::get_x(Self) -> Int // from trait `IsMouseEvent`
-fn MouseEvent::get_y(Self) -> Int // from trait `IsMouseEvent`
-fn MouseEvent::into(@js.Value) -> Self? // from trait `@js.Cast`
-fn MouseEvent::prevent_default(Self) -> Unit // from trait `IsEvent`
-fn MouseEvent::stop_propagation(Self) -> Unit // from trait `IsEvent`
-fn MouseEvent::target(Self) -> EventTarget // from trait `IsEvent`
-fn MouseEvent::to_animation_event(Self) -> AnimationEvent? // from trait `IsEvent`
-fn MouseEvent::to_before_unload_event(Self) -> BeforeUnloadEvent? // from trait `IsEvent`
-fn MouseEvent::to_blob_event(Self) -> BlobEvent? // from trait `IsEvent`
-fn MouseEvent::to_clipboard_event(Self) -> ClipboardEvent? // from trait `IsEvent`
-fn MouseEvent::to_close_event(Self) -> CloseEvent? // from trait `IsEvent`
-fn MouseEvent::to_composition_event(Self) -> CompositionEvent? // from trait `IsEvent`
-fn MouseEvent::to_custom_event(Self) -> CustomEvent? // from trait `IsEvent`
-fn MouseEvent::to_drag_event(Self) -> DragEvent? // from trait `IsEvent`
-fn MouseEvent::to_focus_event(Self) -> FocusEvent? // from trait `IsEvent`
-fn MouseEvent::to_input_event(Self) -> InputEvent? // from trait `IsEvent`
-fn MouseEvent::to_keyboard_event(Self) -> KeyboardEvent? // from trait `IsEvent`
-fn MouseEvent::to_mouse_event(Self) -> Self? // from trait `IsEvent`
-fn MouseEvent::to_ui_event(Self) -> UIEvent? // from trait `IsEvent`
-fn MouseEvent::to_wheel_event(Self) -> WheelEvent? // from trait `IsEvent`
 impl IsEvent for MouseEvent
 impl IsMouseEvent for MouseEvent
 impl IsUIEvent for MouseEvent
@@ -1787,45 +423,6 @@ pub type Navigator
 fn Navigator::clipboard(Self) -> Clipboard
 
 type Node
-fn Node::add_event_listener(Self, String, (Event) -> Unit) -> Unit // from trait `IsEventTarget`
-fn Node::append_child(Self, Self) -> Unit // from trait `IsNode`
-fn Node::as_event_target(Self) -> EventTarget // from trait `IsEventTarget`
-fn Node::as_node(Self) -> Self // from trait `IsNode`
-fn Node::dispatch_event(Self, Event) -> Unit // from trait `IsEventTarget`
-fn Node::from(Self) -> @js.Value // from trait `@js.Cast`
-fn Node::get_child(Self, Int) -> Self // from trait `IsNode`
-fn Node::get_child_count(Self) -> Int // from trait `IsNode`
-fn Node::get_first_child(Self) -> Self // from trait `IsNode`
-fn Node::get_last_child(Self) -> Self // from trait `IsNode`
-fn Node::get_next_sibling(Self) -> Self // from trait `IsNode`
-fn Node::get_node_name(Self) -> String // from trait `IsNode`
-fn Node::get_node_type(Self) -> Int // from trait `IsNode`
-fn Node::get_node_value(Self) -> String // from trait `IsNode`
-fn Node::get_parent_node(Self) -> Self // from trait `IsNode`
-fn Node::get_previous_sibling(Self) -> Self // from trait `IsNode`
-fn Node::insert_before(Self, Self, Self) -> Unit // from trait `IsNode`
-fn Node::into(@js.Value) -> Self? // from trait `@js.Cast`
-fn Node::remove_child(Self, Self) -> Unit // from trait `IsNode`
-fn Node::remove_event_listener(Self, String, (Event) -> Unit) -> Unit // from trait `IsEventTarget`
-fn Node::replace_child(Self, Self, Self) -> Unit // from trait `IsNode`
-fn Node::to_clipboard(Self) -> Clipboard? // from trait `IsEventTarget`
-fn Node::to_document(Self) -> Document? // from trait `IsEventTarget`
-fn Node::to_document_fragment(Self) -> DocumentFragment? // from trait `IsEventTarget`
-fn Node::to_element(Self) -> Element? // from trait `IsEventTarget`
-fn Node::to_html_canvas_element(Self) -> HTMLCanvasElement? // from trait `IsEventTarget`
-fn Node::to_html_dialog_element(Self) -> HTMLDialogElement? // from trait `IsEventTarget`
-fn Node::to_html_element(Self) -> HTMLElement? // from trait `IsEventTarget`
-fn Node::to_html_image_element(Self) -> HTMLImageElement? // from trait `IsEventTarget`
-fn Node::to_html_input_element(Self) -> HTMLInputElement? // from trait `IsEventTarget`
-fn Node::to_html_media_element(Self) -> HTMLMediaElement? // from trait `IsEventTarget`
-fn Node::to_html_select_element(Self) -> HTMLSelectElement? // from trait `IsEventTarget`
-fn Node::to_html_video_element(Self) -> HTMLVideoElement? // from trait `IsEventTarget`
-fn Node::to_node(Self) -> Self? // from trait `IsEventTarget`
-fn Node::to_svg_element(Self) -> SVGElement? // from trait `IsEventTarget`
-fn Node::to_svg_graphics_element(Self) -> SVGGraphicsElement? // from trait `IsEventTarget`
-fn Node::to_svg_image_element(Self) -> SVGImageElement? // from trait `IsEventTarget`
-fn Node::to_text(Self) -> Text? // from trait `IsEventTarget`
-fn Node::to_window(Self) -> Window? // from trait `IsEventTarget`
 impl IsEventTarget for Node
 impl IsNode for Node
 impl @js.Cast for Node
@@ -1845,77 +442,6 @@ type RemotePlayback
 type SVGAnimatedTransformList
 
 type SVGElement
-fn SVGElement::add_event_listener(Self, String, (Event) -> Unit) -> Unit // from trait `IsEventTarget`
-fn SVGElement::append_child(Self, Node) -> Unit // from trait `IsNode`
-fn SVGElement::as_element(Self) -> Element // from trait `IsElement`
-fn SVGElement::as_event_target(Self) -> EventTarget // from trait `IsEventTarget`
-fn SVGElement::as_node(Self) -> Node // from trait `IsNode`
-fn SVGElement::as_svg_element(Self) -> Self // from trait `IsSVGElement`
-fn SVGElement::blur(Self) -> Unit // from trait `IsSVGElement`
-fn SVGElement::dispatch_event(Self, Event) -> Unit // from trait `IsEventTarget`
-fn SVGElement::focus(Self) -> Unit // from trait `IsSVGElement`
-fn SVGElement::from(Self) -> @js.Value // from trait `@js.Cast`
-fn SVGElement::get_attribute(Self, String) -> String // from trait `IsElement`
-fn SVGElement::get_attribute_style_map(Self) -> StylePropertyMap // from trait `IsSVGElement`
-fn SVGElement::get_auto_focus(Self) -> Bool // from trait `IsSVGElement`
-fn SVGElement::get_bounding_client_rect(Self) -> DOMRect // from trait `IsElement`
-fn SVGElement::get_child(Self, Int) -> Node // from trait `IsNode`
-fn SVGElement::get_child_count(Self) -> Int // from trait `IsNode`
-fn SVGElement::get_children(Self) -> Array[Element] // from trait `IsElement`
-fn SVGElement::get_data_set(Self) -> DOMStringMap // from trait `IsSVGElement`
-fn SVGElement::get_first_child(Self) -> Node // from trait `IsNode`
-fn SVGElement::get_last_child(Self) -> Node // from trait `IsNode`
-fn SVGElement::get_next_sibling(Self) -> Node // from trait `IsNode`
-fn SVGElement::get_node_name(Self) -> String // from trait `IsNode`
-fn SVGElement::get_node_type(Self) -> Int // from trait `IsNode`
-fn SVGElement::get_node_value(Self) -> String // from trait `IsNode`
-fn SVGElement::get_nonce(Self) -> String // from trait `IsSVGElement`
-fn SVGElement::get_owner_svg_element(Self) -> Self? // from trait `IsSVGElement`
-fn SVGElement::get_parent_node(Self) -> Node // from trait `IsNode`
-fn SVGElement::get_previous_sibling(Self) -> Node // from trait `IsNode`
-fn SVGElement::get_property(Self, String) -> String // from trait `IsElement`
-fn SVGElement::get_scroll_height(Self) -> Double // from trait `IsElement`
-fn SVGElement::get_scroll_left(Self) -> Double // from trait `IsElement`
-fn SVGElement::get_scroll_top(Self) -> Double // from trait `IsElement`
-fn SVGElement::get_scroll_width(Self) -> Double // from trait `IsElement`
-fn SVGElement::get_style(Self) -> CSSStyleDeclaration // from trait `IsSVGElement`
-fn SVGElement::get_tab_index(Self) -> Int // from trait `IsSVGElement`
-fn SVGElement::get_viewport_element(Self) -> Self? // from trait `IsSVGElement`
-fn SVGElement::insert_before(Self, Node, Node) -> Unit // from trait `IsNode`
-fn SVGElement::into(@js.Value) -> Self? // from trait `@js.Cast`
-fn SVGElement::remove_attribute(Self, String) -> Unit // from trait `IsElement`
-fn SVGElement::remove_child(Self, Node) -> Unit // from trait `IsNode`
-fn SVGElement::remove_event_listener(Self, String, (Event) -> Unit) -> Unit // from trait `IsEventTarget`
-fn SVGElement::remove_property(Self, String) -> Unit // from trait `IsElement`
-fn SVGElement::replace_child(Self, Node, Node) -> Unit // from trait `IsNode`
-fn SVGElement::scroll_into_view(Self) -> Unit // from trait `IsElement`
-fn SVGElement::set_attribute(Self, String, String) -> Unit // from trait `IsElement`
-fn SVGElement::set_auto_focus(Self, Bool) -> Unit // from trait `IsSVGElement`
-fn SVGElement::set_inner_html(Self, String) -> Unit // from trait `IsElement`
-fn SVGElement::set_nonce(Self, String) -> Unit // from trait `IsSVGElement`
-fn SVGElement::set_property(Self, String, @js.Value) -> Unit // from trait `IsElement`
-fn SVGElement::set_scroll_left(Self, Double) -> Unit // from trait `IsElement`
-fn SVGElement::set_scroll_top(Self, Double) -> Unit // from trait `IsElement`
-fn SVGElement::set_style(Self, CSSStyleDeclaration) -> Unit // from trait `IsSVGElement`
-fn SVGElement::set_tab_index(Self, Int) -> Unit // from trait `IsSVGElement`
-fn SVGElement::to_clipboard(Self) -> Clipboard? // from trait `IsEventTarget`
-fn SVGElement::to_document(Self) -> Document? // from trait `IsEventTarget`
-fn SVGElement::to_document_fragment(Self) -> DocumentFragment? // from trait `IsEventTarget`
-fn SVGElement::to_element(Self) -> Element? // from trait `IsEventTarget`
-fn SVGElement::to_html_canvas_element(Self) -> HTMLCanvasElement? // from trait `IsEventTarget`
-fn SVGElement::to_html_dialog_element(Self) -> HTMLDialogElement? // from trait `IsEventTarget`
-fn SVGElement::to_html_element(Self) -> HTMLElement? // from trait `IsEventTarget`
-fn SVGElement::to_html_image_element(Self) -> HTMLImageElement? // from trait `IsEventTarget`
-fn SVGElement::to_html_input_element(Self) -> HTMLInputElement? // from trait `IsEventTarget`
-fn SVGElement::to_html_media_element(Self) -> HTMLMediaElement? // from trait `IsEventTarget`
-fn SVGElement::to_html_select_element(Self) -> HTMLSelectElement? // from trait `IsEventTarget`
-fn SVGElement::to_html_video_element(Self) -> HTMLVideoElement? // from trait `IsEventTarget`
-fn SVGElement::to_node(Self) -> Node? // from trait `IsEventTarget`
-fn SVGElement::to_svg_element(Self) -> Self? // from trait `IsEventTarget`
-fn SVGElement::to_svg_graphics_element(Self) -> SVGGraphicsElement? // from trait `IsEventTarget`
-fn SVGElement::to_svg_image_element(Self) -> SVGImageElement? // from trait `IsEventTarget`
-fn SVGElement::to_text(Self) -> Text? // from trait `IsEventTarget`
-fn SVGElement::to_window(Self) -> Window? // from trait `IsEventTarget`
 impl IsElement for SVGElement
 impl IsEventTarget for SVGElement
 impl IsNode for SVGElement
@@ -1923,84 +449,6 @@ impl IsSVGElement for SVGElement
 impl @js.Cast for SVGElement
 
 type SVGGraphicsElement
-fn SVGGraphicsElement::add_event_listener(Self, String, (Event) -> Unit) -> Unit // from trait `IsEventTarget`
-fn SVGGraphicsElement::append_child(Self, Node) -> Unit // from trait `IsNode`
-fn SVGGraphicsElement::as_element(Self) -> Element // from trait `IsElement`
-fn SVGGraphicsElement::as_event_target(Self) -> EventTarget // from trait `IsEventTarget`
-fn SVGGraphicsElement::as_node(Self) -> Node // from trait `IsNode`
-fn SVGGraphicsElement::as_svg_element(Self) -> SVGElement // from trait `IsSVGElement`
-fn SVGGraphicsElement::as_svg_graphics_element(Self) -> Self // from trait `IsSVGGraphicsElement`
-fn SVGGraphicsElement::blur(Self) -> Unit // from trait `IsSVGElement`
-fn SVGGraphicsElement::dispatch_event(Self, Event) -> Unit // from trait `IsEventTarget`
-fn SVGGraphicsElement::focus(Self) -> Unit // from trait `IsSVGElement`
-fn SVGGraphicsElement::from(Self) -> @js.Value // from trait `@js.Cast`
-fn SVGGraphicsElement::get_attribute(Self, String) -> String // from trait `IsElement`
-fn SVGGraphicsElement::get_attribute_style_map(Self) -> StylePropertyMap // from trait `IsSVGElement`
-fn SVGGraphicsElement::get_auto_focus(Self) -> Bool // from trait `IsSVGElement`
-fn SVGGraphicsElement::get_bbox(Self) -> DOMRect // from trait `IsSVGGraphicsElement`
-fn SVGGraphicsElement::get_bounding_client_rect(Self) -> DOMRect // from trait `IsElement`
-fn SVGGraphicsElement::get_child(Self, Int) -> Node // from trait `IsNode`
-fn SVGGraphicsElement::get_child_count(Self) -> Int // from trait `IsNode`
-fn SVGGraphicsElement::get_children(Self) -> Array[Element] // from trait `IsElement`
-fn SVGGraphicsElement::get_ctm(Self) -> DOMMatrix // from trait `IsSVGGraphicsElement`
-fn SVGGraphicsElement::get_data_set(Self) -> DOMStringMap // from trait `IsSVGElement`
-fn SVGGraphicsElement::get_first_child(Self) -> Node // from trait `IsNode`
-fn SVGGraphicsElement::get_last_child(Self) -> Node // from trait `IsNode`
-fn SVGGraphicsElement::get_next_sibling(Self) -> Node // from trait `IsNode`
-fn SVGGraphicsElement::get_node_name(Self) -> String // from trait `IsNode`
-fn SVGGraphicsElement::get_node_type(Self) -> Int // from trait `IsNode`
-fn SVGGraphicsElement::get_node_value(Self) -> String // from trait `IsNode`
-fn SVGGraphicsElement::get_nonce(Self) -> String // from trait `IsSVGElement`
-fn SVGGraphicsElement::get_owner_svg_element(Self) -> SVGElement? // from trait `IsSVGElement`
-fn SVGGraphicsElement::get_parent_node(Self) -> Node // from trait `IsNode`
-fn SVGGraphicsElement::get_previous_sibling(Self) -> Node // from trait `IsNode`
-fn SVGGraphicsElement::get_property(Self, String) -> String // from trait `IsElement`
-fn SVGGraphicsElement::get_required_extensions(Self) -> String // from trait `IsSVGGraphicsElement`
-fn SVGGraphicsElement::get_screen_ctm(Self) -> DOMMatrix // from trait `IsSVGGraphicsElement`
-fn SVGGraphicsElement::get_scroll_height(Self) -> Double // from trait `IsElement`
-fn SVGGraphicsElement::get_scroll_left(Self) -> Double // from trait `IsElement`
-fn SVGGraphicsElement::get_scroll_top(Self) -> Double // from trait `IsElement`
-fn SVGGraphicsElement::get_scroll_width(Self) -> Double // from trait `IsElement`
-fn SVGGraphicsElement::get_style(Self) -> CSSStyleDeclaration // from trait `IsSVGElement`
-fn SVGGraphicsElement::get_system_language(Self) -> SVGStringList // from trait `IsSVGGraphicsElement`
-fn SVGGraphicsElement::get_tab_index(Self) -> Int // from trait `IsSVGElement`
-fn SVGGraphicsElement::get_transform(Self) -> SVGAnimatedTransformList // from trait `IsSVGGraphicsElement`
-fn SVGGraphicsElement::get_viewport_element(Self) -> SVGElement? // from trait `IsSVGElement`
-fn SVGGraphicsElement::insert_before(Self, Node, Node) -> Unit // from trait `IsNode`
-fn SVGGraphicsElement::into(@js.Value) -> Self? // from trait `@js.Cast`
-fn SVGGraphicsElement::remove_attribute(Self, String) -> Unit // from trait `IsElement`
-fn SVGGraphicsElement::remove_child(Self, Node) -> Unit // from trait `IsNode`
-fn SVGGraphicsElement::remove_event_listener(Self, String, (Event) -> Unit) -> Unit // from trait `IsEventTarget`
-fn SVGGraphicsElement::remove_property(Self, String) -> Unit // from trait `IsElement`
-fn SVGGraphicsElement::replace_child(Self, Node, Node) -> Unit // from trait `IsNode`
-fn SVGGraphicsElement::scroll_into_view(Self) -> Unit // from trait `IsElement`
-fn SVGGraphicsElement::set_attribute(Self, String, String) -> Unit // from trait `IsElement`
-fn SVGGraphicsElement::set_auto_focus(Self, Bool) -> Unit // from trait `IsSVGElement`
-fn SVGGraphicsElement::set_inner_html(Self, String) -> Unit // from trait `IsElement`
-fn SVGGraphicsElement::set_nonce(Self, String) -> Unit // from trait `IsSVGElement`
-fn SVGGraphicsElement::set_property(Self, String, @js.Value) -> Unit // from trait `IsElement`
-fn SVGGraphicsElement::set_scroll_left(Self, Double) -> Unit // from trait `IsElement`
-fn SVGGraphicsElement::set_scroll_top(Self, Double) -> Unit // from trait `IsElement`
-fn SVGGraphicsElement::set_style(Self, CSSStyleDeclaration) -> Unit // from trait `IsSVGElement`
-fn SVGGraphicsElement::set_tab_index(Self, Int) -> Unit // from trait `IsSVGElement`
-fn SVGGraphicsElement::to_clipboard(Self) -> Clipboard? // from trait `IsEventTarget`
-fn SVGGraphicsElement::to_document(Self) -> Document? // from trait `IsEventTarget`
-fn SVGGraphicsElement::to_document_fragment(Self) -> DocumentFragment? // from trait `IsEventTarget`
-fn SVGGraphicsElement::to_element(Self) -> Element? // from trait `IsEventTarget`
-fn SVGGraphicsElement::to_html_canvas_element(Self) -> HTMLCanvasElement? // from trait `IsEventTarget`
-fn SVGGraphicsElement::to_html_dialog_element(Self) -> HTMLDialogElement? // from trait `IsEventTarget`
-fn SVGGraphicsElement::to_html_element(Self) -> HTMLElement? // from trait `IsEventTarget`
-fn SVGGraphicsElement::to_html_image_element(Self) -> HTMLImageElement? // from trait `IsEventTarget`
-fn SVGGraphicsElement::to_html_input_element(Self) -> HTMLInputElement? // from trait `IsEventTarget`
-fn SVGGraphicsElement::to_html_media_element(Self) -> HTMLMediaElement? // from trait `IsEventTarget`
-fn SVGGraphicsElement::to_html_select_element(Self) -> HTMLSelectElement? // from trait `IsEventTarget`
-fn SVGGraphicsElement::to_html_video_element(Self) -> HTMLVideoElement? // from trait `IsEventTarget`
-fn SVGGraphicsElement::to_node(Self) -> Node? // from trait `IsEventTarget`
-fn SVGGraphicsElement::to_svg_element(Self) -> SVGElement? // from trait `IsEventTarget`
-fn SVGGraphicsElement::to_svg_graphics_element(Self) -> Self? // from trait `IsEventTarget`
-fn SVGGraphicsElement::to_svg_image_element(Self) -> SVGImageElement? // from trait `IsEventTarget`
-fn SVGGraphicsElement::to_text(Self) -> Text? // from trait `IsEventTarget`
-fn SVGGraphicsElement::to_window(Self) -> Window? // from trait `IsEventTarget`
 impl IsElement for SVGGraphicsElement
 impl IsEventTarget for SVGGraphicsElement
 impl IsNode for SVGGraphicsElement
@@ -2009,77 +457,6 @@ impl IsSVGGraphicsElement for SVGGraphicsElement
 impl @js.Cast for SVGGraphicsElement
 
 type SVGImageElement
-fn SVGImageElement::add_event_listener(Self, String, (Event) -> Unit) -> Unit // from trait `IsEventTarget`
-fn SVGImageElement::append_child(Self, Node) -> Unit // from trait `IsNode`
-fn SVGImageElement::as_element(Self) -> Element // from trait `IsElement`
-fn SVGImageElement::as_event_target(Self) -> EventTarget // from trait `IsEventTarget`
-fn SVGImageElement::as_node(Self) -> Node // from trait `IsNode`
-fn SVGImageElement::as_svg_element(Self) -> SVGElement // from trait `IsSVGElement`
-fn SVGImageElement::blur(Self) -> Unit // from trait `IsSVGElement`
-fn SVGImageElement::dispatch_event(Self, Event) -> Unit // from trait `IsEventTarget`
-fn SVGImageElement::focus(Self) -> Unit // from trait `IsSVGElement`
-fn SVGImageElement::from(Self) -> @js.Value // from trait `@js.Cast`
-fn SVGImageElement::get_attribute(Self, String) -> String // from trait `IsElement`
-fn SVGImageElement::get_attribute_style_map(Self) -> StylePropertyMap // from trait `IsSVGElement`
-fn SVGImageElement::get_auto_focus(Self) -> Bool // from trait `IsSVGElement`
-fn SVGImageElement::get_bounding_client_rect(Self) -> DOMRect // from trait `IsElement`
-fn SVGImageElement::get_child(Self, Int) -> Node // from trait `IsNode`
-fn SVGImageElement::get_child_count(Self) -> Int // from trait `IsNode`
-fn SVGImageElement::get_children(Self) -> Array[Element] // from trait `IsElement`
-fn SVGImageElement::get_data_set(Self) -> DOMStringMap // from trait `IsSVGElement`
-fn SVGImageElement::get_first_child(Self) -> Node // from trait `IsNode`
-fn SVGImageElement::get_last_child(Self) -> Node // from trait `IsNode`
-fn SVGImageElement::get_next_sibling(Self) -> Node // from trait `IsNode`
-fn SVGImageElement::get_node_name(Self) -> String // from trait `IsNode`
-fn SVGImageElement::get_node_type(Self) -> Int // from trait `IsNode`
-fn SVGImageElement::get_node_value(Self) -> String // from trait `IsNode`
-fn SVGImageElement::get_nonce(Self) -> String // from trait `IsSVGElement`
-fn SVGImageElement::get_owner_svg_element(Self) -> SVGElement? // from trait `IsSVGElement`
-fn SVGImageElement::get_parent_node(Self) -> Node // from trait `IsNode`
-fn SVGImageElement::get_previous_sibling(Self) -> Node // from trait `IsNode`
-fn SVGImageElement::get_property(Self, String) -> String // from trait `IsElement`
-fn SVGImageElement::get_scroll_height(Self) -> Double // from trait `IsElement`
-fn SVGImageElement::get_scroll_left(Self) -> Double // from trait `IsElement`
-fn SVGImageElement::get_scroll_top(Self) -> Double // from trait `IsElement`
-fn SVGImageElement::get_scroll_width(Self) -> Double // from trait `IsElement`
-fn SVGImageElement::get_style(Self) -> CSSStyleDeclaration // from trait `IsSVGElement`
-fn SVGImageElement::get_tab_index(Self) -> Int // from trait `IsSVGElement`
-fn SVGImageElement::get_viewport_element(Self) -> SVGElement? // from trait `IsSVGElement`
-fn SVGImageElement::insert_before(Self, Node, Node) -> Unit // from trait `IsNode`
-fn SVGImageElement::into(@js.Value) -> Self? // from trait `@js.Cast`
-fn SVGImageElement::remove_attribute(Self, String) -> Unit // from trait `IsElement`
-fn SVGImageElement::remove_child(Self, Node) -> Unit // from trait `IsNode`
-fn SVGImageElement::remove_event_listener(Self, String, (Event) -> Unit) -> Unit // from trait `IsEventTarget`
-fn SVGImageElement::remove_property(Self, String) -> Unit // from trait `IsElement`
-fn SVGImageElement::replace_child(Self, Node, Node) -> Unit // from trait `IsNode`
-fn SVGImageElement::scroll_into_view(Self) -> Unit // from trait `IsElement`
-fn SVGImageElement::set_attribute(Self, String, String) -> Unit // from trait `IsElement`
-fn SVGImageElement::set_auto_focus(Self, Bool) -> Unit // from trait `IsSVGElement`
-fn SVGImageElement::set_inner_html(Self, String) -> Unit // from trait `IsElement`
-fn SVGImageElement::set_nonce(Self, String) -> Unit // from trait `IsSVGElement`
-fn SVGImageElement::set_property(Self, String, @js.Value) -> Unit // from trait `IsElement`
-fn SVGImageElement::set_scroll_left(Self, Double) -> Unit // from trait `IsElement`
-fn SVGImageElement::set_scroll_top(Self, Double) -> Unit // from trait `IsElement`
-fn SVGImageElement::set_style(Self, CSSStyleDeclaration) -> Unit // from trait `IsSVGElement`
-fn SVGImageElement::set_tab_index(Self, Int) -> Unit // from trait `IsSVGElement`
-fn SVGImageElement::to_clipboard(Self) -> Clipboard? // from trait `IsEventTarget`
-fn SVGImageElement::to_document(Self) -> Document? // from trait `IsEventTarget`
-fn SVGImageElement::to_document_fragment(Self) -> DocumentFragment? // from trait `IsEventTarget`
-fn SVGImageElement::to_element(Self) -> Element? // from trait `IsEventTarget`
-fn SVGImageElement::to_html_canvas_element(Self) -> HTMLCanvasElement? // from trait `IsEventTarget`
-fn SVGImageElement::to_html_dialog_element(Self) -> HTMLDialogElement? // from trait `IsEventTarget`
-fn SVGImageElement::to_html_element(Self) -> HTMLElement? // from trait `IsEventTarget`
-fn SVGImageElement::to_html_image_element(Self) -> HTMLImageElement? // from trait `IsEventTarget`
-fn SVGImageElement::to_html_input_element(Self) -> HTMLInputElement? // from trait `IsEventTarget`
-fn SVGImageElement::to_html_media_element(Self) -> HTMLMediaElement? // from trait `IsEventTarget`
-fn SVGImageElement::to_html_select_element(Self) -> HTMLSelectElement? // from trait `IsEventTarget`
-fn SVGImageElement::to_html_video_element(Self) -> HTMLVideoElement? // from trait `IsEventTarget`
-fn SVGImageElement::to_node(Self) -> Node? // from trait `IsEventTarget`
-fn SVGImageElement::to_svg_element(Self) -> SVGElement? // from trait `IsEventTarget`
-fn SVGImageElement::to_svg_graphics_element(Self) -> SVGGraphicsElement? // from trait `IsEventTarget`
-fn SVGImageElement::to_svg_image_element(Self) -> Self? // from trait `IsEventTarget`
-fn SVGImageElement::to_text(Self) -> Text? // from trait `IsEventTarget`
-fn SVGImageElement::to_window(Self) -> Window? // from trait `IsEventTarget`
 impl IsElement for SVGImageElement
 impl IsEventTarget for SVGImageElement
 impl IsNode for SVGImageElement
@@ -2100,27 +477,6 @@ type TextTrackList
 type TimeRanges
 
 type UIEvent
-fn UIEvent::as_event(Self) -> Event // from trait `IsEvent`
-fn UIEvent::as_ui_event(Self) -> Self // from trait `IsUIEvent`
-fn UIEvent::from(Self) -> @js.Value // from trait `@js.Cast`
-fn UIEvent::into(@js.Value) -> Self? // from trait `@js.Cast`
-fn UIEvent::prevent_default(Self) -> Unit // from trait `IsEvent`
-fn UIEvent::stop_propagation(Self) -> Unit // from trait `IsEvent`
-fn UIEvent::target(Self) -> EventTarget // from trait `IsEvent`
-fn UIEvent::to_animation_event(Self) -> AnimationEvent? // from trait `IsEvent`
-fn UIEvent::to_before_unload_event(Self) -> BeforeUnloadEvent? // from trait `IsEvent`
-fn UIEvent::to_blob_event(Self) -> BlobEvent? // from trait `IsEvent`
-fn UIEvent::to_clipboard_event(Self) -> ClipboardEvent? // from trait `IsEvent`
-fn UIEvent::to_close_event(Self) -> CloseEvent? // from trait `IsEvent`
-fn UIEvent::to_composition_event(Self) -> CompositionEvent? // from trait `IsEvent`
-fn UIEvent::to_custom_event(Self) -> CustomEvent? // from trait `IsEvent`
-fn UIEvent::to_drag_event(Self) -> DragEvent? // from trait `IsEvent`
-fn UIEvent::to_focus_event(Self) -> FocusEvent? // from trait `IsEvent`
-fn UIEvent::to_input_event(Self) -> InputEvent? // from trait `IsEvent`
-fn UIEvent::to_keyboard_event(Self) -> KeyboardEvent? // from trait `IsEvent`
-fn UIEvent::to_mouse_event(Self) -> MouseEvent? // from trait `IsEvent`
-fn UIEvent::to_ui_event(Self) -> Self? // from trait `IsEvent`
-fn UIEvent::to_wheel_event(Self) -> WheelEvent? // from trait `IsEvent`
 impl IsEvent for UIEvent
 impl IsUIEvent for UIEvent
 impl @js.Cast for UIEvent
@@ -2136,99 +492,33 @@ type WebGL2RenderingContext
 type WebGLRenderingContext
 
 type WheelEvent
-fn WheelEvent::as_event(Self) -> Event // from trait `IsEvent`
-fn WheelEvent::as_mouse_event(Self) -> MouseEvent // from trait `IsMouseEvent`
-fn WheelEvent::as_ui_event(Self) -> UIEvent // from trait `IsUIEvent`
-fn WheelEvent::from(Self) -> @js.Value // from trait `@js.Cast`
-fn WheelEvent::get_alt_key(Self) -> Bool // from trait `IsMouseEvent`
-fn WheelEvent::get_button(Self) -> Int // from trait `IsMouseEvent`
-fn WheelEvent::get_buttons(Self) -> Int // from trait `IsMouseEvent`
-fn WheelEvent::get_client_x(Self) -> Int // from trait `IsMouseEvent`
-fn WheelEvent::get_client_y(Self) -> Int // from trait `IsMouseEvent`
-fn WheelEvent::get_ctrl_key(Self) -> Bool // from trait `IsMouseEvent`
 fn WheelEvent::get_delta_mode(Self) -> Int
 fn WheelEvent::get_delta_x(Self) -> Double
 fn WheelEvent::get_delta_y(Self) -> Double
 fn WheelEvent::get_delta_z(Self) -> Double
-fn WheelEvent::get_meta_key(Self) -> Bool // from trait `IsMouseEvent`
-fn WheelEvent::get_modifier_state(Self) -> Int // from trait `IsMouseEvent`
-fn WheelEvent::get_movement_x(Self) -> Int // from trait `IsMouseEvent`
-fn WheelEvent::get_movement_y(Self) -> Int // from trait `IsMouseEvent`
-fn WheelEvent::get_offset_x(Self) -> Int // from trait `IsMouseEvent`
-fn WheelEvent::get_offset_y(Self) -> Int // from trait `IsMouseEvent`
-fn WheelEvent::get_page_x(Self) -> Int // from trait `IsMouseEvent`
-fn WheelEvent::get_page_y(Self) -> Int // from trait `IsMouseEvent`
-fn WheelEvent::get_related_target(Self) -> EventTarget // from trait `IsMouseEvent`
-fn WheelEvent::get_screen_x(Self) -> Int // from trait `IsMouseEvent`
-fn WheelEvent::get_screen_y(Self) -> Int // from trait `IsMouseEvent`
-fn WheelEvent::get_shift_key(Self) -> Bool // from trait `IsMouseEvent`
-fn WheelEvent::get_x(Self) -> Int // from trait `IsMouseEvent`
-fn WheelEvent::get_y(Self) -> Int // from trait `IsMouseEvent`
-fn WheelEvent::into(@js.Value) -> Self? // from trait `@js.Cast`
-fn WheelEvent::prevent_default(Self) -> Unit // from trait `IsEvent`
-fn WheelEvent::stop_propagation(Self) -> Unit // from trait `IsEvent`
-fn WheelEvent::target(Self) -> EventTarget // from trait `IsEvent`
-fn WheelEvent::to_animation_event(Self) -> AnimationEvent? // from trait `IsEvent`
-fn WheelEvent::to_before_unload_event(Self) -> BeforeUnloadEvent? // from trait `IsEvent`
-fn WheelEvent::to_blob_event(Self) -> BlobEvent? // from trait `IsEvent`
-fn WheelEvent::to_clipboard_event(Self) -> ClipboardEvent? // from trait `IsEvent`
-fn WheelEvent::to_close_event(Self) -> CloseEvent? // from trait `IsEvent`
-fn WheelEvent::to_composition_event(Self) -> CompositionEvent? // from trait `IsEvent`
-fn WheelEvent::to_custom_event(Self) -> CustomEvent? // from trait `IsEvent`
-fn WheelEvent::to_drag_event(Self) -> DragEvent? // from trait `IsEvent`
-fn WheelEvent::to_focus_event(Self) -> FocusEvent? // from trait `IsEvent`
-fn WheelEvent::to_input_event(Self) -> InputEvent? // from trait `IsEvent`
-fn WheelEvent::to_keyboard_event(Self) -> KeyboardEvent? // from trait `IsEvent`
-fn WheelEvent::to_mouse_event(Self) -> MouseEvent? // from trait `IsEvent`
-fn WheelEvent::to_ui_event(Self) -> UIEvent? // from trait `IsEvent`
-fn WheelEvent::to_wheel_event(Self) -> Self? // from trait `IsEvent`
 impl IsEvent for WheelEvent
 impl IsMouseEvent for WheelEvent
 impl IsUIEvent for WheelEvent
 impl @js.Cast for WheelEvent
 
 type Window
-fn Window::add_event_listener(Self, String, (Event) -> Unit) -> Unit // from trait `IsEventTarget`
 fn Window::alert(Self, String) -> Unit
-fn Window::as_event_target(Self) -> EventTarget // from trait `IsEventTarget`
 fn Window::cancel_animation_frame(Self, Double) -> Unit
 fn Window::confirm(Self, String) -> Bool
 fn Window::current_url(Self) -> String
-fn Window::dispatch_event(Self, Event) -> Unit // from trait `IsEventTarget`
-fn Window::from(Self) -> @js.Value // from trait `@js.Cast`
 fn Window::history_go_back(Self) -> Unit
 fn Window::history_go_forward(Self) -> Unit
-fn Window::into(@js.Value) -> Self? // from trait `@js.Cast`
 fn Window::load_url(Self, String) -> Unit
 fn Window::navigator(Self) -> Navigator
 fn Window::push_url(Self, String) -> Unit
 fn Window::reload_url(Self) -> Unit
-fn Window::remove_event_listener(Self, String, (Event) -> Unit) -> Unit // from trait `IsEventTarget`
 fn Window::replace_url(Self, String) -> Unit
 fn Window::request_animation_frame(Self, (Double) -> Unit) -> Double
 fn Window::scroll_by(Self, Int, Int) -> Unit
 fn Window::scroll_to(Self, Int, Int) -> Unit
 fn Window::scroll_to_bottom(Self) -> Unit
 fn Window::scroll_to_top(Self) -> Unit
-fn Window::to_clipboard(Self) -> Clipboard? // from trait `IsEventTarget`
-fn Window::to_document(Self) -> Document? // from trait `IsEventTarget`
-fn Window::to_document_fragment(Self) -> DocumentFragment? // from trait `IsEventTarget`
-fn Window::to_element(Self) -> Element? // from trait `IsEventTarget`
 fn Window::to_event_target(Self) -> EventTarget
-fn Window::to_html_canvas_element(Self) -> HTMLCanvasElement? // from trait `IsEventTarget`
-fn Window::to_html_dialog_element(Self) -> HTMLDialogElement? // from trait `IsEventTarget`
-fn Window::to_html_element(Self) -> HTMLElement? // from trait `IsEventTarget`
-fn Window::to_html_image_element(Self) -> HTMLImageElement? // from trait `IsEventTarget`
-fn Window::to_html_input_element(Self) -> HTMLInputElement? // from trait `IsEventTarget`
-fn Window::to_html_media_element(Self) -> HTMLMediaElement? // from trait `IsEventTarget`
-fn Window::to_html_select_element(Self) -> HTMLSelectElement? // from trait `IsEventTarget`
-fn Window::to_html_video_element(Self) -> HTMLVideoElement? // from trait `IsEventTarget`
-fn Window::to_node(Self) -> Node? // from trait `IsEventTarget`
-fn Window::to_svg_element(Self) -> SVGElement? // from trait `IsEventTarget`
-fn Window::to_svg_graphics_element(Self) -> SVGGraphicsElement? // from trait `IsEventTarget`
-fn Window::to_svg_image_element(Self) -> SVGImageElement? // from trait `IsEventTarget`
-fn Window::to_text(Self) -> Text? // from trait `IsEventTarget`
-fn Window::to_window(Self) -> Self? // from trait `IsEventTarget`
 impl IsEventTarget for Window
 impl @js.Cast for Window
 

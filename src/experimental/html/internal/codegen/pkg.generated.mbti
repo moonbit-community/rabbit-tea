@@ -7,32 +7,20 @@ package "Yoorkin/rabbit-tea/experimental/html/internal/codegen"
 
 // Types and methods
 type Attribute
-fn Attribute::compare(Self, Self) -> Int // from trait `Compare`
-fn Attribute::equal(Self, Self) -> Bool // from trait `Eq`
-#deprecated
-fn Attribute::op_equal(Self, Self) -> Bool // from trait `Eq`
-fn Attribute::output(Self, &Logger) -> Unit // from trait `Show`
-fn Attribute::to_string(Self) -> String // from trait `Show`
 impl Compare for Attribute
 impl Eq for Attribute
 impl Show for Attribute
 
 type AttributeKind
-fn AttributeKind::output(Self, &Logger) -> Unit // from trait `Show`
-fn AttributeKind::to_string(Self) -> String // from trait `Show`
 impl Show for AttributeKind
 
 type AttributeMeta
-fn AttributeMeta::output(Self, &Logger) -> Unit // from trait `Show`
-fn AttributeMeta::to_string(Self) -> String // from trait `Show`
 impl Show for AttributeMeta
 
 pub(all) enum AttributeTarget {
   Global
   Element(Array[HtmlElement])
 }
-fn AttributeTarget::output(Self, &Logger) -> Unit // from trait `Show`
-fn AttributeTarget::to_string(Self) -> String // from trait `Show`
 impl Show for AttributeTarget
 
 pub(all) enum HtmlElement {
@@ -155,12 +143,6 @@ pub(all) enum HtmlElement {
   Font
   Marquee
 }
-fn HtmlElement::compare(Self, Self) -> Int // from trait `Compare`
-fn HtmlElement::equal(Self, Self) -> Bool // from trait `Eq`
-#deprecated
-fn HtmlElement::op_equal(Self, Self) -> Bool // from trait `Eq`
-fn HtmlElement::output(Self, &Logger) -> Unit // from trait `Show`
-fn HtmlElement::to_string(Self) -> String // from trait `Show`
 impl Compare for HtmlElement
 impl Eq for HtmlElement
 impl Show for HtmlElement
@@ -172,18 +154,12 @@ pub struct HtmlMeta {
 }
 
 type MbtParameter
-fn MbtParameter::output(Self, &Logger) -> Unit // from trait `Show`
-fn MbtParameter::to_string(Self) -> String // from trait `Show`
 impl Show for MbtParameter
 
 type MbtParameterKind
-fn MbtParameterKind::output(Self, &Logger) -> Unit // from trait `Show`
-fn MbtParameterKind::to_string(Self) -> String // from trait `Show`
 impl Show for MbtParameterKind
 
 type MbtType
-fn MbtType::output(Self, &Logger) -> Unit // from trait `Show`
-fn MbtType::to_string(Self) -> String // from trait `Show`
 impl Show for MbtType
 
 // Type aliases

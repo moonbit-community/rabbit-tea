@@ -18,7 +18,6 @@ pub(all) enum Color {
   Black
   White
 }
-fn Color::output(Self, &Logger) -> Unit // from trait `Show`
 fn Color::to_string(Self) -> String
 impl Show for Color
 

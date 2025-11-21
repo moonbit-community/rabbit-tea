@@ -12,12 +12,6 @@ pub(all) enum Protocol {
   Https
   Other(String)
 }
-fn Protocol::compare(Self, Self) -> Int // from trait `Compare`
-fn Protocol::equal(Self, Self) -> Bool // from trait `Eq`
-#deprecated
-fn Protocol::op_equal(Self, Self) -> Bool // from trait `Eq`
-fn Protocol::output(Self, &Logger) -> Unit // from trait `Show`
-fn Protocol::to_string(Self) -> String // from trait `Show`
 impl Compare for Protocol
 impl Eq for Protocol
 impl Show for Protocol
@@ -30,11 +24,6 @@ pub(all) struct Url {
   query : String?
   fragment : String?
 }
-fn Url::compare(Self, Self) -> Int // from trait `Compare`
-fn Url::equal(Self, Self) -> Bool // from trait `Eq`
-#deprecated
-fn Url::op_equal(Self, Self) -> Bool // from trait `Eq`
-fn Url::output(Self, &Logger) -> Unit // from trait `Show`
 fn Url::to_string(Self) -> String
 impl Compare for Url
 impl Eq for Url
@@ -44,12 +33,6 @@ pub(all) enum UrlRequest {
   Internal(Url)
   External(String)
 }
-fn UrlRequest::compare(Self, Self) -> Int // from trait `Compare`
-fn UrlRequest::equal(Self, Self) -> Bool // from trait `Eq`
-#deprecated
-fn UrlRequest::op_equal(Self, Self) -> Bool // from trait `Eq`
-fn UrlRequest::output(Self, &Logger) -> Unit // from trait `Show`
-fn UrlRequest::to_string(Self) -> String // from trait `Show`
 impl Compare for UrlRequest
 impl Eq for UrlRequest
 impl Show for UrlRequest
