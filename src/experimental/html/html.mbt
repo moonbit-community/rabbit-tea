@@ -1,8 +1,8 @@
 ///|
-pub typealias @legacy_html.Html
+pub using @legacy_html {type Html}
 
 ///|
-pub typealias Html as T
+pub type T[M] = Html[M]
 
 ///| 
 // fn[Msg] node(
@@ -10,7 +10,7 @@ pub typealias Html as T
 //   attributes : Array[Attribute[Msg]],
 //   children : Array[Html[Msg]]
 // ) -> Html[Msg] {
-//   @vdom.node(tag, attributes.map(_.inner()), children.map(_.inner()))
+//   @vdom.node(tag, attributes.map(x => x.0), children.map(x => x.0))
 // }
 
 ///|
@@ -21,10 +21,10 @@ fn[M] make_node(
   children : Array[Html[M]],
 ) -> Html[M] {
   let attrs = [
-      ..optional.iter().filter_map(x => x).map(_.inner()),
-      ..positional.iter().map(_.inner()),
-    ]
-  @vdom.node(tag, attrs, children.map(_.inner()))
+    ..optional.iter().filter_map(x => x).map(x => x.0),
+    ..positional.iter().map(x => x.0),
+  ]
+  @vdom.node(tag, attrs, children.map(x => x.0))
 }
 
 ///|

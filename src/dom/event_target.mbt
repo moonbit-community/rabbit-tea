@@ -29,7 +29,7 @@ pub trait IsEventTarget: @js.Cast {
 }
 
 ///|
-pub typealias (Event) -> Unit as Listener
+pub type Listener = (Event) -> Unit
 
 ///|
 pub impl IsEventTarget for EventTarget

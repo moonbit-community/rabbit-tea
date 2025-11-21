@@ -35,4 +35,4 @@ pub extern "js" fn ImageData::get_color_space(
 
 ///|
 /// Possible values are "srgb" and "display-p3".
-pub typealias String as PredefinedColorSpace
+pub type PredefinedColorSpace = String

@@ -31,7 +31,7 @@ pub(all) enum Target {
 }
 
 ///|
-fn to_string(self : Target) -> String {
+fn Target::to_string(self : Target) -> String {
   match self {
     Self => "_self"
     Blank => "_blank"

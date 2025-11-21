@@ -12,7 +12,7 @@ pub(all) enum Body {
 }
 
 ///|
-fn content_type(self : Body) -> String {
+fn Body::content_type(self : Body) -> String {
   match self {
     Json(_) => "application/json"
     Text(_) => "text/plain"
@@ -21,7 +21,7 @@ fn content_type(self : Body) -> String {
 }
 
 ///|
-fn stringfiy(self : Body) -> String {
+fn Body::stringfiy(self : Body) -> String {
   match self {
     Json(json) => json.stringify()
     Text(text) => text

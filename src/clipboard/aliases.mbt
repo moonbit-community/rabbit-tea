@@ -1,2 +1,2 @@
 ///|
-typealias @cmd.Cmd
+using @cmd {type Cmd}

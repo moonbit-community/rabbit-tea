@@ -523,11 +523,11 @@ impl IsEventTarget for Window
 impl @js.Cast for Window
 
 // Type aliases
-pub typealias @js.Union7[HTMLImageElement, SVGImageElement, HTMLVideoElement, HTMLCanvasElement, ImageBitmap, OffscreenCanvas, VideoFrame] as ImageUnion
+pub type ImageUnion = @js.Union7[HTMLImageElement, SVGImageElement, HTMLVideoElement, HTMLCanvasElement, ImageBitmap, OffscreenCanvas, VideoFrame]
 
-pub typealias (Event) -> Unit as Listener
+pub type Listener = (Event) -> Unit
 
-pub typealias String as PredefinedColorSpace
+pub type PredefinedColorSpace = String
 
 // Traits
 pub trait IsElement : IsNode {
