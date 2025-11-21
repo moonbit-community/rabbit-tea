@@ -13,8 +13,8 @@ pub fn[M] node(
   @vdom.node_ns(
     @dom.namespace_svg,
     tag,
-    attrs.map(_.inner()),
-    children.map(_.inner()),
+    attrs.map(x => x.0),
+    children.map(x => x.0),
   )
 }
 
@@ -69,8 +69,8 @@ pub fn[M] svg(
   @vdom.node_ns(
     @dom.namespace_svg,
     "svg",
-    attrs.map(_.inner()),
-    children.map(_.inner()),
+    attrs.map(x => x.0),
+    children.map(x => x.0),
   )
 }
 

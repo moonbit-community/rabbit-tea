@@ -55,14 +55,12 @@ pub fn[M] Events::trigger_update(self : Events[M], msg : M) -> Unit {
 /// 
 /// extern "js" fn set_timeout(f : () -> Unit, ms : Int) = "(f,ms) => setTimeout(f, ms)"
 /// ```
+#alias(Command)
 pub(all) struct Cmd[M]((Events[M]) -> Unit)
 
 ///|
-pub typealias Cmd as Command
-
-///|
 /// Map the messages in the command to another type.
-pub fn[A, B] map(self : Cmd[A], f : (A) -> B) -> Cmd[B] {
+pub fn[A, B] Cmd::map(self : Cmd[A], f : (A) -> B) -> Cmd[B] {
   Cmd(events => {
     let predef = {
       on_url_changed: events.on_url_changed,
@@ -83,7 +81,7 @@ pub fn[M] none() -> Cmd[M] {
 ///|
 /// Create a command that runs multiple commands.
 pub fn[M] batch(xs : Array[Cmd[M]]) -> Cmd[M] {
-  Cmd(events => xs.each(cmd => cmd.inner()(events)))
+  Cmd(events => xs.each(cmd => (cmd.0)(events)))
 }
 
 ///|

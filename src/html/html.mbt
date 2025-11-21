@@ -1,21 +1,19 @@
 ///|
+#alias(T)
 pub(all) struct Html[Msg](@vdom.Node[Msg])
-
-///|
-pub typealias Html as T
 
 ///|
 /// Convert msg type of Html.
 /// 
 /// This is a expensive operation and should be used rarely.
-pub fn[A, B] map(self : Html[A], f : (A) -> B) -> Html[B] {
-  self.inner().map(f)
+pub fn[A, B] Html::map(self : Html[A], f : (A) -> B) -> Html[B] {
+  self.0.map(f)
 }
 
 ///|
-pub fn[Msg] to_virtual_dom(self : Html[Msg]) -> @vdom.Node[Msg] {
+pub fn[Msg] Html::to_virtual_dom(self : Html[Msg]) -> @vdom.Node[Msg] {
   // Wrap the node with a root node. This node represents the root of the real DOM managed by TEA.
-  node("root", [], [self]).inner()
+  node("root", [], [self]).0
 }
 
 ///|
@@ -24,7 +22,7 @@ pub fn[Msg] node(
   attributes : Array[Attribute[Msg]],
   children : Array[Html[Msg]],
 ) -> Html[Msg] {
-  @vdom.node(tag, attributes.map(_.inner()), children.map(_.inner()))
+  @vdom.node(tag, attributes.map(x => x.0), children.map(x => x.0))
 }
 
 ///|
@@ -247,7 +245,7 @@ pub fn[M] a(
   if id is Some(id) {
     attrs.push(@vdom.attribute("id", id))
   }
-  @vdom.link(attrs, children.map(_.inner()), escape~)
+  @vdom.link(attrs, children.map(x => x.0), escape~)
 }
 
 ///|
@@ -751,7 +749,7 @@ pub fn[Msg] external(
   width~ : Int,
   height~ : Int,
 ) -> Html[Msg] {
-  let attrs = attrs.map(_.map(_.map(_.inner())))
+  let attrs = attrs.map(_.map(_.map(x => x.0)))
   @vdom.external(node, attrs, width~, height~)
 }
 

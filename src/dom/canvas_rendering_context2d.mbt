@@ -281,7 +281,7 @@ pub extern "js" fn CanvasRenderingContext2D::stroke_text(
 
 ///|
 /// https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage
-pub typealias @js.Union7[
+pub type ImageUnion = @js.Union7[
   HTMLImageElement,
   SVGImageElement,
   HTMLVideoElement,
@@ -289,7 +289,7 @@ pub typealias @js.Union7[
   ImageBitmap,
   OffscreenCanvas,
   VideoFrame,
-] as ImageUnion
+]
 
 ///|
 /// https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage

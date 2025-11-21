@@ -27,9 +27,7 @@ fn[M] task(M) -> @cmd.Cmd[M]
 // Types and methods
 
 // Type aliases
-pub typealias @cmd.Cmd as Cmd
-
-pub typealias @cmd.Cmd as Command
+pub using @cmd {type Cmd}
 
 // Traits
 

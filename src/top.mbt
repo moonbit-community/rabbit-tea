@@ -1,8 +1,8 @@
 ///|
-pub typealias @cmd.(Cmd, Command)
+pub using @cmd {type Cmd, type Command}
 
 ///|
-pub fnalias @cmd.(none, batch, task, perform, attempt)
+pub using @cmd {none, batch, task, perform, attempt}
 
 ///|
 /// Start the application.

@@ -35,7 +35,7 @@ pub(all) enum Protocol {
 } derive(Show, Eq, Compare)
 
 ///|
-pub fn to_string(self : Url) -> String {
+pub fn Url::to_string(self : Url) -> String {
   let protocol = match self.protocol {
     Http => "http"
     Https => "https"

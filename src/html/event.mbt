@@ -9,17 +9,17 @@ pub(all) struct Pos {
 
 ///|
 pub fn Mouse::screen_pos(self : Mouse) -> Pos {
-  { x: self.inner().get_screen_x(), y: self.inner().get_screen_y() }
+  { x: self.0.get_screen_x(), y: self.0.get_screen_y() }
 }
 
 ///|
 pub fn Mouse::offset_pos(self : Mouse) -> Pos {
-  { x: self.inner().get_offset_x(), y: self.inner().get_offset_y() }
+  { x: self.0.get_offset_x(), y: self.0.get_offset_y() }
 }
 
 ///|
 pub fn Mouse::client_pos(self : Mouse) -> Pos {
-  { x: self.inner().get_client_x(), y: self.inner().get_client_y() }
+  { x: self.0.get_client_x(), y: self.0.get_client_y() }
 }
 
 ///|
@@ -27,20 +27,17 @@ struct Scroll(@dom.Element)
 
 ///|
 pub fn Scroll::offset_pos(self : Self) -> Pos {
-  {
-    x: self.inner().get_scroll_left().to_int(),
-    y: self.inner().get_scroll_top().to_int(),
-  }
+  { x: self.0.get_scroll_left().to_int(), y: self.0.get_scroll_top().to_int() }
 }
 
 ///|
 pub fn Scroll::width(self : Self) -> Int {
-  self.inner().get_scroll_width().to_int()
+  self.0.get_scroll_width().to_int()
 }
 
 ///|
 pub fn Scroll::height(self : Self) -> Int {
-  self.inner().get_scroll_height().to_int()
+  self.0.get_scroll_height().to_int()
 }
 
 ///|

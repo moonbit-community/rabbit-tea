@@ -261,9 +261,9 @@ fn Scroll::offset_pos(Self) -> Pos
 fn Scroll::width(Self) -> Int
 
 // Type aliases
-pub typealias @Yoorkin/rabbit-tea/html.Html as Html
+pub using @Yoorkin/rabbit-tea/html {type Html}
 
-pub typealias @Yoorkin/rabbit-tea/html.Html as T
+pub using @Yoorkin/rabbit-tea/html {type Html as T}
 
 // Traits
 

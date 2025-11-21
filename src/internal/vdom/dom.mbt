@@ -22,7 +22,7 @@ enum Node[Msg] {
 /// Convert msg type of Node.
 /// 
 /// This is a expensive operation and should be used rarely.
-pub fn[A, B] map(self : Node[A], f : (A) -> B) -> Node[B] {
+pub fn[A, B] Node::map(self : Node[A], f : (A) -> B) -> Node[B] {
   match self {
     Node(tag, attrs~, children~, listeners~, namespace_uri~) => {
       let attrs = attrs.map(_.map(f))
@@ -105,7 +105,7 @@ pub fn[Msg] nothing() -> Node[Msg] {
 }
 
 ///|
-struct Attribute[Msg](String,AttrValue[Msg])
+struct Attribute[Msg](String, AttrValue[Msg])
 
 ///|
 priv enum AttrValue[Msg] {
@@ -346,7 +346,7 @@ pub fn variant_to_js_value(value : @variant.Variant) -> @js.Value {
 }
 
 ///|
-pub fn[Msg, Model, View] patch(
+pub fn[Msg, Model, View] Node::patch(
   self : Node[Msg],
   old : Node[Msg],
   sandbox : @adapter.Sandbox[Msg, Model, View],
@@ -514,8 +514,8 @@ fn[Msg] attrs_diff(
   // The listeners is used to remove the event listener when the attribute is removed.
   listeners : Array[(String, @dom.Listener)],
 ) -> Array[AttrsUpdate[Msg]] {
-  let old_map = Map::from_iter(old.iter().map(_.inner()))
-  let new_map = Map::from_iter(new.iter().map(_.inner()))
+  let old_map = Map::from_iter(old.iter().map(x => x.inner()))
+  let new_map = Map::from_iter(new.iter().map(x => x.inner()))
   let result = []
   for x in listeners {
     result.push(EventRemove(x.0, x.1))

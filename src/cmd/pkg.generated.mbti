@@ -19,7 +19,9 @@ fn[M] task(M) -> Cmd[M]
 // Errors
 
 // Types and methods
+#alias(Command)
 pub(all) struct Cmd[M]((Events[M]) -> Unit)
+#deprecated
 fn[M] Cmd::inner(Self[M]) -> (Events[M]) -> Unit
 fn[A, B] Cmd::map(Self[A], (A) -> B) -> Self[B]
 
@@ -30,7 +32,6 @@ fn[M] Events::trigger_url_changed(Self[M], @url.Url) -> Unit
 fn[M] Events::trigger_url_request(Self[M], @url.UrlRequest) -> Unit
 
 // Type aliases
-pub typealias Cmd as Command
 
 // Traits
 
