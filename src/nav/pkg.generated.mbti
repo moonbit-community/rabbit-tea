@@ -6,27 +6,27 @@ import(
 )
 
 // Values
-fn[M] back() -> @cmd.Cmd[M]
+pub fn[M] back() -> @cmd.Cmd[M]
 
-fn[M] forward() -> @cmd.Cmd[M]
+pub fn[M] forward() -> @cmd.Cmd[M]
 
-fn[M] load(String) -> @cmd.Cmd[M]
+pub fn[M] load(String) -> @cmd.Cmd[M]
 
-fn[M] push_url(String) -> @cmd.Cmd[M]
+pub fn[M] push_url(String) -> @cmd.Cmd[M]
 
-fn[M] reload() -> @cmd.Cmd[M]
+pub fn[M] reload() -> @cmd.Cmd[M]
 
-fn[M] replace_url(String) -> @cmd.Cmd[M]
+pub fn[M] replace_url(String) -> @cmd.Cmd[M]
 
-fn[M] scroll_by_pos(Int, Int) -> @cmd.Cmd[M]
+pub fn[M] scroll_by_pos(Int, Int) -> @cmd.Cmd[M]
 
-fn[M] scroll_to(String) -> @cmd.Cmd[M]
+pub fn[M] scroll_to(String) -> @cmd.Cmd[M]
 
-fn[M] scroll_to_bottom() -> @cmd.Cmd[M]
+pub fn[M] scroll_to_bottom() -> @cmd.Cmd[M]
 
-fn[M] scroll_to_pos(Int, Int) -> @cmd.Cmd[M]
+pub fn[M] scroll_to_pos(Int, Int) -> @cmd.Cmd[M]
 
-fn[M] scroll_to_top() -> @cmd.Cmd[M]
+pub fn[M] scroll_to_top() -> @cmd.Cmd[M]
 
 // Errors
 

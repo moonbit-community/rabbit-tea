@@ -12,10 +12,10 @@ pub(all) enum Variant {
   Floating(Double)
   String(String)
 }
-impl Compare for Variant
-impl Eq for Variant
-impl Hash for Variant
-impl Show for Variant
+pub impl Compare for Variant
+pub impl Eq for Variant
+pub impl Hash for Variant
+pub impl Show for Variant
 
 // Type aliases
 

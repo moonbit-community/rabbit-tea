@@ -946,13 +946,13 @@ pub fn[M] tfoot(
 /// 
 /// ```moonbit skip
 /// typealias Model = String
-/// 
+///
 /// enum Msg {
 ///   Open
 ///   Closed(String)
 ///   YesNo(Bool)
 /// }
-/// 
+///
 /// fn update(msg : Msg, model : Model) -> (Cmd[Msg], Model) {
 ///   match msg {
 ///     Open => (@dialog.show("confirm"), model)
@@ -960,7 +960,7 @@ pub fn[M] tfoot(
 ///     Closed(value) => (none(), value)
 ///   }
 /// }
-/// 
+///
 /// fn view(model : Model) -> Html[Msg] {
 ///   div([
 ///     h1([text(model)]),

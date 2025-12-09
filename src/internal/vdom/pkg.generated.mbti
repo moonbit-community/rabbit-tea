@@ -9,50 +9,50 @@ import(
 )
 
 // Values
-fn[Msg] attribute(String, String) -> Attribute[Msg]
+pub fn[Msg] attribute(String, String) -> Attribute[Msg]
 
-fn[Msg] diff(Node[Msg], Node[Msg]) -> Patch[Msg]
+pub fn[Msg] diff(Node[Msg], Node[Msg]) -> Patch[Msg]
 
-fn[Msg] diff_without_key(Array[Node[Msg]], Array[Node[Msg]]) -> Array[Patch[Msg]]
+pub fn[Msg] diff_without_key(Array[Node[Msg]], Array[Node[Msg]]) -> Array[Patch[Msg]]
 
-fn[Msg] do_diff(Node[Msg], Node[Msg]) -> Array[Patch[Msg]]
+pub fn[Msg] do_diff(Node[Msg], Node[Msg]) -> Array[Patch[Msg]]
 
-fn[Msg] external(@dom.Node, Ref[Array[Attribute[Msg]]?], width~ : Int, height~ : Int) -> Node[Msg]
+pub fn[Msg] external(@dom.Node, Ref[Array[Attribute[Msg]]?], width~ : Int, height~ : Int) -> Node[Msg]
 
-fn[Msg] link(Array[Attribute[Msg]], Array[Node[Msg]], escape? : Bool) -> Node[Msg]
+pub fn[Msg] link(Array[Attribute[Msg]], Array[Node[Msg]], escape? : Bool) -> Node[Msg]
 
-fn[Msg] node(String, Array[Attribute[Msg]], Array[Node[Msg]]) -> Node[Msg]
+pub fn[Msg] node(String, Array[Attribute[Msg]], Array[Node[Msg]]) -> Node[Msg]
 
-fn[Msg] node_ns(String, String, Array[Attribute[Msg]], Array[Node[Msg]]) -> Node[Msg]
+pub fn[Msg] node_ns(String, String, Array[Attribute[Msg]], Array[Node[Msg]]) -> Node[Msg]
 
-fn[Msg] nothing() -> Node[Msg]
+pub fn[Msg] nothing() -> Node[Msg]
 
-fn[Msg] on(String, Handler[Msg]) -> Attribute[Msg]
+pub fn[Msg] on(String, Handler[Msg]) -> Attribute[Msg]
 
-fn[Msg] property(String, @variant.Variant) -> Attribute[Msg]
+pub fn[Msg] property(String, @variant.Variant) -> Attribute[Msg]
 
-fn[Msg] style(String, String) -> Attribute[Msg]
+pub fn[Msg] style(String, String) -> Attribute[Msg]
 
-fn[Msg] text(String) -> Node[Msg]
+pub fn[Msg] text(String) -> Node[Msg]
 
-fn variant_to_js_value(@variant.Variant) -> @js.Value
+pub fn variant_to_js_value(@variant.Variant) -> @js.Value
 
 // Errors
 
 // Types and methods
 type Attribute[Msg]
-fn[A, B] Attribute::map(Self[A], (A) -> B) -> Self[B]
+pub fn[A, B] Attribute::map(Self[A], (A) -> B) -> Self[B]
 
 pub(all) enum Handler[Msg] {
   Normal(Msg)
   HandleEvent((@dom.Event) -> Msg)
   Custom(Msg, stop_propagation~ : Bool, prevent_default~ : Bool)
 }
-fn[A, B] Handler::map(Self[A], (A) -> B) -> Self[B]
+pub fn[A, B] Handler::map(Self[A], (A) -> B) -> Self[B]
 
 type Node[Msg]
-fn[A, B] Node::map(Self[A], (A) -> B) -> Self[B]
-fn[Msg, Model, View] Node::patch(Self[Msg], Self[Msg], @browser.Sandbox[Msg, Model, View], mount~ : String) -> Unit
+pub fn[A, B] Node::map(Self[A], (A) -> B) -> Self[B]
+pub fn[Msg, Model, View] Node::patch(Self[Msg], Self[Msg], @browser.Sandbox[Msg, Model, View], mount~ : String) -> Unit
 
 type Patch[Msg]
 

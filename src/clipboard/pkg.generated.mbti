@@ -6,9 +6,9 @@ import(
 )
 
 // Values
-fn[M] copy(Item, copied? : M, failed? : (String) -> M) -> @cmd.Cmd[M]
+pub fn[M] copy(Item, copied? : M, failed? : (String) -> M) -> @cmd.Cmd[M]
 
-fn[M] paste(pasted~ : (Item) -> M, failed? : (String) -> M) -> @cmd.Cmd[M]
+pub fn[M] paste(pasted~ : (Item) -> M, failed? : (String) -> M) -> @cmd.Cmd[M]
 
 // Errors
 

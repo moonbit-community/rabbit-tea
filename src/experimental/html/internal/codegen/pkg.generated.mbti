@@ -7,21 +7,21 @@ package "Yoorkin/rabbit-tea/experimental/html/internal/codegen"
 
 // Types and methods
 type Attribute
-impl Compare for Attribute
-impl Eq for Attribute
-impl Show for Attribute
+pub impl Compare for Attribute
+pub impl Eq for Attribute
+pub impl Show for Attribute
 
 type AttributeKind
-impl Show for AttributeKind
+pub impl Show for AttributeKind
 
 type AttributeMeta
-impl Show for AttributeMeta
+pub impl Show for AttributeMeta
 
 pub(all) enum AttributeTarget {
   Global
   Element(Array[HtmlElement])
 }
-impl Show for AttributeTarget
+pub impl Show for AttributeTarget
 
 pub(all) enum HtmlElement {
   Html
@@ -143,9 +143,9 @@ pub(all) enum HtmlElement {
   Font
   Marquee
 }
-impl Compare for HtmlElement
-impl Eq for HtmlElement
-impl Show for HtmlElement
+pub impl Compare for HtmlElement
+pub impl Eq for HtmlElement
+pub impl Show for HtmlElement
 
 pub struct HtmlMeta {
   html : HtmlElement
@@ -154,13 +154,13 @@ pub struct HtmlMeta {
 }
 
 type MbtParameter
-impl Show for MbtParameter
+pub impl Show for MbtParameter
 
 type MbtParameterKind
-impl Show for MbtParameterKind
+pub impl Show for MbtParameterKind
 
 type MbtType
-impl Show for MbtType
+pub impl Show for MbtType
 
 // Type aliases
 
