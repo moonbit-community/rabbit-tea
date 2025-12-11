@@ -2,7 +2,7 @@
 package "Yoorkin/rabbit-tea/url"
 
 // Values
-fn parse(String) -> Url raise
+pub fn parse(String) -> Url raise
 
 // Errors
 
@@ -12,9 +12,9 @@ pub(all) enum Protocol {
   Https
   Other(String)
 }
-impl Compare for Protocol
-impl Eq for Protocol
-impl Show for Protocol
+pub impl Compare for Protocol
+pub impl Eq for Protocol
+pub impl Show for Protocol
 
 pub(all) struct Url {
   protocol : Protocol
@@ -24,18 +24,18 @@ pub(all) struct Url {
   query : String?
   fragment : String?
 }
-fn Url::to_string(Self) -> String
-impl Compare for Url
-impl Eq for Url
-impl Show for Url
+pub fn Url::to_string(Self) -> String
+pub impl Compare for Url
+pub impl Eq for Url
+pub impl Show for Url
 
 pub(all) enum UrlRequest {
   Internal(Url)
   External(String)
 }
-impl Compare for UrlRequest
-impl Eq for UrlRequest
-impl Show for UrlRequest
+pub impl Compare for UrlRequest
+pub impl Eq for UrlRequest
+pub impl Show for UrlRequest
 
 // Type aliases
 

@@ -8,50 +8,50 @@ import(
 )
 
 // Values
-fn[Msg] attribute(String, String) -> Attribute[Msg]
+pub fn[Msg] attribute(String, String) -> Attribute[Msg]
 
-fn[M] circle(id? : String, class? : String, style? : Array[String], cx~ : Int, cy~ : Int, r~ : Int, fill? : String, stroke? : String, stroke_width? : Int, fill_opacity? : Int) -> Svg[M]
+pub fn[M] circle(id? : String, class? : String, style? : Array[String], cx~ : Int, cy~ : Int, r~ : Int, fill? : String, stroke? : String, stroke_width? : Int, fill_opacity? : Int) -> Svg[M]
 
-fn[M] defs(Array[Svg[M]]) -> Svg[M]
+pub fn[M] defs(Array[Svg[M]]) -> Svg[M]
 
-fn[M] ellipse(id? : String, class? : String, style? : Array[String], cx~ : Int, cy~ : Int, rx~ : Int, ry~ : Int, fill? : String, stroke? : String, stroke_width? : Int) -> Svg[M]
+pub fn[M] ellipse(id? : String, class? : String, style? : Array[String], cx~ : Int, cy~ : Int, rx~ : Int, ry~ : Int, fill? : String, stroke? : String, stroke_width? : Int) -> Svg[M]
 
-fn[M] from_string(String) -> @html.Html[M]
+pub fn[M] from_string(String) -> @html.Html[M]
 
-fn[M] g(Array[Svg[M]], id? : String, class? : String, style? : Array[String], fill? : String, stroke? : String) -> Svg[M]
+pub fn[M] g(Array[Svg[M]], id? : String, class? : String, style? : Array[String], fill? : String, stroke? : String) -> Svg[M]
 
-fn[M] image(id? : String, class? : String, style? : Array[String], href~ : String, x~ : Int, y~ : Int, preserveAspectRatio? : String) -> Svg[M]
+pub fn[M] image(id? : String, class? : String, style? : Array[String], href~ : String, x~ : Int, y~ : Int, preserveAspectRatio? : String) -> Svg[M]
 
-fn[M] line(id? : String, class? : String, style? : Array[String], x1~ : Int, y1~ : Int, x2~ : Int, y2~ : Int, fill? : String, stroke? : String, stroke_width? : Int, stroke_linecap? : String) -> Svg[M]
+pub fn[M] line(id? : String, class? : String, style? : Array[String], x1~ : Int, y1~ : Int, x2~ : Int, y2~ : Int, fill? : String, stroke? : String, stroke_width? : Int, stroke_linecap? : String) -> Svg[M]
 
-fn[M] node(String, Array[Attribute[M]], Array[Svg[M]]) -> Svg[M]
+pub fn[M] node(String, Array[Attribute[M]], Array[Svg[M]]) -> Svg[M]
 
-fn[M] path(id? : String, class? : String, style? : Array[String], d~ : String) -> Svg[M]
+pub fn[M] path(id? : String, class? : String, style? : Array[String], d~ : String) -> Svg[M]
 
-fn[M] polyline(id? : String, class? : String, style? : Array[String], points~ : Array[(Int, Int)], pathLength~ : Int, fill? : String, stroke? : String, stroke_width? : Int, stroke_linecap? : String) -> Svg[M]
+pub fn[M] polyline(id? : String, class? : String, style? : Array[String], points~ : Array[(Int, Int)], pathLength~ : Int, fill? : String, stroke? : String, stroke_width? : Int, stroke_linecap? : String) -> Svg[M]
 
-fn[M] property(String, @variant.Variant) -> Attribute[M]
+pub fn[M] property(String, @variant.Variant) -> Attribute[M]
 
-fn[M] rect(id? : String, class? : String, style? : Array[String], x~ : Int, y~ : Int, width~ : Int, height~ : Int, rx? : Int, ry? : Int, fill? : String, stroke? : String, stroke_width? : Int) -> Svg[M]
+pub fn[M] rect(id? : String, class? : String, style? : Array[String], x~ : Int, y~ : Int, width~ : Int, height~ : Int, rx? : Int, ry? : Int, fill? : String, stroke? : String, stroke_width? : Int) -> Svg[M]
 
-fn[M] svg(Array[Attribute[M]], Array[Svg[M]], id? : String, class? : String, style? : Array[String], width? : Int, height? : Int, view_box? : String, xmlns? : String) -> @html.Html[M]
+pub fn[M] svg(Array[Attribute[M]], Array[Svg[M]], id? : String, class? : String, style? : Array[String], width? : Int, height? : Int, view_box? : String, xmlns? : String) -> @html.Html[M]
 
-fn[M] svg_text(id? : String, class? : String, style? : Array[String], x~ : Int, y~ : Int, text~ : String, dx? : Int, dy? : Int, rotate? : String, length_adjust? : String, text_length? : Int) -> Svg[M]
+pub fn[M] svg_text(id? : String, class? : String, style? : Array[String], x~ : Int, y~ : Int, text~ : String, dx? : Int, dy? : Int, rotate? : String, length_adjust? : String, text_length? : Int) -> Svg[M]
 
-fn[M] svg_use(id? : String, class? : String, style? : Array[String], href~ : String, x~ : Int, y~ : Int, stroke? : String, stroke_width? : Int, fill? : String, fill_opacity? : Int) -> Svg[M]
+pub fn[M] svg_use(id? : String, class? : String, style? : Array[String], href~ : String, x~ : Int, y~ : Int, stroke? : String, stroke_width? : Int, fill? : String, fill_opacity? : Int) -> Svg[M]
 
-fn[M] view(id? : String, class? : String, style? : Array[String], view_box? : String, zoom_and_pan? : String, preserve_aspect_ratio? : String) -> Svg[M]
+pub fn[M] view(id? : String, class? : String, style? : Array[String], view_box? : String, zoom_and_pan? : String, preserve_aspect_ratio? : String) -> Svg[M]
 
 // Errors
 
 // Types and methods
 pub(all) struct Attribute[M](@vdom.Attribute[M])
 #deprecated
-fn[M] Attribute::inner(Self[M]) -> @vdom.Attribute[M]
+pub fn[M] Attribute::inner(Self[M]) -> @vdom.Attribute[M]
 
 pub(all) struct Svg[M](@vdom.Node[M])
 #deprecated
-fn[M] Svg::inner(Self[M]) -> @vdom.Node[M]
+pub fn[M] Svg::inner(Self[M]) -> @vdom.Node[M]
 
 // Type aliases
 

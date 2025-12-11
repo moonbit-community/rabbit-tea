@@ -77,8 +77,7 @@ pub fn parse(url : String) -> Url raise Error {
   }
   let (mid, path) = match mid_part.split("/").collect() {
     [mid] => (mid, "")
-    [mid, .. paths] =>
-      (mid, paths.iter().map(@string.View::to_string).join("/"))
+    [mid, .. paths] => (mid, paths.iter().map(StringView::to_string).join("/"))
     _ => fail("Invalid host")
   }
   let (host, port) = match mid.split(":").collect() {

@@ -6,13 +6,13 @@ import(
 )
 
 // Values
-fn[Msg, Model] delete(String, expect~ : Expecting[Msg, Model]) -> @cmd.Cmd[Msg]
+pub fn[Msg, Model] delete(String, expect~ : Expecting[Msg, Model]) -> @cmd.Cmd[Msg]
 
-fn[Msg, Model] get(String, expect~ : Expecting[Msg, Model]) -> @cmd.Cmd[Msg]
+pub fn[Msg, Model] get(String, expect~ : Expecting[Msg, Model]) -> @cmd.Cmd[Msg]
 
-fn[Msg, Model] patch(String, Body, expect~ : Expecting[Msg, Model]) -> @cmd.Cmd[Msg]
+pub fn[Msg, Model] patch(String, Body, expect~ : Expecting[Msg, Model]) -> @cmd.Cmd[Msg]
 
-fn[Msg, Model] post(String, Body, expect~ : Expecting[Msg, Model]) -> @cmd.Cmd[Msg]
+pub fn[Msg, Model] post(String, Body, expect~ : Expecting[Msg, Model]) -> @cmd.Cmd[Msg]
 
 // Errors
 
