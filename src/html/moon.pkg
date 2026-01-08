@@ -1,0 +1,5 @@
+import {
+  "Yoorkin/rabbit-tea/internal/vdom" as @vdom,
+  "Yoorkin/rabbit-tea/dom",
+  "Yoorkin/rabbit-tea/variant",
+}

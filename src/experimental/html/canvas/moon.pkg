@@ -1,0 +1,9 @@
+import {
+  "Yoorkin/rabbit-tea/dom",
+  "rami3l/js-ffi/js",
+  "Yoorkin/rabbit-tea/html",
+}
+
+options(
+  link: { "js": { "format": "iife" } },
+)

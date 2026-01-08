@@ -1,4 +1,5 @@
 target/
+target
 _build/
 .mooncakes/
 .moonagent/
