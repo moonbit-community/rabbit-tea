@@ -10,10 +10,5 @@
       "path": "Yoorkin/rabbit-tea/html",
       "alias": "legacy_html"
     }
-  ],
-  "link": {
-    "js": {
-      "format": "iife"
-    }
-  }
+  ]
 }

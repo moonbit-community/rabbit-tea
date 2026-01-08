@@ -1,13 +1,7 @@
 {
-    "link": {
-        "js": {
-            "format": "iife"
-        }
-    },
     "import": [
         "Yoorkin/rabbit-tea/url",
         "Yoorkin/rabbit-tea/dom",
         "Yoorkin/rabbit-tea/cmd"
     ]
-
 }

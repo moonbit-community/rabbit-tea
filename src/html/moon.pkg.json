@@ -6,10 +6,5 @@
       },
       "Yoorkin/rabbit-tea/dom",
       "Yoorkin/rabbit-tea/variant"
-    ],
-    "link": {
-        "js": {
-            "format": "iife"
-        }
-    }
+    ]
 }
