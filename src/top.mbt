@@ -38,7 +38,7 @@ pub fn[Model, Message] new(
     curr_dom = new_dom
   }
 
-  let sb = @browser.Sandbox::new(model, update, view, after_update~)
+  let sb = @vdom.Sandbox::new(model, update, view, after_update~)
   sandbox = Some(sb)
   sb.refresh()
   App::{ sandbox: sb }
@@ -67,7 +67,7 @@ pub fn[Model, Message] startup(
 
 ///|
 struct App[Msg, Model] {
-  sandbox : @browser.Sandbox[Msg, Model, @html.Html[Msg]]
+  sandbox : @vdom.Sandbox[Msg, Model, @html.Html[Msg]]
 }
 
 ///|
@@ -100,7 +100,7 @@ pub fn[Model, Msg] new_with_route(
 
   guard (try? @url.parse(@dom.window().current_url())) is Ok(url)
   let (cmd, model) = initialize(url)
-  let sandbox = @browser.Sandbox::new(
+  let sandbox = @vdom.Sandbox::new(
     model,
     update,
     view,

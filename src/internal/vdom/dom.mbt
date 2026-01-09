@@ -211,7 +211,7 @@ pub fn[Msg] style(key : String, value : String) -> Attribute[Msg] {
 /// Convert virtual DOM to real DOM
 fn[Msg, Model, View] Node::to_node(
   self : Node[Msg],
-  sandbox : @adapter.Sandbox[Msg, Model, View],
+  sandbox : Sandbox[Msg, Model, View],
 ) -> @dom.Node {
   // NOTE:
   // In Elm, the sandbox is a spacial type and handled in the runtime. But in Moonbit,
@@ -349,7 +349,7 @@ pub fn variant_to_js_value(value : @variant.Variant) -> @js.Value {
 pub fn[Msg, Model, View] Node::patch(
   self : Node[Msg],
   old : Node[Msg],
-  sandbox : @adapter.Sandbox[Msg, Model, View],
+  sandbox : Sandbox[Msg, Model, View],
   mount~ : String,
 ) -> Unit {
   let patches = diff(old, self)
