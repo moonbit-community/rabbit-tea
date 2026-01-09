@@ -2,7 +2,7 @@
 package "Yoorkin/rabbit-tea/dom"
 
 import(
-  "rami3l/js-ffi/js"
+  "moonbit-community/js-ffi/js"
 )
 
 // Values

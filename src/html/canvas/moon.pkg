@@ -1,6 +1,6 @@
 import {
   "Yoorkin/rabbit-tea/dom",
-  "rami3l/js-ffi/js",
+  "moonbit-community/js-ffi/js",
   "Yoorkin/rabbit-tea/html",
 }
 

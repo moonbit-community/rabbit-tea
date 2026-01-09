@@ -2,6 +2,6 @@ import {
   "Yoorkin/rabbit-tea/dom",
   "Yoorkin/rabbit-tea/url",
   "Yoorkin/rabbit-tea/variant",
-  "rami3l/js-ffi/js",
+  "moonbit-community/js-ffi/js",
   "Yoorkin/rabbit-tea/cmd",
 }
